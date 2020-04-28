@@ -5,10 +5,10 @@ import uiReducer from "./ui_reducer";
 import sessionReducer from "./session_reducer";
 
 const rootReducer = combineReducers({
-	entities: entitiesReducer,
+	// entities: entitiesReducer,
 	session: sessionReducer,
-	errors: errorsReducer,
-	ui: uiReducer
+	errors: errorsReducer
+	// ui: uiReducer
 })
 
 export default rootReducer;
