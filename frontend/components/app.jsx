@@ -6,12 +6,17 @@ import SignupFormContainer from './session_form/signup_form_container'
 import NavBarContainer from './nav_bar/nav_bar_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
 
+
 const App = () => (
-	<div>
+	<div style={{height: '100%'}}>
 		<header>
 			<ProtectedRoute path="/" component={NavBarContainer}/>
+			{/* <ProtectedRoute path="/" component={SideDrawer}/> */}
+
 		</header>
-		<h1>DannyDash lives on</h1>
+		<main style={{marginTop: '100px'}}>
+			<h1>DannyDash lives on</h1>
+		</main>
 		<Switch>
 			<Route exact path='/signup' component={SignupFormContainer}/>
 			<Route exact path='/login' component={LoginFormContainer}/>
