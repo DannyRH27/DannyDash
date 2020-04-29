@@ -16,5 +16,5 @@ users = User.create([
     {fname: 'Glen', lname: 'Park', email: 'gp12@gmail.com', password: 'codinggod', address: '4', country: '',
     phone_number: 1234567893,},
     {fname: 'Jay', lname: 'Chen', email: 'jc27@gmail.com', password: 'livingalgo', address: '5', country: '',
-    phone_number: 1234567894,},
+    phone_number: 1234567894,}
 ])

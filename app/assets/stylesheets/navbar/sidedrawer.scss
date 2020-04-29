@@ -3,11 +3,13 @@
     background-color:white;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
     position: fixed;
-    top: 56px;
+    top: 0;
     left: 0;
     width: 70%;
     max-width: 300px;
     z-index: 200px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out
 }
 
 .side-drawer ul {
@@ -18,7 +20,17 @@
     justify-content: center;
 }
 
+.side-drawer.open {
+    transform: translateX(0);
+}
+
 .side-drawer a {
+    color: #521751;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.side-drawer li > div {
     color: #521751;
     text-decoration: none;
     font-size: 1.2rem;
@@ -33,3 +45,8 @@
     color: #fa923f;
 }
 
+@media (max-width: 250px) {
+    .side-drawer {
+        display: none;
+    }
+}

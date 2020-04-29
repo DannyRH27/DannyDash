@@ -12,6 +12,10 @@ class LoginForm extends React.Component {
     this.demo = this.demo.bind(this)
   }
 
+//   componentDidMount(){
+
+//   }
+
   update(field) {
     return (e) =>
       this.setState({
@@ -37,24 +41,23 @@ class LoginForm extends React.Component {
     demo() {
       const eInput = document.getElementById("email-input");
       const pInput = document.getElementById("pw-input");
-      const demoEmail = "demo@user.com";
-      const demoPass = "123456";
+      const demoEmail = "drh8@gmail.com";
+      const demoPass = "cannotcode";
       let ei = 0;
       let pi = 0;
-
+        debugger
       const typePass = () => {
         if (pi <= demoPass.length) {
           pInput.value = demoPass.substr(0, pi++);
           setTimeout(() => typePass(), 50);
-        } else {
-          setTimeout(
-            () =>
-              this.props.login({
-                email: "demo@user.com",
-                password: "123456",
-              }),
-            200
-          );
+        } else { setTimeout(
+                   () =>
+                     this.props.login({
+                       email: "drh8@gmail.com",
+                       password: "cannotcode",
+                     }),
+                   500
+                 );
         }
       };
 
@@ -62,48 +65,65 @@ class LoginForm extends React.Component {
         if (ei <= demoEmail.length) {
           eInput.value = demoEmail.substr(0, ei++);
           setTimeout(() => typeEmail(), 75);
-        } else typePass();
+        }else {
+            typePass()
+        }
       };
 
       typeEmail();
+      
     }
 
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h1>Sign In</h1>
-          <p>New to Doordash?</p>
-          <Link to="/signup">Sign Up </Link>
-          <p>or continue with email</p>
-          <div className="login-form">
-            <br />
-            <label>
-              Email:
-              <input
-                id="email-input"
-                type="text"
-                placeholder="Enter email"
-                value={this.state.email}
-                onChange={this.update("email")}
-              />
-            </label>
-            <br />
-            <label>
-              Password:
-              <input
-                id="pw-input"
-                type="password"
-                placeholder="Enter password"
-                value={this.state.password}
-                onChange={this.update("password")}
-              />
-            </label>
-            <br />
-            <input className="session-submit" type="submit" value="Sign In" />
+        <div className="login-form-box">
+          <div className="login-form-card">
+            <span className="header">Sign In</span>
+            <div className="session-form-header">
+              <p className="session-form-context">New to Doordash? &nbsp;</p>
+              <Link id="session-form-link" to="/signup">
+                Sign Up{" "}
+              </Link>
+            </div>
+            <div
+              className="fb-login-button"
+              data-size="large"
+              data-button-type="continue_with"
+              data-layout="default"
+              data-auto-logout-link="false"
+              data-use-continue-as="false"
+              data-width=""
+            ></div>
+            <p>or continue with email</p>
+            <form onSubmit={this.handleSubmit} className="login-form">
+              <label>
+                Email:
+                <input
+                  id="email-input"
+                  type="text"
+                  placeholder="Enter email"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                />
+              </label>
+              <br />
+              <label>
+                Password:
+                <input
+                  id="pw-input"
+                  type="password"
+                  placeholder="Enter password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                />
+              </label>
+              <br />
+              <input className="session-submit" type="submit" value="Sign In" />
+            </form>
             <button onClick={this.demo}>Demo Login</button>
           </div>
-        </form>
+        </div>
       </div>
     );
   }

@@ -47,3 +47,10 @@
 .spacer {
     flex: 1;
 }
+
+@media (max-width: 500px) {
+    .navbar_nav-items {
+        display: none;
+    }
+}
+

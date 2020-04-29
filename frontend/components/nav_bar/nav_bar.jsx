@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-export const SideDrawer = ({handleToggle}) => (
-  <nav className="side-drawer">
+export const SideDrawer = ({logout, show, handleToggle}) => {
+    let drawerClasses = ['side-drawer'];
+    if (show) {
+        drawerClasses = ['side-drawer', 'open'];
+    }
+  return (
+  <nav className={drawerClasses.join(' ')}>
       <button onClick={handleToggle}>X</button>
     <ul>
       <li>
@@ -18,11 +23,13 @@ export const SideDrawer = ({handleToggle}) => (
         <a href="/">Account</a>
       </li>
       <li>
-        <a href="/">Payment</a>
+        <div onClick={handleToggle, logout}>
+            <Link to='/login'>Logout</Link>
+        </div>
       </li>
     </ul>
   </nav>
-);
+  )};
 
 const DrawerToggleButton = () => (
   <button className="toggle-button">
@@ -49,7 +56,6 @@ class NavBar extends React.Component{
           });
     }
     render(){
-        let sideDrawer;
 
         return (
           <header className="navbar">
@@ -75,7 +81,7 @@ class NavBar extends React.Component{
                   </li>
                 </ul>
               </div>
-              {this.state.sideDrawerOpen ? <SideDrawer handleToggle={this.handleToggle} /> : ""}
+              <SideDrawer logout={this.props.logout} show={this.state.sideDrawerOpen} handleToggle={this.handleToggle} />
             </nav>
           </header>
         );

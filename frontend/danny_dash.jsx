@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			errors: {
 				session: []
 			}
-
 		};
 	}
 	const store = configureStore(preloadedState);
