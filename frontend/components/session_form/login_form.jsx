@@ -85,8 +85,17 @@ class LoginForm extends React.Component {
                 Sign Up
               </Link>
             </div>
-              <br/>
-            <form onSubmit={this.handleSubmit} >
+            <div
+              className="fb-login-button"
+              data-size="large"
+              data-button-type="continue_with"
+              data-layout="rounded"
+              data-auto-logout-link="true"
+              data-use-continue-as="true"
+              data-width=""
+            ></div>
+            <br />
+            <form onSubmit={this.handleSubmit}>
               <label>
                 <span>Email</span>
                 <br />
@@ -99,7 +108,7 @@ class LoginForm extends React.Component {
                 />
               </label>
               <br />
-              <br/>
+              <br />
               <label>
                 <span>Password</span>
                 <br />
@@ -111,11 +120,11 @@ class LoginForm extends React.Component {
                   onChange={this.update("password")}
                 />
               </label>
-              <br/>
+              <br />
               <br />
               <input className="session-submit" type="submit" value="Sign In" />
             </form>
-            <br/>
+            <br />
             <button className="session-submit" onClick={this.demo}>
               Demo Login
             </button>

@@ -8,12 +8,41 @@
     <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     
-
-    
   </head>
 
   <body>
+
+    <% unless current_user %> 
+      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+    <% else %>
+      <%= current_user[:name] %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '175499983639989',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v6.0'
+        });
+          
+        FB.AppEvents.logPageView();   
+          
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=175499983639989&autoLogAppEvents=1"></script>
     <%= yield %>
   </body>
 </html>

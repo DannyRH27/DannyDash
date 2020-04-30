@@ -6,3 +6,4 @@ Rails.application.initialize!
 
 # Converts JBuilder keys to camelCase
 Jbuilder.key_format camelize: :lower
+

@@ -42,6 +42,7 @@ class SignupForm extends React.Component {
     render() {
         return (
           <div className="session-form-container">
+            
             <div className="session-form-box">
               <div className="session-form-card">
                 <span className="header">Sign Up</span>

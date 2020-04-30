@@ -3,7 +3,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :fname, null:false
       t.string :lname, null:false
-      t.string :email, null:false
       t.string :address
       t.string :phone_number, null:false
       t.string :password_digest, null:false
@@ -11,7 +10,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :users, :email, unique: true
     add_index :users, :phone_number, unique: true
     add_index :users, :address, unique: true
     add_index :users, :session_token, unique: true
