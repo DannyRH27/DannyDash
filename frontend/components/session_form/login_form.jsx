@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import FacebookLogin from 'react-facebook-login'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -12,10 +13,6 @@ class LoginForm extends React.Component {
     this.demo = this.demo.bind(this)
   }
 
-//   componentDidMount(){
-
-//   }
-
   update(field) {
     return (e) =>
       this.setState({
@@ -26,6 +23,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state)
+      .then(() => this.props.history.push('/'))
   }
 
   showErrors() {
@@ -45,7 +43,8 @@ class LoginForm extends React.Component {
       const demoPass = "cannotcode";
       let ei = 0;
       let pi = 0;
-        debugger
+
+      
       const typePass = () => {
         if (pi <= demoPass.length) {
           pInput.value = demoPass.substr(0, pi++);
@@ -76,52 +75,50 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <div className="login-form-box">
-          <div className="login-form-card">
+      <div className="session-form-container">
+        <div className="session-form-box">
+          <div className="session-form-card">
             <span className="header">Sign In</span>
             <div className="session-form-header">
               <p className="session-form-context">New to Doordash? &nbsp;</p>
               <Link id="session-form-link" to="/signup">
-                Sign Up{" "}
+                Sign Up
               </Link>
             </div>
-            <div
-              className="fb-login-button"
-              data-size="large"
-              data-button-type="continue_with"
-              data-layout="default"
-              data-auto-logout-link="false"
-              data-use-continue-as="false"
-              data-width=""
-            ></div>
-            <p>or continue with email</p>
-            <form onSubmit={this.handleSubmit} className="login-form">
+              <br/>
+            <form onSubmit={this.handleSubmit} >
               <label>
-                Email:
+                <span>Email</span>
+                <br />
                 <input
+                  className="login-input"
                   id="email-input"
                   type="text"
-                  placeholder="Enter email"
                   value={this.state.email}
                   onChange={this.update("email")}
                 />
               </label>
               <br />
+              <br/>
               <label>
-                Password:
+                <span>Password</span>
+                <br />
                 <input
+                  className="login-input"
                   id="pw-input"
                   type="password"
-                  placeholder="Enter password"
                   value={this.state.password}
                   onChange={this.update("password")}
                 />
               </label>
+              <br/>
               <br />
               <input className="session-submit" type="submit" value="Sign In" />
             </form>
-            <button onClick={this.demo}>Demo Login</button>
+            <br/>
+            <button className="session-submit" onClick={this.demo}>
+              Demo Login
+            </button>
           </div>
         </div>
       </div>

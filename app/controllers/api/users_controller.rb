@@ -1,7 +1,6 @@
 class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
-        
         if @user.save
             login!(@user)
             render 'api/users/show'
@@ -39,7 +38,7 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:fname, :lname, :country, :phone_number, :email, :password)
+        params.require(:user).permit(:fname, :lname, :phone_number, :email, :password)
     end
 
 end
