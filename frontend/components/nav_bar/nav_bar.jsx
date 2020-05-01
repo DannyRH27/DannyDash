@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import {BsX} from  'react-icons/bs';
+import {FiHome} from 'react-icons/fi'
 
 export const SideDrawer = ({logout, show, handleToggle}) => {
     let drawerClasses = ['side-drawer'];
@@ -10,25 +11,27 @@ export const SideDrawer = ({logout, show, handleToggle}) => {
   return (
     <nav className={drawerClasses.join(" ")}>
       <ul>
-        <li className="closer">
-          <div onClick={handleToggle}>
-            <BsX/>
+        <div className="closer-box">
+          <div className="closer" onClick={handleToggle}>
+            <BsX />
           </div>
+        </div>
+        <li className="side-drawer-link">
+          <span>
+            <FiHome/> <Link to="/login">Home</Link>
+          </span>
         </li>
         <li>
-          <a href="/">Home</a>
+          <Link to="/login">Pickup</Link>
         </li>
         <li>
-          <a href="/">Pickup</a>
+          <Link to="/login">Orders</Link>
         </li>
         <li>
-          <a href="/">Orders</a>
+          <Link to="/login">Account</Link>
         </li>
         <li>
-          <a href="/">Account</a>
-        </li>
-        <li>
-          <div onClick={(handleToggle, logout)}>
+          <div id="test" onClick={(handleToggle, logout)}>
             <Link to="/login">Logout</Link>
           </div>
         </li>
@@ -66,7 +69,7 @@ class NavBar extends React.Component{
           <header className="navbar">
             <nav className="navbar_navigation">
               <div onClick={this.handleToggle}>
-                  <DrawerToggleButton />
+                <DrawerToggleButton />
               </div>
               <div className="navbar_logo">
                 <a href="/">THE LOGO</a>
@@ -76,17 +79,21 @@ class NavBar extends React.Component{
                 <ul>
                   {/* These will all be replaced with Links */}
                   <li>
-                    <a href="/">Home</a>
+                    <Link to="/login">Logout</Link>
                   </li>
                   <li>
-                    <a href="/">Pickup</a>
+                    <Link to="/login">Logout</Link>
                   </li>
                   <li>
-                    <a href="/">Sign Up or Sign In</a>
+                    <Link to="/login">Logout</Link>
                   </li>
                 </ul>
               </div>
-              <SideDrawer logout={this.props.logout} show={this.state.sideDrawerOpen} handleToggle={this.handleToggle} />
+              <SideDrawer
+                logout={this.props.logout}
+                show={this.state.sideDrawerOpen}
+                handleToggle={this.handleToggle}
+              />
             </nav>
           </header>
         );
