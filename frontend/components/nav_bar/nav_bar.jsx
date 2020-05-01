@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import {BsX} from  'react-icons/bs';
 
 export const SideDrawer = ({logout, show, handleToggle}) => {
     let drawerClasses = ['side-drawer'];
@@ -10,9 +11,9 @@ export const SideDrawer = ({logout, show, handleToggle}) => {
     <nav className={drawerClasses.join(" ")}>
       <ul>
         <li className="closer">
-          <button onClick={handleToggle}>
-            X
-          </button>
+          <div onClick={handleToggle}>
+            <BsX/>
+          </div>
         </li>
         <li>
           <a href="/">Home</a>
