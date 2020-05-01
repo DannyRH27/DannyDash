@@ -3,6 +3,13 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?
 
+  def after_sign_in_path_for(resource)
+    debugger
+    # @user = resource
+    # 'api/users/show'
+    api_user_path(resource)
+  end
+
   def login!(user)
     session[:session_token] = user.reset_session_token! 
     @current_user = user

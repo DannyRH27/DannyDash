@@ -7,29 +7,33 @@ export const SideDrawer = ({logout, show, handleToggle}) => {
         drawerClasses = ['side-drawer', 'open'];
     }
   return (
-  <nav className={drawerClasses.join(' ')}>
-      <button onClick={handleToggle}>X</button>
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/">Pickup</a>
-      </li>
-      <li>
-        <a href="/">Orders</a>
-      </li>
-      <li>
-        <a href="/">Account</a>
-      </li>
-      <li>
-        <div onClick={handleToggle, logout}>
-            <Link to='/login'>Logout</Link>
-        </div>
-      </li>
-    </ul>
-  </nav>
-  )};
+    <nav className={drawerClasses.join(" ")}>
+      <ul>
+        <li className="closer">
+          <button onClick={handleToggle}>
+            X
+          </button>
+        </li>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/">Pickup</a>
+        </li>
+        <li>
+          <a href="/">Orders</a>
+        </li>
+        <li>
+          <a href="/">Account</a>
+        </li>
+        <li>
+          <div onClick={(handleToggle, logout)}>
+            <Link to="/login">Logout</Link>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  );};
 
 const DrawerToggleButton = () => (
   <button className="toggle-button">
@@ -44,7 +48,7 @@ class NavBar extends React.Component{
         super(props)
         this.state = {
             user: this.props.currentUser,
-            sideDrawerOpen: false
+            sideDrawerOpen: true
         }
         this.handleToggle = this.handleToggle.bind(this)
     }

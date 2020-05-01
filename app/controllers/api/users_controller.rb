@@ -10,6 +10,7 @@ class Api::UsersController < ApplicationController
     end
 
     def show
+        debugger
         @user = current_user
     end
 

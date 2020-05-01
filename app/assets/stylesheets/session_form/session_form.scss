@@ -1,0 +1,116 @@
+.session-form-container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(250,250,250);
+    -webkit-box-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: none;
+    height: 100%;
+    min-height: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.session-form-box {
+    min-height: 300px;
+    width: 400px;
+    background-color: white;
+
+}
+
+.session-form-card {
+    display: flex;
+    height: 100%;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.session-form-header {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.04ch;
+    text-transform: none;
+    color: rgb(25,25,25);
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.session-form-context {
+    font-size: 16px;
+    font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 375;
+    line-height: 20px;
+    letter-spacing: 0ch;
+    text-transform: none;
+    color: rgb(118, 118, 118);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+}
+
+#session-form-link {
+    font-weight: 550;
+    font-size: 15px;
+    color: rgb(235,23,0);
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.session-submit {
+    background-color: rgb(235, 23, 0);
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    width: 300px;
+    height: 30px;
+    align-items: center;
+}
+
+.fb-input {
+    display:flex;  
+    justify-content: center;
+}
+
+.login-input {
+    width: 100%;
+    // max-width: 400px;
+    border-radius: 4px;
+    height: 38px;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+    border: 1px solid rgb(198, 198, 198);
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.login-input:focus {
+    border: 2px solid rgb(126, 126, 172); 
+}
+
+// Sign Up Form specific
+.user-name {
+    display: flex;
+    max-width: 300px;
+    // flex-direction: row;
+    // justify-content: space-between;
+    
+}
+
+.fname{
+    width: 70%;
+    margin-right: 10px;
+}

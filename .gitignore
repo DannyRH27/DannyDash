@@ -5,3 +5,4 @@ tmp/
 
 bundle.js*
 /public/assets
+api_keys.rb*

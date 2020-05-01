@@ -70,7 +70,7 @@ class LoginForm extends React.Component {
       };
 
       typeEmail();
-      
+
     }
 
   render() {
@@ -85,15 +85,7 @@ class LoginForm extends React.Component {
                 Sign Up
               </Link>
             </div>
-            <div
-              className="fb-login-button"
-              data-size="large"
-              data-button-type="continue_with"
-              data-layout="rounded"
-              data-auto-logout-link="true"
-              data-use-continue-as="true"
-              data-width=""
-            ></div>
+            <a className='fb-login session-submit' href="/users/auth/facebook">Continue with Facebook</a>
             <br />
             <form onSubmit={this.handleSubmit}>
               <label>

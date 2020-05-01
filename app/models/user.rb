@@ -13,17 +13,26 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
+
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      # debugger
+      user.provider = auth.provider
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
+      user.pass_digest = BCrypt::Password.create(user.password)
       user.name = auth.info.name   # assuming the user model has a name
       user.image = auth.info.image # assuming the user model has an image
+      user.fname = auth.info.name.split[0]
+      user.lname = auth.info.name.split[-1]
+      # If you are using confirmable and the provider(s) you use validate emails, 
+      # uncomment the line below to skip the confirmation emails.
+      # user.skip_confirmation!
     end
   end
-      validates :email, :phone_number, presence: true, uniqueness: true
+    validates :email, presence: true, uniqueness: true
     validates :fname, :lname, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
-    validates :password_digest, presence: true
+    validates :pass_digest, presence: true
     validates :session_token, presence: true, uniqueness: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
@@ -39,16 +48,18 @@ class User < ApplicationRecord
 
     def password=(password)
         @password = password
-        self.password_digest = BCrypt::Password.create(password)
+        self.pass_digest = BCrypt::Password.create(password)
     end
 
     def is_password?(password)
-        BCrypt::Password.new(self.password_digest).is_password?(password)
+        puts "WHATR THE eUFKC", self
+        BCrypt::Password.new(self.pass_digest).is_password?(password)
     end
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil if user.nil?
+        # puts "fwahwefi", user, password, user.password_digest?
         user.is_password?(password) ? user : nil
     end
 

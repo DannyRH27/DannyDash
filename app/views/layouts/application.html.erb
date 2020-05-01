@@ -11,13 +11,7 @@
   </head>
 
   <body>
-
-    <% unless current_user %> 
-      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-    <% else %>
-      <%= current_user[:name] %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% end %>
+   
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <script>
@@ -33,7 +27,7 @@
           
       };
 
-      (function(d, s, id){
+  (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
         js = d.createElement(s); js.id = id;

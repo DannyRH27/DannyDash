@@ -20,3 +20,10 @@ export const logout = () => (
         method: 'DELETE'
     })
 );
+
+export const fbsignup = () => (
+    $.ajax({
+        url: '/users/auth/facebook',
+        method: 'GET'
+    })
+)
