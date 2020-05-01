@@ -35754,3 +35754,225 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 3.7ms)
 
 
+Started GET "/users/auth/facebook/callback?code=AQAYLZbIkINoi5ZxmEBJaeGqsm_2ZgL6sQXJZsAHl4K06ZrHMriT5rRtCSLTXcwITs8ZvKGVaCZzHE9ha745BM434A3432ooA_kdZYnQN-xbxjgmi9TbLvHYslKCLwz4Nc5vSiGdwQVcQ3HdEH-BSRmGczrYtE7o90Cr0Zmpu5pmV1AviL3dcJsuVzfMrCI3cjko94Y1CV_CfuaqGUAojDAjQSyd4KfFjd19TCq7KGSt-MkM4WuQrUhLeH9slrJZ_smGBNtbkX2wBokQd487xopEspv6lHPzDsGQW3DBn4To_jEbocK_kQ4qLRSiCe-tDNU&state=01730cc6984ca6710f5377dcf6825653a0bd33a7cd012a9e" for ::1 at 2020-04-30 21:03:55 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQAYLZbIkINoi5ZxmEBJaeGqsm_2ZgL6sQXJZsAHl4K06ZrHMriT5rRtCSLTXcwITs8ZvKGVaCZzHE9ha745BM434A3432ooA_kdZYnQN-xbxjgmi9TbLvHYslKCLwz4Nc5vSiGdwQVcQ3HdEH-BSRmGczrYtE7o90Cr0Zmpu5pmV1AviL3dcJsuVzfMrCI3cjko94Y1CV_CfuaqGUAojDAjQSyd4KfFjd19TCq7KGSt-MkM4WuQrUhLeH9slrJZ_smGBNtbkX2wBokQd487xopEspv6lHPzDsGQW3DBn4To_jEbocK_kQ4qLRSiCe-tDNU", "state"=>"01730cc6984ca6710f5377dcf6825653a0bd33a7cd012a9e"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:03:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 55ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQB9ejhoetfMAMC6oD40nMKwZ7Paeh96JJ9DIMJh8g_34rMmLdy2v3zu3_o1PNXJAFsC4RjYdzK-uHeD4d7-nF9b-CCmM3tsjT6buDkg4k5LbbELBtXiVCTDE9CuvK2y0O7koRIB8E6-itrheqEZl8Xo8pMA79xTjA-vXigcTSmbzODRQRiLxkNvlhBxAh_flZsf-ixI-CHnCv2pq3EUh5MxKSqCZ9TmnxxuQNTThJraSkGpr0ZcfknexVINb3LFsAzwcMBml-68s3SyKmfen9yue235ss3F2S3p25dUW7La0Y5NWrRAcDm8yyrd8pXYBG4&state=175c445fa581ba860e01c7be5efa661a4abbce5fab736dd6" for ::1 at 2020-04-30 21:04:29 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQB9ejhoetfMAMC6oD40nMKwZ7Paeh96JJ9DIMJh8g_34rMmLdy2v3zu3_o1PNXJAFsC4RjYdzK-uHeD4d7-nF9b-CCmM3tsjT6buDkg4k5LbbELBtXiVCTDE9CuvK2y0O7koRIB8E6-itrheqEZl8Xo8pMA79xTjA-vXigcTSmbzODRQRiLxkNvlhBxAh_flZsf-ixI-CHnCv2pq3EUh5MxKSqCZ9TmnxxuQNTThJraSkGpr0ZcfknexVINb3LFsAzwcMBml-68s3SyKmfen9yue235ss3F2S3p25dUW7La0Y5NWrRAcDm8yyrd8pXYBG4", "state"=>"175c445fa581ba860e01c7be5efa661a4abbce5fab736dd6"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:04:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 62ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:04:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:04:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-04-30 21:04:54 -0700
+Started GET "/users/auth/facebook/callback?code=AQAVylWqeenl6OIW_Tum-9OJ1tYGm_x3OpBZ6RhU-SOMoOKRNxEkG_0PaV9UhZI_DGcA5Mw_o0jIq48i5NtJgyp6P5FTncHF741aInKMIqxQBCCjXt1J0VlZwpy0tiggzXOcXKXazeX99S_M63pPFM-1BosyfM5nRFDHLcprHavMtL_nbZ6LJJfjWmbLGIGFYMHiYxR_-fs1nRQ5FspafUbfckBmeCpNRkZWwIzn7dU1K8Rs1Aljjnz5jr_46-0UccB61_yTgHVkEF8X-hAZXIP6amoSGKPnt-9zsLNGDS2rqZS8pbWvNMACq-nqlw2ynoQ&state=3be6c2677dd84f60cf2f2a455d1407daf753ebd07c2c670a" for ::1 at 2020-04-30 21:04:54 -0700
+Processing by Users::OmniauthCallbacksController#facebook as JSON
+  Parameters: {"code"=>"AQAVylWqeenl6OIW_Tum-9OJ1tYGm_x3OpBZ6RhU-SOMoOKRNxEkG_0PaV9UhZI_DGcA5Mw_o0jIq48i5NtJgyp6P5FTncHF741aInKMIqxQBCCjXt1J0VlZwpy0tiggzXOcXKXazeX99S_M63pPFM-1BosyfM5nRFDHLcprHavMtL_nbZ6LJJfjWmbLGIGFYMHiYxR_-fs1nRQ5FspafUbfckBmeCpNRkZWwIzn7dU1K8Rs1Aljjnz5jr_46-0UccB61_yTgHVkEF8X-hAZXIP6amoSGKPnt-9zsLNGDS2rqZS8pbWvNMACq-nqlw2ynoQ", "state"=>"3be6c2677dd84f60cf2f2a455d1407daf753ebd07c2c670a"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10158253431024570"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "danny.roman8@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "dtc084yB0Qu6imSVyGUCRw"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "dtc084yB0Qu6imSVyGUCRw"], ["updated_at", "2020-05-01 04:04:55.246278"], ["id", 2]]
+  ↳ app/models/user.rb:45
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:45
+Redirected to http://localhost:3000/
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users/omniauth_callbacks_controller.rb:11
+Completed 302 Found in 12ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:04:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dtc084yB0Qu6imSVyGUCRw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQDNRfRETtKcbYwGdTMDxEFYWBeOiQJfXqnSlKYY3masv2Ih6-J9q4gNgNRYlsye41U_NCW9TgUsCe5g4L728iQdYG7Be2bvbwlh73SDUk0b5J3wPLz1aihRelAiUudN7OmIADghzdT0crRj6qWEt05vHdugk22WCWyL9L1Iy8w0IXSsjyEy7RBqjaBw0YTPyWlCTBp850qcrm6z_rIwVMAeQMOLauQaYv39YwH_3H8rSicBHzVh9N0wH6zT9bTJCB5zxV_NFUyGJInXvZeyyzh19wCy3GjtGHXvxm2YaUZBe0SUhbDrtO45TXqESrQKOyI&state=5ffa1bc3fa9b6edb7a83b72eeafb009d01ca3aa536e008ee" for ::1 at 2020-04-30 21:05:23 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDNRfRETtKcbYwGdTMDxEFYWBeOiQJfXqnSlKYY3masv2Ih6-J9q4gNgNRYlsye41U_NCW9TgUsCe5g4L728iQdYG7Be2bvbwlh73SDUk0b5J3wPLz1aihRelAiUudN7OmIADghzdT0crRj6qWEt05vHdugk22WCWyL9L1Iy8w0IXSsjyEy7RBqjaBw0YTPyWlCTBp850qcrm6z_rIwVMAeQMOLauQaYv39YwH_3H8rSicBHzVh9N0wH6zT9bTJCB5zxV_NFUyGJInXvZeyyzh19wCy3GjtGHXvxm2YaUZBe0SUhbDrtO45TXqESrQKOyI", "state"=>"5ffa1bc3fa9b6edb7a83b72eeafb009d01ca3aa536e008ee"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:05:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dtc084yB0Qu6imSVyGUCRw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 25ms (Views: 24.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:07:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dtc084yB0Qu6imSVyGUCRw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 59ms (Views: 58.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQDkWCzHeY_o_aX8SzgDwLBMPqWzQQsGgLW7R2r18dEW-k4x7Fg3fjEGvptqrqkCb9SsktRZiApFVeId8Y4dJ6kEz8zazCuKemiIwfiwgR9w0A0xEkna9Gi0boDDv2dEjMWmNfrTKofI_fsnW8FWM3y9Oy4hphMkKtaQHy0IkL14wMM7CMZWlkkHQT0YA-PKAwqYZlZ11-UjVqXkqy8nnUajt9fGbbnboXs9BZw81RP4NcY3AudVhYtE8Ol8N3mwtHuQFEncCwWVNduj8rqeSzGQSrxn7P8kWV_QN4LRShBgwBiJxQJNlXYGmQ2-909o7KM&state=75095188e8c67e9248272e6f96c9729e568ce94ef6d78493" for ::1 at 2020-04-30 21:07:31 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDkWCzHeY_o_aX8SzgDwLBMPqWzQQsGgLW7R2r18dEW-k4x7Fg3fjEGvptqrqkCb9SsktRZiApFVeId8Y4dJ6kEz8zazCuKemiIwfiwgR9w0A0xEkna9Gi0boDDv2dEjMWmNfrTKofI_fsnW8FWM3y9Oy4hphMkKtaQHy0IkL14wMM7CMZWlkkHQT0YA-PKAwqYZlZ11-UjVqXkqy8nnUajt9fGbbnboXs9BZw81RP4NcY3AudVhYtE8Ol8N3mwtHuQFEncCwWVNduj8rqeSzGQSrxn7P8kWV_QN4LRShBgwBiJxQJNlXYGmQ2-909o7KM", "state"=>"75095188e8c67e9248272e6f96c9729e568ce94ef6d78493"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:07:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dtc084yB0Qu6imSVyGUCRw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 37ms (Views: 36.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-30 21:08:30 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dtc084yB0Qu6imSVyGUCRw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "danny.roman8@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "hKrOG3QmVudPoTDbCsg1tQ"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "hKrOG3QmVudPoTDbCsg1tQ"], ["updated_at", "2020-05-01 04:08:30.350772"], ["id", 2]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:45
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQCOD2bZct9VYsga72dpeQKuCbUVxwKWf1UaW5B0DbRK43Y9nbyFY9JMo4qcTR5JLWdNjL14B5Mbv3i1XXW36Gf8Rb3BQETpMDCDhBwk5Qt4K8MeZ4tbZLg0je61Rp7fCEqOV1YnbM-vvANpQ-d9mB6eDb7anQ-zNHZpcu7h8ccoJepa8_40-hoODBtmjGV0kup-HqV0Kym-hWALS1oUvvGGoF1vj0oxujvfJxexhhtS_yleFzjf5Td3s6CW-sNU_OD15gcO_78CxnzXqPxC--WY7WKw9OVkcYxMVWKtWoCVXElI6TqKNoTBOLf-f3uHkoM&state=0570cba29ba09fd1e425a5b2228683afc6419942c21f25e3" for ::1 at 2020-04-30 21:08:39 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCOD2bZct9VYsga72dpeQKuCbUVxwKWf1UaW5B0DbRK43Y9nbyFY9JMo4qcTR5JLWdNjL14B5Mbv3i1XXW36Gf8Rb3BQETpMDCDhBwk5Qt4K8MeZ4tbZLg0je61Rp7fCEqOV1YnbM-vvANpQ-d9mB6eDb7anQ-zNHZpcu7h8ccoJepa8_40-hoODBtmjGV0kup-HqV0Kym-hWALS1oUvvGGoF1vj0oxujvfJxexhhtS_yleFzjf5Td3s6CW-sNU_OD15gcO_78CxnzXqPxC--WY7WKw9OVkcYxMVWKtWoCVXElI6TqKNoTBOLf-f3uHkoM", "state"=>"0570cba29ba09fd1e425a5b2228683afc6419942c21f25e3"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:08:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 79ms (Views: 78.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-04-30 21:08:46 -0700
+Started GET "/users/auth/facebook/callback?code=AQB5girVmYr3N1kQ4IMo6BTvjkFTv1oaycauuLQPRjcbsZjBY9yNQfSSRMZh6vaQ-H4SI6OGXqeASxnL0Clbl0ImsVtNS_wveYW7giDwCZQCF1XZ4w0TtS9wnyyoRcumQamSwmJ7_y6SveZCOD2X5AWQ7bp-Nn9Av7A_HaNtaO3HiXFyIy-13gBaJHnFg8sRhYzC2EDNhmILjz1o_fKT_2LlkzkQaQUo030r-8Qkg51A9IFbY2iRiZ9-lAKOjHKoiaGpKTpmKQvw_V3GgQfu2eqzQMxkRwxYqxlWDbWMrhqgm5RvVy7Ksbku8cNBFrV52xw&state=645986f404b85e7e197011b4f4bd427cbe2ca695b457fdbd" for ::1 at 2020-04-30 21:08:46 -0700
+Processing by Users::OmniauthCallbacksController#facebook as JSON
+  Parameters: {"code"=>"AQB5girVmYr3N1kQ4IMo6BTvjkFTv1oaycauuLQPRjcbsZjBY9yNQfSSRMZh6vaQ-H4SI6OGXqeASxnL0Clbl0ImsVtNS_wveYW7giDwCZQCF1XZ4w0TtS9wnyyoRcumQamSwmJ7_y6SveZCOD2X5AWQ7bp-Nn9Av7A_HaNtaO3HiXFyIy-13gBaJHnFg8sRhYzC2EDNhmILjz1o_fKT_2LlkzkQaQUo030r-8Qkg51A9IFbY2iRiZ9-lAKOjHKoiaGpKTpmKQvw_V3GgQfu2eqzQMxkRwxYqxlWDbWMrhqgm5RvVy7Ksbku8cNBFrV52xw", "state"=>"645986f404b85e7e197011b4f4bd427cbe2ca695b457fdbd"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10158253431024570"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "danny.roman8@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "xQEvqb1TTq4G60mb9_WwqA"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "xQEvqb1TTq4G60mb9_WwqA"], ["updated_at", "2020-05-01 04:08:47.374648"], ["id", 2]]
+  ↳ app/models/user.rb:45
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:45
+Redirected to http://localhost:3000/
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users/omniauth_callbacks_controller.rb:11
+Completed 302 Found in 13ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:08:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xQEvqb1TTq4G60mb9_WwqA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 58ms (Views: 57.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-30 21:08:48 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xQEvqb1TTq4G60mb9_WwqA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "danny.roman8@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "FqQVQm_vnJO9uwtjkfKIIA"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "FqQVQm_vnJO9uwtjkfKIIA"], ["updated_at", "2020-05-01 04:08:48.959952"], ["id", 2]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:45
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQDzhtT9IlHRVfo4t6F1ijGz_1XwHbzqk3j-rOsCMZv9I9Afb09Srcwtf6eU7glLOLHUtvIplvRnJGJ14Ef2HJqxWkQE2w32lYRJC1oVFJUNhuRbsu67p6XqwzRzRH7nbjpgSU80iWduCjb5SU6v8cGuV1xB7YdQq0q5jY_drnhmFrn8xN_f1GqPQV8rma_-OV3OdR3cIOiLdRqO7fjUvkanaFFykNyd6sCdpkScTDpO5e-CuBThC42Ua3oexl3TH4AuPdbaWQFOxFT-gk95tRfI_iAEHIiuDlVAXIE2GOjTx5qQZWZaKrUpcQTBHmIWB-o&state=512dafce2f48d849decdc1d98e9c7ac0fd0c3814246845c8" for ::1 at 2020-04-30 21:09:44 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDzhtT9IlHRVfo4t6F1ijGz_1XwHbzqk3j-rOsCMZv9I9Afb09Srcwtf6eU7glLOLHUtvIplvRnJGJ14Ef2HJqxWkQE2w32lYRJC1oVFJUNhuRbsu67p6XqwzRzRH7nbjpgSU80iWduCjb5SU6v8cGuV1xB7YdQq0q5jY_drnhmFrn8xN_f1GqPQV8rma_-OV3OdR3cIOiLdRqO7fjUvkanaFFykNyd6sCdpkScTDpO5e-CuBThC42Ua3oexl3TH4AuPdbaWQFOxFT-gk95tRfI_iAEHIiuDlVAXIE2GOjTx5qQZWZaKrUpcQTBHmIWB-o", "state"=>"512dafce2f48d849decdc1d98e9c7ac0fd0c3814246845c8"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:09:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 152ms (Views: 152.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 21:11:11 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 943ms (Views: 942.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-04-30 21:11:17 -0700
