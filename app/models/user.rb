@@ -16,7 +16,6 @@ class User < ApplicationRecord
 
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       # debugger
-      user.provider = auth.provider
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.pass_digest = BCrypt::Password.create(user.password)
