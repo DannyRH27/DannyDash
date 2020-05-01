@@ -85,12 +85,21 @@
     line-height: 40px;
 }
 
+.session-submit:hover {
+    background-color: #c61400;
+    transition: 0.3s;
+}
+
 .fb-input {
     background-color: #3B5998;
     margin-top: 20px;
 }
 
-*, ::after, ::before {
+.fb-input:hover {
+    background-color: rgb(45, 68, 118);
+}
+
+::after, ::before {
     box-sizing: border-box;
 }
 
@@ -101,15 +110,34 @@
 
 .header-divider {
     color: gray;
+    font-size: 12px;
+    letter-spacing: 1px;
+    position: relative;
+    text-align: center;
+    width: 350px;
+    margin: 7px 0px 20px 0px;
 }
 
-.header-divider-box::before, .header-divider-box::after {
+.header-divider::before {
     display: block;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
+    width: 100px;
     height: 1px;
     background-color: rgb(118, 118, 118);
     content: "";
+    left: 0;
+    top: 50%;
+    position: absolute;
+}
+
+.header-divider::after {
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: rgb(118, 118, 118);
+    content: "";
+    right: 0;
+    top: 50%;
+    position: absolute;
 }
 
 .login-input {
@@ -131,7 +159,7 @@
 // Sign Up Form specific
 .user-name {
     display: flex;
-    max-width: 300px;
+    max-width: 400px;
     // flex-direction: row;
     // justify-content: space-between;
     

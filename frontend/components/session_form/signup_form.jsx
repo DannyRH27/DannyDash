@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { FaFacebookSquare } from "react-icons/fa";
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -54,6 +55,14 @@ class SignupForm extends React.Component {
                     Sign In
                   </Link>
                 </div>
+                <a className="fb-input session-submit" href="/users/auth/facebook">
+              <FaFacebookSquare className="fb-logo" /> &nbsp;Continue with
+              Facebook
+            </a>
+            <br />
+            <div className="header-divider-box">
+              <span className="header-divider">or continue with email</span>
+            </div>
                 <br />
                 <form onSubmit={this.handleSubmit}>
                   <div className='user-name'>

@@ -91,9 +91,7 @@ class LoginForm extends React.Component {
             </a>
             <br />
             <div className="header-divider-box">
-              {/* <p className='line'>&nbsp;</p> */}
-              <p className="header-divider">or continue with email</p>
-              {/* <p className='line'>&nbsp;</p> */}
+              <span className="header-divider">or continue with email</span>
             </div>
             <form onSubmit={this.handleSubmit}>
               <label>
