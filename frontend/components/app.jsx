@@ -11,7 +11,7 @@ const App = () => (
   <div style={{ height: "100%" }}>
     <header>
       <Switch>
-        <ProtectedRoute path="/" component={NavBarContainer} />
+        <Route path="/" component={NavBarContainer} />
       </Switch>
     </header>
     <main style={{ marginTop: "100px" }}>

@@ -71,18 +71,45 @@
 }
 
 .session-submit {
-    background-color: rgb(235, 23, 0);
+    background-color: #eb1700;
     color: white;
     font-size: 16px;
+    font-weight: 500;
     border-radius: 30px;
-    width: 300px;
-    height: 30px;
+    width: 370px;
     align-items: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.4px;
+    line-height: 40px;
 }
 
 .fb-input {
-    display:flex;  
+    background-color: #3B5998;
+    margin-top: 20px;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.header-divider-box {
+    display: flex;
     justify-content: center;
+}
+
+.header-divider {
+    color: gray;
+}
+
+.header-divider-box::before, .header-divider-box::after {
+    display: block;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    height: 1px;
+    background-color: rgb(118, 118, 118);
+    content: "";
 }
 
 .login-input {
