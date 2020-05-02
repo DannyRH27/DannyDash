@@ -1,10 +1,11 @@
 .navbar {
     position: fixed;
     width: 100%;
-    background-color: #521751;
-    height: 56px;
+    background-color: white;
+    height: 48px;
     top: 0;
     left: 0;
+
 }
 
 .navbar_navigation {
@@ -12,28 +13,19 @@
     height: 100%;
     align-items: center;
     padding: 0 1rem;
+
+
 }
-.navbar_logo a {
-    color: white;
+.navbar_logo {
+    color: black;
     text-decoration: none;
     font-size: 1.5rem;
-}
-
-.navbar_nav-items ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    margin-left: 1rem;
+    width: 100%;
     display: flex;
-}
-.navbar_nav-items li {
-    padding: 0 0.5rem;
+    justify-content: center;
 }
 
-.navbar_nav-items a {
-    color: white;
-    text-decoration: none;
-
-}
 
 .navbar_logo {
     margin-left: 1rem;

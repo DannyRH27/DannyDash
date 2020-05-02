@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import {BsX} from  'react-icons/bs';
 import {FiHome} from 'react-icons/fi'
+import {
+  RiShoppingBag2Line,
+  RiFileList3Line,
+  RiAccountCircleLine,
+  RiCloseCircleLine
+} from "react-icons/ri";
 
 export const SideDrawer = ({logout, show, handleToggle}) => {
     let drawerClasses = ['side-drawer'];
@@ -12,28 +18,40 @@ export const SideDrawer = ({logout, show, handleToggle}) => {
     <nav className={drawerClasses.join(" ")}>
       <ul>
         <div className="closer-box">
-          <div className="closer" onClick={handleToggle}>
+          <p className="side-bar-icon" onClick={handleToggle}>
             <BsX />
-          </div>
+          </p>
         </div>
         <li className="side-drawer-link">
-          <span>
-            <FiHome/> <Link to="/login">Home</Link>
-          </span>
+          <p className="side-bar-icon">
+            <FiHome />
+          </p>
+          <Link to="/login">Home</Link>
         </li>
         <li>
+          <p className="side-bar-icon">
+            <RiShoppingBag2Line />
+          </p>
           <Link to="/login">Pickup</Link>
         </li>
         <li>
+          <p className="side-bar-icon">
+            <RiFileList3Line />
+          </p>
           <Link to="/login">Orders</Link>
         </li>
         <li>
+          <p className="side-bar-icon">
+            <RiAccountCircleLine />
+          </p>
           <Link to="/login">Account</Link>
         </li>
-        <li>
-          <div id="test" onClick={(handleToggle, logout)}>
-            <Link to="/login">Logout</Link>
-          </div>
+        <li onClick={(handleToggle, logout)}>
+          <p className="side-bar-icon">
+            <RiCloseCircleLine />
+          </p>
+
+          <Link to="/login">Sign Out</Link>
         </li>
       </ul>
     </nav>
@@ -52,7 +70,7 @@ class NavBar extends React.Component{
         super(props)
         this.state = {
             user: this.props.currentUser,
-            sideDrawerOpen: true
+            sideDrawerOpen: false
         }
         this.handleToggle = this.handleToggle.bind(this)
     }
@@ -71,19 +89,15 @@ class NavBar extends React.Component{
               <div onClick={this.handleToggle}>
                 <DrawerToggleButton />
               </div>
-              <div className="navbar_logo">
-                <a href="/">THE LOGO</a>
-              </div>
+              {/* <div className="navbar_logo"> */}
+              <a className="navbar_logo" href="/">
+                THE LOGO
+              </a>
+              {/* </div> */}
               <div className="spacer"></div>
               <div className="navbar_nav-items">
                 <ul>
                   {/* These will all be replaced with Links */}
-                  <li>
-                    <Link to="/login">Logout</Link>
-                  </li>
-                  <li>
-                    <Link to="/login">Logout</Link>
-                  </li>
                   <li>
                     <Link to="/login">Logout</Link>
                   </li>
