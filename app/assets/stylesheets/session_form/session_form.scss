@@ -32,6 +32,7 @@
 .session-form-header {
     display: flex;
     justify-content: center;
+    align-items: baseline;
 }
 
 .header {
@@ -67,8 +68,6 @@
     font-weight: 550;
     font-size: 15px;
     color: rgb(235,23,0);
-    display: inline-flex;
-    align-items: center;
     text-decoration: none;
 }
 
@@ -170,4 +169,18 @@
 .fname{
     width: 70%;
     margin-right: 10px;
+}
+
+.session-errors{
+    font-size: 14px;
+    font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0ch;
+    text-transform: none;
+    color: rgb(183, 16, 0);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding-bottom: 20px;
 }

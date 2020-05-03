@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
             login!(@user)
             render 'api/users/show'
         else
-            render json: @user.errors.full_messages, status: 404
+            render json: ['Invalid Signup Credentials'], status: 401
         end
     end
 

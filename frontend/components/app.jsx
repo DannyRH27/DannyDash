@@ -6,6 +6,7 @@ import SignupFormContainer from './session_form/signup_form_container'
 import NavBarContainer from './nav_bar/nav_bar_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
 import {SessionFormNavBar} from "./nav_bar/session_form_nav_bar";
+import StoreIndexContainer from './store_index/store_index_container'
 
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
         <AuthRoute path="/" component={SessionFormNavBar} />
     </header>
     <main style={{ marginTop: "50px" }}>
+    <ProtectedRoute path="/home" component={StoreIndexContainer} />
     </main>
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
