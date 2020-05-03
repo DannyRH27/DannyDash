@@ -32,6 +32,7 @@ class User < ApplicationRecord
     validates :fname, :lname, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
     validates :pass_digest, presence: true
+    validates :password, length: { minimum: 6, allow_nil: true }
     validates :session_token, presence: true, uniqueness: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
@@ -51,14 +52,12 @@ class User < ApplicationRecord
     end
 
     def is_password?(password)
-        puts "WHATR THE eUFKC", self
         BCrypt::Password.new(self.pass_digest).is_password?(password)
     end
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil if user.nil?
-        # puts "fwahwefi", user, password, user.password_digest?
         user.is_password?(password) ? user : nil
     end
 

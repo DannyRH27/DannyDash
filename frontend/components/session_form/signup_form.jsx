@@ -97,10 +97,10 @@ class SignupForm extends React.Component {
                                 <span>Email</span>
                                 <br />
                                 <input
-                                className="login-input"
-                                type="email"
-                                value={this.state.email}
-                                onChange={this.update("email")}
+                                    className="login-input"
+                                    type="email"
+                                    value={this.state.email}
+                                    onChange={this.update("email")}
                                 />
                             </label>
                             <br />
@@ -109,10 +109,13 @@ class SignupForm extends React.Component {
                                 <span>Mobile Number</span>
                                 <br />
                                 <input
-                                className="login-input"
-                                type="text"
-                                value={this.state.phone_number}
-                                onChange={this.update("phone_number")}
+                                    className="login-input"
+                                    type="tel"
+                                    placeholder='619-282-9384'
+                                    value={this.state.phone_number}
+                                    onChange={this.update("phone_number")}
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    title="XXX-XXX-XXXX"
                                 />
                             </label>
                             <br />
@@ -121,10 +124,10 @@ class SignupForm extends React.Component {
                                 <span>Password</span>
                                 <br />
                                 <input
-                                className="login-input"
-                                type="password"
-                                value={this.state.password}
-                                onChange={this.update("password")}
+                                    className="login-input"
+                                    type="password"
+                                    value={this.state.password}
+                                    onChange={this.update("password")}
                                 />
                             </label>
                             <br />
