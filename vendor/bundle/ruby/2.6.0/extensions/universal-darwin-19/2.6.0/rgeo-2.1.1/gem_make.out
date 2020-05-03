@@ -1,0 +1,19 @@
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/2.6.0/gems/rgeo-2.1.1/ext/geos_c_impl
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20200502-8906-14vsvdu.rb extconf.rb
+checking for geos-config... no
+checking for geos_c.h... no
+**** WARNING: Unable to find GEOS headers or libraries.
+**** Ensure that 'geos-config' is in your PATH or provide that full path via --with-geos-config
+**** Compiling without GEOS support.
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/2.6.0/gems/rgeo-2.1.1/ext/geos_c_impl
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/2.6.0/gems/rgeo-2.1.1/ext/geos_c_impl
+make "DESTDIR="
+make: Nothing to be done for `install'.
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/2.6.0/gems/rgeo-2.1.1/ext/geos_c_impl
+make "DESTDIR=" install
+make: Nothing to be done for `install'.

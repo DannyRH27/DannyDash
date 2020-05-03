@@ -10,10 +10,115 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_050937) do
+ActiveRecord::Schema.define(version: 2020_05_02_212823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.json "contents", default: {}, null: false
+    t.integer "status", null: false
+    t.integer "customer_id", null: false
+    t.integer "store_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_carts_on_customer_id", unique: true
+    t.index ["store_id"], name: "index_carts_on_store_id", unique: true
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category_title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_title"], name: "index_categories_on_category_title", unique: true
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name", null: false
+    t.float "price", null: false
+    t.integer "store_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id", "name"], name: "index_items_on_store_id_and_name", unique: true
+  end
+
+  create_table "menu_items", force: :cascade do |t|
+    t.integer "menu_id", null: false
+    t.integer "item_id", null: false
+    t.integer "rank", null: false
+    t.integer "store_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_id", "item_id"], name: "index_menu_items_on_menu_id_and_item_id", unique: true
+    t.index ["menu_id", "rank"], name: "index_menu_items_on_menu_id_and_rank", unique: true
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.string "title"
+    t.json "items", null: false
+    t.integer "rank", null: false
+    t.integer "store_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id", "rank"], name: "index_menus_on_store_id_and_rank", unique: true
+    t.index ["store_id"], name: "index_menus_on_store_id", unique: true
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "store_id", null: false
+    t.integer "rating", null: false
+    t.text "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["created_at"], name: "index_reviews_on_created_at"
+    t.index ["rating"], name: "index_reviews_on_rating"
+    t.index ["store_id"], name: "index_reviews_on_store_id"
+    t.index ["user_id", "store_id"], name: "index_reviews_on_user_id_and_store_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "store_categories", force: :cascade do |t|
+    t.integer "store_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id", "store_id"], name: "index_store_categories_on_category_id_and_store_id", unique: true
+    t.index ["store_id", "category_id"], name: "index_store_categories_on_store_id_and_category_id", unique: true
+  end
+
+  create_table "stores", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "address", null: false
+    t.text "hours", default: [], null: false, array: true
+    t.text "description"
+    t.integer "status", null: false
+    t.point "coordinate", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_stores_on_name", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "fname", null: false
@@ -40,4 +145,5 @@ ActiveRecord::Schema.define(version: 2020_04_30_050937) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end

@@ -1,0 +1,22 @@
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/2.6.0/gems/puma-3.12.4/ext/puma_http11
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20200502-8906-a7rsuw.rb extconf.rb
+checking for BIO_read() in -lcrypto... no
+checking for BIO_read() in -llibeay32... no
+creating Makefile
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/2.6.0/gems/puma-3.12.4/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/2.6.0/gems/puma-3.12.4/ext/puma_http11
+make "DESTDIR="
+compiling http11_parser.c
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.bundle
+ld: warning: directory not found for option '-L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.Internal.sdk/usr/local/libressl/lib'
+ld: warning: directory not found for option '-L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.Internal.sdk/usr/local/lib'
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/2.6.0/gems/puma-3.12.4/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20200502-8906-1keohhh/puma
