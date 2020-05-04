@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_02_212823) do
+ActiveRecord::Schema.define(version: 2020_05_04_033952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(version: 2020_05_02_212823) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_title"], name: "index_categories_on_category_title", unique: true
+  end
+
+  create_table "filters", force: :cascade do |t|
+    t.string "filter_title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["filter_title"], name: "index_filters_on_filter_title", unique: true
   end
 
   create_table "items", force: :cascade do |t|
@@ -106,6 +113,15 @@ ActiveRecord::Schema.define(version: 2020_05_02_212823) do
     t.datetime "updated_at", null: false
     t.index ["category_id", "store_id"], name: "index_store_categories_on_category_id_and_store_id", unique: true
     t.index ["store_id", "category_id"], name: "index_store_categories_on_store_id_and_category_id", unique: true
+  end
+
+  create_table "store_filters", force: :cascade do |t|
+    t.integer "store_id", null: false
+    t.integer "filter_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["filter_id", "store_id"], name: "index_store_filters_on_filter_id_and_store_id", unique: true
+    t.index ["store_id", "filter_id"], name: "index_store_filters_on_store_id_and_filter_id", unique: true
   end
 
   create_table "stores", force: :cascade do |t|

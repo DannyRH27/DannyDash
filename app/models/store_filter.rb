@@ -1,0 +1,2 @@
+class StoreFilter < ApplicationRecord
+end

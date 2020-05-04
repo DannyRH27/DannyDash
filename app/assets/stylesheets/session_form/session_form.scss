@@ -91,6 +91,10 @@
     transition: 0.3s;
 }
 
+.session-submit:focus {
+    outline: none;
+}
+
 .fb-input {
     background-color: #3B5998;
     margin-top: 20px;

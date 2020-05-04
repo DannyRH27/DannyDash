@@ -1,16 +1,15 @@
 .side-drawer {
     height: 100%;
-    background-color:white;
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
     left: 0;
     width: 70%;
-    max-width: 400px;
+    max-width: 350px;
     z-index: 200px;
     transform: translateX(-100%);
     transition: transform 0.3s ease-out;
-    overflow: scroll;
 }
 
 .side-drawer ul {
@@ -45,7 +44,7 @@
     align-items: center;
     border-bottom: 1px solid rgb(222, 222, 222);
     width: 100%;
-    max-width: 355px;
+    max-width: 320px;
     padding: 14px 20px 14px 10px;
     text-align: center;
 }
@@ -69,18 +68,22 @@ background-color: rgb(247, 247, 247);
 }
 
 .closer-box {
-    padding: 7px 10px 10px 10px;
+    padding: 1px 5px 1px 1px;
+    margin-left: 10px;
+    margin-top: 7px;
 }
 
 
-.closer:hover {
-    background-color: rgb(247, 247, 247);
+.closer-box:hover {
+    background-color: #f7f7f7;
     border: 0px solid white;
-    border-radius: 100%;
+    border-radius: 50%;
     max-width: 30px;
-    padding: 5px 5px 0px 5px;
+    padding: 1px 5px 1px 1px;
     transition: 0.3s;
-    
+    margin-left: 10px;
+    margin-top: 7px;
+
 }
 
 .side-bar-icon {
