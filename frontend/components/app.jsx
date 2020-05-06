@@ -13,15 +13,17 @@ import StoreShowContainer from './store_show/store_show_container'
 const App = () => (
   <div style={{ height: "100%" }}>
     <header>
-        <Route path="/" component={NavBarContainer} />
-        <AuthRoute path="/" component={SessionFormNavBar} />
+        <Switch>
+                <Route path="/" component={NavBarContainer} />
+                <AuthRoute path="/" component={SessionFormNavBar} />
+        </Switch>
     </header>
     <main style={{ marginTop: "50px" }}>
-    <Route exact path="/home" component={StoreIndexContainer} />
-    <Route path="/stores/:storeId" component={StoreShowContainer} />
+        <Route path="/home" component={StoreIndexContainer} />
+        <Route path="/stores/:storeId" component={StoreShowContainer} />
     </main>
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
   </div>
 );
 

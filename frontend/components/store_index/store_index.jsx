@@ -12,7 +12,7 @@ class StoreIndex extends React.Component {
     }
     render(){
         const {stores, fetchStores} = this.props
-        if (!stores) return null;
+        if (stores === null || stores === undefined || stores === false) return null;
         return(
             <div>
                 <div className='store-index-container'>
@@ -21,6 +21,7 @@ class StoreIndex extends React.Component {
                             <div>
                                 <div>
                                     <span></span>
+                                    {/* Filter Container goes here */}
                                     <span></span>
                                 </div>
                             </div>

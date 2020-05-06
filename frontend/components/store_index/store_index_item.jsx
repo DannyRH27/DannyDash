@@ -8,15 +8,11 @@ class StoreIndexItem extends React.Component{
         super(props)
     }
 
-    // componentDidMount(){
-    //     this.props.fetchStores()
-    // }
-
     render(){
         const {store} = this.props
-        const filters = store.filter.map((filter, idx) => <p key={idx}>{filter}, &nbsp;</p> )
-
-        if (!store) return null;
+        if (store === null || store === undefined || store === false) return null;
+        const tags = store.filter.map((filter, idx) => <p key={idx}>{filter}, &nbsp;</p> )
+        tags[tags.length - 1] = store.filter[store.filter.length-1].substr(0, store.filter[store.filter.length-1].length)
         return (
             <div className='index-item-container'>
                 <div className='index-item-pictures'>
@@ -38,7 +34,7 @@ class StoreIndexItem extends React.Component{
                             <p><IoIosCheckmarkCircle /></p>
                         </div>
                         <div className='info-filters'>
-                            <span> $ • &nbsp; {filters} </span>
+                            <span> $ • &nbsp; {tags} </span>
                         </div>
                         <div className='info-misc'>
                             <div className='info-review'>

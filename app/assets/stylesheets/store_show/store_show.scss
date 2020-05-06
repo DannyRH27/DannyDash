@@ -9,3 +9,171 @@
     position: relative;
     width: 100%;
 }
+
+.store-info {
+    max-width: calc(100vw - 340px);
+}
+
+// Header Store Info
+.store-header-container {
+    position: relative;
+    max-width: 960px;
+    margin: 32px auto 0px;
+    padding: 0px 16px 16px;
+}
+
+.store-header-info {
+    max-width: 100%;
+}
+
+.store-header-info h1 {
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: -0.04ch;
+    text-transform: none;
+    color: rgb(25, 25, 25);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+}
+
+.store-header-info span {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0ch;
+    text-transform: none;
+    color: rgb(118, 118, 118);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+}
+
+.danny-pass {
+    max-width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 6px;
+}
+
+.danny-pass p {
+    height: 16px;
+    width: 16px;
+    x: 0px;
+    y: 0px;
+    color: rgb(0, 131, 138);
+}
+
+.danny-pass span {
+    font-size: 16px;
+    font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 800;
+    line-height: 22px;
+    letter-spacing: 0.1ch;
+    text-transform: uppercase;
+    color: rgb(0, 131, 138);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+    white-space: nowrap;
+    margin-left: 8px;
+}
+
+.store-show-rating {
+    max-width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+
+.store-show-rating span {
+    font-size: 16px;
+    font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.3px;
+    text-transform: none;
+    color: rgb(118, 118, 118);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin-left: 16px;
+    padding: 0px;
+}
+
+.star-rating {
+    max-width: 100%;
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+.star-rating p {
+    font-size: 22px;
+    margin-right: 2px;
+}
+
+// Header Delivery Info
+
+.delivery-header-container {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    align-self: stretch;
+    margin-top: 12px;
+}
+
+.delivery-header-info{
+    max-width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+.delivery-header-info div{ 
+    max-width: 100%;
+    margin-right: 6px;
+}
+
+.delivery-header-info span{
+    font-size: 18px;
+    font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.04ch;
+    text-transform: none;
+    color: rgb(25, 25, 25);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+}
+
+.delivery-header-info p{
+    font-size: 14px;
+    font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0ch;
+    text-transform: none;
+    color: rgb(118, 118, 118);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+}
