@@ -1,4 +1,4 @@
-import { RECEIVE_STORES, RECEIVE_STORE, RECEIVE_STORE_ERRORS } from '../actions/store_actions'
+import { RECEIVE_STORES, RECEIVE_STORE } from '../actions/store_actions'
 
 const storesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -6,7 +6,7 @@ const storesReducer = (state = {}, action) => {
         case RECEIVE_STORES:
             return action.stores;
         case RECEIVE_STORE:
-            const newStore =  { [action.store.id]: action.store};
+            const newStore =  { [action.payload.id]: action.payload};
             return Object.assign({}, state, newStore);
         default:
             return state;

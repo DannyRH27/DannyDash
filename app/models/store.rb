@@ -14,5 +14,23 @@ class Store < ApplicationRecord
     end
 
     has_many_attached :photos
+
+    has_many :menus,
+        foreign_key: :store_id,
+        class_name: :Menu
+
+    has_many :menu_items,
+        through: :menus,
+        source: :menu_item
+
+        
+    has_many :store_filters,
+        foreign_key: :store_id,
+        class_name: :StoreFilter
+    
+    has_many :filters,
+        through: :store_filters,
+        source: :filter
+
 end
 

@@ -7,16 +7,18 @@ import NavBarContainer from './nav_bar/nav_bar_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
 import {SessionFormNavBar} from "./nav_bar/session_form_nav_bar";
 import StoreIndexContainer from './store_index/store_index_container'
+import StoreShowContainer from './store_show/store_show_container'
 
 
 const App = () => (
   <div style={{ height: "100%" }}>
     <header>
-        <ProtectedRoute path="/" component={NavBarContainer} />
+        <Route path="/" component={NavBarContainer} />
         <AuthRoute path="/" component={SessionFormNavBar} />
     </header>
     <main style={{ marginTop: "50px" }}>
-    <ProtectedRoute path="/home" component={StoreIndexContainer} />
+    <Route exact path="/home" component={StoreIndexContainer} />
+    <Route path="/stores/:storeId" component={StoreShowContainer} />
     </main>
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />

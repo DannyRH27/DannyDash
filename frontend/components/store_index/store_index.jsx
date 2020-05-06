@@ -1,5 +1,6 @@
 import React from 'react'
 import StoreIndexItem from './store_index_item';
+import { Link } from 'react-router-dom';
 
 class StoreIndex extends React.Component {
     constructor(props){
@@ -10,7 +11,8 @@ class StoreIndex extends React.Component {
         this.props.fetchStores();
     }
     render(){
-        const {stores} = this.props
+        const {stores, fetchStores} = this.props
+        if (!stores) return null;
         return(
             <div>
                 <div className='store-index-container'>
@@ -29,10 +31,11 @@ class StoreIndex extends React.Component {
                         <div className='store-list-container'>
                             <div className='store-list'>
                                 <ul>
-                                    {stores.map(store => (
+                                    {stores.map(store => (  
                                         <li key={store.id}>
-                                            
-                                            <StoreIndexItem store={store} />
+                                            <Link to={`/stores/${store.id}`}>
+                                                <StoreIndexItem fetchStores={fetchStores} store={store} />
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>

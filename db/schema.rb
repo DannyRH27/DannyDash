@@ -83,13 +83,12 @@ ActiveRecord::Schema.define(version: 2020_05_04_033952) do
 
   create_table "menus", force: :cascade do |t|
     t.string "title"
-    t.json "items", null: false
     t.integer "rank", null: false
     t.integer "store_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["store_id", "rank"], name: "index_menus_on_store_id_and_rank", unique: true
-    t.index ["store_id"], name: "index_menus_on_store_id", unique: true
+    t.index ["store_id"], name: "index_menus_on_store_id"
   end
 
   create_table "reviews", force: :cascade do |t|

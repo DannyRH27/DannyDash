@@ -10,7 +10,7 @@ const receiveStores = (stores) => ({
 })
 
 const receiveStore = (payload) => ({
-    type: RECEIVE_BOARD,
+    type: RECEIVE_STORE,
     payload
 });
 

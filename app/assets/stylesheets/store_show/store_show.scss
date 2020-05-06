@@ -1,0 +1,11 @@
+.store-show-container {
+    display: flex;
+}
+
+.store-show-box {
+    display: flex;
+    flex-direction: column;
+    min-height: 33vh;
+    position: relative;
+    width: 100%;
+}
