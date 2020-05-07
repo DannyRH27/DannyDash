@@ -14,47 +14,51 @@ export const SideDrawer = ({logout, show, handleToggle}) => {
     if (show) {
         drawerClasses = ['side-drawer', 'open'];
     }
-  return (
-    <nav className={drawerClasses.join(" ")}>
-      <ul>
-        <div className="closer-box">
-          <p className="side-bar-icon" onClick={handleToggle}>
-            <BsX />
-          </p>
-        </div>
-        <li className="side-drawer-link" onClick={handleToggle}>
-          <p className="side-bar-icon">
-            <FiHome />
-          </p>
-          <Link to="/login">Home</Link>
-        </li >
-              <li onClick={handleToggle}>
-          <p className="side-bar-icon">
-            <RiShoppingBag2Line />
-          </p>
-          <Link to="/login">Pickup</Link>
-        </li>
-              <li onClick={handleToggle}>
-          <p className="side-bar-icon">
-            <RiFileList3Line />
-          </p>
-          <Link to="/login">Orders</Link>
-        </li>
-              <li onClick={handleToggle}>
-          <p className="side-bar-icon">
-            <RiAccountCircleLine />
-          </p>
-          <Link to="/login">Account</Link>
-        </li >
-        <li onClick={(handleToggle, logout)}>
-          <p className="side-bar-icon">
-            <RiCloseCircleLine />
-          </p>
 
-          <Link to="/login">Sign Out</Link>
-        </li>
-      </ul>
-    </nav>
+    const signOut = (logout,handleToggle)=> {
+        logout();
+        handleToggle();
+    }
+  return (
+      <nav className={drawerClasses.join(" ")}>
+          <ul>
+              <div className="closer-box">
+                  <p className="side-bar-icon" onClick={handleToggle}>
+                      <BsX />
+                  </p>
+              </div>
+              <li className="side-drawer-link" onClick={handleToggle}>
+                  <p className="side-bar-icon">
+                      <FiHome />
+                  </p>
+                  <Link to="/login">Home</Link>
+              </li >
+              <li onClick={handleToggle}>
+                  <p className="side-bar-icon">
+                      <RiShoppingBag2Line />
+                  </p>
+                  <Link to="/login">Pickup</Link>
+              </li>
+              <li onClick={handleToggle}>
+                  <p className="side-bar-icon">
+                      <RiFileList3Line />
+                  </p>
+                  <Link to="/login">Orders</Link>
+              </li>
+              <li onClick={handleToggle}>
+                  <p className="side-bar-icon">
+                      <RiAccountCircleLine />
+                  </p>
+                  <Link to="/login">Account</Link>
+              </li >
+              <li onClick={logout}>
+                  <p className="side-bar-icon">
+                      <RiCloseCircleLine />
+                  </p>
+                  <Link to="/login">Sign Out</Link>
+              </li>
+          </ul>
+      </nav>
   );};
 
 const DrawerToggleButton = () => (
