@@ -21,7 +21,7 @@ class Store < ApplicationRecord
 
     has_many :menu_items,
         through: :menus,
-        source: :menu_item
+        source: :items
 
         
     has_many :store_filters,

@@ -1,6 +1,7 @@
 import React from 'react'
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
+import { RiFileTransferLine } from 'react-icons/ri';
 
 class StoreShow extends React.Component{
     constructor(props){
@@ -57,9 +58,16 @@ class StoreShow extends React.Component{
                                 </div>
                             </div>
                         </header>
-                        <div>
-                            
+                        <div className='menu-search-container'>
+                            <div className='menu-search-bar'>
+                                {store.menus.map((menu, idx) => (
+                                    <a key={idx} href={`#${menu}`}>
+                                        {menu}
+                                    </a>
+                                )) }
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

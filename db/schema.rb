@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_033952) do
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
     t.float "price", null: false
+    t.text "description"
     t.integer "store_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

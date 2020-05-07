@@ -22,30 +22,30 @@ export const SideDrawer = ({logout, show, handleToggle}) => {
             <BsX />
           </p>
         </div>
-        <li className="side-drawer-link">
+        <li className="side-drawer-link" onClick={handleToggle}>
           <p className="side-bar-icon">
             <FiHome />
           </p>
           <Link to="/login">Home</Link>
-        </li>
-        <li>
+        </li >
+              <li onClick={handleToggle}>
           <p className="side-bar-icon">
             <RiShoppingBag2Line />
           </p>
           <Link to="/login">Pickup</Link>
         </li>
-        <li>
+              <li onClick={handleToggle}>
           <p className="side-bar-icon">
             <RiFileList3Line />
           </p>
           <Link to="/login">Orders</Link>
         </li>
-        <li>
+              <li onClick={handleToggle}>
           <p className="side-bar-icon">
             <RiAccountCircleLine />
           </p>
           <Link to="/login">Account</Link>
-        </li>
+        </li >
         <li onClick={(handleToggle, logout)}>
           <p className="side-bar-icon">
             <RiCloseCircleLine />

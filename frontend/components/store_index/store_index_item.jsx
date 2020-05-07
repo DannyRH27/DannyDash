@@ -11,19 +11,19 @@ class StoreIndexItem extends React.Component{
     render(){
         const {store} = this.props
         if (store === null || store === undefined || store === false) return null;
-        const tags = store.filter.map((filter, idx) => <p key={idx}>{filter}, &nbsp;</p> )
-        tags[tags.length - 1] = store.filter[store.filter.length-1].substr(0, store.filter[store.filter.length-1].length)
+        const tags = store.filters.map((filter, idx) => <p key={idx}>{filter}, &nbsp;</p> )
+        tags[tags.length - 1] = store.filters[store.filters.length-1].substr(0, store.filters[store.filters.length-1].length)
         return (
             <div className='index-item-container'>
                 <div className='index-item-pictures'>
                     <div className='picture-container'>
                         <div className='picture-card'>
-                            <img className='index-picture' src={`${store.photoUrl[0]}`} alt="" />
+                            <img className='index-picture' src={`${store.photoUrls[0]}`} alt="" />
                         </div>
                     </div>
                     <div className='picture-container'>
                         <div className='picture-card'>
-                            <img className='index-picture' src={`${store.photoUrl[1]}`} alt="" />
+                            <img className='index-picture' src={`${store.photoUrls[1]}`} alt="" />
                         </div>
                     </div>
                 </div>
