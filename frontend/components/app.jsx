@@ -13,6 +13,7 @@ import StoreShowContainer from './store_show/store_show_container'
 const App = () => (
   <div style={{ height: "100%" }}>
     <header>
+
         <Switch>
                 <Route path="/" component={NavBarContainer} />
                 <AuthRoute path="/" component={SessionFormNavBar} />
