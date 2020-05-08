@@ -6,7 +6,16 @@ const storesReducer = (state = {}, action) => {
         case RECEIVE_STORES:
             return action.stores;
         case RECEIVE_STORE:
-            const newStore =  { [action.payload.id]: action.payload};
+            const newStore = {
+                [action.payload.id]: 
+                    {
+                        ['id']:action.payload.id,
+                        ['name']: action.payload.name, 
+                        ['address']:action.payload.address,
+                        ['hours']:action.payload.hours,
+                        ['photoUrls']:action.payload.photoUrls
+                    }
+            };
             return Object.assign({}, state, newStore);
         default:
             return state;

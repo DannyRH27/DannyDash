@@ -1,0 +1,38 @@
+// Menu Container
+.menu-container {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 0px 16px;
+}
+
+// Store Show Menu
+
+.menu-box {
+    width: 100%;
+    height: 400px;
+}
+
+.menu-box h2 {
+    font-size: 24px;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.04ch;
+    text-transform: none;
+    color: rgb(25, 25, 25);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu-item-list-container{
+    column-count: 2;
+    margin: 24px auto;
+}
+

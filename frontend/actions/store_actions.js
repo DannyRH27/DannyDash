@@ -29,5 +29,6 @@ export const fetchStores = () => (dispatch) => {
 export const fetchStore = (storeId) => (dispatch) => {
     return StoreAPIUtil.fetchStore(storeId)
         .then((payload) => dispatch(receiveStore(payload)))
+        // .then((payload) => console.log(payload))
         .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
 };

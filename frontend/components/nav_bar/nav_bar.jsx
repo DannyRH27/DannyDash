@@ -9,57 +9,85 @@ import {
   RiCloseCircleLine
 } from "react-icons/ri";
 
-export const SideDrawer = ({logout, show, handleToggle}) => {
-    let drawerClasses = ['side-drawer'];
-    if (show) {
-        drawerClasses = ['side-drawer', 'open'];
+class SideDrawer extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.signOut = this.signOut.bind(this)
     }
 
-    const signOut = (logout,handleToggle)=> {
-        logout();
-        handleToggle();
+
+    signOut(){
+        const {currentUser, logout, handleToggle} = this.props
+        if (currentUser) {
+            logout()
+                .then(() => handleToggle())
+        } else {
+            handleToggle()
+        }
     }
-  return (
-      <nav className={drawerClasses.join(" ")}>
-          <ul>
-              <div className="closer-box">
-                  <p className="side-bar-icon" onClick={handleToggle}>
-                      <BsX />
-                  </p>
-              </div>
-              <li className="side-drawer-link" onClick={handleToggle}>
-                  <p className="side-bar-icon">
-                      <FiHome />
-                  </p>
-                  <Link to="/login">Home</Link>
-              </li >
-              <li onClick={handleToggle}>
-                  <p className="side-bar-icon">
-                      <RiShoppingBag2Line />
-                  </p>
-                  <Link to="/login">Pickup</Link>
-              </li>
-              <li onClick={handleToggle}>
-                  <p className="side-bar-icon">
-                      <RiFileList3Line />
-                  </p>
-                  <Link to="/login">Orders</Link>
-              </li>
-              <li onClick={handleToggle}>
-                  <p className="side-bar-icon">
-                      <RiAccountCircleLine />
-                  </p>
-                  <Link to="/login">Account</Link>
-              </li >
-              <li onClick={logout}>
-                  <p className="side-bar-icon">
-                      <RiCloseCircleLine />
-                  </p>
-                  <Link to="/login">Sign Out</Link>
-              </li>
-          </ul>
-      </nav>
-  );};
+    render(){
+        const { show, handleToggle } = this.props
+        let drawerClasses = ['side-drawer'];
+        if (show) {
+            drawerClasses = ['side-drawer', 'open'];
+        }
+
+
+        return (
+            <nav onClick={e => e.stopPropagation()} className={drawerClasses.join(" ")}>
+                <ul>
+                    <div className="closer-box">
+                        <p className="side-bar-icon" onClick={handleToggle}>
+                            <BsX />
+                        </p>
+                    </div>
+                    <li className="side-drawer-link" onClick={handleToggle}>
+                        <Link to="/home">
+                            <p className="side-bar-icon">
+                                <FiHome />
+                            </p>
+                            Home
+                        </Link>
+                    </li >
+                    <li onClick={handleToggle}>
+                        <Link to="/">
+                            <p className="side-bar-icon">
+                                <RiShoppingBag2Line />
+                            </p>
+                            Pickup
+                        </Link>
+                    </li>
+                    <li onClick={handleToggle}>
+                        <Link to="/">
+                            <p className="side-bar-icon">
+                                <RiFileList3Line />
+                            </p>
+                            Orders
+                        </Link>
+                    </li>
+                    <li onClick={handleToggle}>
+                        <Link to="/">
+                            <p className="side-bar-icon">
+                                <RiAccountCircleLine />
+                            </p>
+                            Account
+                        </Link>
+                    </li >
+                    <li onClick={this.signOut}>
+                        <Link to="/">
+                            <p className="side-bar-icon">
+                                <RiCloseCircleLine />
+                            </p>
+                            Sign Out
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+        );
+    }
+}
+
 
 const DrawerToggleButton = () => (
   <button className="toggle-button">
@@ -103,7 +131,7 @@ class NavBar extends React.Component{
                 <ul>
                   {/* These will all be replaced with Links */}
                   <li>
-                    <Link to="/login">Logout</Link>
+                    <Link to="/login">Login</Link>
                   </li>
                 </ul>
               </div>
@@ -111,6 +139,7 @@ class NavBar extends React.Component{
                 logout={this.props.logout}
                 show={this.state.sideDrawerOpen}
                 handleToggle={this.handleToggle}
+                currentUser={this.props.currentUser}
               />
             </nav>
           </header>

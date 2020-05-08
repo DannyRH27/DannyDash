@@ -1,0 +1,172 @@
+// Show Menu Item
+
+.menu-item-container{
+    height: 141px;
+    break-inside: avoid;
+    padding-bottom: 20px;
+}
+
+.menu-item-box{
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    background-color: transparent;
+    box-shadow: rgba(165, 211, 242, 0) 0px 0px 0px 3px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 4px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    transition: background-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    text-decoration: none;
+}
+
+.first-outer-layer{
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    opacity: 1; 
+}
+
+.second-outer-layer{
+    max-width: 100%;
+    padding: 0px;
+}
+
+.secondary-foreground{
+    font-size: 16px;
+    font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: -0.04ch;
+    text-transform: none;
+    color: rgb(25, 25, 25);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+}
+
+.first-inner-layer{
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.second-inner-layer{
+    display: flex;
+    flex-direction: row;
+    break-inside: avoid;
+    text-align: left;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(231, 231, 231);
+    border-image: initial;
+    flex: 5 1 0%;
+    border-radius: 4px;
+    height: 130px;
+    padding-bottom: 10px;
+}
+
+.second-inner-layer:hover {
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(214, 214, 214);
+    border-image: initial;
+}
+
+.menu-item-info{
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 125px;
+    max-width: 100%;
+    min-width: 0px;
+    padding: 16px;
+    flex: 3 1 0%;
+}
+
+.menu-item-info span {
+    font-size: 14px;
+    font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0ch;
+    text-transform: none;
+    color: rgb(118, 118, 118);
+    font-variant-ligatures: no-common-ligatures;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 40px;
+    white-space: normal;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.menu-item-info p{
+    font-size: 16px;
+    font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0ch;
+    text-transform: none;
+    color: rgb(73, 73, 73);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu-item-name{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.menu-item-name span {
+    font-size: 16px;
+    font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: -0.04ch;
+    text-transform: none;
+    color: rgb(25, 25, 25);
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.menu-item-picture-container{
+    flex: 2 1 0%;
+}
+
+.menu-item-picture-box {
+    position: relative;
+    padding-bottom: 125px;
+}
+
+.menu-item-box img {
+    height: 140px;
+    width: 100%;
+    border-radius: 0px 4px 4px 0px;
+}

@@ -230,13 +230,36 @@ ri_menu4 = Menu.create!(title: 'Wholesale', rank: 4, store_id: store11.id)
 # Items
 Item.destroy_all
 item1 = Item.create!(name: 'Roasted Duck Breast(2)', price: 100.00, description: 'Pan-seared with rhubarb, fiddlehead fern, and pea shoot', store_id: store11.id)
+item1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Duck.jpg')
+item1.photo.attach(io: item1_photo, filename: 'Duck.jpg')
+
 item2 = Item.create!(name: '16oz. A5 Wagyu Ribeye', description: 'Grilled to perfection and served with dryaged wagyu butter', price: 95.00, store_id: store11.id)
+item2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Ribeye.jpg')
+item2.photo.attach(io: item2_photo, filename: 'Ribeye.jpg')
+
 item3 = Item.create!(name: 'Hamachi Nigiri Platter', description: 'IQF sushi-grade wild Hamachi from Japan',price: 35.00, store_id: store11.id)
+item3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Hamachi.jpg')
+item3.photo.attach(io: item3_photo, filename: 'Hamachi.jpg')
+
 item4 = Item.create!(name: 'Peking Duck', price: 40.00, description: 'Thin pieces of tender, roasted duck meat and crispy skin wrapped in a thin crepe, along with sliced spring onions, cucumbers, and hoisin sauce or sweet bean sauce.',store_id: store11.id)
+item4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Peking.jpg')
+item4.photo.attach(io: item4_photo, filename: 'Peking.jpg')
+
 item5 = Item.create!(name: 'Dumplings(25)', price: 30.00, description: 'pork, cabbage, green onion' ,store_id: store11.id)
+item5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/DumplingW.jpg')
+item5.photo.attach(io: item5_photo, filename: 'DumplingW.jpg')
+
 item6 = Item.create!(name: 'Catfish', price: 26.00, description:'Freshly caught catfish', store_id: store11.id)
+item6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/CatfishW.jpg')
+item6.photo.attach(io: item6_photo, filename: 'CatfishW.jpg')
+
 item7 = Item.create!(name: 'Whole Duck', price: 25.00,description: 'Freshly butchered duck', store_id: store11.id)
+item7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/DuckW.jpg')
+item7.photo.attach(io: item7_photo, filename: 'DuckW.jpg')
+
 item8 = Item.create!(name: 'A5 Wagyu Ribeye', price: 50.00, description: 'A5 Wagyu certified from Kobe Prefecture in Japan', store_id: store11.id)
+item8_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/RibeyeW.jpg')
+item8.photo.attach(io: item8_photo, filename: 'RibeyeW.jpg')
 
 
 # Menu Items (Joins Table)

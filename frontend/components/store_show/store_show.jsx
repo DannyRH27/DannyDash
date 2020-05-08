@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
-import { RiFileTransferLine } from 'react-icons/ri';
+import StoreShowMenu from './store_show_menu'
 
 class StoreShow extends React.Component{
     constructor(props){
@@ -11,11 +11,14 @@ class StoreShow extends React.Component{
     componentDidMount(){
         const {storeId} = this.props
         this.props.fetchStore(storeId)
+        this.props.fetchMenus(storeId)
+        this.props.fetchItems(storeId)
     }
 
     render(){
-        const {store} = this.props
+        const {store, menus, items} = this.props
         if (store === null || store === undefined || store === false) return null;
+        if (menus === null || menus === undefined || menus === false) return null;
         return(
             <div className='store-show-container'>
                 <div className='store-show-box'>
@@ -60,14 +63,18 @@ class StoreShow extends React.Component{
                         </header>
                         <div className='menu-search-container'>
                             <div className='menu-search-bar'>
-                                {store.menus.map((menu, idx) => (
-                                    <a key={idx} href={`#${menu}`}>
-                                        {menu}
+                                {Object.values(menus).map((menu, idx) => (
+                                    <a key={idx} href={`#${menu.title}`}>
+                                        {menu.title}
                                     </a>
                                 )) }
                             </div>
                         </div>
-                        
+                        <div className='menu-container'>
+                            {Object.values(menus).map((menu, idx) => (
+                                <StoreShowMenu key={idx} menu={menu} items={items} />
+                            )) }
+                        </div>
                     </div>
                 </div>
             </div>
