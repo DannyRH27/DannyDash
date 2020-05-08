@@ -18,7 +18,7 @@ class ShowMenuItem extends React.Component{
                             <div className='menu-item-info'>
                                 <div className='menu-item-name'>
                                     {/* Need to fix anchor tags. */}
-                                    <a name={`#${menu.title.split(' ').join('')}`}>{item.name}</a>
+                                    <a id={`#${menu.title.split(' ').join('')}`}>{item.name}</a>
                                 </div>
                                 <span>{item.description}</span>
                                 <p>{item.price.toFixed(2)}</p>

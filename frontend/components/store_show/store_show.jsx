@@ -1,7 +1,9 @@
 import React from 'react'
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
-import StoreShowMenu from './store_show_menu'
+import StoreShowMenu from './store_show_menu';
+import { HashLink } from "react-router-hash-link";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 class StoreShow extends React.Component{
     constructor(props){
@@ -65,9 +67,15 @@ class StoreShow extends React.Component{
                             <div className='menu-search-bar'>
                                 {/* Need to fix anchor tags with React Router Hash Link */}
                                 {Object.values(menus).map((menu, idx) => (
-                                    <a key={idx} href={`#${menu.title.split(' ').join('')}`}>
+
+                                    <Link 
+                                    key={idx} 
+                                    to={`#${menu.title.split(' ').join('')}`}
+                                    smooth={true}
+                                    >
                                         {menu.title}
-                                    </a>
+                                    </Link>
+
                                 )) }
                             </div>
                         </div>
