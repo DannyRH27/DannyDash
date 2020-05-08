@@ -72,6 +72,7 @@ class StoreShow extends React.Component{
                                     key={idx} 
                                     to={`#${menu.title.split(' ').join('')}`}
                                     smooth={true}
+                                    offset={-130}
                                     >
                                         {menu.title}
                                     </Link>

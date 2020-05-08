@@ -14,16 +14,16 @@ class StoreShowMenu extends React.Component{
         const menuItems = menu.itemIds.map((id) => items[id] )
         // console.log(menu.itemIds)
         // console.log(menuItems)
-        return(
-                <div className='menu-box'>
-                    <h2>{menu.title}</h2>
-                    <div className='menu-item-list-container'>
-                        {menuItems.map((item, idx)=>(
-                            <ShowMenuItem menu={menu} item={item} key={idx}/>
-                        ))}
-                    </div>
-                </div>
-        )  
+        return (
+          <div className="menu-box">
+            <h2 className='anchor' id={`#${menu.title.split(" ").join("")}`} >{menu.title}</h2>
+            <div className="menu-item-list-container">
+              {menuItems.map((item, idx) => (
+                <ShowMenuItem menu={menu} item={item} key={idx} />
+              ))}
+            </div>
+          </div>
+        );  
     }
 }
 
