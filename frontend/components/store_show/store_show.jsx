@@ -63,8 +63,9 @@ class StoreShow extends React.Component{
                         </header>
                         <div className='menu-search-container'>
                             <div className='menu-search-bar'>
+                                {/* Need to fix anchor tags with React Router Hash Link */}
                                 {Object.values(menus).map((menu, idx) => (
-                                    <a key={idx} href={`#${menu.title}`}>
+                                    <a key={idx} href={`#${menu.title.split(' ').join('')}`}>
                                         {menu.title}
                                     </a>
                                 )) }

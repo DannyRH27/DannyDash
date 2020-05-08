@@ -19,7 +19,7 @@ class StoreShowMenu extends React.Component{
                     <h2>{menu.title}</h2>
                     <div className='menu-item-list-container'>
                         {menuItems.map((item, idx)=>(
-                            <ShowMenuItem item={item} key={idx}/>
+                            <ShowMenuItem menu={menu} item={item} key={idx}/>
                         ))}
                     </div>
                 </div>
