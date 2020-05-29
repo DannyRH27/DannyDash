@@ -1,13 +1,21 @@
-.session_navbar {
+#session_navbar {
     position: fixed;
     width: 100%;
     background-color: transparent;
     height: 48px;
     top: 0;
     left: 0;
-
+    z-index: 99;
+    transition: 0.4s;
 }
 
+.navbar_navigation h1 {
+  color: transparent;
+  font-family: 'Bubblegum Sans';
+  font-weight: 500;
+  font-size: 32px;
+  
+}
 
 .session_navbar_nav-items ul {
     list-style: none;
@@ -33,5 +41,9 @@
     border: 0px solid white;
     border-radius: 10px;
     height: 40px;
-    vertical-align: center;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    font-family: 'Bubblegum Sans';
+    margin: 5px;
 }

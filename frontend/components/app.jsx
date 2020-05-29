@@ -5,7 +5,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
-import {SessionFormNavBar} from "./nav_bar/session_form_nav_bar";
+import SessionFormNavBar from "./nav_bar/session_form_nav_bar";
 import StoreIndexContainer from './store_index/store_index_container';
 import StoreShowContainer from './store_show/store_show_container';
 import SplashContainer from './splash/splash_container';
