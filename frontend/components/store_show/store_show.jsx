@@ -67,16 +67,14 @@ class StoreShow extends React.Component{
                             <div className='menu-search-bar'>
                                 {/* Need to fix anchor tags with React Router Hash Link */}
                                 {Object.values(menus).map((menu, idx) => (
-
                                     <Link 
-                                    key={idx} 
-                                    to={`#${menu.title.split(' ').join('')}`}
-                                    smooth={true}
-                                    offset={-130}
+                                        key={idx} 
+                                        to={`#${menu.title.split(' ').join('')}`}
+                                        smooth={true}
+                                        offset={-130}
                                     >
                                         {menu.title}
                                     </Link>
-
                                 )) }
                             </div>
                         </div>

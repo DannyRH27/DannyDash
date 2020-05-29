@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 export const SessionFormNavBar = () => (
          <header className="session_navbar">
            <nav className="navbar_navigation">
-             <div className="navbar_logo">
-               <a href="/">THE LOGO</a>
-             </div>
              <div className="spacer"></div>
              <div className="session_navbar_nav-items">
                <ul>

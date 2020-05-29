@@ -1,0 +1,44 @@
+.local-item-card {
+  max-width: 33%;
+  flex-basis: 33%;
+  height: 100%;
+}
+.local-item-description {
+  display: flex;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+.local-item-description span {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  padding-top: 6px;
+  padding-left: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.local-item-description p {
+  height: 10px;
+  padding-left: 5px;
+  text-decoration: none;
+  color: rgb(0, 131, 138);
+}
+
+.local-item-picture {
+  height: 200px;
+  background-size: cover;
+  margin: 4px;
+  border-radius: 8px;
+  background-position: center center;
+  overflow: hidden;
+  width: 300px;
+  margin-right: 30px;
+  transition: all .5s;
+}
+
+.local-item-picture:hover {
+  transform: scale(1.1);
+}

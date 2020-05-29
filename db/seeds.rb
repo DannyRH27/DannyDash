@@ -229,11 +229,11 @@ ri_menu4 = Menu.create!(title: 'Wholesale', rank: 4, store_id: store11.id)
 
 # Items
 Item.destroy_all
-item1 = Item.create!(name: 'Roasted Duck Breast(2)', price: 100.00, description: 'Pan-seared with rhubarb, fiddlehead fern, and pea shoot', store_id: store11.id)
+item1 = Item.create!(name: 'Roasted Duck Breast(2)', price: 100.00, description: 'Pan-seared with rhubarb, fiddlehead fern, and gai lan', store_id: store11.id)
 item1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Duck.jpg')
 item1.photo.attach(io: item1_photo, filename: 'Duck.jpg')
 
-item2 = Item.create!(name: '16oz. A5 Wagyu Ribeye', description: 'Grilled to perfection and served with dryaged wagyu butter', price: 95.00, store_id: store11.id)
+item2 = Item.create!(name: '16oz. A5 Wagyu Ribeye', description: 'Grilled to perfection and served with dry-aged wagyu butter', price: 95.00, store_id: store11.id)
 item2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Ribeye.jpg')
 item2.photo.attach(io: item2_photo, filename: 'Ribeye.jpg')
 
