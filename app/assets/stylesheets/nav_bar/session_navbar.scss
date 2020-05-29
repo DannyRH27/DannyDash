@@ -1,12 +1,12 @@
 #session_navbar {
-    position: fixed;
-    width: 100%;
-    background-color: transparent;
-    height: 48px;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  height: 48px;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transition: 0.4s;
 }
 
 .navbar_navigation h1 {
@@ -14,36 +14,39 @@
   font-family: 'Bubblegum Sans';
   font-weight: 500;
   font-size: 32px;
-  
 }
 
 .session_navbar_nav-items ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 .session_navbar_nav-items li {
-    padding: 0 0.5rem;
-    width: 60px;
-    display: flex;
-    align-items: center;
+  padding: 0 0.5rem;
+  width: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .session_navbar_nav-items a {
-    color: white;
-    text-decoration: none;
-
+  color: white;
+  text-decoration: none;
 }
 
 .splash-signup {
-    background-color: black;
-    border: 0px solid white;
-    border-radius: 10px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    vertical-align: middle;
-    font-family: 'Bubblegum Sans';
-    margin: 5px;
+  background-color: black;
+  border: 0px solid white;
+  border-radius: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  font-family: 'Bubblegum Sans';
+  margin: 5px;
+  transition: 0.4s;
+}
+
+.splash-signup:hover {
+  transform: scale(1.1);
 }
