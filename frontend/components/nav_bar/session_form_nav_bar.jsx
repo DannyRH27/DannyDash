@@ -20,7 +20,10 @@ class SessionFormNavBar extends React.Component {
     }
   }
   
-  componentDidUpdate(){
+  componentDidUpdate(prevProps){
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      window.scrollTo(0, 0);
+    }
     this.listenForScroll();
     var bar = document.getElementById("session_navbar");
     var logo = document.getElementById("logo");

@@ -5,7 +5,7 @@ const menusReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_MENUS:
             const newMenus = action.payload.menus
-            return Object.assign({}, state, newMenus);
+            return Object.assign({} , newMenus);
         default:
             return state;
     };
