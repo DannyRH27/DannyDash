@@ -14,12 +14,12 @@ const App = () => (
   <div style={{ height: "100%" }}>
     <header>
         <Switch>
-          <Route path="/" component={SessionFormNavBar} />
-          <ProtectedRoute path="/" component={NavBarContainer} />
+          <AuthRoute exact path={["/", "/login", "/signup"]} component={SessionFormNavBar} />
+          <Route path="/" component={NavBarContainer} /> 
         </Switch>
+
     </header>
     <main>
-        
         <Route path="/home" component={StoreIndexContainer} />
         <Route path="/stores/:storeId" component={StoreShowContainer} />
     </main>

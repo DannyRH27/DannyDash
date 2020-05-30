@@ -1,6 +1,6 @@
 .side-drawer {
     height: 100%;
-    background-color: white;
+    background-color: black;
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
@@ -33,7 +33,7 @@
     font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: 700;
     line-height: 24px;
-    color: #191919;
+    color: white;
     max-width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -55,11 +55,11 @@
 }
 
 .side-drawer li:hover {
-background-color: rgb(247, 247, 247);
+background-color: rgb(33, 33, 33);
 }
 
 .side-drawer li:active {
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(80, 80, 80);
 }
 
 @media (max-width: 250px) {
@@ -76,7 +76,7 @@ background-color: rgb(247, 247, 247);
 
 
 .closer-box:hover {
-    background-color: #f7f7f7;
+    background-color: rgb(33, 33, 33);
     border: 0px solid white;
     border-radius: 50%;
     max-width: 30px;
@@ -90,4 +90,5 @@ background-color: rgb(247, 247, 247);
 .side-bar-icon {
     font-size: 25px;
     padding: 5px 25px 0px 5px;
+    color: white;
 }
