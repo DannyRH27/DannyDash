@@ -18,23 +18,39 @@ class SideDrawer extends React.Component {
   }
 
   signOut() {
-    const { currentUser, logout, handleToggle } = this.props;
-    if (currentUser) {
+    const { logout, handleToggle } = this.props;
       logout().then(() => {
         handleToggle()
         this.props.history.push("/")
       });
-    } else {
-      handleToggle();
-    }
   }
+  
   render() {
-    const { show, handleToggle } = this.props;
+    const { show, handleToggle, currentUser } = this.props;
+    console.log("what is happening")
     let drawerClasses = ["side-drawer"];
     if (show) {
       drawerClasses = ["side-drawer", "open"];
     }
-    // const Session = current
+    const SessionDrawer = currentUser ? (
+      <li onClick={this.signOut}>
+        <Link to="/">
+          <p className="side-bar-icon">
+            <RiCloseCircleLine />
+          </p>
+          Sign Out
+        </Link>
+      </li>
+    ) : (
+      <li>
+        <Link to="/login">
+          <p className="side-bar-icon">
+            <RiCloseCircleLine />
+          </p>
+          Sign In
+        </Link>
+      </li>
+    );
     return (
       <nav
         onClick={(e) => e.stopPropagation()}
@@ -78,14 +94,7 @@ class SideDrawer extends React.Component {
               Account
             </Link>
           </li>
-          <li onClick={this.signOut}>
-            <Link to="/">
-              <p className="side-bar-icon">
-                <RiCloseCircleLine />
-              </p>
-              Sign Out
-            </Link>
-          </li>
+          {SessionDrawer}
         </ul>
       </nav>
     );

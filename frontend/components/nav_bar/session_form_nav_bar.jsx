@@ -30,7 +30,10 @@ class SessionFormNavBar extends React.Component {
     ) {
       bar.style.background = "black";
       logo.style.color = "white";
-    } 
+    } else {
+      bar.style.background = "transparent";
+      logo.style.color = "transparent";
+    }
   }
   componentWillUnmount(){
      window.removeEventListener("scroll", this.handleScroll);
