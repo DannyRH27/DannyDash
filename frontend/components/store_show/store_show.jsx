@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 import StoreShowMenu from './store_show_menu';
@@ -11,18 +12,11 @@ class StoreShow extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0);
     const { storeId } = this.props;
     this.props.fetchStore(storeId);
     this.props.fetchMenus(storeId);
     this.props.fetchItems(storeId);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
-      this.props.fetchStore(storeId);
-      this.props.fetchMenus(storeId);
-      this.props.fetchItems(storeId);
-    }
   }
 
   render() {
@@ -109,4 +103,4 @@ class StoreShow extends React.Component {
     );
   }
 }
-export default StoreShow;
+export default withRouter(StoreShow);

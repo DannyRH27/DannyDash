@@ -24,10 +24,9 @@ class SideDrawer extends React.Component {
         this.props.history.push("/")
       });
   }
-  
+
   render() {
     const { show, handleToggle, currentUser } = this.props;
-    console.log("what is happening")
     let drawerClasses = ["side-drawer"];
     if (show) {
       drawerClasses = ["side-drawer", "open"];

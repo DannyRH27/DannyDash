@@ -14,10 +14,11 @@
 // }
 
 #logo {
-  color: transparent;
+  color: white;
   font-family: 'Bubblegum Sans';
   font-weight: 500;
   font-size: 32px;
+  display: none;
 }
 
 .session_navbar_nav-items ul {
@@ -44,6 +45,7 @@
   border-radius: 10px;
   height: 40px;
   display: flex;
+  font-size: 18px;
   justify-content: center;
   vertical-align: middle;
   font-family: 'Bubblegum Sans';
@@ -52,5 +54,9 @@
 }
 
 .splash-signup:hover {
+  transform: scale(1.05);
+}
+
+.splash-signup:active {
   transform: scale(1.1);
 }

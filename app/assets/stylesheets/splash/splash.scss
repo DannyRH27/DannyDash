@@ -59,6 +59,10 @@
 }
 
 .splash-text a:hover {
+  transform: scale(1.05);
+}
+
+.splash-text a:active {
   transform: scale(1.1);
 }
 

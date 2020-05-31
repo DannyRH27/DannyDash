@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SideDrawer from "./side_drawer"
+import { MdShoppingCart } from "react-icons/md";
+import SideDrawer from "./side_drawer";
+import CartDrawer from "./cart_drawer";
 
 const DrawerToggleButton = () => (
   <button className="toggle-button">
@@ -16,19 +18,13 @@ class NavBar extends React.Component {
     this.state = {
       user: this.props.currentUser,
       sideDrawerOpen: false,
+      cartDrawerOpen: false,
     };
     this._isMounted = false;
     this.handleToggle = this.handleToggle.bind(this);
+    this.handleCartToggle = this.handleCartToggle.bind(this);
   }
 
-  handleToggle() {
-    if (this._isMounted) {
-      let value = !this.state.sideDrawerOpen;
-      this.setState({
-        sideDrawerOpen: value,
-      });
-    }
-  }
   componentDidMount() {
     this._isMounted = true;
   }
@@ -41,6 +37,24 @@ class NavBar extends React.Component {
 
   componentWillUnmount() {
     this._isMounted = false;
+  }
+
+  handleToggle() {
+    if (this._isMounted) {
+      let value = !this.state.sideDrawerOpen;
+      this.setState({
+        sideDrawerOpen: value,
+      });
+    }
+  }
+
+  handleCartToggle() {
+    if (this._isMounted) {
+      let value = !this.state.cartDrawerOpen;
+      this.setState({
+        cartDrawerOpen: value,
+      });
+    }
   }
 
   render() {
@@ -58,18 +72,27 @@ class NavBar extends React.Component {
     return (
       <header className="navbar">
         <nav className="navbar_navigation">
-          <div id="toggle" onClick={this.handleToggle}>
+          <div onClick={this.handleToggle}>
             <DrawerToggleButton />
           </div>
           <Link className="navbar_logo" to="/">
             DannyDash
           </Link>
           <div className="spacer"></div>
-          <div className="navbar_nav-items">{SessionButtons}</div>
+          <div className="navbar_nav-items">{SessionButtons}
+          </div>
+          <div onClick={this.handleCartToggle} className="cart-toggle">
+            <MdShoppingCart />
+          </div>
           <SideDrawer
             logout={this.props.logout}
             show={this.state.sideDrawerOpen}
             handleToggle={this.handleToggle}
+            currentUser={this.props.currentUser}
+          />
+          <CartDrawer
+            show={this.state.cartDrawerOpen}
+            handleCartToggle={this.handleCartToggle}
             currentUser={this.props.currentUser}
           />
         </nav>

@@ -6,7 +6,7 @@
     width: 100%;
     margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 16px;
-    transition: box-shadow 200ms ease-in-out 0s;
+    transition: all 200ms ease-in-out 0s;
     border-width: 1px;
     border-style: solid;
     border-color: rgb(255, 255, 255);
@@ -16,6 +16,11 @@
 
 .index-item-container:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 26px, rgba(0, 0, 0, 0.08) 0px 2px 8px;
+    transform: scale(1.01);
+}
+
+.index-item-container:active {
+  transform: scale(1.03);
 }
 
 // Store Index Item Picture

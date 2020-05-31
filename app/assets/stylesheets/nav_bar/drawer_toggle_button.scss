@@ -9,6 +9,7 @@
     cursor: pointer;
     padding: 0px;
     box-sizing: border-box;
+    transition: 0.4s;
 }
 
 .toggle-button:focus {
@@ -19,4 +20,8 @@
     width: 17px;
     height: 2px;
     background: white;
+}
+
+.toggle-button:hover {
+  transform: scale(1.1);
 }

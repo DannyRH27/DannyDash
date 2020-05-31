@@ -32,10 +32,10 @@ class SessionFormNavBar extends React.Component {
       this.props.location.pathname === "/signup"
     ) {
       bar.style.background = "black";
-      logo.style.color = "white";
+      logo.style.display = "initial";
     } else {
       bar.style.background = "transparent";
-      logo.style.color = "transparent";
+      logo.style.display = "none";
     }
   }
   componentWillUnmount(){
@@ -52,10 +52,10 @@ class SessionFormNavBar extends React.Component {
     var top = window.pageYOffset || document.documentElement.scrollTop;
     if (top > 55) {
       bar.style.background = "black";
-      logo.style.color = "white";
+      logo.style.display = "initial";
     } else {
       bar.style.background = "transparent";
-      logo.style.color = "transparent";
+      logo.style.display = "none";
     }
   }
 
