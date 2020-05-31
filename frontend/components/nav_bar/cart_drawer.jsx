@@ -15,12 +15,26 @@ class CartDrawer extends React.Component {
   }
 
   render() {
-    const { show, handleCartToggle, currentUser } = this.props;
+    const { show, handleCartToggle, currentUser, location } = this.props;
     let drawerClasses = ["cart-drawer"];
-    if (show) {
+    if (show || location.pathname.includes("/stores/")) {
       drawerClasses = ["cart-drawer", "open"];
     }
-    return (
+
+    const CartDrawer = location.pathname.includes("/stores/") ? (
+      <nav
+        onClick={(e) => e.stopPropagation()}
+        className={drawerClasses.join(" ")}
+      >
+        <ul>
+          <div className="empty-cart">
+            <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/EmptyCart.svg" />
+            <p>Your cart is empty</p>
+            <p>Add items to get started</p>
+          </div>
+        </ul>
+      </nav>
+    ) : (
       <nav
         onClick={(e) => e.stopPropagation()}
         className={drawerClasses.join(" ")}
@@ -38,6 +52,11 @@ class CartDrawer extends React.Component {
           </div>
         </ul>
       </nav>
+    );
+    return (
+      <div>
+        {CartDrawer}
+      </div>
     );
   }
 }

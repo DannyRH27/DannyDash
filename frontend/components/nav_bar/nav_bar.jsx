@@ -58,6 +58,7 @@ class NavBar extends React.Component {
   }
 
   render() {
+    console.log(this.props.location)
     const { currentUser } = this.props;
     const SessionButtons = currentUser ? null : (
       <ul>
