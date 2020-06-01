@@ -7,17 +7,15 @@ class ShowMenuItem extends React.Component{
         
     }
 
-    async handleClick(){
+    handleClick(){
       const { openModal, item, receiveModalItem } = this.props;
 
-      new Promise((resolve, reject) => {
-        receiveModalItem(item)
-      })
-      await openModal()
+      receiveModalItem(item)
+      openModal()
     }
 
     render(){
-        const {item, menu, openModal, receiveModalItem} = this.props
+        const {item, menu} = this.props
         if (item === null || item === undefined || item === false) return null;
         if (menu === null || menu === undefined || menu === false) return null;
         return (

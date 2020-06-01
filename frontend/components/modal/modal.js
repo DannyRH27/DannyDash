@@ -1,7 +1,7 @@
 import React from "react";
 import { closeModal, openModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
-
+import { BsX } from "react-icons/bs";
 
 function Modal({ modal, closeModal, openModal, item }) {
 
@@ -12,7 +12,16 @@ function Modal({ modal, closeModal, openModal, item }) {
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={(e) => e.stopPropagation()}>
         <div className="modal-item-container">
+          <div className="modal-closer">
+            <p className="modal-icon" onClick={closeModal}>
+              <BsX />
+            </p>
+          </div>
           <h1>{item.name}</h1>
+          <span>{item.description}</span>
+          <div>
+            <img src={`${item.photoUrl}`} />
+          </div>
         </div>
       </div>
     </div>
