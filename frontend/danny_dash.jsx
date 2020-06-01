@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
-import {login, logout, signup} from './actions/session_actions'
-
+import {login, logout, signup} from './actions/session_actions';
+import { openModal } from'./actions/modal_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.store = store
 	window.login = login
 	window.logout = logout
-	window.signup = signup
+  window.signup = signup
+  window.openModal = openModal
 	
 })

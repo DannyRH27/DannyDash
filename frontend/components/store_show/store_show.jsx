@@ -20,7 +20,7 @@ class StoreShow extends React.Component {
   }
 
   render() {
-    const { store, menus, items } = this.props;
+    const { store, menus, items, openModal, receiveModalItem } = this.props;
     if (store === null || store === undefined || store === false) return null;
     if (menus === null || menus === undefined || menus === false) return null;
     return (
@@ -94,7 +94,7 @@ class StoreShow extends React.Component {
             </div>
             <div className="menu-container">
               {Object.values(menus).map((menu, idx) => (
-                <StoreShowMenu key={idx} menu={menu} items={items} />
+                <StoreShowMenu receiveModalItem={receiveModalItem} openModal={openModal} key={idx} menu={menu} items={items} />
               ))}
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { RECEIVE_MENUS } from '../actions/menu_actions'
+import { RECEIVE_MENUS } from '../../actions/menu_actions';
 
 const menusReducer = (state = {}, action) => {
     Object.freeze(state);

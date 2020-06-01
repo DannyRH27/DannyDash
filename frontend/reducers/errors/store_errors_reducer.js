@@ -1,4 +1,4 @@
-import {RECEIVE_STORE, RECEIVE_STORE_ERRORS} from '../actions/store_actions'
+import {RECEIVE_STORE, RECEIVE_STORE_ERRORS} from '../../actions/store_actions'
 
 const storeErrorsReducer = (state = [], action) => {
     Object.freeze(state);

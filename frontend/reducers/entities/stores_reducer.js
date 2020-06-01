@@ -1,4 +1,4 @@
-import { RECEIVE_STORES, RECEIVE_STORE } from '../actions/store_actions'
+import { RECEIVE_STORES, RECEIVE_STORE } from '../../actions/store_actions'
 
 const storesReducer = (state = {}, action) => {
     Object.freeze(state);

@@ -9,6 +9,7 @@ import SessionFormNavBar from "./nav_bar/session_form_nav_bar";
 import StoreIndexContainer from './store_index/store_index_container';
 import StoreShowContainer from './store_show/store_show_container';
 import SplashContainer from './splash/splash_container';
+import Modal from "./modal/modal";
 
 const App = () => (
   <div style={{ height: "100%" }}>
@@ -17,9 +18,9 @@ const App = () => (
           <AuthRoute exact path={["/", "/login", "/signup"]} component={SessionFormNavBar} />
           <Route path="/" component={NavBarContainer} /> 
         </Switch>
-
     </header>
     <main>
+        <Modal/>
         <Route path="/home" component={StoreIndexContainer} />
         <Route path="/stores/:storeId" component={StoreShowContainer} />
     </main>

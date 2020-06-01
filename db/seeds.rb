@@ -245,7 +245,7 @@ item4 = Item.create!(name: 'Peking Duck', price: 40.00, description: 'Thin piece
 item4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Peking.jpg')
 item4.photo.attach(io: item4_photo, filename: 'Peking.jpg')
 
-item5 = Item.create!(name: 'Dumplings(25)', price: 30.00, description: 'pork, cabbage, green onion' ,store_id: store11.id)
+item5 = Item.create!(name: 'Dumplings(25)', price: 30.00, description: 'Pork, cabbage, green onion' ,store_id: store11.id)
 item5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/DumplingW.jpg')
 item5.photo.attach(io: item5_photo, filename: 'DumplingW.jpg')
 
