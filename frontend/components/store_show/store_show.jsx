@@ -17,6 +17,7 @@ class StoreShow extends React.Component {
     this.props.fetchStore(storeId);
     this.props.fetchMenus(storeId);
     this.props.fetchItems(storeId);
+    console.log(this.props)
   }
 
   render() {
@@ -85,7 +86,7 @@ class StoreShow extends React.Component {
                     key={idx}
                     to={`#${menu.title.split(" ").join("")}`}
                     smooth={true}
-                    offset={-130}
+                    offset={-65}
                   >
                     {menu.title}
                   </Link>

@@ -25,6 +25,7 @@ class CartDrawer extends React.Component {
       <nav
         onClick={(e) => e.stopPropagation()}
         className={drawerClasses.join(" ")}
+        id="store-cart"
       >
         <ul>
           <div className="empty-cart">
@@ -40,7 +41,7 @@ class CartDrawer extends React.Component {
         className={drawerClasses.join(" ")}
       >
         <ul>
-          <div className="closer-box">
+          <div className="closer-box" >
             <p className="side-bar-icon" onClick={handleCartToggle}>
               <BsX />
             </p>

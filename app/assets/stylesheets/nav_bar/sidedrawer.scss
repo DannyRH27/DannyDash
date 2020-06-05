@@ -63,33 +63,32 @@ background-color: rgb(33, 33, 33);
 }
 
 @media (max-width: 250px) {
-    .side-drawer {
-        display: none;
-    }
+  .side-drawer {
+      display: none;
+  }
 }
 
 .closer-box {
-    padding: 1px 5px 1px 1px;
-    margin-left: 10px;
-    margin-top: 7px;
-    background-color: transparent;
+  padding: 1px 5px 1px 1px;
+  margin-left: 10px;
+  margin-top: 7px;
+  background-color: transparent;
 }
 
 
 .closer-box:hover {
-    background-color: rgb(33, 33, 33);
-    border: 0px solid white;
-    border-radius: 50%;
-    max-width: 30px;
-    padding: 1px 5px 1px 1px;
-    transition: 0.3s;
-    margin-left: 10px;
-    margin-top: 7px;
-
+  background-color: rgb(33, 33, 33);
+  border: 0px solid white;
+  border-radius: 50%;
+  max-width: 30px;
+  padding: 1px 5px 1px 1px;
+  transition: 0.3s;
+  margin-left: 10px;
+  margin-top: 7px;
 }
 
 .side-bar-icon {
-    font-size: 25px;
-    padding: 5px 25px 0px 5px;
-    color: white;
+  font-size: 25px;
+  padding: 5px 25px 0px 5px;
+  color: white;
 }

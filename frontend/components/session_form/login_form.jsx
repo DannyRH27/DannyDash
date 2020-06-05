@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { FaFacebookSquare} from "react-icons/fa";
 
 class LoginForm extends React.Component {
@@ -27,7 +27,10 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state)
-        .then(() => this.props.history.push('/home'))
+        .then(() => {
+          this.props.history.goBack();
+        }
+      )
     }
 
     showErrors() {
@@ -58,6 +61,8 @@ class LoginForm extends React.Component {
                      this.props.login({
                        email: "drh8@gmail.com",
                        password: "cannotcode",
+                     }).then(()=> {
+                       this.props.history.goBack();
                      }),
                    500
                  );
@@ -142,4 +147,4 @@ class LoginForm extends React.Component {
         );
     }
 }
-export default LoginForm;
+export default withRouter(LoginForm);

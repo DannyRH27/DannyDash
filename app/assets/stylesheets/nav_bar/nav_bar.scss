@@ -47,12 +47,20 @@
 
 .navbar_nav-items a {
   color: white;
+  height: 30px;
   text-decoration: none;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar_nav-items a:hover, 
 .navbar_nav-items a:active {
-    color: #fa923f
+  color: black;
+  background-color: white;
+  border-radius: 15px;
+  width: 80px;
 }
 
 .spacer {

@@ -1,7 +1,7 @@
 // Show Menu Item
 
 .menu-item-container{
-    height: 141px;
+    height: 120px;
     break-inside: avoid;
     padding-bottom: 20px;
     max-width: 891px;
@@ -74,7 +74,7 @@
     border-image: initial;
     flex: 5 1 0%;
     border-radius: 4px;
-    height: 130px;
+    height: 110px;
     padding-bottom: 10px;
 }
 
@@ -96,7 +96,7 @@
     flex-direction: column;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    height: 125px;
+    height: 96px;
     width: 294px;
     padding: 16px;
     flex: 3 1 0%;
@@ -167,11 +167,10 @@
 
 .menu-item-picture-box {
     position: relative;
-    padding-bottom: 125px;
 }
 
 .menu-item-box img {
-    height: 140px;
+    height: 121px;
     width: 100%;
     border-radius: 0px 4px 4px 0px;
 }

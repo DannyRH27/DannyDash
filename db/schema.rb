@@ -38,9 +38,8 @@ ActiveRecord::Schema.define(version: 2020_05_04_033952) do
 
   create_table "carts", force: :cascade do |t|
     t.json "contents", default: {}, null: false
-    t.integer "status", null: false
     t.integer "customer_id", null: false
-    t.integer "store_id", null: false
+    t.integer "store_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_carts_on_customer_id", unique: true

@@ -1,27 +1,23 @@
 .toggle-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 16px;
-    width: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0px;
-    box-sizing: border-box;
-    transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 16px;
+  width: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+  box-sizing: border-box;
+  transition: 0.4s;
 }
 
 .toggle-button:focus {
-    outline: none;
+  outline: none;
 }
 
 .toggle-button_line {
-    width: 17px;
-    height: 2px;
-    background: white;
-}
-
-.toggle-button:hover {
-  transform: scale(1.1);
+  width: 17px;
+  height: 1px;
+  background: white;
 }
