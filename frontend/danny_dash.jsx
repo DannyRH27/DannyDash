@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
-import {login, logout, signup} from './actions/session_actions';
-import { openModal } from'./actions/modal_actions';
-
+import {login, logout, signup} from "./actions/session_actions";
+import { openModal } from "./actions/modal_actions";
+import { fetchCart, updateCart } from "./actions/cart_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
 	let preloadedState = undefined;
@@ -34,5 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.logout = logout
   window.signup = signup
   window.openModal = openModal
+  window.fetchCart = fetchCart
+  window.updateCart = updateCart
 	
 })

@@ -1,6 +1,6 @@
-import * as StoreAPIUtil from '../util/store_api_util'
-export const RECEIVE_MENUS = "RECEIVE_MENUS"
-export const RECEIVE_MENU_ERRORS = "RECEIVE_MENU_ERRORS"
+import * as StoreAPIUtil from '../util/store_api_util';
+export const RECEIVE_MENUS = "RECEIVE_MENUS";
+export const RECEIVE_MENU_ERRORS = "RECEIVE_MENU_ERRORS";
 
 const receiveMenus = (payload) => ({
     type: RECEIVE_MENUS,

@@ -14,6 +14,11 @@ class CartDrawer extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    const { fetchCart, currentUser } = this.props;
+    fetchCart(currentUser.id)
+  }
+
   render() {
     const { show, handleCartToggle, currentUser, location } = this.props;
     let drawerClasses = ["cart-drawer"];

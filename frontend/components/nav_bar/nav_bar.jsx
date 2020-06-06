@@ -60,7 +60,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, fetchCart } = this.props;
     const SessionButtons = currentUser ? null : (
       <ul>
         <li className="splash-signup">
@@ -90,12 +90,13 @@ class NavBar extends React.Component {
             logout={this.props.logout}
             show={this.state.sideDrawerOpen}
             handleToggle={this.handleToggle}
-            currentUser={this.props.currentUser}
+            currentUser={currentUser}
           />
           <CartDrawer
             show={this.state.cartDrawerOpen}
             handleCartToggle={this.handleCartToggle}
-            currentUser={this.props.currentUser}
+            currentUser={currentUser}
+            fetchCart = {fetchCart}
           />
         </nav>
       </header>

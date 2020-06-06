@@ -3,12 +3,14 @@ import stores from './stores_reducer';
 import menus from './menu_reducers';
 import items from './items_reducer';
 import modalItem from  './modal_item_reducer';
+import cart from './cart_reducer';
 
 const entitiesReducer = combineReducers({
     stores,
     menus,
     items,
-    modalItem
+    modalItem,
+    cart
 });
 
 export default entitiesReducer;

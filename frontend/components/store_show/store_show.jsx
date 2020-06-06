@@ -17,7 +17,7 @@ class StoreShow extends React.Component {
     this.props.fetchStore(storeId);
     this.props.fetchMenus(storeId);
     this.props.fetchItems(storeId);
-    console.log(this.props)
+    // console.log(this.props)
   }
 
   render() {
