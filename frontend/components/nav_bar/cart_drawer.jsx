@@ -1,4 +1,5 @@
 import React from "react";
+import CartIndexContainer from "../cart/cart_index_container"
 import { Link, withRouter } from "react-router-dom";
 import { BsX } from "react-icons/bs";
 import { FiHome } from "react-icons/fi";
@@ -20,12 +21,20 @@ class CartDrawer extends React.Component {
   }
 
   render() {
-    const { show, handleCartToggle, currentUser, location } = this.props;
+    const { show, handleCartToggle, currentUser, location, cart } = this.props;
+    console.log(cart)
     let drawerClasses = ["cart-drawer"];
     if (show || location.pathname.includes("/stores/")) {
       drawerClasses = ["cart-drawer", "open"];
     }
-
+    const EmptyCart = (
+      <div className="empty-cart">
+        <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/EmptyCart.svg" />
+        <p>Your cart is empty</p>
+        <p>Add items to get started</p>
+      </div>
+    )
+    const CartShow = JSON.stringify(cart.contents) === JSON.stringify({}) ? EmptyCart : <CartIndexContainer/>
     const CartDrawer = location.pathname.includes("/stores/") ? (
       <nav
         onClick={(e) => e.stopPropagation()}
@@ -33,11 +42,7 @@ class CartDrawer extends React.Component {
         id="store-cart"
       >
         <ul>
-          <div className="empty-cart">
-            <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/EmptyCart.svg" />
-            <p>Your cart is empty</p>
-            <p>Add items to get started</p>
-          </div>
+          {CartShow}
         </ul>
       </nav>
     ) : (
@@ -51,11 +56,7 @@ class CartDrawer extends React.Component {
               <BsX />
             </p>
           </div>
-          <div className="empty-cart">
-            <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/EmptyCart.svg" />
-            <p>Your cart is empty</p>
-            <p>Add items to get started</p>
-          </div>
+          {CartShow}
         </ul>
       </nav>
     );

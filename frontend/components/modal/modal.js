@@ -24,10 +24,10 @@ class Modal extends React.Component {
     // console.log(newCart)
     // console.log(typeof newCart.storeId)
     // console.log(typeof storeId)
-    if (newCart.storeId.toString() !== storeId) {
+    if (newCart.storeId === null || newCart.storeId.toString() !== storeId) {
+      newCart.store_id = storeId
       newCart.contents = {}
     } 
-    newCart.store_id = storeId
     newCart.contents[newItem.name] = newItem
   
     updateCart(newCart)

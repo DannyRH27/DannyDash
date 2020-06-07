@@ -9,8 +9,9 @@ class Api::CartsController < ApplicationController
     @cart = current_user.cart
     
     # debugger
+
     if @cart
-      @cart.contents = params[:contents]
+      @cart.contents = params[:contents] || {}
       @cart.update(update_cart_params)
       render :show
     elsif !@cart
