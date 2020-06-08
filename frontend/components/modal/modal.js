@@ -15,15 +15,17 @@ class Modal extends React.Component {
   }
 
   AddToCart(){
-    const { cart, updateCart, currentUser, item } = this.props;
+    const { currentUser, cart, updateCart, closeModal, item } = this.props;
+    if (!currentUser) {
+      this.props.history.push("/login")
+      closeModal();
+      return;
+    } 
+    
     const storeId = this.props.location.pathname.split("/")[2]
     const newItem = Object.assign({}, item)
     const newCart = Object.assign({},cart)
     newItem["quantity"] = this.state.quantity
-    console.log(newItem)
-    // console.log(newCart)
-    // console.log(typeof newCart.storeId)
-    // console.log(typeof storeId)
     if (newCart.storeId === null || newCart.storeId.toString() !== storeId) {
       newCart.store_id = storeId
       newCart.contents = {}
@@ -31,6 +33,7 @@ class Modal extends React.Component {
     newCart.contents[newItem.name] = newItem
   
     updateCart(newCart)
+    closeModal()
   }
 
 

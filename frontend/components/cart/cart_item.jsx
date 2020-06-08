@@ -21,11 +21,15 @@ class CartItem extends React.Component {
     const { item } = this.props;
 
     return (
-      <li>
-        {item.name}
-        <p onClick={this.removeFromCart}>Remove</p>
-      </li>
-    )
+      <div className="cart-item-container">
+        <div className="cart-item-details">
+          <span>{item.quantity} x</span>
+          <p>{item.name}</p>
+          <p onClick={this.removeFromCart}>Remove</p>
+          <p>${parseFloat(item.price).toFixed(2)}</p>
+        </div>
+      </div>
+    );
   }
 }
 

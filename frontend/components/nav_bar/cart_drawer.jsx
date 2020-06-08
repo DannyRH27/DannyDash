@@ -17,12 +17,12 @@ class CartDrawer extends React.Component {
 
   componentDidMount(){
     const { fetchCart, currentUser } = this.props;
-    fetchCart(currentUser.id)
+
+    currentUser ? fetchCart(currentUser.id) : null;
   }
 
   render() {
     const { show, handleCartToggle, currentUser, location, cart } = this.props;
-    console.log(cart)
     let drawerClasses = ["cart-drawer"];
     if (show || location.pathname.includes("/stores/")) {
       drawerClasses = ["cart-drawer", "open"];
@@ -34,7 +34,7 @@ class CartDrawer extends React.Component {
         <p>Add items to get started</p>
       </div>
     )
-    const CartShow = JSON.stringify(cart.contents) === JSON.stringify({}) ? EmptyCart : <CartIndexContainer/>
+    const CartShow = JSON.stringify(cart.contents) === JSON.stringify({}) || !cart.contents ? EmptyCart : <CartIndexContainer/>
     const CartDrawer = location.pathname.includes("/stores/") ? (
       <nav
         onClick={(e) => e.stopPropagation()}
