@@ -19,6 +19,13 @@ export const searchStores = (fragment) =>
     data: {fragment: fragment}
   });
 
+export const filterStores = (filter) =>
+  $.ajax({
+    method: "GET",
+    url: `/api/stores/filter/`,
+    data: { filter: filter },
+  });
+
 
 
 // export const createReview = review => (

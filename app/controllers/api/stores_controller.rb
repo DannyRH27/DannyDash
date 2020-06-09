@@ -20,6 +20,13 @@ class Api::StoresController < ApplicationController
       render :search
     end
 
+    def filter
+      filter = params[:filter]
+      @stores = Store.includes(:filters).where(filters: {filter_title: "#{filter}"})
+      debugger
+      render :filter
+    end
+
     private
 
     def store_params

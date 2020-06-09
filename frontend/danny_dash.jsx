@@ -5,7 +5,7 @@ import configureStore from "./store/store";
 import {login, logout, signup} from "./actions/session_actions";
 import { openModal } from "./actions/modal_actions";
 import { fetchCart, updateCart } from "./actions/cart_actions";
-import { searchStores } from "./util/store_api_util";
+import { searchStores, filterStores } from "./util/store_api_util";
 document.addEventListener("DOMContentLoaded", () => {
 	let preloadedState = undefined;
 	if (window.currentUser) {
@@ -37,5 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchCart = fetchCart
   window.updateCart = updateCart
   window.searchStores = searchStores
+  window.filterStores = filterStores
 	
 })
