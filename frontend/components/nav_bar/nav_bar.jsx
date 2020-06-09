@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { MdShoppingCart } from "react-icons/md";
 import SideDrawer from "./side_drawer";
 import CartDrawer from "./cart_drawer";
+import SearchBar from "../search/search_bar";
 
 const DrawerToggleButton = () => (
   <button className="toggle-button">
@@ -81,6 +82,7 @@ class NavBar extends React.Component {
             DannyDash
           </Link>
           <div className="spacer"></div>
+          <SearchBar/>
           <div className="navbar_nav-items">{SessionButtons}
           </div>
           <div onClick={this.handleCartToggle} className="cart-toggle">

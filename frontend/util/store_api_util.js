@@ -12,6 +12,15 @@ export const fetchStore = (storeId) => (
     })
 );
 
+export const searchStores = (fragment) =>
+  $.ajax({
+    method: "GET",
+    url: `/api/stores/search/`,
+    data: {fragment: fragment}
+  });
+
+
+
 // export const createReview = review => (
 //     $.ajax({
 //         method: 'POST',

@@ -17,7 +17,7 @@
 
 .modal-closer {
     padding: 1px 5px 1px 1px;
-    margin-left: 10px;
+    // margin-left: 10px;
     margin-top: 7px;
     background-color: transparent;
 }
@@ -30,7 +30,7 @@
     max-width: 30px;
     padding: 1px 5px 1px 1px;
     transition: 0.3s;
-    margin-left: 10px;
+    // margin-left: 10px;
     margin-top: 7px;
 
 }
@@ -52,9 +52,14 @@
   background: rgb(255, 255, 255);
   border-radius: 16px;
   overflow: hidden;
+  // padding: 8px 16px;
 }
 
-.modal-item-container h1 {
+.modal-item-details {
+  padding: 0px 16px;
+}
+
+.modal-item-details h1 {
   font-size: 32px;
   font-family: Roboto;
   font-weight: 700;
@@ -67,10 +72,32 @@
   font-variant-ligatures: no-common-ligatures;
   max-width: 400px;
   margin: 0px;
-  padding: 8px 16px;
 }
 
-.modal-item-container img {
+.modal-item-details span {
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(118, 118, 118);
+  text-align: left;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 0px;
+  padding: 0px;
+}
+
+.modal-image-container {
+  display:flex;
+  justify-content: center;
+  padding: 8px 16px;
+  width: 100%;
+  max-width: 528px;
+}
+.modal-image-container img {
+  // margin-right: 30px;
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -79,3 +106,59 @@
   left: 0px;
   right: 0px;
 }
+
+.modal-item-checkout-container {
+  width: 100%;
+  padding: 20px 0;
+  display:flex;
+  justify-content: flex-end;
+}
+
+.modal-item-checkout {
+  // padding:  0 10px;
+  display: flex;
+  justify-content: end;
+  align-content: center;
+  align-items: center;
+}
+
+.modal-item-checkout button {
+  font-size: 20px;
+  background-color: white;
+  border: none;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.modal-item-checkout button:focus {
+  outline: 0;
+}
+
+.modal-item-checkout button:disabled {
+  cursor: not-allowed;
+}
+.modal-item-checkout p {
+  padding: 10px 30px;
+  margin: 0 24px;
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.modal-item-checkout-button button {
+  width: 165px;
+  margin-right: 15px;
+  padding: 8px 10px;
+  background-color: rgb(235, 23, 0);
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(255, 255, 255);
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  border-radius: 4px;
+}
+

@@ -1,0 +1,157 @@
+.background-search {
+  box-sizing: border-box;
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 180px);
+}
+
+.background-search-filter {
+  min-height: calc(100vh - 180px);
+  box-sizing: border-box;
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.search-bar-container {
+  width: 200px;
+  position: relative;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  margin-right: 19px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 33.5%;
+  left: 4.4%;
+  color: rgb(155, 155, 155);
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+.search-input {
+  width: 100%;
+  height: 25px;
+  margin: 5px;
+  font-size: 14px;
+  font-family: Roboto;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+  text-indent: 12.15%;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-dropdown {
+  box-sizing: border-box;
+  width: 105%;
+  position: absolute;
+  top: 108%;
+  left: 2.5%;
+  background-color: black;
+  color: white;
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.search-dropdown-item, .no-results, .index-search-link  {
+  padding: 8px;
+}
+
+.search-dropdown-item {
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid white;
+}
+
+.search-item-content {
+  display: flex;
+}
+
+.search-item-image {
+  width: 50px;
+  height: 50px;
+}
+
+.search-item-info {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 15px;
+  box-sizing: border-box;
+}
+
+.search-dropdown-item:hover, .index-search-link:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.index-search-link {
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.index-search-link p {
+  font-size: 12px;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 15px;
+  box-sizing: border-box;
+}
+
+/* .search-results-container {
+  
+} */
+
+.search-results-header {
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+}
+
+.search-fragment {
+  font-size: 26px;
+  font-weight: 100;
+}
+
+.search-results-container h2 {
+  font-size: 28px;
+  margin: 40px 0;
+  width: 80px;
+  border-bottom: 3px solid lightgrey;
+  color: white;
+}
+
+.search-artists-results {
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  color: white
+}
+
+.search-events-results {
+  color: white;
+}
+
+.artist-search-item {
+  margin: 20px 40px 20px 0;
+}

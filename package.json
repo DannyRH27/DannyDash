@@ -12,7 +12,7 @@
     "react-scroll": "^1.7.16",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "throttle-debounce": "^2.1.0"
+    "throttle-debounce": "^2.2.1"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",

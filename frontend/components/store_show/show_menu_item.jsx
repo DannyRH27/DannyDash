@@ -30,7 +30,7 @@ class ShowMenuItem extends React.Component{
                       <p>{item.name}</p>
                     </div>
                     <span>{item.description}</span>
-                    <p>{item.price.toFixed(2)}</p>
+                    <p>${item.price.toFixed(2)}</p>
                   </div>
                   <div className="menu-item-picture-container">
                     <div className="menu-item-picture-box">
