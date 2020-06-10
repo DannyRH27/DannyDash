@@ -1,0 +1,41 @@
+.filter-item-container {
+  width: 96px;
+  overflow-wrap: break-word;
+  text-decoration: none;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 90px;
+  width: 96px;
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.filter-item:hover > img {
+  transform: scale(1.1);
+}
+
+.filter-item img {
+  height: 100%;
+  width: 100%;
+  margin: 0px auto;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.filter-item span {
+  font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 16px;
+    letter-spacing: 0ch;
+    text-transform: none;
+    color: rgb(25, 25, 25);
+    text-align: center;
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    margin: 0px;
+    padding: 0px;
+}

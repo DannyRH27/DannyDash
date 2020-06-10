@@ -7,7 +7,7 @@ json.menus do
     end
 end
 json.photoUrls @store.photos.map { |file| url_for(file) }
-# json.filters @store.filters.map {|filter| filter.filter_title}
+json.filters @store.filters.map {|filter| filter.filter_title}
 json.items do
     @store.menu_items.each do |item|
         json.set! item.id do

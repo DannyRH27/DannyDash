@@ -1,48 +1,95 @@
 // Store Index Containers
 
 .store-index-container {
-    padding-top: 64px;
-    background-color: rgb(247, 247, 247);
+  padding-top: 64px;
+  background-color: rgb(247, 247, 247);
 }
 
 .store-index-box {
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    width: 960px;
-    flex-direction: row;
-    margin: 0px auto;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 960px;
+  flex-direction: row;
+  margin: 0px auto;
 }
 
 .filter-list-container {
-    flex: 33 1 0%;
+  z-index: 1;
+  flex: 33 1 0%;
+}
+
+.filter-list {
+  min-height: 96px;
+  background-color: rgb(247, 247, 247);
+  position: sticky;
+  top: 48px;
+  padding: 12px;
+}
+
+.filter-list-header {
+  margin-left: 20px;
+}
+
+.filter-list-header span:nth-child(1) {
+  font-size: 32px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 0px;
+  padding: 0px;
+}
+
+.filter-list-header span:nth-child(2) {
+  font-size: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  line-height: 18px;
+  letter-spacing: 0.1ch;
+  text-transform: uppercase;
+  color: rgb(25, 25, 25);
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 0px;
+  padding: 0px;
+}
+
+.filter-list-index {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 12px 0px;
 }
 
 .store-list-container {
-    flex: 66 1 0%;
-    overflow: hidden;
-    padding: 0px 12px;
+  flex: 66 1 0%;
+  overflow: hidden;
+  padding: 0px 12px;
 }
 
 // Store Index Individual Restaurants
 
 // Index Picture Section
 .index-item-pictures {
-    display: flex;
-    opacity: 1;
+  display: flex;
+  opacity: 1;
 }
 
 .picture-container {
-    flex: 1 1 auto;
-    margin: 24px 16px 4px;
+  flex: 1 1 auto;
+  margin: 24px 16px 4px;
 }
 
 
 .index-picture {
-    height: 139.5px;
-    width: 279px;
-    object-fit: cover;
-    object-position: 50% 50%;
-    border-radius: 4px;
+  height: 139.5px;
+  width: 279px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 4px;
 }
 

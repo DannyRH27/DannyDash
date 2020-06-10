@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 	root to: 'static_pages#root'
 	devise_for :users, defaults: {format: :json}, controllers: { omniauth_callbacks: "users/omniauth_callbacks"}
 	
-	namespace :api, defaults: { format: :json} do
+  namespace :api, defaults: { format: :json} do
+    resources :filters, only: [:index]
 		resources :users, only: [:create, :show, :destroy, :update]
 		resource :session, only: [:create, :destroy]
     resources :stores do
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
         get :index
         get :show
         get :search
-        get :filter
+        get ':filter', to: 'stores#filter'
       end
     end
     resources :carts, only: [:show, :update, :destroy]

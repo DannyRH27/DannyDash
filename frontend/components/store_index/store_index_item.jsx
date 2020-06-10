@@ -10,9 +10,10 @@ class StoreIndexItem extends React.Component {
 
   render() {
     const { store } = this.props
-    if (store === null || store === undefined || store === false) return;
-    // const tags = store.filters.map((filter, idx) => <p key={idx}>{filter}, &nbsp;</p> )
-    // tags[tags.length - 1] = store.filters[store.filters.length-1].substr(0, store.filters[store.filters.length-1].length)
+    if (store === null || store === undefined || store === false) return null;
+    if (store.filters === undefined) return null;
+    const tags = store.filters.map((filter, idx) => <p key={idx}>{filter}, &nbsp;</p> )
+    tags[tags.length - 1] = store.filters[store.filters.length-1].substr(0, store.filters[store.filters.length-1].length)
 
     const IndexItem = 
     this.props.location.pathname === "/" ? (
@@ -48,7 +49,7 @@ class StoreIndexItem extends React.Component {
                   <p><IoIosCheckmarkCircle /></p>
                 </div>
                 <div className='info-filters'>
-                  <span> $ • &nbsp; Doordash CSS Game Too Strong </span>
+                  <span> $ • &nbsp; {tags} </span>
                 </div>
                 <div className='info-misc'>
                   <div className='info-review'>

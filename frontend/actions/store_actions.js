@@ -26,6 +26,12 @@ export const fetchStores = () => (dispatch) => {
         .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
 };
 
+export const filterStores = (filter) => (dispatch) => {
+  return StoreAPIUtil.filterStores(filter)
+    .then((stores) => dispatch(receiveStores(stores)))
+    .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
+}
+
 export const fetchStore = (storeId) => (dispatch) => {
     return StoreAPIUtil.fetchStore(storeId)
         .then((payload) => dispatch(receiveStore(payload)))

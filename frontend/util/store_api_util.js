@@ -26,8 +26,6 @@ export const filterStores = (filter) =>
     data: { filter: filter },
   });
 
-
-
 // export const createReview = review => (
 //     $.ajax({
 //         method: 'POST',
