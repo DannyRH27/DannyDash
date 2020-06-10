@@ -42,10 +42,6 @@ class SessionFormNavBar extends React.Component {
      window.removeEventListener("scroll", this.handleScroll);
   }
 
-  testFunction() {
-    console.log("hello")
-  }
-
   handleScroll() {
     var bar = document.getElementById("session_navbar");
     var logo = document.getElementById("logo");

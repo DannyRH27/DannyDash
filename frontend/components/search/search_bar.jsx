@@ -58,7 +58,6 @@ class SearchBar extends React.Component {
     })
       .then(res => {
         this.setState({ searchResults: res })
-        console.log(Object.values(res).pop().name)
       })
   }
 

@@ -8,9 +8,9 @@ class CartIndex extends React.Component {
 
   }
 
-  componentDidMount(){
-    this.props.fetchStores();
-  }
+  // componentDidMount(){
+  //   this.props.fetchStores();
+  // }
 
   render(){
     const { cart, updateCart, stores } = this.props;

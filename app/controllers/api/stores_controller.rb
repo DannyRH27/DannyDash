@@ -17,6 +17,7 @@ class Api::StoresController < ApplicationController
     def search
       fragment = params[:fragment]
       @stores = Store.where("name ilike ?", "%#{fragment}%")
+      # debugger
       render :search
     end
 

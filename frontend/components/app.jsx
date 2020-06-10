@@ -23,6 +23,7 @@ const App = () => (
         <Modal/>
         <Route path="/home" component={StoreIndexContainer} />
         <Route path="/filters/:filter" component={StoreIndexContainer} />
+        <Route path="/search/:fragment" component={StoreIndexContainer} />
         <Route path="/stores/:storeId" component={StoreShowContainer} />
     </main>
       <Switch>

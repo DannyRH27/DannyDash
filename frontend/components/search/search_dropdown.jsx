@@ -13,7 +13,6 @@ class SearchDropdown extends React.Component {
   }
   
   showFiveResults(objects) {
-    console.log(objects)
     if (Object.values(objects).length > 0) {
       return Object.values(objects).slice(0, 5).map((object) =>
         <div

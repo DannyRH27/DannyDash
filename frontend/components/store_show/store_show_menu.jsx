@@ -10,10 +10,7 @@ class StoreShowMenu extends React.Component{
         const {menu, items, openModal, receiveModalItem} = this.props
         if (menu === null || menu === undefined || menu === false) return null;
         if (items === null || items === undefined || items === false) return null;
-        // console.log(items)
         const menuItems = menu.itemIds.map((id) => items[id] )
-        // console.log(menu.itemIds)
-        // console.log(menuItems)
         return (
           <div className="menu-box">
             <h2 className="anchor" id={`#${menu.title.split(" ").join("")}`}>

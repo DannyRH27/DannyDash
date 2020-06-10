@@ -12,15 +12,19 @@ class StoreIndex extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchStores, fetchFilters, filterStores, location, match } = this.props;
+    const { fetchStores, fetchFilters, filterStores, searchStores, location, match } = this.props;
     fetchFilters();
     if (location.pathname.slice(0,8) === "/filters") {
       filterStores(match.params.filter)
         .then( stores => this.setState({ stores: stores}))
-    } else {
-      fetchStores()
-        .then(stores => this.setState({ stores: stores}))
+    } else if (location.pathname.slice(0,7) === "/search") {
+      searchStores(match.params.fragment)
+        .then( stores => this.setState({ stores: stores}))
     }
+    //  else {
+    //   fetchStores()
+    //     .then(stores => this.setState({ stores: stores}))
+    // }
   }
   
   componentDidUpdate(prevProps){
@@ -29,7 +33,11 @@ class StoreIndex extends React.Component {
     if (location.pathname !== prevProps.location.pathname && location.pathname.slice(0,8) === "/filters") {
       filterStores(filter)
       .then(stores => this.setState({ stores: stores}))
-    }
+    } 
+    // else if (location.pathname.slice(0, 7) === "/search") {
+    //   searchStores(match.params.fragment)
+    //     .then(stores => this.setState({ stores: stores }))
+    // }
     window.scrollTo(0, 0);
   }
 
@@ -38,7 +46,12 @@ class StoreIndex extends React.Component {
     if (stores === null || stores === undefined || stores === false) return;
     if (filters === null || filters === undefined || filters === false) return;
 
-    const FilterHeader = location.pathname.slice(0, 8) === "/filters" ? (<span>{match.params.filter}</span>) : <span>All Restaurants</span>
+    const FilterHeader = 
+      location.pathname.slice(0, 8) === "/filters" 
+        ? (<span>{match.params.filter}</span>) 
+        : location.pathname.slice(0, 7) === "/search" 
+          ? (<span>Results for {match.params.fragment}...</span>) 
+          : <span>All Restaurants</span>
     return (
       <div>
         <div className='store-index-container'>

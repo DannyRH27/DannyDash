@@ -15,6 +15,5 @@ const receiveErrors = (errors) => ({
 export const fetchMenus = (storeId) => (dispatch) => {
     return StoreAPIUtil.fetchStore(storeId)
         .then((payload) => dispatch(receiveMenus(payload)))
-        // .then((payload) => console.log(payload))
         .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
 };
