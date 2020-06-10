@@ -64,6 +64,7 @@
   max-height: calc(100vh - 70px);
   overflow-y: auto;
   overflow-x: hidden;
+  z-index: 101;
 }
 
 .search-dropdown-item, .no-results, .index-search-link  {
