@@ -5,7 +5,7 @@ class FilterIndexItem extends React.Component {
 
   render(){
     const { filter } = this.props;
-    if (filter === null || filter === undefined || filter === false) return null;
+    if (filter === null || filter === undefined || filter === false) return;
     return (
       <div className="filter-item-container">
         <div className="filter-item">

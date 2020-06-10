@@ -16,13 +16,14 @@ class Api::StoresController < ApplicationController
 
     def search
       fragment = params[:fragment]
-      @stores = Store.where("name LIKE ?", "%#{fragment}%")
+      @stores = Store.where("name ilike ?", "%#{fragment}%")
       render :search
     end
 
     def filter
       filter = params[:filter]
       @stores = Store.includes(:filters).where(filters: {filter_title: "#{filter}"})
+      # debugger
       render :filter
     end
 

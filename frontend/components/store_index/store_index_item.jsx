@@ -10,8 +10,8 @@ class StoreIndexItem extends React.Component {
 
   render() {
     const { store } = this.props
-    if (store === null || store === undefined || store === false) return null;
-    if (store.filters === undefined) return null;
+    if (store === null || store === undefined || store === false) return;
+    if (store.filters === undefined) return;
     const tags = store.filters.map((filter, idx) => <p key={idx}>{filter}, &nbsp;</p> )
     tags[tags.length - 1] = store.filters[store.filters.length-1].substr(0, store.filters[store.filters.length-1].length)
 

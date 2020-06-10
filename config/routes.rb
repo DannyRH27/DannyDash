@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         get :index
         get :show
         get :search
-        get ':filter', to: 'stores#filter'
+        get :filter
       end
     end
     resources :carts, only: [:show, :update, :destroy]
