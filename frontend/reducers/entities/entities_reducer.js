@@ -5,13 +5,16 @@ import items from './items_reducer';
 import modalItem from  './modal_item_reducer';
 import cart from './cart_reducer';
 import filters from './filters_reducer';
+import cartStore from './cart_store_reducer';
+
 const entitiesReducer = combineReducers({
     stores,
     menus,
     items,
     modalItem,
     cart,
-    filters
+    filters,
+    cartStore
 });
 
 export default entitiesReducer;

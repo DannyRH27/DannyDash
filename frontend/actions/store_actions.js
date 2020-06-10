@@ -2,6 +2,7 @@ import * as StoreAPIUtil from '../util/store_api_util'
 
 export const RECEIVE_STORES = "RECEIVE_STORES"
 export const RECEIVE_STORE = 'RECEIVE_STORE'
+export const RECEIVE_CART_STORE = 'RECEIVE_CART_STORE'
 export const RECEIVE_STORE_ERRORS = "RECEIVE_STORE_ERRORS"
 
 const receiveStores = (stores) => ({
@@ -14,6 +15,10 @@ const receiveStore = (payload) => ({
   payload
 });
 
+const receiveCartStore = (payload) => ({
+  type: RECEIVE_CART_STORE,
+  payload
+})
 
 const receiveErrors = (errors) => ({
   type: RECEIVE_STORE_ERRORS,
@@ -43,3 +48,9 @@ export const fetchStore = (storeId) => (dispatch) => {
     .then((payload) => dispatch(receiveStore(payload)))
     .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
 };
+
+export const fetchCartStore = (storeId) => (dispatch) => {
+  return StoreAPIUtil.fetchStore(storeId)
+    .then((payload) => dispatch(receiveCartStore(payload)))
+    .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
+}

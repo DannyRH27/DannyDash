@@ -1,6 +1,6 @@
 import React from 'react';
 import CartItem from './cart_item';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class CartIndex extends React.Component {
   constructor(props){
@@ -8,14 +8,18 @@ class CartIndex extends React.Component {
 
   }
 
-  // componentDidMount(){
-  //   this.props.fetchStores();
-  // }
+  componentDidMount(){
+    const { fetchStores, fetchCartStore, cart, location } = this.props;
+    if (location.pathname.slice(0,5) === "/home") {
+      console.log("hi")
+      fetchStores();
+    }
+    fetchCartStore(cart.storeId);
+  }
 
   render(){
-    const { cart, updateCart, stores } = this.props;
+    const { cart, updateCart, store } = this.props;
     if (JSON.stringify(cart) === JSON.stringify({})) return null;
-    const store = stores[cart.storeId]
     if (store === undefined) return null;
     let total = 0;
     Object.values(cart.contents).forEach(item => {
@@ -45,8 +49,4 @@ class CartIndex extends React.Component {
   }
 }
 
-export default CartIndex;
-// What if i threaded through the modal
-// On click, add item to cart contents hash
-// Need to thread dispatch through props
-// Grab state from Redux store.
+export default withRouter(CartIndex);
