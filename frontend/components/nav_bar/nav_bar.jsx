@@ -28,6 +28,7 @@ class NavBar extends React.Component {
 
   componentDidMount() {
     this._isMounted = true;
+    this.props.fetchStores();
   }
 
   componentDidUpdate(prevProps) {

@@ -17,7 +17,7 @@ class CartDrawer extends React.Component {
 
   componentDidMount(){
     const { fetchCart, currentUser } = this.props;
-
+    
     currentUser ? fetchCart(currentUser.id) : null;
   }
 
