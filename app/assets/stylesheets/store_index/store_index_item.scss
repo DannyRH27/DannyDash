@@ -20,21 +20,28 @@
 }
 
 .index-item-container:active {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 // Store Index Item Picture
-.index-major-picture {
-    height: 151px;
-    width: 302px;
-    object-fit: cover;
-    object-position: 50% 50%;
-    border-radius: 4px;
+// Index Picture Section
+.index-item-pictures {
+  display: flex;
+  opacity: 1;
 }
 
-.index-major-picture:hover {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 26px, rgba(0, 0, 0, 0.08) 0px 2px 8px;
-    transition: box-shadow 200ms ease-in-out 0s;
+.picture-container {
+  flex: 1 1 auto;
+  margin: 24px 16px 4px;
+}
+
+
+.index-picture {
+  height: 139.5px;
+  width: 279px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 4px;
 }
 
 // Index Store Info Section

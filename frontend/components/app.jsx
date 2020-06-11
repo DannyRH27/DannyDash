@@ -9,6 +9,7 @@ import SessionFormNavBar from "./nav_bar/session_form_nav_bar";
 import StoreIndexContainer from './store_index/store_index_container';
 import StoreShowContainer from './store_show/store_show_container';
 import SplashContainer from './splash/splash_container';
+import CheckoutIndexContainer from './checkout/checkout_index_container';
 import Modal from "./modal/modal";
 
 const App = () => (
@@ -20,17 +21,18 @@ const App = () => (
         </Switch>
     </header>
     <main>
-        <Modal/>
-        <Route path="/home" component={StoreIndexContainer} />
-        <Route path="/filters/:filter" component={StoreIndexContainer} />
-        <Route path="/search/:fragment" component={StoreIndexContainer} />
-        <Route path="/stores/:storeId" component={StoreShowContainer} />
-    </main>
       <Switch>
         <AuthRoute exact path="/" component={SplashContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
       </Switch>
+      <Modal/>
+      <Route path="/checkout" component={CheckoutIndexContainer} />
+      <Route path="/home" component={StoreIndexContainer} />
+      <Route path="/filters/:filter" component={StoreIndexContainer} />
+      <Route path="/search/:fragment" component={StoreIndexContainer} />
+      <Route path="/stores/:storeId" component={StoreShowContainer} />
+    </main>
   </div>
 );
 

@@ -1,14 +1,11 @@
 class Api::CartsController < ApplicationController
 
   def show
-    # debugger
     @cart = current_user.cart
   end
 
   def update
     @cart = current_user.cart
-    
-    # debugger
 
     if @cart
       @cart.contents = params[:contents] || {}

@@ -28,7 +28,9 @@ class NavBar extends React.Component {
 
   componentDidMount() {
     this._isMounted = true;
-    this.props.fetchStores();
+    if (this.props.location.pathname === "/home") {
+      this.props.fetchStores();
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -36,6 +38,10 @@ class NavBar extends React.Component {
       window.scrollTo(0, 0);
       this.setState({sideDrawerOpen: false})
       this.setState({cartDrawerOpen: false})
+    }
+
+    if (this.props.location.pathname === "/home") {
+      this.props.fetchStores();
     }
   }
 
@@ -79,7 +85,7 @@ class NavBar extends React.Component {
           <div onClick={this.handleToggle}>
             <DrawerToggleButton />
           </div>
-          <Link className="navbar_logo" to="/">
+          <Link className="navbar_logo" to="/home">
             DannyDash
           </Link>
           <div className="spacer"></div>
