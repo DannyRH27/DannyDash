@@ -14,7 +14,8 @@ const storesReducer = (state = {}, action) => {
                         ['address']:action.payload.address,
                         ['hours']:action.payload.hours,
                         ['photoUrls']:action.payload.photoUrls,
-                        ['filters']:action.payload.filters
+                        ['filters']:action.payload.filters,
+                        ['coordinate']:action.payload.coordinate
                     }
             };
             return Object.assign({}, state, newStore);

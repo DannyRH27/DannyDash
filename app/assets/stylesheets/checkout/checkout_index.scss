@@ -29,3 +29,36 @@
   color: black;
   font-size: 50px;
 }
+
+.checkout-section {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0px;
+  margin: 0px 16px;
+  // border-bottom: 1px solid rgb(214, 214, 214);
+  border-top: 1px solid rgb(214, 214, 214);
+}
+
+.checkout-section-header {
+  padding-bottom: 16px;
+  width: 150px;
+}
+
+.checkout-section-header h2 {
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 0.1ch;
+  text-transform: uppercase;
+  color: rgb(25, 25, 25);
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 0px;
+  padding: 0px;
+}
+
+#map {
+  height: 200px;
+  flex: 1 1 0%;
+}

@@ -1,4 +1,4 @@
-json.extract! @store, :id, :name, :address, :hours, :description
+json.extract! @store, :id, :name, :address, :hours, :description, :coordinate
 json.menus do 
     @store.menus.each do |menu|
         json.set! menu.id do 

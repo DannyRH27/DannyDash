@@ -9,3 +9,5 @@ bundle.js*
 !/log/.keep
 !/tmp/.keep
 .bundle/
+# Ignore application configuration
+/config/application.yml

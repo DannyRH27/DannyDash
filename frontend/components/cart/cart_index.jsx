@@ -11,7 +11,6 @@ class CartIndex extends React.Component {
   componentDidMount(){
     const { fetchStores, fetchCartStore, cart, location } = this.props;
     if (location.pathname.slice(0,5) === "/home") {
-      console.log("hi")
       fetchStores();
     }
     fetchCartStore(cart.storeId);
@@ -36,12 +35,14 @@ class CartIndex extends React.Component {
           <Link to={`/stores/${cart.storeId}`}>{store.name}</Link>
         </div>
         <div className="cart-checkout-container">
-          <div className="cart-checkout-button">
-            <div className="cart-checkout-details">
-              <span>Checkout</span>
-              <p>${total.toFixed(2)}</p>
+          <Link to="/checkout">
+            <div className="cart-checkout-button">
+              <div className="cart-checkout-details">
+                <span>Checkout</span>
+                <p>${total.toFixed(2)}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
         {CartItems}
       </div>

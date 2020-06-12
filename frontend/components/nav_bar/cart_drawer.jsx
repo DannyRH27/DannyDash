@@ -10,13 +10,14 @@ import {
   RiCloseCircleLine,
 } from "react-icons/ri";
 
+
 class CartDrawer extends React.Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount(){
-    const { fetchCart, currentUser } = this.props;
+    const { fetchCart, fetchCartStore, currentUser } = this.props;
     
     currentUser ? fetchCart(currentUser.id) : null;
   }
