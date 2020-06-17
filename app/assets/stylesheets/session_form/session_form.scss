@@ -84,11 +84,17 @@
     justify-content: center;
     letter-spacing: 0.4px;
     line-height: 40px;
+    border: none;
 }
 
 .session-submit:hover {
     background-color: #c61400;
     transition: 0.3s;
+}
+
+.session-submit:active {
+  background-color: #a21101;
+  transition: 0.3s;
 }
 
 .session-submit:focus {

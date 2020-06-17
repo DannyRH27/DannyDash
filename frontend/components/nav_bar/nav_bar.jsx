@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { MdShoppingCart } from "react-icons/md";
 import SideDrawer from "./side_drawer";
 import CartDrawer from "./cart_drawer";
 import SearchBar from "../search/search_bar";
+import AddressBar from "../address/address_bar";
 
 const DrawerToggleButton = () => (
   <button className="toggle-button">
@@ -68,7 +69,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { currentUser, fetchCart, fetchCartStore, cart } = this.props;
+    const { currentUser, fetchCart, fetchCartStore, cart, update, cartStore } = this.props;
     const SessionButtons = currentUser ? null : (
       <ul>
         <li className="splash-signup">
@@ -79,15 +80,23 @@ class NavBar extends React.Component {
         </li>
       </ul>
     );
+    const DrawerToggle = this.props.location.pathname === "/checkout"
+      ? null : (
+        <div onClick={this.handleToggle}>
+          <DrawerToggleButton />
+        </div> 
+      )
     return (
       <header className="navbar">
         <nav className="navbar_navigation">
-          <div onClick={this.handleToggle}>
-            <DrawerToggleButton />
-          </div>
+          {DrawerToggle} 
           <Link className="navbar_logo" to="/home">
             DannyDash
           </Link>
+          <AddressBar
+            update={update}
+            currentUser={currentUser}
+          />
           <div className="spacer"></div>
           <SearchBar/>
           <div className="navbar_nav-items">{SessionButtons}
@@ -108,6 +117,7 @@ class NavBar extends React.Component {
             fetchCart = {fetchCart}
             fetchCartStore = {fetchCartStore}
             cart = {cart}
+            cartStore = {cartStore}
           />
         </nav>
       </header>
@@ -115,4 +125,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

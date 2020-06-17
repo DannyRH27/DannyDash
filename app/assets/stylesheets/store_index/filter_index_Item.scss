@@ -30,16 +30,17 @@
 
 .filter-item span {
   font-size: 12px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 16px;
-    letter-spacing: 0ch;
-    text-transform: none;
-    color: rgb(25, 25, 25);
-    text-align: center;
-    display: block;
-    font-variant-ligatures: no-common-ligatures;
-    margin: 0px;
-    padding: 0px;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  text-align: center;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 0px;
+  padding: 0px;
 }
 
 .filter-item:active > span {

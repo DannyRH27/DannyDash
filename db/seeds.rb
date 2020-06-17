@@ -18,11 +18,9 @@ require 'open-uri'
 
 # Users
 User.destroy_all
-user1 = User.create({fname: 'Danny', lname: 'Huang', email: 'drh8@gmail.com', password: 'cannotcode', address: '39 Fair Oaks Street, San Francisco CA 94107', phone_number: 1234567890})
-user2 = User.create({fname: 'Darrick', lname: 'Yong', email: 'dy29@gmail.com', password: 'codingwizard', address: '2', phone_number: 1234567891})
-user3 = User.create({fname: 'TJ', lname: 'McCabe', email: 'tjm30@gmail.com', password: 'codinggenius', address: '3', phone_number: 1234567892})
-user4 = User.create({fname: 'Glen', lname: 'Park', email: 'gp12@gmail.com', password: 'codinggod', address: '4', phone_number: 1234567893})
-user5 = User.create({fname: 'Jay', lname: 'Chen', email: 'jc27@gmail.com', password: 'livingalgo', address: '5', phone_number: 1234567894})
+user1 = User.create({fname: 'Danny', lname: 'Huang', email: 'drh8@gmail.com', password: 'cannotcode', address: '39 Fair Oaks Street, San Francisco CA 94107', phone_number: 858-314-0788})
+user2 = User.create({fname: 'Demo', lname: 'User', email: 'demo@gmail.com', password: 'longpassforeffect', address: '39 Fair Oaks Street, San Francisco CA 94107', phone_number: 858-314-0788})
+
 
 
 # Stores and Store Index Photos
@@ -258,7 +256,6 @@ store_filter36 = StoreFilter.create!(store_id: store11.id, filter_id: filter6.id
 store_filter38 = StoreFilter.create!(store_id: store11.id, filter_id: filter13.id)
 store_filter39 = StoreFilter.create!(store_id: store11.id, filter_id: filter19.id)
 store_filter40 = StoreFilter.create!(store_id: store11.id, filter_id: filter20.id)
-store_filter41 = StoreFilter.create!(store_id: store11.id, filter_id: filter21.id)
 
 # Menus
 Menu.destroy_all

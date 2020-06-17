@@ -46,8 +46,8 @@ class LoginForm extends React.Component {
     demo() {
       const eInput = document.getElementById("email-input");
       const pInput = document.getElementById("pw-input");
-      const demoEmail = "drh8@gmail.com";
-      const demoPass = "cannotcode";
+      const demoEmail = "demo@gmail.com";
+      const demoPass = "longpassforeffect";
       let ei = 0;
       let pi = 0;
 
@@ -56,17 +56,12 @@ class LoginForm extends React.Component {
         if (pi <= demoPass.length) {
           pInput.value = demoPass.substr(0, pi++);
           setTimeout(() => typePass(), 50);
-        } else { setTimeout(
-                   () =>
-                     this.props.login({
-                       email: "drh8@gmail.com",
-                       password: "cannotcode",
-                     }).then(()=> {
-                       this.props.history.goBack();
-                     }),
-                   500
-                 );
-        }
+        } else { 
+          setTimeout(() => this.props.login({
+                       email: "demo@gmail.com",
+                       password: "longpassforeffect",
+                     })
+                      .then(()=> { this.props.history.goBack()}), 500);}
       };
 
       const typeEmail = () => {

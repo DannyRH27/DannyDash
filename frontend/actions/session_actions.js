@@ -30,6 +30,12 @@ export const login = (user) => (dispatch) => {
         .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
 };
 
+export const update = (user) => (dispatch) => {
+  return APIUtil.update(user)
+    .then((user) => dispatch(receiveCurrentUser(user)))
+    .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
+};
+
 export const logout = () => (dispatch) => {
     return APIUtil.logout()
         .then(() => dispatch(logoutCurrentUser()))

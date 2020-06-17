@@ -27,7 +27,7 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
       </Switch>
       <Modal/>
-      <Route path="/checkout" component={CheckoutIndexContainer} />
+      <ProtectedRoute path="/checkout" component={CheckoutIndexContainer} />
       <Route path="/home" component={StoreIndexContainer} />
       <Route path="/filters/:filter" component={StoreIndexContainer} />
       <Route path="/search/:fragment" component={StoreIndexContainer} />

@@ -1,9 +1,14 @@
 import React from 'react';
-
+import { FaCcVisa } from "react-icons/fa";
+import CheckoutItem from "./checkout_item";
+import ReactTooltip from "react-tooltip";
 
 class CheckoutIndex extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      address: this.props.currentUser.address
+    }
   }
 
   componentDidMount(){
@@ -14,66 +19,103 @@ class CheckoutIndex extends React.Component {
         .then((store) => this.initMap(store.payload))
     })
   }
-
-  componentDidUpdate(){
-    const { fetchStores, fetchCart, fetchCartStore, cart, currentUser } = this.props;
-    // if (cart !== undefined) fetchCartStore(cart.storeId)
-    // this.initMap();
-  }
-
+ 
   initMap(store) {
     // The location of Uluru
-    console.log(store)
-    console.log(typeof store.coordinate.y)
-    console.log(typeof store.coordinate.x)
+    const { currentUser } = this.props;
     var location = { lat: store.coordinate.x , lng: store.coordinate.y };
     // The map, centered at location
-    var map = new google.maps.Map(
-      document.getElementById('map'), { zoom: 14, center: location });
+    // var map = new google.maps.Map(
+    //   document.getElementById('map'), { zoom: 14, center: location });
     // The marker, positioned at location
-    var marker = new google.maps.Marker({ position: location, map: map });
+    // var marker = new google.maps.Marker({ position: location, map: map });
+
+    var geocoder = new google.maps.Geocoder();
+    console.log(currentUser.address)
+    geocoder.geocode({ 'address': currentUser.address }, function (results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var map = new google.maps.Map(
+          document.getElementById('map'), { zoom: 14, center: results[0].geometry.location });
+          console.log(results)
+        // map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+        });
+        const address = document.getElementById('address')
+        address.innerHTML = results[0].formatted_address
+      }
+
+    })
     
     
     
   }
 
   render(){
-    const { store, cart, currentUser } = this.props;
-    // if (cart === undefined) return null;
+    const { store, cart, currentUser, updateCart } = this.props;
+    if (cart.contents === undefined) return null;
+    console.log(cart.contents)
+    const Tooltip = "Confused I am so <br /> confused LOREM IPSUM THIS BITCH";
     return (
       <div className="checkout-index-wrapper">
         <div className="checkout-index-container">
           <div className="checkout-index-card">
             <div className="checkout-index">
-              <div className="checkout-section">
+              <div id="address-section" className="checkout-section">
                 <div className="checkout-section-header">
                   <h2>Address</h2>
                 </div>
-                <div id="map"></div>
+                <div className="checkout-section-details">
+                  <div id="map"></div>
+                  <p id="address"></p>
+                </div>
               </div>
               <div className="checkout-section">
                 <div className="checkout-section-header">
                   <h2>Phone Number</h2>
                 </div>
-                <div id="map"></div>
+                <div className="checkout-section-details">
+                  <p>{currentUser.phoneNumber}</p>
+                </div>
               </div>
               <div className="checkout-section">
                 <div className="checkout-section-header">
                   <h2>Payment</h2>
                 </div>
-                <div id="map"></div>
+                <div className="checkout-section-details">
+                  <div className="payment-details">
+                    <FaCcVisa />
+                    <p>Visa....8888</p>
+                  </div>
+                </div>
               </div>
               <div className="checkout-section">
                 <div className="checkout-section-header">
                   <h2>Summary</h2>
                 </div>
-                <div id="map"></div>
+                <div className="checkout-section-details">
+                  {Object.values(cart.contents).map((item) => (
+                    <CheckoutItem
+                      key={item.id}
+                      item={item}
+                      updateCart={updateCart}
+                      cart={cart}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div id="button-section" className="checkout-section">
+                <div className="checkout-section-header"></div>
+                <div className="checkout-section-details">
+                  <button>Place Order</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
