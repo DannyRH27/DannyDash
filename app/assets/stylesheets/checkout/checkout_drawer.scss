@@ -1,6 +1,6 @@
 .checkout-drawer-section {
   max-width: 100%;
-  padding: 24px;
+  padding: 15px 24px;
   border-bottom: 1px solid rgb(214, 214, 214);
 }
 
@@ -89,10 +89,93 @@
   display: flex;
 }
 
-.tooltip {
-  font-size: 15px;
+
+#tooltip {
+  padding-left: 2px;
+  font-size: 13px;
+
 }
 
-.tooltip path{
+#tooltip path{
   stroke: white;
+}
+
+.tip-radio-inputs {
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.tip-radio-inputs button {
+  position: relative;
+  max-width: 100%;
+  display: inline-flex;
+  min-height: 32px;
+  width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  transition: background-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  text-decoration: none;
+  padding-left: 6px;
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+}
+
+.tip-radio-inputs button:focus{
+  background-color: rgb(41, 41, 41);
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(255, 255, 255);
+  outline: none;
+}
+.tip-radio-inputs button:first-child {
+  padding-left: 6px;
+  border-top-left-radius: 24px !important;
+  border-bottom-left-radius: 24px !important;
+}
+
+.tip-radio-inputs button:last-child {
+ padding-right: 6px;
+  border-top-right-radius: 24px !important;
+  border-bottom-right-radius: 24px !important;
+}
+
+.dasher-info p {
+  font-size: 12px;
+  font-family: DD-TTNorms, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(118, 118, 118);
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 0px;
+  padding: 0px;
+}
+
+#final {
+  border-bottom: none;
+  font-weight: 600;
 }

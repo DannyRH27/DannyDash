@@ -7,8 +7,9 @@ class CheckoutDrawer extends React.Component {
     this.state = {
       store: {},
       cart: {},
-      tip: null
+      tip: 'Please add a tip'
     }
+    this.onSelect = this.onSelect.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,17 @@ class CheckoutDrawer extends React.Component {
     });
   }
 
+  placeOrder(){
+    
+  }
+
+  onSelect(e){
+    let value = e.target.innerHTML.split('$')
+    this.setState({ tip: parseFloat(value[1])})
+    console.log(parseFloat(value[1]))
+    console.log(typeof parseFloat(value[1]))
+  }
+
   render() {
     const { drawerClasses } = this.props;
     const { store, cart, tip } = this.state;
@@ -35,11 +47,14 @@ class CheckoutDrawer extends React.Component {
       let item_subtotal = parseFloat(item.price) * parseFloat(item.quantity);
       subtotal += item_subtotal;
     });
-
-    let tax = subtotal * 0.11
-    let total = subtotal + tax
-    console.log(tax)
-
+    let buttonClass = null
+    let tax = subtotal * 0.0875
+    let service = subtotal * 0.11
+    let fees = tax + service
+    let baseTip = Math.round(subtotal * .1)
+    let selectedTip = typeof tip === typeof "" ? <p>{tip}</p> : <p>${tip.toFixed(2)}</p>
+    let total = typeof tip === typeof "" ? subtotal + fees : subtotal + fees + tip
+    let tooltip = `Estimated Tax: $${tax.toFixed(2)}<br/>Service Fee: $${service}<br/><br/>This 11% service fee helps us<br/>operate DannyDash.`
     return (
       <nav
         onClick={(e) => e.stopPropagation()}
@@ -60,12 +75,12 @@ class CheckoutDrawer extends React.Component {
             <div className="payment-section">
               <div className="tax-details">
                 <p>Fees and Estimated Tax</p>
-                <ReactTooltip place="bottom" multiline={true} />
-                <p data-tip="hello world">
-                  <GrCircleInformation className="tooltip" />
+                <ReactTooltip effect="solid" place="bottom" multiline={true} />
+                <p data-tip={tooltip}>
+                  <GrCircleInformation id="tooltip" />
                 </p>
               </div>
-              <p>${tax}</p>
+              <p>${fees.toFixed(2)}</p>
             </div>
             <div className="payment-section">
               <p>Delivery</p>
@@ -74,13 +89,35 @@ class CheckoutDrawer extends React.Component {
           </div>
         </div>
         <div className="checkout-drawer-section">
-          <div className="checkout-drawer-payment">
-            <div className="checkout-drawer-payment">
-              <div className="payment-section">
-                <p>Dasher Tip</p>
-                <p>$4.00</p>
-              </div>
-            </div>
+          <div className="payment-section">
+            <p>Dasher Tip</p>
+            {selectedTip}
+          </div>
+          <div className="tip-radio-inputs">
+            <button onClick={this.onSelect} autoFocus>
+              ${baseTip.toFixed(2)}
+            </button>
+            <button onClick={this.onSelect}>${(baseTip + 1).toFixed(2)}</button>
+            <button onClick={this.onSelect}>${(baseTip + 2).toFixed(2)}</button>
+            <button onClick={this.onSelect}>${(baseTip + 3).toFixed(2)}</button>
+          </div>
+          <div className="dasher-info">
+            <p>
+              The recommended Dasher tip is based on the delivery distance and
+              effort. 100% of the tip goes to your Dasher.
+            </p>
+          </div>
+        </div>
+        <div className="checkout-drawer-section">
+          <div className="payment-section">
+            <p>Total</p>
+            <p>{total.toFixed(2)}</p>
+          </div>
+        </div>
+        <div id="final" className="checkout-drawer-section">
+          <div className="payment-section">
+            <p>Amount Due</p>
+            <p>{total.toFixed(2)}</p>
           </div>
         </div>
       </nav>

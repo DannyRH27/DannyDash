@@ -47,9 +47,6 @@ class CheckoutIndex extends React.Component {
       }
 
     })
-    
-    
-    
   }
 
   render(){
