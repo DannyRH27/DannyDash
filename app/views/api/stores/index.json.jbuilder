@@ -4,5 +4,4 @@
         json.photoUrls store.photos.map {|file| url_for(file)}
         json.filters store.filters.map {|filter| filter.filter_title}
     end
-    
 end

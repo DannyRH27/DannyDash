@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { logout, update } from "../../actions/session_actions";
 import { fetchStores, fetchCartStore } from "../../actions/store_actions";
 import { fetchCart, updateCart } from "../../actions/cart_actions";
+import { fetchOrders } from "../../actions/order_actions";
 import NavBar from './nav_bar';
 
 
@@ -19,7 +20,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchCart: (cartId) => dispatch(fetchCart(cartId)),
   fetchStores: () => dispatch(fetchStores()),
   fetchCartStore: (storeId) => dispatch(fetchCartStore(storeId)),
-  update: (user) => dispatch(update(user))
+  update: (user) => dispatch(update(user)),
+  fetchOrders: () => dispatch(fetchOrders()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

@@ -74,3 +74,26 @@
   color: white;
   // opacity: 1;
 }
+
+.address-prompt {
+  position: absolute;
+  background: rgb(79, 79, 79);
+  color: white;
+  border-radius: 7px;
+  width: 122px;
+  opacity: 0.8;
+  top: 8px;
+  left: 377px;
+  padding: 3px 0px 3px 10px;
+}
+
+.address-prompt:before {
+  position: absolute;
+  left: -9px;
+  top: 8px;
+  display: inline-block;
+  border-top: 9px solid transparent;
+  border-right: 9px solid rgb(79, 79, 79);
+  border-bottom: 9px solid transparent;
+  content: "";
+}

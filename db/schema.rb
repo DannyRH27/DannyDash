@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_033952) do
+ActiveRecord::Schema.define(version: 2020_06_18_061855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,15 @@ ActiveRecord::Schema.define(version: 2020_05_04_033952) do
     t.index ["store_id"], name: "index_menus_on_store_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.json "contents", default: {}, null: false
+    t.integer "customer_id", null: false
+    t.json "store", default: {}, null: false
+    t.decimal "total", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "store_id", null: false
@@ -142,6 +151,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_033952) do
     t.string "phone_number"
     t.string "pass_digest", null: false
     t.string "session_token", null: false
+    t.integer "current_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -155,6 +165,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_033952) do
     t.text "image"
     t.index ["address"], name: "index_users_on_address", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["phone_number"], name: "index_users_on_phone_number"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end

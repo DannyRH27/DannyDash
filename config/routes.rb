@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       end
     end
     resources :carts, only: [:show, :update, :destroy]
+    resources :orders, only: [:index, :create, :show, :destroy]
 	end
 
 	

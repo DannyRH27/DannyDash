@@ -10,6 +10,7 @@ import StoreIndexContainer from './store_index/store_index_container';
 import StoreShowContainer from './store_show/store_show_container';
 import SplashContainer from './splash/splash_container';
 import CheckoutIndexContainer from './checkout/checkout_index_container';
+import OrderShowContainer from './order/order_show_container';
 import Modal from "./modal/modal";
 
 const App = () => (
@@ -32,6 +33,7 @@ const App = () => (
       <Route path="/filters/:filter" component={StoreIndexContainer} />
       <Route path="/search/:fragment" component={StoreIndexContainer} />
       <Route path="/stores/:storeId" component={StoreShowContainer} />
+      <Route path="/orders/:orderId" component={OrderShowContainer} />
     </main>
   </div>
 );

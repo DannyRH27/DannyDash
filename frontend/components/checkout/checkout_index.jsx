@@ -9,6 +9,8 @@ class CheckoutIndex extends React.Component {
     this.state = {
       address: this.props.currentUser.address
     }
+
+    this.placeOrder = this.placeOrder.bind(this);
   }
 
   componentDidMount(){
@@ -18,6 +20,16 @@ class CheckoutIndex extends React.Component {
       fetchCartStore(payload.cart.storeId)
         .then((store) => this.initMap(store.payload))
     })
+  }
+
+  placeOrder(){
+    const { currentUser, createOrder, store, cart } = this.props;
+    const orderButton = document.getElementById("placeButton")
+    orderButton.click();
+    if (Object.values(cart.contents).length !== 0) {
+      const newOrder = { contents: cart.contents, customer_id: currentUser.id, store: store}
+
+    }
   }
  
   initMap(store) {
@@ -31,12 +43,10 @@ class CheckoutIndex extends React.Component {
     // var marker = new google.maps.Marker({ position: location, map: map });
 
     var geocoder = new google.maps.Geocoder();
-    console.log(currentUser.address)
     geocoder.geocode({ 'address': currentUser.address }, function (results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         var map = new google.maps.Map(
           document.getElementById('map'), { zoom: 14, center: results[0].geometry.location });
-          console.log(results)
         // map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
           map: map,
@@ -52,7 +62,7 @@ class CheckoutIndex extends React.Component {
   render(){
     const { store, cart, currentUser, updateCart } = this.props;
     if (cart.contents === undefined) return null;
-    console.log(cart.contents)
+    
     const Tooltip = "Confused I am so <br /> confused LOREM IPSUM THIS BITCH";
     return (
       <div className="checkout-index-wrapper">
@@ -105,7 +115,7 @@ class CheckoutIndex extends React.Component {
               <div id="button-section" className="checkout-section">
                 <div className="checkout-section-header"></div>
                 <div className="checkout-section-details">
-                  <button>Place Order</button>
+                  <button onClick={this.placeOrder}>Place Order</button>
                 </div>
               </div>
             </div>

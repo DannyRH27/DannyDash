@@ -1,5 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
+import { withRouter } from "react-router-dom";
 import { GrCircleInformation } from "react-icons/gr";
 class CheckoutDrawer extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class CheckoutDrawer extends React.Component {
       tip: 'Please add a tip'
     }
     this.onSelect = this.onSelect.bind(this);
+    this.placeOrder = this.placeOrder.bind(this);
   }
 
   componentDidMount() {
@@ -28,14 +30,23 @@ class CheckoutDrawer extends React.Component {
   }
 
   placeOrder(){
-    
+    const { currentUser, createOrder, store, cart } = this.props;
+    let orderTotal = document.getElementById("total").innerHTML.split("$")
+    if (Object.values(cart.contents).length !== 0) {
+      const newOrder = {
+        contents: cart.contents,
+        customer_id: currentUser.id,
+        store: Object.values(store)[0],
+        total: parseFloat(orderTotal[1])
+      };
+      createOrder(newOrder)
+        .then((action) => this.props.history.push(`/orders/${action.payload.order.id}`))
+    }
   }
 
   onSelect(e){
     let value = e.target.innerHTML.split('$')
     this.setState({ tip: parseFloat(value[1])})
-    console.log(parseFloat(value[1]))
-    console.log(typeof parseFloat(value[1]))
   }
 
   render() {
@@ -47,7 +58,6 @@ class CheckoutDrawer extends React.Component {
       let item_subtotal = parseFloat(item.price) * parseFloat(item.quantity);
       subtotal += item_subtotal;
     });
-    let buttonClass = null
     let tax = subtotal * 0.0875
     let service = subtotal * 0.11
     let fees = tax + service
@@ -66,7 +76,7 @@ class CheckoutDrawer extends React.Component {
             <h1>Order From</h1>
             <span>{store.name}</span>
           </div>
-          <button className="checkout-drawer-button">Place Order</button>
+          <button id="placeButton" onClick={this.placeOrder}className="checkout-drawer-button">Place Order</button>
           <div className="checkout-drawer-payment">
             <div className="payment-section">
               <p>Subtotal</p>
@@ -111,17 +121,17 @@ class CheckoutDrawer extends React.Component {
         <div className="checkout-drawer-section">
           <div className="payment-section">
             <p>Total</p>
-            <p>{total.toFixed(2)}</p>
+            <p>${total.toFixed(2)}</p>
           </div>
         </div>
         <div id="final" className="checkout-drawer-section">
           <div className="payment-section">
             <p>Amount Due</p>
-            <p>{total.toFixed(2)}</p>
+            <p id="total">${total.toFixed(2)}</p>
           </div>
         </div>
       </nav>
     );
   }
 }
-export default CheckoutDrawer;
+export default withRouter(CheckoutDrawer);

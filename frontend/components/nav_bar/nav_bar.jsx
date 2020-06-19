@@ -25,6 +25,7 @@ class NavBar extends React.Component {
     this._isMounted = false;
     this.handleToggle = this.handleToggle.bind(this);
     this.handleCartToggle = this.handleCartToggle.bind(this);
+    this.goBack = this.goBack.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +33,7 @@ class NavBar extends React.Component {
     if (this.props.location.pathname === "/home") {
       this.props.fetchStores();
     }
+    this.props.fetchOrders();
   }
 
   componentDidUpdate(prevProps) {
@@ -68,6 +70,10 @@ class NavBar extends React.Component {
     }
   }
 
+  goBack(){
+    this.props.history.goBack()
+  }
+
   render() {
     const { currentUser, fetchCart, fetchCartStore, cart, update, cartStore } = this.props;
     const SessionButtons = currentUser ? null : (
@@ -86,13 +92,21 @@ class NavBar extends React.Component {
           <DrawerToggleButton />
         </div> 
       )
+    const NavbarLogo =
+      this.props.location.pathname === "/checkout" ? (
+        <div className="navbar_logo" onClick={this.goBack}>
+          Back to Menu
+        </div>
+      ) : (
+        <Link className="navbar_logo" to="/home">
+          DannyDash
+        </Link>
+      );
     return (
       <header className="navbar">
         <nav className="navbar_navigation">
           {DrawerToggle} 
-          <Link className="navbar_logo" to="/home">
-            DannyDash
-          </Link>
+          {NavbarLogo}
           <AddressBar
             update={update}
             currentUser={currentUser}

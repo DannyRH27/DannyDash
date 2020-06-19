@@ -68,6 +68,21 @@
   margin: 20px 0px;
 }
 
+.checkout-drawer-button:hover {
+    background-color: #c61400;
+    transition: 0.3s;
+}
+
+.checkout-drawer-button:active {
+  background-color: #a21101;
+  transition: 0.3s;
+}
+
+
+.checkout-drawer-button:focus {
+  outline: none;
+}
+
 .payment-section {
   color: white;
   display: flex;

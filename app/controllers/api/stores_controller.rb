@@ -2,9 +2,9 @@ class Api::StoresController < ApplicationController
     def show
       @store = Store.find_by(id: params[:id])
       if @store
-          render :show
+        render :show
       else
-          render json: ['No store exists'], status: 404
+        render json: ['No store exists'], status: 404
       end
     end
 

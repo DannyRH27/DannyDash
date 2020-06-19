@@ -42,6 +42,10 @@ class User < ApplicationRecord
     has_one :cart,
       foreign_key: :customer_id,
       class_name: :Cart
+      
+    has_many :orders,
+      foreign_key: :customer_id,
+      class_name: :Order
 
     def reset_session_token!
         self.session_token = SecureRandom.urlsafe_base64

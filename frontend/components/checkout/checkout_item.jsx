@@ -15,7 +15,8 @@ class CheckoutItem extends React.Component {
     } else {
       newCart.contents = {}
     }
-    updateCart(newCart)
+    updateCart(newCart);
+    window.location.reload();
   }
 
 

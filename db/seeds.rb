@@ -18,8 +18,8 @@ require 'open-uri'
 
 # Users
 User.destroy_all
-user1 = User.create({fname: 'Danny', lname: 'Huang', email: 'drh8@gmail.com', password: 'cannotcode', address: '39 Fair Oaks Street, San Francisco CA 94107', phone_number: 858-314-0788})
-user2 = User.create({fname: 'Demo', lname: 'User', email: 'demo@gmail.com', password: 'longpassforeffect', address: '39 Fair Oaks Street, San Francisco CA 94107', phone_number: 858-314-0788})
+user1 = User.create({fname: 'Danny', lname: 'Huang', email: 'drh8@gmail.com', password: 'cannotcode', address: '10547 Whispering Hills Lane, San Diego CA 92130', phone_number: 8583140788})
+user2 = User.create({fname: 'Demo', lname: 'User', email: 'demo@gmail.com', password: 'longpassforeffect', address: '39 Fair Oaks Street, San Francisco CA 94107', phone_number: 8583140788})
 
 
 

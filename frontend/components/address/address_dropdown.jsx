@@ -37,20 +37,31 @@ class AddressDropdown extends React.Component {
   }
 
   render() {
-    const { closeDropdown } = this.props;
+    const { currentUser, closeDropdown } = this.props;
+    const placeholdertext = currentUser ? "Please enter a new address" : "Please sign in/sign up"
+    const Dropdown = currentUser ? (
+      <input
+        onChange={this.handleInput}
+        onKeyPress={this.handleEnter}
+        placeholder={placeholdertext}
+        type="text"
+      ></input>
+    ) : (
+      <input
+        onChange={this.handleInput}
+        onKeyPress={this.handleEnter}
+        placeholder={placeholdertext}
+        type="text"
+        disabled
+      ></input>
+    );
     return (
       <div className="address-dropdown" onClick={(e) => e.stopPropagation()}>
         <div
           className="address-dropdown-input"
         >
           <FaMapMarkerAlt />
-          <input
-            onChange={this.handleInput}
-            onKeyPress={this.handleEnter}
-            placeholder="Please enter a new address"
-            type="text"  
-          >
-          </input>
+          {Dropdown}
         </div>
       </div>
     );
