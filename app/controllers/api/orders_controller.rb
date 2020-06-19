@@ -7,6 +7,7 @@ class Api::OrdersController < ApplicationController
 
   def show
     @order = Order.find_by(id: params[:id])
+    p @order
     @cart = current_user.cart
     if @order
       render :show
@@ -34,6 +35,6 @@ class Api::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:id, :contents, :customer_id, :store, :total)
+    params.require(:order).permit(:id, :contents, :customer_id, :store, :total, :created_at)
   end
 end

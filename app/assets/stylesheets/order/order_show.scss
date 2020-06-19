@@ -53,6 +53,44 @@
   color: rgb(118, 118, 118);
   display: block;
   font-variant-ligatures: no-common-ligatures;
-  margin: 0px;
+  margin: 10px 0px;
   padding: 0px;
+}
+
+.delivery-visual {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.first-line {
+  width: 40px;
+  height: 3px;
+  background-color: rgb(235, 23, 0);
+  border-radius: 3px;
+}
+
+.visual-icon {
+  width: 24px;
+  height: 15px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  fill: rgb(235, 23, 0);
+}
+
+.second-line {
+  height: 3px;
+  background-color: rgb(235, 23, 0);
+  width: 103px;
+  border-radius: 3px;
+}
+
+.third-line {
+height: 3px;
+  background-color: rgb(235, 23, 0);
+  width: 79px;
+  border-radius: 3px;
 }
