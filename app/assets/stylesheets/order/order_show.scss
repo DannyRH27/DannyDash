@@ -118,12 +118,15 @@
 }
 
 .third-line {
-height: 3px;
+  height: 3px;
   background-color: rgb(235, 23, 0);
   width: 79px;
   border-radius: 3px;
 }
 
+#in-transit {
+  background-color: rgb(118, 118, 118);
+}
 .order-summary {
   margin: 10px 0px;
 }

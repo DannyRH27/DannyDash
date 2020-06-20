@@ -74,16 +74,15 @@ class OrderShow extends React.Component {
       }
     }
     const { currentUser } = this.props;
-    var origin1 = new google.maps.LatLng(37.741249, -122.424217);
-    var destinationA = order.store.address;
-    var destinationB = currentUser.address;
+    var origin1 = order.store.address;
+    var destinationA = currentUser.address;
 
     var service = new google.maps.DistanceMatrixService();
     service.getDistanceMatrix(
       {
         origins: [origin1],
-        destinations: [destinationA, destinationB],
-        travelMode: "DRIVING",
+        destinations: [destinationA],
+        travelMode: "WALKING",
         // transitOptions: TransitOptions,
         // drivingOptions: DrivingOptions,
         // unitSystem: UnitSystem,
@@ -156,13 +155,12 @@ class OrderShow extends React.Component {
     if (order === undefined) return null;
     if (duration === 0) return null;
     if (ETA === "") return null;
-    console.log(address)
     var date = new Date();
     var etaDate = new Date(order.createdAt);
     etaDate.setMinutes(etaDate.getMinutes() + duration / 60);
     const DeliveryStatus = date > etaDate ? "Delivered" : "In-Transit";
     const Plural = Object.keys(order.contents).length > 1 ? "Items" : "Item";
-    console.log("wtf");
+    const visualClass =  date > etaDate ? null : 'in-transit'
     return (
       <div className="order-show-container">
         <div className="order-show-drawer-container">
@@ -177,17 +175,18 @@ class OrderShow extends React.Component {
                 </span>
               </div>
               <div className="delivery-visual">
-                <div className="first-line"></div>
+                <div className="first-line" id={visualClass}></div>
                 <GiKnifeFork className="visual-icon" />
-                <div className="second-line"></div>
+                <div className="second-line" id={visualClass}></div>
                 <MdDirectionsCar className="visual-icon" />
-                <div className="third-line"></div>
+                <div className="third-line" id={visualClass}></div>
                 <TiHome className="visual-icon" />
               </div>
               <div className="section-details">
                 <span>
                   The estimated distance for your order route is {distance} and
-                  it would have taken approximately {durationText}.
+                  it would have taken approximately {durationText} for Danny to
+                  delivery this by walking.
                 </span>
               </div>
             </div>

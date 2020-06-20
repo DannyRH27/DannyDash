@@ -35,3 +35,9 @@ export const fbsignup = () => (
         method: 'GET'
     })
 )
+
+export const currentUser = () => (
+  $.ajax({
+    url: 'api/users/:id'
+  })
+)

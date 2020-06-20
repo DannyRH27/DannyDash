@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { fetchFilters } from '../../actions/filter_actions';
+import { fetchCurrentUser } from '../../actions/session_actions';
 import {fetchStores, fetchStore, filterStores, searchStores } from '../../actions/store_actions';
 import StoreIndex from './store_index';
 
@@ -13,7 +14,8 @@ const mapDispatchToProps = (dispatch) => ({
     fetchStore: storeId => dispatch(fetchStore(storeId)),
     fetchFilters: () => dispatch(fetchFilters()),
     filterStores: (filter) => dispatch(filterStores(filter)),
-    searchStores: (fragment) => dispatch(searchStores(fragment))
+    searchStores: (fragment) => dispatch(searchStores(fragment)),
+    fetchCurrentUser: () => dispatch(fetchCurrentUser())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StoreIndex);

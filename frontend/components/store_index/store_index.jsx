@@ -42,7 +42,7 @@ class StoreIndex extends React.Component {
   }
 
   render() {
-    const { stores, fetchStores, filters, location, match } = this.props
+    const { fetchCurrentUser, stores, fetchStore, fetchStores, filters, location, match } = this.props
     if (stores === null || stores === undefined || stores === false) return;
     if (filters === null || filters === undefined || filters === false) return;
 
@@ -75,7 +75,7 @@ class StoreIndex extends React.Component {
               <div className='store-list'>
                   {stores.map(store => (
                       <Link key={store.id}to={`/stores/${store.id}`}>
-                        <StoreIndexItem fetchStores={fetchStores} store={store} />
+                        <StoreIndexItem fetchCurrentUser={fetchCurrentUser} fetchStore={fetchStore} fetchStores={fetchStores} store={store} />
                       </Link>
                   ))}
               </div>

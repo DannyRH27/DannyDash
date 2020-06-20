@@ -41,3 +41,9 @@ export const logout = () => (dispatch) => {
         .then(() => dispatch(logoutCurrentUser()))
         .fail((errors) => dispatch(receiveErrors(errors.responseJSON)));
 };
+
+export const fetchCurrentUser = () => (dispatch) => {
+  return APIUtil.currentUser()
+    .then((user) => dispatch(receiveCurrentUser(user)))
+    .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
+}
