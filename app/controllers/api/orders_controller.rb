@@ -35,6 +35,8 @@ class Api::OrdersController < ApplicationController
   def update
     @order = Order.find_by(id: params[:order][:id])
     @cart = current_user.cart
+    p params
+    p "these are params"
     if @order
       @order.delivery_eta = params[:order][:deliveryEta]
       @order.save
