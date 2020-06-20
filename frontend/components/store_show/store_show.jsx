@@ -13,10 +13,20 @@ class StoreShow extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0,0);
-    const { storeId } = this.props;
-    this.props.fetchStore(storeId);
-    this.props.fetchMenus(storeId);
-    this.props.fetchItems(storeId);
+    const { storeId, fetchStore, fetchMenus, fetchItems } = this.props;
+    fetchStore(storeId);
+    fetchMenus(storeId);
+    fetchItems(storeId);
+  }
+
+  componentDidUpdate(prevProps){
+    const { storeId, fetchStore, fetchMenus, fetchItems } = this.props;
+    
+    if (this.props.location.pathname !== prevProps.location.pathname) { 
+      fetchStore(storeId)
+      fetchMenus(storeId)
+      fetchItems(storeId)
+    }
   }
 
   render() {
