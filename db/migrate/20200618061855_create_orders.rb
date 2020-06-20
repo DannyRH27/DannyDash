@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.json :contents, null: false, default: {}
       t.integer :customer_id, null: false
       t.json :store, null: false, default: {}
+      t.json :delivered_date
       t.numeric :total, null: false
       t.string :delivery_eta
       t.timestamps

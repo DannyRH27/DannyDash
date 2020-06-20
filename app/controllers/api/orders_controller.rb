@@ -35,10 +35,10 @@ class Api::OrdersController < ApplicationController
   def update
     @order = Order.find_by(id: params[:order][:id])
     @cart = current_user.cart
-    p params
-    p "these are params"
+
     if @order
       @order.delivery_eta = params[:order][:deliveryEta]
+      @order.delivered_date = params[:order][:deliveredDate]
       @order.save
       render :show
     elsif !@order
@@ -51,6 +51,6 @@ class Api::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:id, :contents, :customer_id, :store, :total, :delivery_eta, :created_at)
+    params.require(:order).permit(:id, :contents, :customer_id, :store, :total, :delivery_eta, :delivered_date, :created_at)
   end
 end

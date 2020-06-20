@@ -10,7 +10,6 @@ class OrderIndex extends React.Component {
 
   render(){
     const { orders } = this.props;
-    const current_date = new Date()
     if (orders === undefined) return null;
     return (
       <div className="order-index-container">

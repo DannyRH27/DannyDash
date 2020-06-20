@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 2020_06_18_061855) do
     t.json "contents", default: {}, null: false
     t.integer "customer_id", null: false
     t.json "store", default: {}, null: false
+    t.json "delivered_date"
     t.decimal "total", null: false
     t.string "delivery_eta"
     t.datetime "created_at", null: false

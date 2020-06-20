@@ -59,7 +59,8 @@ class OrderShow extends React.Component {
         var strTime = hours + ":" + minutes + " " + ampm;
         if (order.deliveryEta === null) {
           const newOrder = Object.assign({}, order)
-          newOrder.deliveryEta = JSON.stringify([strTime, date])
+          newOrder.deliveryEta = strTime
+          newOrder.deliveredDate = date
           updateOrder(newOrder)
         }
         
