@@ -11,30 +11,125 @@ import StarRatings from "react-star-ratings";
 class StoreShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      duration: 0,
+      distance: '',
+    }
+
+    // this.calculateDispatchDistance = this.calculateDispatchDistance.bind(this);
   }
 
   componentDidMount() {
-    window.scrollTo(0,0);
-    const { storeId, fetchStore, fetchMenus, fetchItems } = this.props;
-    fetchStore(storeId);
+    window.scrollTo(0, 0);
+    const { storeId, fetchStore, fetchCurrentUser, fetchMenus, fetchItems } = this.props;
+     var dispatchUser = {};
+     fetchCurrentUser()
+       .then((action) => {
+         dispatchUser = action.currentUser;
+       })
+       .then(() => {
+         fetchStore(storeId).then((store) => {
+           this.calculateDispatchDistance(store.payload, dispatchUser);
+         });
+       });
     fetchMenus(storeId);
     fetchItems(storeId);
   }
 
-  componentDidUpdate(prevProps){
+  componentDidUpdate(prevProps) {
     const { storeId, fetchStore, fetchMenus, fetchItems } = this.props;
-    
-    if (this.props.location.pathname !== prevProps.location.pathname) { 
-      fetchStore(storeId)
-      fetchMenus(storeId)
-      fetchItems(storeId)
+
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      fetchStore(storeId);
+      fetchMenus(storeId);
+      fetchItems(storeId);
     }
+  }
+
+  calculateDispatchDistance(store, currentUser) {
+    function callback(response, status) {
+      if (status == "OK") {
+        var origins = response.originAddresses;
+        var destinations = response.destinationAddresses;
+
+        for (var i = 0; i < origins.length; i++) {
+          var results = response.rows[i].elements;
+          for (var j = 0; j < results.length; j++) {
+            var element = results[j];
+            var distance = element.distance.text;
+            var duration = element.duration.value;
+            var from = origins[i];
+            var to = destinations[j];
+          }
+        }
+        this.setState({ duration: duration });
+        this.setState({ distance: distance.split(" ")[0] });
+      }
+    }
+    var origin1 = store.address;
+    var destinationA = currentUser.address;
+    var service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+      {
+        origins: [origin1],
+        destinations: [destinationA],
+        travelMode: "WALKING",
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        // transitOptions: TransitOptions,
+        // drivingOptions: DrivingOptions,
+        // unitSystem: UnitSystem,
+        // avoidHighways: Boolean,
+        // avoidTolls: Boolean,
+      },
+      callback.bind(this)
+    );
   }
 
   render() {
     const { store, menus, items, openModal, receiveModalItem } = this.props;
+    const { distance, duration } = this.state;
+    if (distance === '') return null;
     if (store === null || store === undefined || store === false) return null;
     if (menus === null || menus === undefined || menus === false) return null;
+    var days = Math.trunc(duration / 86400)
+    var minutes = Math.trunc(((duration % 86400) % 3600) / 60);
+    var minMinuteRange = Math.trunc(((duration % 86400) % 3600) / 60) - 3;
+    var maxMinuteRange = Math.trunc(((duration % 86400) % 3600) / 60) + 8;
+    var hours = Math.trunc((duration % 86400)/ 3600)
+    if (maxMinuteRange >= 60) {
+      hours = hours + 1
+      minMinuteRange = 0
+      maxMinuteRange = maxMinuteRange % 60
+    }
+    if ( hours >= 24 ) {
+      days = days + 1
+      hours = hours % 60
+    }
+    if (minMinuteRange <=0 ) {
+      minMinuteRange = 0
+    }
+
+    const DaysETA =
+      days !== 0 ? (
+        <div>
+          <span>{days}</span>
+          <p>days</p>
+        </div>
+      ) : null;
+    const HoursETA =
+      hours !== 0 ? (
+        <div>
+          <span>{hours}</span>
+          <p>hours</p>
+        </div>
+      ) : null;
+    const MinutesETA =
+      minutes !== 0 ? (
+        <div>
+          <span>{minMinuteRange}-{maxMinuteRange}</span>
+          <p>minutes</p>
+        </div>
+      ) : null;
     return (
       <div className="store-show-container">
         <div className="store-show-box">
@@ -69,12 +164,11 @@ class StoreShow extends React.Component {
                       <span>Free</span>
                       <p>Delivery</p>
                     </div>
+                    {DaysETA}
+                    {HoursETA}
+                    {MinutesETA}
                     <div>
-                      <span>1 - 2</span>
-                      <p>hours</p>
-                    </div>
-                    <div>
-                      <span>2.0</span>
+                      <span>{distance}</span>
                       <p>miles</p>
                     </div>
                   </div>

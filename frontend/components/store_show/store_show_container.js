@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import {fetchMenus} from '../../actions/menu_actions'
 import {fetchItems} from '../../actions/item_actions'
 import { fetchStore, fetchStores } from '../../actions/store_actions';
+import { fetchCurrentUser } from '../../actions/session_actions';
 import { selectReviewsForStore, selectStore} from '../../reducers/entities/selectors';
 import StoreShow from './store_show'
 import { openModal } from "../../actions/modal_actions";
@@ -28,6 +29,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchItems: (id) => dispatch(fetchItems(id)),
   openModal: () => dispatch(openModal()),
   receiveModalItem: (item) => dispatch(receiveModalItem(item)),
+  fetchCurrentUser: () => dispatch(fetchCurrentUser())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StoreShow);

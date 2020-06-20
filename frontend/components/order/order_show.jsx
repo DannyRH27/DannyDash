@@ -83,6 +83,7 @@ class OrderShow extends React.Component {
         origins: [origin1],
         destinations: [destinationA],
         travelMode: "WALKING",
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
         // transitOptions: TransitOptions,
         // drivingOptions: DrivingOptions,
         // unitSystem: UnitSystem,
@@ -186,7 +187,7 @@ class OrderShow extends React.Component {
                 <span>
                   The estimated distance for your order route is {distance} and
                   it would have taken approximately {durationText} for Danny to
-                  delivery this by walking.
+                  delivery this by walking. Hope you're not hungry!
                 </span>
               </div>
             </div>

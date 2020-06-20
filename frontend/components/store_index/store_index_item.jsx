@@ -31,7 +31,6 @@ class StoreIndexItem extends React.Component {
 
 
   calculateDispatchDistance(store, currentUser) {
-    console.log("Dispatching")
     function callback(response, status) {
       if (status == "OK") {
         var origins = response.originAddresses;
@@ -47,7 +46,6 @@ class StoreIndexItem extends React.Component {
             var to = destinations[j];
           }
         }
-        console.log(durationText)
         this.setState({ duration: durationText });
 
       }
@@ -60,6 +58,7 @@ class StoreIndexItem extends React.Component {
         origins: [origin1],
         destinations: [destinationA],
         travelMode: "WALKING",
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
         // transitOptions: TransitOptions,
         // drivingOptions: DrivingOptions,
         // unitSystem: UnitSystem,
@@ -83,7 +82,6 @@ class StoreIndexItem extends React.Component {
       0,
       store.filters[store.filters.length - 1].length
     );
-    // console.log(duration)
     const IndexItem =
       this.props.location.pathname === "/" ? (
         <div className="local-item-card">
@@ -130,7 +128,7 @@ class StoreIndexItem extends React.Component {
               </div>
               <div className="info-filters">
                 <span> $ • &nbsp; {tags} </span>
-                <span>{duration}</span>
+                <span>Approximately {duration}</span>
               </div>
               <div className="info-misc">
                 <div className="info-review">
