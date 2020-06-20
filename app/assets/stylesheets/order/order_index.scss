@@ -54,3 +54,61 @@
   margin-top: 24px;
 }
 
+.order-index-item {
+  padding: 16px;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+.order-item-title {
+  display: flex;
+  align-items: center;
+}
+
+.order-item-title span:nth-child(1) {
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 0px;
+  padding: 0px;
+}
+
+.order-item-title svg {
+  height: 13px;
+  width: 20px;
+  color: rgb(0, 131, 138);
+}
+
+.order-index-item span:nth-child(2) {
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(118, 118, 118);
+  text-align: left;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 0px;
+}
+
+#order-item-summary {
+  display: flex;
+}
+
+#order-item-summary span {
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(118, 118, 118);
+  text-align: left;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 0px;
+}
