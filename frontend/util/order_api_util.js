@@ -17,3 +17,10 @@ export const createOrder = (order) =>
     data: { order: order },
   });
 
+export const updateOrder = (order) =>
+  $.ajax({
+    url: `/api/orders/${order.id}`,
+    method: "PATCH",
+    data: { order: order },
+  });
+

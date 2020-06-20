@@ -39,3 +39,7 @@ export const createOrder = (order) => (dispatch) => {
     .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
 };
 
+export const updateOrder = (order) => (dispatch) =>
+  OrderAPIUtil.updateOrder(order)
+    .then((order) => dispatch(receiveOrder(order)));
+

@@ -32,9 +32,23 @@ class Api::OrdersController < ApplicationController
     end
   end
 
+  def update
+    @order = Order.find_by(id: params[:order][:id])
+    @cart = current_user.cart
+    if @order
+      @order.delivery_eta = params[:order][:deliveryEta]
+      @order.save
+      render :show
+    elsif !@order
+      render json: ['Order not found'], status: 404
+    else
+      render json: @order.errors.full_messages, status: 404
+    end
+  end
+
   private
 
   def order_params
-    params.require(:order).permit(:id, :contents, :customer_id, :store, :total, :created_at)
+    params.require(:order).permit(:id, :contents, :customer_id, :store, :total, :delivery_eta, :created_at)
   end
 end

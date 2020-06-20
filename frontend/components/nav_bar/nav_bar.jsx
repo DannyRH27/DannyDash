@@ -29,11 +29,11 @@ class NavBar extends React.Component {
   }
 
   componentDidMount() {
+    const { currentUser } = this.props;
     this._isMounted = true;
-    if (this.props.location.pathname === "/home") {
-      this.props.fetchStores();
-    }
-    this.props.fetchOrders();
+
+    this.props.location.pathname === "/home" ? this.props.fetchStores() : null
+    currentUser ? this.props.fetchOrders() : null
   }
 
   componentDidUpdate(prevProps) {

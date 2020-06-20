@@ -78,7 +78,7 @@ class SideDrawer extends React.Component {
             </Link>
           </li>
           <li onClick={handleToggle}>
-            <Link to="/">
+            <Link to="/orders">
               <p className="side-bar-icon">
                 <RiFileList3Line />
               </p>

@@ -11,15 +11,20 @@ import StoreShowContainer from './store_show/store_show_container';
 import SplashContainer from './splash/splash_container';
 import CheckoutIndexContainer from './checkout/checkout_index_container';
 import OrderShowContainer from './order/order_show_container';
+import OrderIndexContainer from './order/order_index_container';
 import Modal from "./modal/modal";
 
 const App = () => (
   <div style={{ height: "100%" }}>
     <header>
-        <Switch>
-          <AuthRoute exact path={["/", "/login", "/signup"]} component={SessionFormNavBar} />
-          <Route path="/" component={NavBarContainer} /> 
-        </Switch>
+      <Switch>
+        <AuthRoute
+          exact
+          path={["/", "/login", "/signup"]}
+          component={SessionFormNavBar}
+        />
+        <Route path="/" component={NavBarContainer} />
+      </Switch>
     </header>
     <main>
       <Switch>
@@ -27,13 +32,16 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
       </Switch>
-      <Modal/>
-      <ProtectedRoute path="/checkout" component={CheckoutIndexContainer} />
+      <Modal />
       <Route path="/home" component={StoreIndexContainer} />
       <Route path="/filters/:filter" component={StoreIndexContainer} />
       <Route path="/search/:fragment" component={StoreIndexContainer} />
       <Route path="/stores/:storeId" component={StoreShowContainer} />
-      <Route path="/orders/:orderId" component={OrderShowContainer} />
+      <ProtectedRoute path="/checkout" component={CheckoutIndexContainer} />
+      <Switch>
+        <ProtectedRoute path="/orders/:orderId" component={OrderShowContainer} />
+        <ProtectedRoute exact path="/orders" component={OrderIndexContainer} />
+      </Switch>
     </main>
   </div>
 );
