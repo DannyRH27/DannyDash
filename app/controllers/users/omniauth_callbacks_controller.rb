@@ -6,7 +6,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         if @user.persisted?
             login!(@user)
             redirect_to "#/home"
-
+            @cart = @user.cart || Cart.create(customer_id: @user.id)
             sign_in @user, event: :authentication
             set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
         else
