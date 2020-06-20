@@ -6,6 +6,7 @@ import StoreShowMenu from './store_show_menu';
 import { HashLink } from "react-router-hash-link";
 import { Link, animateScroll as scroll } from "react-scroll";
 import StarRatings from "react-star-ratings";
+import { currentUser } from '../../util/session_api_util';
 
 
 class StoreShow extends React.Component {
@@ -21,17 +22,25 @@ class StoreShow extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    const { storeId, fetchStore, fetchCurrentUser, fetchMenus, fetchItems } = this.props;
+    const { storeId, fetchStore, currentUser, fetchCurrentUser, fetchMenus, fetchItems } = this.props;
      var dispatchUser = {};
-     fetchCurrentUser()
-       .then((action) => {
-         dispatchUser = action.currentUser;
-       })
-       .then(() => {
-         fetchStore(storeId).then((store) => {
-           this.calculateDispatchDistance(store.payload, dispatchUser);
+     if (currentUser) {
+       fetchCurrentUser()
+         .then((action) => {
+           dispatchUser = action.currentUser;
+         })
+         .then(() => {
+           fetchStore(storeId).then((store) => {
+             this.calculateDispatchDistance(store.payload, dispatchUser);
+           });
          });
+     } else {
+       fetchStore(storeId).then((store) => {
+         this.calculateDispatchDistance(store.payload, dispatchUser);
        });
+     }
+     
+     
     fetchMenus(storeId);
     fetchItems(storeId);
   }
@@ -67,7 +76,8 @@ class StoreShow extends React.Component {
       }
     }
     var origin1 = store.address;
-    var destinationA = currentUser.address;
+    var destinationA =
+      currentUser.address || new google.maps.LatLng(37.75383, -122.401772);
     var service = new google.maps.DistanceMatrixService();
     service.getDistanceMatrix(
       {

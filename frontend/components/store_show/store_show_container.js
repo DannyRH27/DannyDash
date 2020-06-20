@@ -18,7 +18,8 @@ const mapStateToProps = (state, { match }) => {
         storeId,
         store,
         menus,
-        items
+        items,
+        currentUser : state.session.currentUser
     };
 };
 

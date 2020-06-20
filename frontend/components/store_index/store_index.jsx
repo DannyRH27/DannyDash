@@ -54,37 +54,43 @@ class StoreIndex extends React.Component {
           : <span>All Restaurants</span>
     return (
       <div>
-        <div className='store-index-container'>
-          <div className='store-index-box'>
-            <div className='filter-list-container'>
-              <div className='filter-list'>
-                <div className='filter-list-header'>
+        <div className="store-index-container">
+          <div className="store-index-box">
+            <div className="filter-list-container">
+              <div className="filter-list">
+                <div className="filter-list-header">
                   {FilterHeader}
                   <span>{Object.keys(stores).length} STORES NEARBY</span>
                 </div>
-                <div className='filter-list-index'>
-                    {filters.map(filter => (
-                        <Link key={filter.id} to={`/filters/${filter.filterTitle.split(" ").join(" ")}`}>
-                          <FilterIndexItem filter={filter} />
-                        </Link>
-                    ))}
+                <div className="filter-list-index">
+                  {filters.map((filter) => (
+                    <Link
+                      key={filter.id}
+                      to={`/filters/${filter.filterTitle.split(" ").join(" ")}`}
+                    >
+                      <FilterIndexItem filter={filter} />
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
-            <div className='store-list-container'>
-              <div className='store-list'>
-                  {stores.map(store => (
-                      <Link key={store.id}to={`/stores/${store.id}`}>
-                        <StoreIndexItem fetchCurrentUser={fetchCurrentUser} fetchStore={fetchStore} fetchStores={fetchStores} store={store} />
-                      </Link>
-                  ))}
+            <div className="store-list-container">
+              <div className="store-list">
+                {stores.map((store) => (
+                  <Link key={store.id} to={`/stores/${store.id}`}>
+                    <StoreIndexItem
+                      fetchCurrentUser={fetchCurrentUser}
+                      fetchStore={fetchStore}
+                      fetchStores={fetchStores}
+                      store={store}
+                    />
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
     );
   }
 }

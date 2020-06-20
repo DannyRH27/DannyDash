@@ -12,38 +12,55 @@ class Splash extends React.Component{
   }
 
   render(){
-    const { stores } = this.props;
-    if (stores === null || stores === undefined || stores === false) return null;
-    const locals = [];
+        const {
+          fetchCurrentUser,
+          stores,
+          fetchStore,
+          fetchStores,
+        } = this.props;
+
+    let locals = {};
+    // console.log("WTF")
     const storeIds = Object.keys(stores);
+    console.log(stores)
     storeIds.forEach(id => {
-      while (locals.length < 6){
-        const random = storeIds[Math.floor(Math.random() * storeIds.length)]
-        !locals.includes(stores[random]) ? locals.push(stores[random]) : null;
+      if (Object.values(locals).length === 6){
+        return
+      } else {
+        locals[id] = stores[id];
       }
     })
+    console.log(Object.values(locals).length)
+
     return (
       <div>
-        <div 
+        <div
           className="splash-container"
-          style={{ backgroundImage: `url(https://dannydash-seeds.s3-us-west-1.amazonaws.com/Splash.jpg)` }}>
+          style={{
+            backgroundImage: `url(https://dannydash-seeds.s3-us-west-1.amazonaws.com/Splash.jpg)`,
+          }}
+        >
           <div className="splash-card">
             <div className="splash-text">
               <h1>DannyDash</h1>
               <span>Your favorite stores, delivered</span>
               <Link to="/home">Order Now</Link>
             </div>
-            
           </div>
         </div>
         <div className="local-favorites-container">
           <div className="local-favorites-card">
             <h1>Local Favorites</h1>
             <div className="local-favorites-index">
-              {locals.map((store, idx) => (
+              {Object.values(locals).map((store, idx) => (
                 <div key={idx}>
                   <Link to={`/stores/${store.id}`}>
-                    <StoreIndexItem store={store} />
+                    <StoreIndexItem
+                      fetchCurrentUser={fetchCurrentUser}
+                      fetchStore={fetchStore}
+                      fetchStores={fetchStores}
+                      store={store}
+                    />
                   </Link>
                 </div>
               ))}
@@ -57,7 +74,7 @@ class Splash extends React.Component{
           {/* <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/Communal3.jpg" alt="" /> */}
         </div>
       </div>
-    )
+    );
   }; 
 };
 export default Splash;

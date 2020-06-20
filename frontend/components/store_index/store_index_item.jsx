@@ -15,17 +15,24 @@ class StoreIndexItem extends React.Component {
   }
 
   componentDidMount(){
+    
     const { fetchCurrentUser, fetchStore, store, currentUser } = this.props;
-    var dispatchUser = {};
-    fetchCurrentUser()
-      .then(action => {
-       dispatchUser = action.currentUser; 
-      })
-      .then(() => {
-        fetchStore(store.id).then((store) => {
-          this.calculateDispatchDistance(store.payload, dispatchUser);
+    if (currentUser) {
+      var dispatchUser = {};
+      fetchCurrentUser()
+        .then((action) => {
+          dispatchUser = action.currentUser;
+        })
+        .then(() => {
+          fetchStore(store.id).then((store) => {
+            this.calculateDispatchDistance(store.payload, dispatchUser);
+          });
         });
-      })
+    } else {
+      fetchStore(store.id).then((store) => {
+        this.calculateDispatchDistance(store.payload, dispatchUser);
+      });
+    }
     
   }
 
@@ -51,7 +58,10 @@ class StoreIndexItem extends React.Component {
       }
     }
     var origin1 = store.address
-    var destinationA = currentUser.address;
+    var destinationA = new google.maps.LatLng(37.75383, -122.401772);
+    if (currentUser) {
+      destinationA = currentUser.address
+    }
     var service = new google.maps.DistanceMatrixService();
     service.getDistanceMatrix(
       {
@@ -73,7 +83,7 @@ class StoreIndexItem extends React.Component {
     const { store } = this.props;
     const { duration } = this.state;
     // if (store === null || store === undefined || store === false) return null;
-    if (duration === '') return null;
+    // if (this.props.location.pathname === "/home" && duration === '') return null;
     // if (store.filters === undefined) return null;
     const tags = store.filters.map((filter, idx) => (
       <p key={idx}>{filter}, &nbsp;</p>
@@ -94,6 +104,9 @@ class StoreIndexItem extends React.Component {
             <p>
               <IoIosCheckmarkCircle />
             </p>
+          </div>
+          <div className="local-item-eta">
+            <span>{duration} • Free delivery</span>
           </div>
         </div>
       ) : (
