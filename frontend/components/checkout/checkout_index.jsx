@@ -62,8 +62,25 @@ class CheckoutIndex extends React.Component {
   render(){
     const { store, cart, currentUser, updateCart } = this.props;
     if (cart.contents === undefined) return null;
-    
-    const Tooltip = "Confused I am so <br /> confused LOREM IPSUM THIS BITCH";
+    const PlaceOrder = currentUser.address ? (
+      <button onClick={this.placeOrder}>
+        Place Order
+      </button>
+    ) : (
+      <button id="disabled" onClick={this.placeOrder} disabled>
+        Place Order
+      </button>
+    );
+    const CheckoutMap = currentUser.address ? (
+      <div className="checkout-section-details">
+        <div id="map"></div>
+        <p id="address"></p>
+      </div>
+    ) : (
+      <div className="checkout-section-details">
+        <p id="address">Please enter an address</p>
+      </div>
+    );
     return (
       <div className="checkout-index-wrapper">
         <div className="checkout-index-container">
@@ -73,10 +90,7 @@ class CheckoutIndex extends React.Component {
                 <div className="checkout-section-header">
                   <h2>Address</h2>
                 </div>
-                <div className="checkout-section-details">
-                  <div id="map"></div>
-                  <p id="address"></p>
-                </div>
+                {CheckoutMap}
               </div>
               <div className="checkout-section">
                 <div className="checkout-section-header">
@@ -115,7 +129,7 @@ class CheckoutIndex extends React.Component {
               <div id="button-section" className="checkout-section">
                 <div className="checkout-section-header"></div>
                 <div className="checkout-section-details">
-                  <button onClick={this.placeOrder}>Place Order</button>
+                  {PlaceOrder}
                 </div>
               </div>
             </div>

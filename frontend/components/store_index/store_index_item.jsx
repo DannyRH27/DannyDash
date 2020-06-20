@@ -53,9 +53,9 @@ class StoreIndexItem extends React.Component {
                 </div>
                 <div className='info-misc'>
                   <div className='info-review'>
-                    <span>5.0</span>
+                    <span>{store.rating}</span>
                     <p><AiFillStar /></p>
-                    <span> 10000+ ratings</span>
+                    <span> {store.ratingCount} ratings</span>
                   </div>
                 </div>
               </div>

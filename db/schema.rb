@@ -141,6 +141,8 @@ ActiveRecord::Schema.define(version: 2020_06_18_061855) do
     t.text "description"
     t.integer "status", null: false
     t.point "coordinate", null: false
+    t.decimal "rating", null: false
+    t.integer "rating_count", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_stores_on_name", unique: true

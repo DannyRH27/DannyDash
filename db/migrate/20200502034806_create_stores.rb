@@ -7,7 +7,8 @@ class CreateStores < ActiveRecord::Migration[5.2]
       t.text :description
       t.integer :status, null: false
       t.point :coordinate, null: false
-
+      t.numeric :rating, null: false 
+      t.integer :rating_count, null: false
       t.timestamps
     end
     add_index :stores, :name, unique: true

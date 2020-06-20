@@ -5,6 +5,8 @@ import { FaStar } from "react-icons/fa";
 import StoreShowMenu from './store_show_menu';
 import { HashLink } from "react-router-hash-link";
 import { Link, animateScroll as scroll } from "react-scroll";
+import StarRatings from "react-star-ratings";
+
 
 class StoreShow extends React.Component {
   constructor(props) {
@@ -49,24 +51,16 @@ class StoreShow extends React.Component {
                   <h1>{store.name}</h1>
                   <span>Open Hours: {store.hours[0]}</span>
                   <div className="store-show-rating">
-                    <div className="star-rating">
-                      <p>
-                        <FaStar />
-                      </p>
-                      <p>
-                        <FaStar />
-                      </p>
-                      <p>
-                        <FaStar />
-                      </p>
-                      <p>
-                        <FaStar />
-                      </p>
-                      <p>
-                        <FaStar />
-                      </p>
-                    </div>
-                    <span>5.0 (14264 Ratings)</span>
+                    <StarRatings
+                      rating={parseFloat(store.rating)}
+                      starRatedColor="black"
+                      starDimension="20px"
+                      starSpacing="1px"
+                      numberOfStars={5}
+                    />
+                    <span>
+                      {store.rating} ({store.ratingCount} Ratings)
+                    </span>
                   </div>
                 </div>
                 <div className="delivery-header-container">
@@ -104,7 +98,13 @@ class StoreShow extends React.Component {
             </div>
             <div className="menu-container">
               {Object.values(menus).map((menu, idx) => (
-                <StoreShowMenu receiveModalItem={receiveModalItem} openModal={openModal} key={idx} menu={menu} items={items} />
+                <StoreShowMenu
+                  receiveModalItem={receiveModalItem}
+                  openModal={openModal}
+                  key={idx}
+                  menu={menu}
+                  items={items}
+                />
               ))}
             </div>
           </div>

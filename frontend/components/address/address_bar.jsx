@@ -25,7 +25,7 @@ class AddressBar extends React.Component {
     const { currentUser, update } = this.props;
     const { openDropdown } = this.state;
     const AddressPrompt = currentUser && currentUser.address || openDropdown ? null : ( 
-      <div className="address-prompt">
+      <div onClick={this.handleClick} className="address-prompt">
         Please enter an address
       </div> 
     )
