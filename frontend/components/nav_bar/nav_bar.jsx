@@ -26,21 +26,22 @@ class NavBar extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
     this.handleCartToggle = this.handleCartToggle.bind(this);
     this.goBack = this.goBack.bind(this);
+    this.hideSideBars = this.hideSideBars.bind(this);
   }
 
   componentDidMount() {
     const { currentUser } = this.props;
     this._isMounted = true;
 
-    this.props.location.pathname === "/home" ? this.props.fetchStores() : null
-    currentUser ? this.props.fetchOrders() : null
+    this.props.location.pathname === "/home" ? this.props.fetchStores() : null;
+    currentUser ? this.props.fetchOrders() : null;
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
       window.scrollTo(0, 0);
-      this.setState({sideDrawerOpen: false})
-      this.setState({cartDrawerOpen: false})
+      this.setState({ sideDrawerOpen: false });
+      this.setState({ cartDrawerOpen: false });
     }
 
     if (this.props.location.pathname === "/home") {
@@ -50,6 +51,11 @@ class NavBar extends React.Component {
 
   componentWillUnmount() {
     this._isMounted = false;
+  }
+
+  hideSideBars() {
+    this.setState({ sideDrawerOpen: false });
+    this.setState({ cartDrawerOpen: false });
   }
 
   handleToggle() {
@@ -70,12 +76,19 @@ class NavBar extends React.Component {
     }
   }
 
-  goBack(){
-    this.props.history.goBack()
+  goBack() {
+    this.props.history.goBack();
   }
 
   render() {
-    const { currentUser, fetchCart, fetchCartStore, cart, update, cartStore } = this.props;
+    const {
+      currentUser,
+      fetchCart,
+      fetchCartStore,
+      cart,
+      update,
+      cartStore,
+    } = this.props;
     const SessionButtons = currentUser ? null : (
       <ul>
         <li className="splash-signup">
@@ -86,12 +99,16 @@ class NavBar extends React.Component {
         </li>
       </ul>
     );
-    const DrawerToggle = this.props.location.pathname === "/checkout"
-      ? null : (
-        <div onClick={this.handleToggle}>
+    const DrawerToggle =
+      this.props.location.pathname === "/checkout" ? null : (
+        <div onClick={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          this.handleToggle();
+          }}>
           <DrawerToggleButton />
-        </div> 
-      )
+        </div>
+      );
     const NavbarLogo =
       this.props.location.pathname === "/checkout" ? (
         <div className="navbar_logo" onClick={this.goBack}>
@@ -102,20 +119,24 @@ class NavBar extends React.Component {
           DannyDash
         </Link>
       );
+      const fuck = "FUCKL"
     return (
       <header className="navbar">
         <nav className="navbar_navigation">
-          {DrawerToggle} 
+          {DrawerToggle}
           {NavbarLogo}
-          <AddressBar
-            update={update}
-            currentUser={currentUser}
-          />
+          <AddressBar update={update} currentUser={currentUser} />
           <div className="spacer"></div>
-          <SearchBar/>
-          <div className="navbar_nav-items">{SessionButtons}
-          </div>
-          <div onClick={this.handleCartToggle} className="cart-toggle">
+          <SearchBar />
+          <div className="navbar_nav-items">{SessionButtons}</div>
+          <div
+            className="cart-toggle"
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              this.handleCartToggle();
+            }}
+          >
             <MdShoppingCart />
           </div>
           <SideDrawer
@@ -123,15 +144,17 @@ class NavBar extends React.Component {
             show={this.state.sideDrawerOpen}
             handleToggle={this.handleToggle}
             currentUser={currentUser}
+            hideSideBars={this.hideSideBars}
           />
           <CartDrawer
             show={this.state.cartDrawerOpen}
+            hideSideBars={this.hideSideBars}
             handleCartToggle={this.handleCartToggle}
             currentUser={currentUser}
-            fetchCart = {fetchCart}
-            fetchCartStore = {fetchCartStore}
-            cart = {cart}
-            cartStore = {cartStore}
+            fetchCart={fetchCart}
+            fetchCartStore={fetchCartStore}
+            cart={cart}
+            cartStore={cartStore}
           />
         </nav>
       </header>

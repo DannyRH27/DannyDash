@@ -17,12 +17,22 @@ class SideDrawer extends React.Component {
     this.signOut = this.signOut.bind(this);
   }
 
+  componentDidMount() {
+    window.addEventListener("click", this.props.hideSideBars);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("click", this.props.hideSideBars);
+  }
+
+  
+
   signOut() {
     const { logout, handleToggle } = this.props;
-      logout().then(() => {
-        handleToggle()
-        this.props.history.push("/")
-      });
+    logout().then(() => {
+      handleToggle();
+      this.props.history.push("/");
+    });
   }
 
   render() {

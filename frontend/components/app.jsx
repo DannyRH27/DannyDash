@@ -40,7 +40,7 @@ const App = () => (
       <ProtectedRoute path="/checkout" component={CheckoutIndexContainer} />
       <Switch>
         <ProtectedRoute path="/orders/:orderId" component={OrderShowContainer} />
-        <ProtectedRoute exact path="/orders" component={OrderIndexContainer} />
+        <Route exact path="/orders" component={OrderIndexContainer} />
       </Switch>
     </main>
   </div>

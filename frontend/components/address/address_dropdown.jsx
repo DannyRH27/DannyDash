@@ -37,7 +37,7 @@ class AddressDropdown extends React.Component {
   }
 
   render() {
-    const { currentUser, closeDropdown } = this.props;
+    const { currentUser, closeDropdown, openDropdown} = this.props;
     const placeholdertext = currentUser ? "Please enter a new address" : "Please sign in/sign up"
     const Dropdown = currentUser ? (
       <input
@@ -52,11 +52,12 @@ class AddressDropdown extends React.Component {
         onKeyPress={this.handleEnter}
         placeholder={placeholdertext}
         type="text"
+        id="disabled"
         disabled
       ></input>
     );
     return (
-      <div className="address-dropdown" onClick={(e) => e.stopPropagation()}>
+      <div className={`address-dropdown ${openDropdown ? "animate-dropdown" : ""}`} onClick={(e) => e.stopPropagation()}>
         <div
           className="address-dropdown-input"
         >

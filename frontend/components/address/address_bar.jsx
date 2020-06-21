@@ -24,28 +24,33 @@ class AddressBar extends React.Component {
   render() {
     const { currentUser, update } = this.props;
     const { openDropdown } = this.state;
-    const AddressPrompt = currentUser && currentUser.address || openDropdown ? null : ( 
-      <div onClick={this.handleClick} className="address-prompt">
+    const AddressPrompt = currentUser && currentUser.address ? null : ( 
+      <div onClick={this.handleClick} className={`address-prompt ${openDropdown ? "animate-prompt" : ""}`}>
         Please enter an address
       </div> 
     )
-    const Address = currentUser && currentUser.address 
-      ? <span onClick={this.handleClick}>{currentUser.address}</span> 
-      : <span onClick={this.handleClick}>Your Address</span>
+    const Address =
+      currentUser && currentUser.address ? (
+        <span onClick={this.handleClick}>
+          {currentUser.address}
+        </span>
+      ) : (
+        <span onClick={this.handleClick}>
+          Your Address
+        </span>
+      );
     return (
       <div className="address-input">
         <span>ASAP</span>
         <p>to</p>
         {Address}
         {AddressPrompt}
-        { openDropdown ? 
-          <AddressDropdown
-            currentUser = {currentUser}
-            update = {update}
-            closeDropdown = {this.closeDropdown}/> 
-            : null
-        }
-        
+        <AddressDropdown
+          currentUser = {currentUser}
+          update = {update}
+          openDropdown = {openDropdown}
+          closeDropdown = {this.closeDropdown}
+        /> 
       </div>
     )
   }
