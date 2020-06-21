@@ -72,7 +72,13 @@ class StoreShow extends React.Component {
           }
         }
         this.setState({ duration: duration });
-        this.setState({ distance: distance.split(" ")[0] });
+        if (distance.split(" ")[1] === "ft"){
+          this.setState({
+            distance: (parseInt(distance.split(" ")[0]) / 5280).toFixed(2),
+          });
+        } else {
+          this.setState({ distance: distance.split(" ")[0] });
+        }
       }
     }
     var origin1 = store.address;
@@ -101,6 +107,8 @@ class StoreShow extends React.Component {
     if (distance === '') return null;
     if (store === null || store === undefined || store === false) return null;
     if (menus === null || menus === undefined || menus === false) return null;
+
+    if ( distance)
     var days = Math.trunc(duration / 86400)
     var minutes = Math.trunc(((duration % 86400) % 3600) / 60);
     var minMinuteRange = Math.trunc(((duration % 86400) % 3600) / 60) - 3;
