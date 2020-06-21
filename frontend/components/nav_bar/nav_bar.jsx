@@ -26,7 +26,8 @@ class NavBar extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
     this.handleCartToggle = this.handleCartToggle.bind(this);
     this.goBack = this.goBack.bind(this);
-    this.hideSideBars = this.hideSideBars.bind(this);
+    this.hideSideBar = this.hideSideBar.bind(this);
+    this.hideCartSideBar = this.hideCartSideBar.bind(this);
   }
 
   componentDidMount() {
@@ -53,8 +54,11 @@ class NavBar extends React.Component {
     this._isMounted = false;
   }
 
-  hideSideBars() {
+  hideSideBar() {
     this.setState({ sideDrawerOpen: false });
+  }
+
+  hideCartSideBar() {
     this.setState({ cartDrawerOpen: false });
   }
 
@@ -144,11 +148,11 @@ class NavBar extends React.Component {
             show={this.state.sideDrawerOpen}
             handleToggle={this.handleToggle}
             currentUser={currentUser}
-            hideSideBars={this.hideSideBars}
+            hideSideBar={this.hideSideBar}
           />
           <CartDrawer
             show={this.state.cartDrawerOpen}
-            hideSideBars={this.hideSideBars}
+            hideCartSideBar={this.hideCartSideBar}
             handleCartToggle={this.handleCartToggle}
             currentUser={currentUser}
             fetchCart={fetchCart}

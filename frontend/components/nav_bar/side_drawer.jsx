@@ -18,11 +18,11 @@ class SideDrawer extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener("click", this.props.hideSideBars);
+    window.addEventListener("click", this.props.hideSideBar);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("click", this.props.hideSideBars);
+    window.removeEventListener("click", this.props.hideSideBar);
   }
 
   

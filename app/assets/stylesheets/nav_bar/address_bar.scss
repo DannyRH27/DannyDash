@@ -41,17 +41,18 @@
   position: absolute;
   top: 105%;
   background-color: black;
-  max-height: calc(100vh - 70px);
+  max-height: 0px;
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 101;
   box-shadow: 0px 2px 6px rgb(89, 89, 89);
   border-radius: 5px;
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 300ms ease-in-out 0s;
 }
 
 .animate-dropdown {
+  max-height: 100px;
   opacity: 1;
 }
 
@@ -92,12 +93,13 @@
   left: 377px;
   padding: 3px 0px 3px 10px;
   opacity: 1;
-  transition: opacity 1s;
+  transition: opacity 300ms ease-in-out 0s;
   cursor: pointer;
 }
 
 .animate-prompt {
   opacity: 0;
+  cursor: default;
 }
 
 
