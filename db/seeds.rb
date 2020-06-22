@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# Heroku doesn't seed in order so set seeds equal to variables and then access ids in joins table.
+# Heroku doesn't seed in order so set seeds exqual to variables and then access ids in joins table.
 
 # users = User.create([
 #     {fname: 'Danny', lname: 'Huang', email: 'drh8@gmail.com', password: 'cannotcode', address: '1', phone_number: 1234567890,},

@@ -20,13 +20,13 @@ class UserShow extends React.Component {
   update(field) {
     return (e) =>{
       var user = {...this.state.user}
+      const fields = Object.entries(this.state.user);
+
       user[field] = e.currentTarget.value
       this.setState({user})
       
-      this.setState({disabled: false})
-      // this.setState({
-      //   currentUser[field]: e.currentTarget.value,
-      // });
+      this.setState({disabled: false})      
+
     }
   }
 
@@ -42,9 +42,7 @@ class UserShow extends React.Component {
       }
     })
     
-    console.log(user)
-
-    // this.props.signup(user).then(() => this.props.history.push("/home"));
+    update(user)
   }
 
   render() {

@@ -24,9 +24,7 @@ class Splash extends React.Component{
     const storeIds = Object.keys(stores);
     console.log(stores)
     storeIds.forEach(id => {
-      if (Object.values(locals).length === 6){
-        return
-      } else {
+      if (Object.values(locals).length !== 6){
         locals[id] = stores[id];
       }
     })
