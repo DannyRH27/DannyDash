@@ -12,6 +12,7 @@ import SplashContainer from './splash/splash_container';
 import CheckoutIndexContainer from './checkout/checkout_index_container';
 import OrderShowContainer from './order/order_show_container';
 import OrderIndexContainer from './order/order_index_container';
+import UserShowContainer from './user/user_show_container';
 import Modal from "./modal/modal";
 
 const App = () => (
@@ -34,6 +35,7 @@ const App = () => (
       </Switch>
       <Modal />
       <Route path="/home" component={StoreIndexContainer} />
+      <Route path="/users/:userId" component={UserShowContainer} />
       <Route path="/filters/:filter" component={StoreIndexContainer} />
       <Route path="/search/:fragment" component={StoreIndexContainer} />
       <Route path="/stores/:storeId" component={StoreShowContainer} />
