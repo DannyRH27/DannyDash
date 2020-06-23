@@ -31,7 +31,7 @@ store1_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WokGo2.j
 store1.photos.attach(io: store1_photo1, filename: 'WokGo.jpg')
 store1.photos.attach(io: store1_photo2, filename: 'WokGo2.jpg')
 
-store2 = Store.create!(name:'Marugame Udon',address: '3251 20th Ave space 184, San Francisco, CA 94132', hours: ['11:00AM - 10:00PM'], description: 'Hip spot where an array of udon dishes are prepared with noodles hand-pulled in an open kitchen.', status: 1, coordinate: '(37.728180, -122.477020)', rating: 4.6, rating_count: 2184 )
+store2 = Store.create!(name:'Marugame Udon',address: '3251 20th Ave 184, San Francisco, CA 94132', hours: ['11:00AM - 10:00PM'], description: 'Hip spot where an array of udon dishes are prepared with noodles hand-pulled in an open kitchen.', status: 1, coordinate: '(37.728180, -122.477020)', rating: 4.6, rating_count: 2184 )
 store2_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Udon.jpg')
 store2_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Udon2.jpg')
 store2.photos.attach(io: store2_photo1, filename: 'Udon.jpg')
@@ -109,45 +109,7 @@ store11.photos.attach(io: store11_photo2, filename: 'RI2.jpg')
 # 8. Hot Sauce & Panko
 # 9. Rooster & Rice
 # 10. Zen
-# Store Categories (Joins Table) (Consider Refactoring)
-# StoreCategory.destroy_all
-# store_category1 = StoreCategory.create!(store_id: store1.id, category_id: category6.id)
-# store_category2 = StoreCategory.create!(store_id: store1.id, category_id: category4.id)
-# store_category3 = StoreCategory.create!(store_id: store1.id, category_id: category1.id)
-# store_category4 = StoreCategory.create!(store_id: store1.id, category_id: category5.id)
-# store_category5 = StoreCategory.create!(store_id: store1.id, category_id: category3.id)
-# store_category6 = StoreCategory.create!(store_id: store2.id, category_id: category6.id)
-# store_category7 = StoreCategory.create!(store_id: store2.id, category_id: category3.id)
-# store_category8 = StoreCategory.create!(store_id: store2.id, category_id: category4.id)
-# store_category9 = StoreCategory.create!(store_id: store2.id, category_id: category1.id)
-# store_category10 = StoreCategory.create!(store_id: store2.id, category_id: category5.id)
-# store_category11 = StoreCategory.create!(store_id: store3.id, category_id: category6.id)
-# store_category12 = StoreCategory.create!(store_id: store4.id, category_id: category6.id)
-# store_category13 = StoreCategory.create!(store_id: store4.id, category_id: category3.id)
-# store_category14 = StoreCategory.create!(store_id: store4.id, category_id: category1.id)
-# store_category15 = StoreCategory.create!(store_id: store4.id, category_id: category4.id)
-# store_category16 = StoreCategory.create!(store_id: store5.id, category_id: category6.id)
-# store_category17 = StoreCategory.create!(store_id: store5.id, category_id: category5.id)
-# store_category18 = StoreCategory.create!(store_id: store5.id, category_id: category3.id)
-# store_category19 = StoreCategory.create!(store_id: store6.id, category_id: category2.id)
-# store_category20 = StoreCategory.create!(store_id: store6.id, category_id: category1.id)
-# store_category21 = StoreCategory.create!(store_id: store7.id, category_id: category6.id)
-# store_category22 = StoreCategory.create!(store_id: store7.id, category_id: category4.id)
-# store_category23 = StoreCategory.create!(store_id: store7.id, category_id: category1.id)
-# store_category24 = StoreCategory.create!(store_id: store8.id, category_id: category6.id)
-# store_category25 = StoreCategory.create!(store_id: store8.id, category_id: category3.id)
-# store_category26 = StoreCategory.create!(store_id: store8.id, category_id: category4.id)
-# store_category27 = StoreCategory.create!(store_id: store8.id, category_id: category5.id)
-# store_category28 = StoreCategory.create!(store_id: store9.id, category_id: category5.id)
-# store_category29 = StoreCategory.create!(store_id: store9.id, category_id: category2.id)
-# store_category30 = StoreCategory.create!(store_id: store9.id, category_id: category6.id)
-# store_category31 = StoreCategory.create!(store_id: store10.id, category_id: category1.id)
-# store_category32 = StoreCategory.create!(store_id: store10.id, category_id: category2.id)
-# store_category33 = StoreCategory.create!(store_id: store10.id, category_id: category3.id)
-# store_category34 = StoreCategory.create!(store_id: store10.id, category_id: category4.id)
-# store_category35 = StoreCategory.create!(store_id: store10.id, category_id: category5.id)
-# store_category36 = StoreCategory.create!(store_id: store10.id, category_id: category6.id)
-
+# 11. RI XV
 
 # Filters 
 Filter.destroy_all
@@ -256,6 +218,7 @@ store_filter36 = StoreFilter.create!(store_id: store11.id, filter_id: filter6.id
 store_filter38 = StoreFilter.create!(store_id: store11.id, filter_id: filter13.id)
 store_filter39 = StoreFilter.create!(store_id: store11.id, filter_id: filter19.id)
 store_filter40 = StoreFilter.create!(store_id: store11.id, filter_id: filter20.id)
+store_filter41 = StoreFilter.create!(store_id: store6.id, filter_id: filter4.id)
 
 # Menus
 Menu.destroy_all
@@ -263,6 +226,7 @@ ri_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store11.id)
 ri_menu2 = Menu.create!(title: 'Fine Dining', rank: 2, store_id: store11.id)
 ri_menu3 = Menu.create!(title: 'Asian', rank: 3, store_id: store11.id)
 ri_menu4 = Menu.create!(title: 'Wholesale', rank: 4, store_id: store11.id)
+
 
 # Items
 Item.destroy_all
@@ -316,3 +280,73 @@ menu_item6 = MenuItem.create!(menu_id: ri_menu4.id, item_id: item6.id, rank: 12,
 menu_item7 = MenuItem.create!(menu_id: ri_menu4.id, item_id: item7.id, rank: 13, store_id: store11.id)
 menu_item8 = MenuItem.create!(menu_id: ri_menu4.id, item_id: item8.id, rank: 14, store_id: store11.id)
 
+
+wk_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store1.id)
+wk_menu2 = Menu.create!(title: 'Appetizers', rank: 2, store_id: store1.id)
+wk_menu3 = Menu.create!(title: 'Soups & Noodle Soups', rank: 3, store_id: store1.id)
+wk_menu4 = Menu.create!(title: 'Vegetarian Dishes', rank: 4, store_id: store1.id)
+
+wkitem1 = Item.create!(name: 'Salt & Pepper Chicken Wings', price: 10.99, description: 'Salt and pepper chicken wings are fried to a crunchy golden brown and then tossed in a garlic, red chili, white and black pepper mixture, that makes them flavorful and addictive.', store_id: store1.id)
+wkitem1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WokGo.jpg')
+wkitem1.photo.attach(io: wkitem1_photo, filename: 'WokGo.jpg')
+
+wkitem2 = Item.create!(name: 'Preserved Egg & Pork Porridge', description: 'Slow cooked until creamy and leaves you feeling nourished', price: 9.99, store_id: store1.id)
+wkitem2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WokGo2.jpg') 
+wkitem2.photo.attach(io: wkitem2_photo, filename: 'WokGo2.jpg')
+
+wkitem3 = Item.create!(name: 'Potstickers', description: 'Steam-fried dumplings made with round wrappers and stuffed with juicy fillings, traditionally pork and cabbage.',price: 35.00, store_id: store1.id)
+wkitem3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WKPotstickers.jpg')
+wkitem3.photo.attach(io: wkitem3_photo, filename: 'WKPotstickers.jpg')
+
+wkitem4 = Item.create!(name: 'Scallion Pancake', price: 8.99, description: 'Chinese, savory, unleavened flatbread folded with oil and minced scallions.',store_id: store1.id)
+wkitem4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WKGreenOnion.jpg')
+wkitem4.photo.attach(io: wkitem4_photo, filename: 'WKGreenOnion.jpg')
+
+wkitem5 = Item.create!(name: 'Wonton Noodle Soup', price: 9.99, description: 'Bok choy, shrimp, pork/prawn filling wontons, and egg noodles, ' ,store_id: store1.id)
+wkitem5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WKWontonNoodle.jpg')
+wkitem5.photo.attach(io: wkitem5_photo, filename: 'WKWontonNoodle.jpg')
+
+wkitem6 = Item.create!(name: 'Hot & Sour Soup', price: 6.99, description:'Pork shoulder, wood ear mushrooms, bamboo shoots, and tofu', store_id: store1.id)
+wkitem6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WKHotSour.jpg')
+wkitem6.photo.attach(io: wkitem6_photo, filename: 'WKHotSour.jpg')
+
+wkitem7 = Item.create!(name: 'Garlic Snow Pea Leaves', price: 9.99,description: 'Snow pea leaves, sesame oil, garlic, white pepper, vegetable oil', store_id: store1.id)
+wkitem7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WKPeaLeaves.jpg')
+wkitem7.photo.attach(io: wkitem7_photo, filename: 'WKPeaLeaves.jpg')
+
+wkitem8 = Item.create!(name: 'Chinese Broccoli', price: 8.99, description: 'Gai Lan, soy sauce, sesame oil, chinese rice wine, ginger', store_id: store1.id)
+wkitem8_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WKCBroccoli.jpg')
+wkitem8.photo.attach(io: wkitem8_photo, filename: 'WKCBroccoli.jpg')
+
+wkitem9 = Item.create!(name: 'Pickled Mustard Green Noodle Soup', price: 9.99, description: 'Pickled mustard greens, noodles, shredded pork, sesame oil, soy sauce', store_id: store1.id)
+wkitem9_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WKMustardSoup.jpg')
+wkitem9.photo.attach(io: wkitem9_photo, filename: 'WKMustardSoup.jpg')
+
+wkitem10 = Item.create!(name: 'Seafood Noodle Soup', price: 11.99, description: 'Bok choy, mussels, shrimp, squid, soy sauces, sesame sauce, and noodles', store_id: store1.id)
+wkitem10_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WKSeafoodSoup.jpg')
+wkitem10.photo.attach(io: wkitem10_photo, filename: 'WKSeafoodSoup.jpg')
+
+wkitem11 = Item.create!(name: 'Eggplant with Garlic Sauce', price: 9.99, description: 'Eggplant, soy sauce, black vinegar, red chili, and garlic', store_id: store1.id)
+wkitem11_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WKEggplant.jpg')
+wkitem11.photo.attach(io: wkitem11_photo, filename: 'WKEggplant.jpg')
+
+wkitem12 = Item.create!(name: 'Fried Tofu', price: 6.99, description: 'Soy Sauce, sesame oil, extra firm tofu, and green onion', store_id: store1.id)
+wkitem12_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WKFriedTofu.jpg')
+wkitem12.photo.attach(io: wkitem12_photo, filename: 'WKFriedTofu.jpg')
+
+wkmenu_item1 = MenuItem.create!(menu_id: wk_menu1.id, item_id: wkitem1.id, rank: 1, store_id: store1.id)
+wkmenu_item2 = MenuItem.create!(menu_id: wk_menu1.id, item_id: wkitem2.id, rank: 2, store_id: store1.id)
+wkmenu_item3 = MenuItem.create!(menu_id: wk_menu1.id, item_id: wkitem5.id, rank: 3, store_id: store1.id)
+wkmenu_item4 = MenuItem.create!(menu_id: wk_menu1.id, item_id: wkitem7.id, rank: 4, store_id: store1.id)
+wkmenu_item5 = MenuItem.create!(menu_id: wk_menu2.id, item_id: wkitem1.id, rank: 5, store_id: store1.id)
+wkmenu_item6 = MenuItem.create!(menu_id: wk_menu2.id, item_id: wkitem2.id, rank: 6, store_id: store1.id)
+wkmenu_item7 = MenuItem.create!(menu_id: wk_menu2.id, item_id: wkitem3.id, rank: 7, store_id: store1.id)
+wkmenu_item8 = MenuItem.create!(menu_id: wk_menu2.id, item_id: wkitem4.id, rank: 8, store_id: store1.id)
+wkmenu_item9 = MenuItem.create!(menu_id: wk_menu3.id, item_id: wkitem5.id, rank: 9, store_id: store1.id)
+wkmenu_item10 = MenuItem.create!(menu_id: wk_menu3.id, item_id: wkitem6.id, rank: 10, store_id: store1.id)
+wkmenu_item11 = MenuItem.create!(menu_id: wk_menu3.id, item_id: wkitem9.id, rank: 11, store_id: store1.id)
+wkmenu_item12 = MenuItem.create!(menu_id: wk_menu3.id, item_id: wkitem10.id, rank: 12, store_id: store1.id)
+wkmenu_item13 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem11.id, rank: 13, store_id: store1.id)
+wkmenu_item14 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem12.id, rank: 14, store_id: store1.id)
+wkmenu_item15 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem7.id, rank: 15, store_id: store1.id)
+wkmenu_item16 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem8.id, rank: 16, store_id: store1.id)

@@ -40,7 +40,6 @@ class StoreShow extends React.Component {
        });
      }
      
-     
     fetchMenus(storeId);
     fetchItems(storeId);
   }
@@ -56,7 +55,10 @@ class StoreShow extends React.Component {
   }
 
   calculateDispatchDistance(store, currentUser) {
+    console.log(store)
+    console.log(currentUser)
     function callback(response, status) {
+      console.log(response, status)
       if (status == "OK") {
         var origins = response.originAddresses;
         var destinations = response.destinationAddresses;
@@ -71,6 +73,7 @@ class StoreShow extends React.Component {
             var to = destinations[j];
           }
         }
+
         this.setState({ duration: duration });
         if (distance.split(" ")[1] === "ft"){
           this.setState({

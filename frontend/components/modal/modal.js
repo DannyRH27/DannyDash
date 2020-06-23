@@ -34,18 +34,17 @@ class Modal extends React.Component {
       closeModal();
       return;
     } 
-    
     const storeId = this.props.location.pathname.split("/")[2]
     const newItem = Object.assign({}, item)
     const newCart = Object.assign({},cart)
     newItem["quantity"] = this.state.quantity
-    newItem["id"] = Object.values(newCart.contents).length
+    newItem["id"] = Date.now()
+    
     if (newCart.storeId === null || newCart.storeId.toString() !== storeId) {
       newCart.store_id = storeId
       newCart.contents = {}
     } 
     newCart.contents[newItem.id] = newItem
-  
     updateCart(newCart)
     closeModal()
     this.setState({ quantity: 1 });

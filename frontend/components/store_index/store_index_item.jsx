@@ -59,6 +59,8 @@ class StoreIndexItem extends React.Component {
     }
     var origin1 = store.address
     var destinationA = new google.maps.LatLng(37.75383, -122.401772);
+    console.log(store.name)
+    console.log(destinationA)
     if (currentUser) {
       destinationA = currentUser.address
     }
