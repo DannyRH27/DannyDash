@@ -16,9 +16,7 @@
 }
 
 .modal-closer {
-    padding: 1px 5px 1px 1px;
-    // margin-left: 10px;
-    margin-top: 7px;
+    margin: 7px 5px 1px 10px;
     background-color: transparent;
 }
 
@@ -28,10 +26,9 @@
     border: 0px solid white;
     border-radius: 50%;
     max-width: 30px;
-    padding: 1px 5px 1px 1px;
+    margin: 7px 5px 1px 10px;
     transition: 0.3s;
-    // margin-left: 10px;
-    margin-top: 7px;
+    padding-right: 4px;
 
 }
 
