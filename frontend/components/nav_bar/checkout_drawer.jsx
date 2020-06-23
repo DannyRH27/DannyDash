@@ -32,6 +32,7 @@ class CheckoutDrawer extends React.Component {
   placeOrder(){
     const { currentUser, createOrder, store, cart } = this.props;
     let orderTotal = document.getElementById("total").innerHTML.split("$")
+    console.log(store)
     if (Object.values(cart.contents).length !== 0) {
       const newOrder = {
         contents: cart.contents,
@@ -50,9 +51,10 @@ class CheckoutDrawer extends React.Component {
   }
 
   render() {
-    const { drawerClasses } = this.props;
+    const { drawerClasses, currentUser } = this.props;
     const { store, cart, tip } = this.state;
     let subtotal = 0
+    if (currentUser === undefined) return null;
     if (Object.values(cart).length === 0 ) return null;
     Object.values(cart.contents).forEach((item) => {
       let item_subtotal = parseFloat(item.price) * parseFloat(item.quantity);

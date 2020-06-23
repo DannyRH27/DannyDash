@@ -350,3 +350,84 @@ wkmenu_item13 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem11.id, ran
 wkmenu_item14 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem12.id, rank: 14, store_id: store1.id)
 wkmenu_item15 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem7.id, rank: 15, store_id: store1.id)
 wkmenu_item16 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem8.id, rank: 16, store_id: store1.id)
+
+mgitem1 = Item.create!(name: 'Nikutama Udon', price: 8.90, description: 'Our made to order Sanuki Udon noodles served with our signature Sweet & Savory Beef in our signature Bukkake SAUCE and topped with a Hot Spring Egg.', store_id: store2.id)
+mgitem1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGNikutama.jpg')
+mgitem1.photo.attach(io: mgitem1_photo, filename: 'MGNikutama.jpg')
+
+mgitem2 = Item.create!(name: 'Curry Udon', description: 'Our signature beef Curry Udon served with our made to order Sanuki Udon noodles', price: 7.30, store_id: store2.id)
+mgitem2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGCurry.jpg') 
+mgitem2.photo.attach(io: mgitem2_photo, filename: 'MGCurry.jpg')
+
+mgitem3 = Item.create!(name: 'Spam Musubi', description: 'A slice of our special grilled and seasoned SPAM on white rice. Listed price is for 1 Spam Musubi.',price: 2.80, store_id: store2.id)
+mgitem3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGSpamMusubi.jpg')
+mgitem3.photo.attach(io: mgitem3_photo, filename: 'MGSpamMusubi.jpg')
+
+mgitem4 = Item.create!(name: 'Crab Meat Musubi', price: 1.50, description: 'A musubi rice ball filled with an Imitation Crab Meat / mayonnaise mix.',store_id: store2.id)
+mgitem4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGCrabMusubi.jpg')
+mgitem4.photo.attach(io: mgitem4_photo, filename: 'MGCrabMusubi.jpg')
+
+mgitem5 = Item.create!(name: 'Mentai Mayo Musubi', price: 1.70, description: 'A musubi rice ball filled with a Mentai (Cod Roe) / mayonnaise mix.' ,store_id: store2.id)
+mgitem5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGMentaiMusubi.jpg')
+mgitem5.photo.attach(io: mgitem5_photo, filename: 'MGMentaiMusubi.jpg')
+
+mgitem6 = Item.create!(name: 'Salmon Flake Musubi', price: 1.70, description:'A musubi rice ball filled with flaked Salmon meat.', store_id: store2.id)
+mgitem6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGSalmonMusubi.jpg')
+mgitem6.photo.attach(io: mgitem6_photo, filename: 'MGSalmonMusubi.jpg')
+
+mgitem7 = Item.create!(name: 'Chicken Tempura', price: 1.90,description: 'Soy sauce marinated chicken breast deep fried with Tempura batter.', store_id: store2.id)
+mgitem7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGChickenTempura.jpg')
+mgitem7.photo.attach(io: mgitem7_photo, filename: 'MGChickenTempura.jpg')
+
+mgitem8 = Item.create!(name: 'Fishcake Tempura', price: 1.80, description: 'White fish based "Chikuwa" fishcake deep fried in Tempura batter.', store_id: store2.id)
+mgitem8_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGFishcakeTempura.jpg')
+mgitem8.photo.attach(io: mgitem8_photo, filename: 'MGFishcakeTempura.jpg')
+
+mgitem9 = Item.create!(name: 'Shrimp Tempura', price: 2.00, description: 'A large Shrimp deep fried with Tempura batter.', store_id: store2.id)
+mgitem9_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGShrimpTempura.jpg')
+mgitem9.photo.attach(io: mgitem9_photo, filename: 'MGShrimpTempura.jpg')
+
+mgitem10 = Item.create!(name: 'Sweet Potato Tempura', price: 1.70, description: 'A Japanese "Satsuma Imo" sweet potato deep fried in Tempura batter.', store_id: store2.id)
+mgitem10_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGSweetTempura.jpg')
+mgitem10.photo.attach(io: mgitem10_photo, filename: 'MGSweetTempura.jpg')
+
+mgitem11 = Item.create!(name: 'Zucchini Tempura', price: 1.40, description: 'A slice of Zucchini squash deep fried in Tempura batter.', store_id: store2.id)
+mgitem11_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGZucchiniTempura.jpg')
+mgitem11.photo.attach(io: mgitem11_photo, filename: 'MGZucchiniTempura.jpg')
+
+mgitem12 = Item.create!(name: 'Pumpkin Tempura', price: 1.30, description: 'A slice of Japanese "Kabocha" pumpkin deep fried in Tempura batter.', store_id: store2.id)
+mgitem12_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGPumpkinTempura.jpg')
+mgitem12.photo.attach(io: mgitem12_photo, filename: 'MGPumpkinTempura.jpg')
+
+mgitem13 = Item.create!(name: 'Squid Tempura', price: 2.10, description: 'A sliced Squid deep fried in Tempura batter.', store_id: store2.id)
+mgitem13_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGSquidTempura.jpg')
+mgitem13.photo.attach(io: mgitem13_photo, filename: 'MGSquidTempura.jpg')
+
+mgitem14 = Item.create!(name: 'Potato Croquette', price: 2.10, description: 'Mashed Potato deep fried in Panko bread crumbs.', store_id: store2.id)
+mgitem14_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGCroquette.jpg')
+mgitem14.photo.attach(io: mgitem14_photo, filename: 'MGCroquette.jpg')
+
+mg_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store2.id)
+mg_menu2 = Menu.create!(title: 'Udon', rank: 2, store_id: store2.id)
+mg_menu3 = Menu.create!(title: 'Musubi', rank: 3, store_id: store2.id)
+mg_menu4 = Menu.create!(title: 'Tempura', rank: 4, store_id: store2.id)
+
+mgmenu_item1 = MenuItem.create!(menu_id: mg_menu1.id, item_id: mgitem1.id, rank: 1, store_id: store2.id)
+mgmenu_item2 = MenuItem.create!(menu_id: mg_menu1.id, item_id: mgitem2.id, rank: 2, store_id: store2.id)
+mgmenu_item3 = MenuItem.create!(menu_id: mg_menu1.id, item_id: mgitem3.id, rank: 3, store_id: store2.id)
+mgmenu_item4 = MenuItem.create!(menu_id: mg_menu1.id, item_id: mgitem9.id, rank: 4, store_id: store2.id)
+mgmenu_item5 = MenuItem.create!(menu_id: mg_menu1.id, item_id: mgitem5.id, rank: 5, store_id: store2.id)
+mgmenu_item6 = MenuItem.create!(menu_id: mg_menu2.id, item_id: mgitem1.id, rank: 6, store_id: store2.id)
+mgmenu_item7 = MenuItem.create!(menu_id: mg_menu2.id, item_id: mgitem2.id, rank: 7, store_id: store2.id)
+mgmenu_item8 = MenuItem.create!(menu_id: mg_menu3.id, item_id: mgitem3.id, rank: 8, store_id: store2.id)
+mgmenu_item9 = MenuItem.create!(menu_id: mg_menu3.id, item_id: mgitem4.id, rank: 9, store_id: store2.id)
+mgmenu_item10 = MenuItem.create!(menu_id: mg_menu3.id, item_id: mgitem5.id, rank: 10, store_id: store2.id)
+mgmenu_item11 = MenuItem.create!(menu_id: mg_menu3.id, item_id: mgitem6.id, rank: 11, store_id: store2.id)
+mgmenu_item12 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem7.id, rank: 12, store_id: store2.id)
+mgmenu_item13 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem8.id, rank: 13, store_id: store2.id)
+mgmenu_item14 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem9.id, rank: 14, store_id: store2.id)
+mgmenu_item15 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem10.id, rank: 15, store_id: store2.id)
+mgmenu_item16 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem11.id, rank: 16, store_id: store2.id)
+mgmenu_item17 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem12.id, rank: 17, store_id: store2.id)
+mgmenu_item18 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem13.id, rank: 18, store_id: store2.id)
+mgmenu_item19 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem14.id, rank: 19, store_id: store2.id)

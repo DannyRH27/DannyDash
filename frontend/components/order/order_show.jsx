@@ -23,7 +23,7 @@ class OrderShow extends React.Component {
 
   componentDidMount() {
     const { fetchOrder } = this.props;
-
+    
     fetchOrder(this.props.match.params.orderId)
       .then((action) => this.calculateDispatchDistance(action.payload.order)
     );
@@ -187,7 +187,7 @@ class OrderShow extends React.Component {
                 <span>
                   The estimated distance for your order route is {distance} and
                   it would have taken approximately {durationText} for Danny to
-                  delivery this by walking. Hope you're not hungry!
+                  deliver this by walking. Hope you're not hungry!
                 </span>
               </div>
             </div>

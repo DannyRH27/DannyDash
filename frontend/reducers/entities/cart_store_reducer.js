@@ -16,7 +16,7 @@ const cartStoreReducer = (state = {}, action) => {
           ['coordinate']: action.payload.coordinate,
         }
       };
-      return Object.assign({}, state, newStore);
+      return newStore;
     default:
       return state;
   }
