@@ -220,15 +220,14 @@ store_filter39 = StoreFilter.create!(store_id: store11.id, filter_id: filter19.i
 store_filter40 = StoreFilter.create!(store_id: store11.id, filter_id: filter20.id)
 store_filter41 = StoreFilter.create!(store_id: store6.id, filter_id: filter4.id)
 
-# Menus
+# RI XV
+
 Menu.destroy_all
 ri_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store11.id)
 ri_menu2 = Menu.create!(title: 'Fine Dining', rank: 2, store_id: store11.id)
 ri_menu3 = Menu.create!(title: 'Asian', rank: 3, store_id: store11.id)
 ri_menu4 = Menu.create!(title: 'Wholesale', rank: 4, store_id: store11.id)
 
-
-# Items
 Item.destroy_all
 item1 = Item.create!(name: 'Roasted Duck Breast(2)', price: 100.00, description: 'Pan-seared with rhubarb, fiddlehead fern, and gai lan', store_id: store11.id)
 item1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Duck.jpg')
@@ -280,6 +279,7 @@ menu_item6 = MenuItem.create!(menu_id: ri_menu4.id, item_id: item6.id, rank: 12,
 menu_item7 = MenuItem.create!(menu_id: ri_menu4.id, item_id: item7.id, rank: 13, store_id: store11.id)
 menu_item8 = MenuItem.create!(menu_id: ri_menu4.id, item_id: item8.id, rank: 14, store_id: store11.id)
 
+# Wok & Go
 
 wk_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store1.id)
 wk_menu2 = Menu.create!(title: 'Appetizers', rank: 2, store_id: store1.id)
@@ -350,6 +350,8 @@ wkmenu_item13 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem11.id, ran
 wkmenu_item14 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem12.id, rank: 14, store_id: store1.id)
 wkmenu_item15 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem7.id, rank: 15, store_id: store1.id)
 wkmenu_item16 = MenuItem.create!(menu_id: wk_menu4.id, item_id: wkitem8.id, rank: 16, store_id: store1.id)
+
+# Marugame
 
 mgitem1 = Item.create!(name: 'Nikutama Udon', price: 8.90, description: 'Our made to order Sanuki Udon noodles served with our signature Sweet & Savory Beef in our signature Bukkake SAUCE and topped with a Hot Spring Egg.', store_id: store2.id)
 mgitem1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/MGNikutama.jpg')
@@ -431,3 +433,209 @@ mgmenu_item16 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem11.id, ran
 mgmenu_item17 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem12.id, rank: 17, store_id: store2.id)
 mgmenu_item18 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem13.id, rank: 18, store_id: store2.id)
 mgmenu_item19 = MenuItem.create!(menu_id: mg_menu4.id, item_id: mgitem14.id, rank: 19, store_id: store2.id)
+
+# Benu
+
+benuitem1 = Item.create!(name: '1st Course', price: 20.00, description: 'Thousand year old quail egg, cabbage juice, ginger.', store_id: store3.id)
+benuitem1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu1.jpg')
+benuitem1.photo.attach(io: benuitem1_photo, filename: 'Benu1.jpg')
+
+benuitem2 = Item.create!(name: '2nd Course', description: 'Pork belly, oyster and kimchi shooter.', price: 25.00, store_id: store3.id)
+benuitem2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu2.jpg') 
+benuitem2.photo.attach(io: benuitem2_photo, filename: 'Benu2.jpg')
+
+benuitem3 = Item.create!(name: '3rd Course', description: 'Shrimp tempura, jellyfish, seaweed.',price: 20.00, store_id: store3.id)
+benuitem3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu3.jpg')
+benuitem3.photo.attach(io: benuitem3_photo, filename: 'Benu3.jpg')
+
+benuitem4 = Item.create!(name: '4th Course', price: 23.00, description: 'Blood sausage, sweet rice, squid ink, shiso.',store_id: store3.id)
+benuitem4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu4.jpg')
+benuitem4.photo.attach(io: benuitem4_photo, filename: 'Benu4.jpg')
+
+benuitem5 = Item.create!(name: '5th Course', price: 17.00, description: 'Ginkgo flour "tortilla", matsutake mushroom, pine needles, 10 year old aged pine syrup.' ,store_id: store3.id)
+benuitem5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu5.jpg')
+benuitem5.photo.attach(io: benuitem5_photo, filename: 'Benu5.jpg')
+
+benuitem6 = Item.create!(name: '6th Course', price: 29.00, description:'Chicken wing stuffed with abalone and abalone liver mousse.', store_id: store3.id)
+benuitem6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu6.jpg')
+benuitem6.photo.attach(io: benuitem6_photo, filename: 'Benu6.jpg')
+
+benuitem7 = Item.create!(name: '7th Course', price: 35.00,description: '"Shark fin" soup - Dungeness crab, ham, egg white and black truffles.', store_id: store3.id)
+benuitem7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu7.jpg')
+benuitem7.photo.attach(io: benuitem7_photo, filename: 'Benu7.jpg')
+
+benuitem8 = Item.create!(name: '8th Course', price: 27.00, description: 'Xiao long bao with lobster coral, house-made soy sauce, vinegar.', store_id: store3.id)
+benuitem8_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu8.jpg')
+benuitem8.photo.attach(io: benuitem8_photo, filename: 'Benu8.jpg')
+
+benuitem9 = Item.create!(name: '9th Course', price: 30.00, description: 'Sea urchin marinated in fermented crab sauce, with thinly sliced celtuce.', store_id: store3.id)
+benuitem9_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu9.jpg')
+benuitem9.photo.attach(io: benuitem9_photo, filename: 'Benu9.jpg')
+
+benuitem10 = Item.create!(name: '10th Course', price: 32.00, description: 'Monkfish liver steamed in rice wine, with toasted seaweed and chili.', store_id: store3.id)
+benuitem10_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu10.jpg')
+benuitem10.photo.attach(io: benuitem10_photo, filename: 'Benu10.jpg')
+
+benuitem11 = Item.create!(name: '11th Course', price: 26.00, description: 'Caviar with hand-pressed sesame oil, sesame leaf and daikon.', store_id: store3.id)
+benuitem11_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu11.jpg')
+benuitem11.photo.attach(io: benuitem11_photo, filename: 'Benu11.jpg')
+
+benuitem12 = Item.create!(name: '12th Course', price: 67.00, description: 'Barbecued quail from Wolfe Ranch.', store_id: store3.id)
+benuitem12_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu12.jpg')
+benuitem12.photo.attach(io: benuitem12_photo, filename: 'Benu12.jpg')
+
+benuitem13 = Item.create!(name: '13th Course', price: 23.00, description: 'Butter with orange blossom honey and ginseng.', store_id: store3.id)
+benuitem13_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu13.jpg')
+benuitem13.photo.attach(io: benuitem13_photo, filename: 'Benu13.jpg')
+
+benu_menu1 = Menu.create!(title: 'Fixed Menu', rank: 1, store_id: store3.id)
+
+benumenu_item1 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem1.id, rank: 1, store_id: store3.id)
+benumenu_item2 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem2.id, rank: 2, store_id: store3.id)
+benumenu_item3 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem3.id, rank: 3, store_id: store3.id)
+benumenu_item4 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem4.id, rank: 4, store_id: store3.id)
+benumenu_item5 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem5.id, rank: 5, store_id: store3.id)
+benumenu_item6 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem6.id, rank: 6, store_id: store3.id)
+benumenu_item7 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem7.id, rank: 7, store_id: store3.id)
+benumenu_item8 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem8.id, rank: 8, store_id: store3.id)
+benumenu_item9 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem9.id, rank: 9, store_id: store3.id)
+benumenu_item10 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem10.id, rank: 10, store_id: store3.id)
+benumenu_item11 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem11.id, rank: 11, store_id: store3.id)
+benumenu_item12 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem12.id, rank: 12, store_id: store3.id)
+benumenu_item13 = MenuItem.create!(menu_id: benu_menu1.id, item_id: benuitem13.id, rank: 13, store_id: store3.id)
+
+# Little Szechuan
+
+# store4 = Store.find_by(name: "Little Szechuan")
+szitem1 = Item.create!(name: 'A1. Braised Crispy Chicken w/ Jalapeno辣子鸡', price: 16.98, store_id: store4.id)
+szitem1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-A1.jpg')
+szitem1.photo.attach(io: szitem1_photo, filename: 'SZ-A1.jpg')
+
+szitem2 = Item.create!(name: 'A2. General Tso Chicken  左中堂鸡', price: 14.98, store_id: store4.id)
+szitem2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-A1.jpg') 
+szitem2.photo.attach(io: szitem2_photo, filename: 'SZ-A1.jpg')
+
+szitem3 = Item.create!(name: 'B1. Spicy Twice Cooked Pork  川味回锅肉',price: 14.98, store_id: store4.id)
+szitem3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-B1.jpg')
+szitem3.photo.attach(io: szitem3_photo, filename: 'SZ-B1.jpg')
+
+szitem4 = Item.create!(name: 'B2. Sweet & Sour Pork  咕噜肉', price: 13.98, store_id: store4.id)
+szitem4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-B2.jpg')
+szitem4.photo.attach(io: szitem4_photo, filename: 'SZ-B2.jpg')
+
+szitem5 = Item.create!(name: 'C1. Fish Fillet Boiled w/ Flaming Chili OIl 水煮鱼片', price: 18.98, store_id: store4.id)
+szitem5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-C1.jpg')
+szitem5.photo.attach(io: szitem5_photo, filename: 'SZ-C1.jpg')
+
+szitem6 = Item.create!(name: 'C2. Honey Walnut Prawns 合桃虾', price: 17.98, store_id: store4.id)
+szitem6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-C2.jpg')
+szitem6.photo.attach(io: szitem6_photo, filename: 'SZ-C2.jpg')
+
+szitem7 = Item.create!(name: 'C3. Dry Spicy Prawns (w/ Shell) 香辣跳跳虾', price: 17.98, store_id: store4.id)
+szitem7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-C3.jpg')
+szitem7.photo.attach(io: szitem7_photo, filename: 'SZ-C3.jpg')
+
+szitem8 = Item.create!(name: 'D1. Honey Lemon Black Tea', price: 3.98, store_id: store4.id)
+szitem8_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-D1.jpg')
+szitem8.photo.attach(io: szitem8_photo, filename: 'SZ-D1.jpg')
+
+szitem9 = Item.create!(name: 'D2. Carrot 红萝卜汁', price: 5.98, store_id: store4.id)
+szitem9_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-D2.jpg')
+szitem9.photo.attach(io: szitem9_photo, filename: 'SZ-D2.jpg')
+
+szitem10 = Item.create!(name: 'D3. Soft Drink', price: 1.98, store_id: store4.id)
+szitem10_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-D3.jpg')
+szitem10.photo.attach(io: szitem10_photo, filename: 'SZ-D3.jpg')
+
+
+sz_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store4.id)
+sz_menu2 = Menu.create!(title: 'Poultry', rank: 2, store_id: store4.id)
+sz_menu3 = Menu.create!(title: 'Pork', rank: 3, store_id: store4.id)
+sz_menu4 = Menu.create!(title: 'Seafood', rank: 4, store_id: store4.id)
+sz_menu5 = Menu.create!(title: 'Drinks', rank: 5, store_id: store4.id)
+
+szmenu_item1 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem1.id, rank: 1, store_id: store4.id)
+szmenu_item2 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem2.id, rank: 2, store_id: store4.id)
+szmenu_item3 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem3.id, rank: 3, store_id: store4.id)
+szmenu_item4 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem7.id, rank: 4, store_id: store4.id)
+szmenu_item5 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem5.id, rank: 5, store_id: store4.id)
+szmenu_item6 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem9.id, rank: 6, store_id: store4.id)
+szmenu_item7 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem8.id, rank: 7, store_id: store4.id)
+szmenu_item8 = MenuItem.create!(menu_id: sz_menu2.id, item_id: szitem1.id, rank: 8, store_id: store4.id)
+szmenu_item9 = MenuItem.create!(menu_id: sz_menu2.id, item_id: szitem2.id, rank: 9, store_id: store4.id)
+szmenu_item10 = MenuItem.create!(menu_id: sz_menu3.id, item_id: szitem3.id, rank: 10, store_id: store4.id)
+szmenu_item11 = MenuItem.create!(menu_id: sz_menu3.id, item_id: szitem4.id, rank: 11, store_id: store4.id)
+szmenu_item12 = MenuItem.create!(menu_id: sz_menu4.id, item_id: szitem5.id, rank: 12, store_id: store4.id)
+szmenu_item13 = MenuItem.create!(menu_id: sz_menu4.id, item_id: szitem6.id, rank: 13, store_id: store4.id)
+szmenu_item14 = MenuItem.create!(menu_id: sz_menu4.id, item_id: szitem7.id, rank: 14, store_id: store4.id)
+szmenu_item15 = MenuItem.create!(menu_id: sz_menu5.id, item_id: szitem8.id, rank: 15, store_id: store4.id)
+szmenu_item16 = MenuItem.create!(menu_id: sz_menu5.id, item_id: szitem9.id, rank: 16, store_id: store4.id)
+szmenu_item17 = MenuItem.create!(menu_id: sz_menu5.id, item_id: szitem10.id, rank: 17, store_id: store4.id)
+
+# # Thanh Tam II
+
+# # store4 = Store.find_by(name: "Little Szechuan")
+# szitem1 = Item.create!(name: 'A1. Braised Crispy Chicken w/ Jalapeno辣子鸡', price: 16.98, store_id: store4.id)
+# szitem1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-A1.jpg')
+# szitem1.photo.attach(io: szitem1_photo, filename: 'SZ-A1.jpg')
+
+# szitem2 = Item.create!(name: 'A2. General Tso Chicken  左中堂鸡', price: 14.98, store_id: store4.id)
+# szitem2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-A1.jpg') 
+# szitem2.photo.attach(io: szitem2_photo, filename: 'SZ-A1.jpg')
+
+# szitem3 = Item.create!(name: 'B1. Spicy Twice Cooked Pork  川味回锅肉',price: 14.98, store_id: store4.id)
+# szitem3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-B1.jpg')
+# szitem3.photo.attach(io: szitem3_photo, filename: 'SZ-B1.jpg')
+
+# szitem4 = Item.create!(name: 'B2. Sweet & Sour Pork  咕噜肉', price: 13.98, store_id: store4.id)
+# szitem4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-B2.jpg')
+# szitem4.photo.attach(io: szitem4_photo, filename: 'SZ-B2.jpg')
+
+# szitem5 = Item.create!(name: 'C1. Fish Fillet Boiled w/ Flaming Chili OIl 水煮鱼片', price: 18.98, store_id: store4.id)
+# szitem5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-C1.jpg')
+# szitem5.photo.attach(io: szitem5_photo, filename: 'SZ-C1.jpg')
+
+# szitem6 = Item.create!(name: 'C2. Honey Walnut Prawns 合桃虾', price: 17.98, store_id: store4.id)
+# szitem6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-C2.jpg')
+# szitem6.photo.attach(io: szitem6_photo, filename: 'SZ-C2.jpg')
+
+# szitem7 = Item.create!(name: 'C3. Dry Spicy Prawns (w/ Shell) 香辣跳跳虾', price: 17.98, store_id: store4.id)
+# szitem7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-C3.jpg')
+# szitem7.photo.attach(io: szitem7_photo, filename: 'SZ-C3.jpg')
+
+# szitem8 = Item.create!(name: 'D1. Honey Lemon Black Tea', price: 3.98, store_id: store4.id)
+# szitem8_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-D1.jpg')
+# szitem8.photo.attach(io: szitem8_photo, filename: 'SZ-D1.jpg')
+
+# szitem9 = Item.create!(name: 'D2. Carrot 红萝卜汁', price: 5.98, store_id: store4.id)
+# szitem9_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-D2.jpg')
+# szitem9.photo.attach(io: szitem9_photo, filename: 'SZ-D2.jpg')
+
+# szitem10 = Item.create!(name: 'D3. Soft Drink', price: 1.98, store_id: store4.id)
+# szitem10_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SZ-D3.jpg')
+# szitem10.photo.attach(io: szitem10_photo, filename: 'SZ-D3.jpg')
+
+
+# sz_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store4.id)
+# sz_menu2 = Menu.create!(title: 'Poultry', rank: 2, store_id: store4.id)
+# sz_menu3 = Menu.create!(title: 'Pork', rank: 3, store_id: store4.id)
+# sz_menu4 = Menu.create!(title: 'Seafood', rank: 4, store_id: store4.id)
+# sz_menu5 = Menu.create!(title: 'Drinks', rank: 5, store_id: store4.id)
+
+# szmenu_item1 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem1.id, rank: 1, store_id: store4.id)
+# szmenu_item2 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem2.id, rank: 2, store_id: store4.id)
+# szmenu_item3 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem3.id, rank: 3, store_id: store4.id)
+# szmenu_item4 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem7.id, rank: 4, store_id: store4.id)
+# szmenu_item5 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem5.id, rank: 5, store_id: store4.id)
+# szmenu_item6 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem9.id, rank: 6, store_id: store4.id)
+# szmenu_item7 = MenuItem.create!(menu_id: sz_menu1.id, item_id: szitem8.id, rank: 7, store_id: store4.id)
+# szmenu_item8 = MenuItem.create!(menu_id: sz_menu2.id, item_id: szitem1.id, rank: 8, store_id: store4.id)
+# szmenu_item9 = MenuItem.create!(menu_id: sz_menu2.id, item_id: szitem2.id, rank: 9, store_id: store4.id)
+# szmenu_item10 = MenuItem.create!(menu_id: sz_menu3.id, item_id: szitem3.id, rank: 10, store_id: store4.id)
+# szmenu_item11 = MenuItem.create!(menu_id: sz_menu3.id, item_id: szitem4.id, rank: 11, store_id: store4.id)
+# szmenu_item12 = MenuItem.create!(menu_id: sz_menu4.id, item_id: szitem5.id, rank: 12, store_id: store4.id)
+# szmenu_item13 = MenuItem.create!(menu_id: sz_menu4.id, item_id: szitem6.id, rank: 13, store_id: store4.id)
+# szmenu_item14 = MenuItem.create!(menu_id: sz_menu4.id, item_id: szitem7.id, rank: 14, store_id: store4.id)
+# szmenu_item15 = MenuItem.create!(menu_id: sz_menu5.id, item_id: szitem8.id, rank: 15, store_id: store4.id)
+# szmenu_item16 = MenuItem.create!(menu_id: sz_menu5.id, item_id: szitem9.id, rank: 16, store_id: store4.id)
+# szmenu_item17 = MenuItem.create!(menu_id: sz_menu5.id, item_id: szitem10.id, rank: 17, store_id: store4.id)
