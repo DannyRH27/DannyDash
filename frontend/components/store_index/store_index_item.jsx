@@ -153,6 +153,7 @@ class StoreIndexItem extends React.Component {
                   </p>
                   <span> {store.ratingCount} ratings</span>
                 </div>
+                <span>Free Delivery</span>
               </div>
             </div>
           </div>
