@@ -28,6 +28,6 @@ class Api::StoresController < ApplicationController
     private
 
     def store_params
-        params.require(:store).permit(:name, :address, :hours, :description, :rating, :rating_count, photos:[])
+        params.require(:store).permit(:name, :address, :hours, :description, :rating, :rating_count, :price_rating, photos:[])
     end
 end

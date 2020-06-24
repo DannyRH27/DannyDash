@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 2020_06_18_061855) do
     t.point "coordinate", null: false
     t.decimal "rating", null: false
     t.integer "rating_count", null: false
+    t.string "price_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_stores_on_name", unique: true

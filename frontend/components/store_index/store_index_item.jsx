@@ -132,8 +132,8 @@ class StoreIndexItem extends React.Component {
                 </p>
               </div>
               <div className="info-filters">
-                <span> $ • &nbsp; {tags} </span>
-                <span>Approximately {duration}</span>
+                <span> {store.priceRating} • &nbsp; {tags} </span>
+                <span>Approximately {duration} (Walking)</span>
               </div>
               <div className="info-misc">
                 <div className="info-review">

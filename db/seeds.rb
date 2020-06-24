@@ -25,67 +25,67 @@ user2 = User.create({fname: 'Demo', lname: 'User', email: 'demo@gmail.com', pass
 
 # Stores and Store Index Photos
 Store.destroy_all
-store1 = Store.create!(name:'Wok & Go',address: '2700 24th St, San Francisco, CA 94110', hours: ['10:00AM - 11:00PM'], description: 'Best Salt & Pepper Wings in the city', status: 1, coordinate: '(37.7531, -122.4066)', rating: 4.7, rating_count: 315)
+store1 = Store.create!(name:'Wok & Go',address: '2700 24th St, San Francisco, CA 94110', hours: ['10:00AM - 11:00PM'], description: 'Best Salt & Pepper Wings in the city', status: 1, coordinate: '(37.7531, -122.4066)', rating: 4.7, rating_count: 315, price_rating: '$')
 store1_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WokGo.jpg')
 store1_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/WokGo2.jpg') 
 store1.photos.attach(io: store1_photo1, filename: 'WokGo.jpg')
 store1.photos.attach(io: store1_photo2, filename: 'WokGo2.jpg')
 
-store2 = Store.create!(name:'Marugame Udon',address: '3251 20th Ave 184, San Francisco, CA 94132', hours: ['11:00AM - 10:00PM'], description: 'Hip spot where an array of udon dishes are prepared with noodles hand-pulled in an open kitchen.', status: 1, coordinate: '(37.728180, -122.477020)', rating: 4.6, rating_count: 2184 )
+store2 = Store.create!(name:'Marugame Udon',address: '3251 20th Ave 184, San Francisco, CA 94132', hours: ['11:00AM - 10:00PM'], description: 'Hip spot where an array of udon dishes are prepared with noodles hand-pulled in an open kitchen.', status: 1, coordinate: '(37.728180, -122.477020)', rating: 4.6, rating_count: 2184, price_rating: '$' )
 store2_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Udon.jpg')
 store2_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Udon2.jpg')
 store2.photos.attach(io: store2_photo1, filename: 'Udon.jpg')
 store2.photos.attach(io: store2_photo2, filename: 'Udon2.jpg')
 
-store3 = Store.create!(name:'Benu',address: '22 Hawthorne St, San Francisco, CA 94105', hours: ['5:30PM - 8:30PM'], description: 'Minimalist SoMa spot featuring innovative, ultrapricey American cuisine and renowned tasting menu.', status: 1, coordinate: '(37.785461, -122.399048)', rating: 4.9, rating_count: 4281)
+store3 = Store.create!(name:'Benu',address: '22 Hawthorne St, San Francisco, CA 94105', hours: ['5:30PM - 8:30PM'], description: 'Minimalist SoMa spot featuring innovative, ultrapricey American cuisine and renowned tasting menu.', status: 1, coordinate: '(37.785461, -122.399048)', rating: 4.9, rating_count: 4281, price_rating: '$$$$')
 store3_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu.jpg')
 store3_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Benu2.jpg')
 store3.photos.attach(io: store3_photo1, filename: 'Benu.jpg')
 store3.photos.attach(io: store3_photo2, filename: 'Benu2.jpg')
 
-store4 = Store.create!(name:'Little Szechuan',address: '501 Broadway St, San Francisco, CA 94133', hours: ['11:00AM - 3:00PM'], description: 'Spicy Sichuan dishes, mu shu & Chinese stir-fries are served in a vintage A-frame building.', status: 1, coordinate: '(37.797790, -122.405700)', rating: 4.3, rating_count: 523)
+store4 = Store.create!(name:'Little Szechuan',address: '501 Broadway St, San Francisco, CA 94133', hours: ['11:00AM - 3:00PM'], description: 'Spicy Sichuan dishes, mu shu & Chinese stir-fries are served in a vintage A-frame building.', status: 1, coordinate: '(37.797790, -122.405700)', rating: 4.3, rating_count: 523, price_rating: '$$')
 store4_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Szechuan.jpg')
 store4_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Szechuan2.jpg')
 store4.photos.attach(io: store4_photo1, filename: 'Szechuan.jpg')
 store4.photos.attach(io: store4_photo2, filename: 'Szechuan2.jpg')
 
-store5 = Store.create!(name:'Thanh Tam II',address: '577 Valencia St, San Francisco, CA 94110', hours: ['11:15AM - 9:30PM'], description: 'No-frills restaurant with menu featuring over 150 Vietnamese & Southeast Asian dishes.', status: 1, coordinate: '(37.763690, -122.421470)', rating: 4.3, rating_count: 1096)
+store5 = Store.create!(name:'Thanh Tam II',address: '577 Valencia St, San Francisco, CA 94110', hours: ['11:15AM - 9:30PM'], description: 'No-frills restaurant with menu featuring over 150 Vietnamese & Southeast Asian dishes.', status: 1, coordinate: '(37.763690, -122.421470)', rating: 4.3, rating_count: 1096, price_rating: '$')
 store5_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/ThanhTam.jpg')
 store5_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/ThanhTam2.jpg')
 store5.photos.attach(io: store5_photo1, filename: 'ThanhTam.jpg')
 store5.photos.attach(io: store5_photo2, filename: 'ThanhTam2.jpg')
 
-store6 = Store.create!(name:'McDonalds',address: '302 Potrero Ave, San Francisco, CA 94110', hours: ['5:00AM - 2:00AM'], description: 'Classic, long-running fast-food chain known for its burgers, fries & shakes.', status: 1, coordinate: '(37.748960, -122.404820)', rating: 4.0, rating_count: 4072)
+store6 = Store.create!(name:'McDonalds',address: '302 Potrero Ave, San Francisco, CA 94110', hours: ['5:00AM - 2:00AM'], description: 'Classic, long-running fast-food chain known for its burgers, fries & shakes.', status: 1, coordinate: '(37.748960, -122.404820)', rating: 4.0, rating_count: 4072, price_rating: '$')
 store6_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/McDonalds.jpg')
 store6_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Mcdonalds2.jpg')
 store6.photos.attach(io: store6_photo1, filename: 'McDonalds.jpg')
 store6.photos.attach(io: store6_photo2, filename: 'Mcdonalds2.jpg')
 
-store7 = Store.create!(name:'Seapot',address: '1952 S El Camino Real, San Mateo, CA 94403', hours: ['11:00AM - 9:30PM'], description: 'Spacious & stylish eatery featuring Chinese hot pot tables, plus a conveyor belt of food options.', status: 1, coordinate: '(37.548490, -122.310230)', rating: 4.8, rating_count: 1688)
+store7 = Store.create!(name:'Seapot',address: '1952 S El Camino Real, San Mateo, CA 94403', hours: ['11:00AM - 9:30PM'], description: 'Spacious & stylish eatery featuring Chinese hot pot tables, plus a conveyor belt of food options.', status: 1, coordinate: '(37.548490, -122.310230)', rating: 4.8, rating_count: 1688, price_rating: '$$')
 store7_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Seapot.jpg')
 store7_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Seapot2.jpg')
 store7.photos.attach(io: store7_photo1, filename: 'Seapot.jpg')
 store7.photos.attach(io: store7_photo2, filename: 'Seapot2.jpg')
 
-store8 = Store.create!(name:'Hot Sauce & Panko',address: '1468 Hyde St, San Francisco, CA 94109', hours: ['11:30AM - 7:00PM'], description: 'Tiny outpost for Korean-American comfort food, waffle sandwiches & over 300 hot sauce varieties.', status: 1, coordinate: '(37.794320, -122.418010)', rating: 4.3, rating_count: 945)
+store8 = Store.create!(name:'Hot Sauce & Panko',address: '1468 Hyde St, San Francisco, CA 94109', hours: ['11:30AM - 7:00PM'], description: 'Tiny outpost for Korean-American comfort food, waffle sandwiches & over 300 hot sauce varieties.', status: 1, coordinate: '(37.794320, -122.418010)', rating: 4.3, rating_count: 945, price_rating: '$')
 store8_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HotSauce.jpg')
 store8_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HotSauce2.jpg')
 store8.photos.attach(io: store8_photo1, filename: 'HotSauce.jpg')
 store8.photos.attach(io: store8_photo2, filename: 'HotSauce2.jpg')
 
-store9 = Store.create!(name:'Rooster & Rice',address: '4039 18th St, San Francisco, CA 94114', hours: ['11:00AM - 8:00PM'], description: 'Snug counter-service cafe serving dine-in or take-out khao mun gai (Thai chicken & rice).', status: 1, coordinate: '(37.760780, -122.433650)', rating: 4.5, rating_count: 2056)
+store9 = Store.create!(name:'Rooster & Rice',address: '4039 18th St, San Francisco, CA 94114', hours: ['11:00AM - 8:00PM'], description: 'Snug counter-service cafe serving dine-in or take-out khao mun gai (Thai chicken & rice).', status: 1, coordinate: '(37.760780, -122.433650)', rating: 4.5, rating_count: 2056, price_rating: '$')
 store9_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/RoosterRice.jpg')
 store9_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/RoosterRice2.jpg')
 store9.photos.attach(io: store9_photo1, filename: 'RoosterRice.jpg')
 store9.photos.attach(io: store9_photo2, filename: 'RoosterRice2.jpg')
 
-store10 = Store.create!(name:'Zen Modern Asian Bistro',address: '13510 Sabre Springs Pkwy, San Diego, CA 92128', hours: ['10:00AM - 9:00PM'], description: 'Casual counter-serve locale offering Asian fusion, wok-fried dishes & sushi amid basic decor.', status: 1, coordinate: '(32.962670, -117.092020)', rating: 4.6, rating_count: 730)
+store10 = Store.create!(name:'Zen Modern Asian Bistro',address: '13510 Sabre Springs Pkwy, San Diego, CA 92128', hours: ['10:00AM - 9:00PM'], description: 'Casual counter-serve locale offering Asian fusion, wok-fried dishes & sushi amid basic decor.', status: 1, coordinate: '(32.962670, -117.092020)', rating: 4.6, rating_count: 730, price_rating: '$')
 store10_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Zen.jpg')
 store10_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Zen2.jpg')
 store10.photos.attach(io: store10_photo1, filename: 'Zen.jpg')
 store10.photos.attach(io: store10_photo2, filename: 'Zen2.jpg')
 
-store11 = Store.create!(name:'RI XV',address: '2250 23rd St, San Francisco, CA 94107', hours: ['11:30AM - 9:00PM'], description: 'Bib Gourmand. Home cooking with farm-to-table ingredients', status: 1, coordinate: '(37.754590, -122.402080)', rating: 5.0, rating_count: 11923)
+store11 = Store.create!(name:'RI XV',address: '2250 23rd St, San Francisco, CA 94107', hours: ['11:30AM - 9:00PM'], description: 'Bib Gourmand. Home cooking with farm-to-table ingredients', status: 1, coordinate: '(37.754590, -122.402080)', rating: 5.0, rating_count: 11923, price_rating: '$$$')
 store11_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/RI1.jpg')
 store11_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/RI2.jpg')
 store11.photos.attach(io: store11_photo1, filename: 'RI1.jpg')
@@ -195,8 +195,6 @@ store_filter12 = StoreFilter.create!(store_id: store5.id, filter_id: filter16.id
 store_filter13 = StoreFilter.create!(store_id: store5.id, filter_id: filter10.id)
 store_filter14 = StoreFilter.create!(store_id: store6.id, filter_id: filter1.id)
 store_filter15 = StoreFilter.create!(store_id: store6.id, filter_id: filter3.id)
-store_filter16 = StoreFilter.create!(store_id: store6.id, filter_id: filter8.id)
-store_filter17 = StoreFilter.create!(store_id: store6.id, filter_id: filter10.id)
 store_filter18 = StoreFilter.create!(store_id: store7.id, filter_id: filter2.id)
 store_filter19 = StoreFilter.create!(store_id: store7.id, filter_id: filter6.id)
 store_filter20 = StoreFilter.create!(store_id: store8.id, filter_id: filter2.id)
@@ -228,11 +226,11 @@ ri_menu3 = Menu.create!(title: 'Asian', rank: 3, store_id: store11.id)
 ri_menu4 = Menu.create!(title: 'Wholesale', rank: 4, store_id: store11.id)
 
 Item.destroy_all
-item1 = Item.create!(name: 'Roasted Duck Breast(2)', price: 100.00, description: 'Pan-seared with rhubarb, fiddlehead fern, and gai lan', store_id: store11.id)
+item1 = Item.create!(name: 'Roasted Duck Breast(2)', price: 20.00, description: 'Pan-seared with rhubarb, fiddlehead fern, and gai lan', store_id: store11.id)
 item1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Duck.jpg')
 item1.photo.attach(io: item1_photo, filename: 'Duck.jpg')
 
-item2 = Item.create!(name: '16oz. A5 Wagyu Ribeye', description: 'Grilled to perfection and served with dry-aged wagyu butter', price: 95.00, store_id: store11.id)
+item2 = Item.create!(name: '16oz. A5 Wagyu Ribeye', description: 'Grilled to perfection and served with dry-aged wagyu butter', price: 70.00, store_id: store11.id)
 item2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Ribeye.jpg')
 item2.photo.attach(io: item2_photo, filename: 'Ribeye.jpg')
 
@@ -240,11 +238,11 @@ item3 = Item.create!(name: 'Hamachi Nigiri Platter', description: 'IQF sushi-gra
 item3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Hamachi.jpg')
 item3.photo.attach(io: item3_photo, filename: 'Hamachi.jpg')
 
-item4 = Item.create!(name: 'Peking Duck', price: 40.00, description: 'Thin pieces of tender, roasted duck meat and crispy skin wrapped in a thin crepe, along with sliced spring onions, cucumbers, and hoisin sauce or sweet bean sauce.',store_id: store11.id)
+item4 = Item.create!(name: 'Peking Duck', price: 30.00, description: 'Thin pieces of tender, roasted duck meat and crispy skin wrapped in a thin crepe, along with sliced spring onions, cucumbers, and hoisin sauce or sweet bean sauce.',store_id: store11.id)
 item4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Peking.jpg')
 item4.photo.attach(io: item4_photo, filename: 'Peking.jpg')
 
-item5 = Item.create!(name: 'Dumplings(25)', price: 30.00, description: 'Pork, cabbage, green onion' ,store_id: store11.id)
+item5 = Item.create!(name: 'Dumplings(25)', price: 20.00, description: 'Pork, cabbage, green onion' ,store_id: store11.id)
 item5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/DumplingW.jpg')
 item5.photo.attach(io: item5_photo, filename: 'DumplingW.jpg')
 
@@ -1066,7 +1064,7 @@ zmenu_item23 = MenuItem.create!(menu_id: z_menu4.id, item_id: zitem16.id, rank: 
 
 # Delfina
 
-store12 = Store.create!(name:'Delfina',address: '3611 18th St, San Francisco, CA 94110', hours: ['4:00PM - 9:00PM'], description: 'Relaxed urban pizza joint with some al fresco tables & an Italian wine selection.', status: 1, coordinate: '(37.761589, -122.424782)', rating: 4.6, rating_count: 1782)
+store12 = Store.create!(name:'Delfina',address: '3611 18th St, San Francisco, CA 94110', hours: ['4:00PM - 9:00PM'], description: 'Relaxed urban pizza joint with some al fresco tables & an Italian wine selection.', status: 1, coordinate: '(37.761589, -122.424782)', rating: 4.6, rating_count: 1782, price_rating: '$$$')
 store12_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Delfina1.jpg')
 store12_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/Delfina2.jpg')
 store12.photos.attach(io: store12_photo1, filename: 'Delfina1.jpg')
@@ -1099,7 +1097,7 @@ deitem6 = Item.create!(name: 'Carbonara', price: 21.75, description: 'Guanciale,
 deitem6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/DECarbonara.jpg')
 deitem6.photo.attach(io: deitem6_photo, filename: 'DECarbonara.jpg')
 
-deitem7 = Item.create!(name: 'Pesto Pie', price: 25.30, description: 'Basil pesto, new potatoes, pecorino, burrata..', store_id: store12.id)
+deitem7 = Item.create!(name: 'Pesto Pie', price: 25.30, description: 'Basil pesto, new potatoes, pecorino, burrata.', store_id: store12.id)
 deitem7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/DEPesto.jpg')
 deitem7.photo.attach(io: deitem7_photo, filename: 'DEPesto.jpg')
 
@@ -1156,3 +1154,295 @@ demenu_item15 = MenuItem.create!(menu_id: de_menu5.id, item_id: deitem6.id, rank
 demenu_item16 = MenuItem.create!(menu_id: de_menu5.id, item_id: deitem7.id, rank: 16, store_id: store12.id)
 demenu_item17 = MenuItem.create!(menu_id: de_menu5.id, item_id: deitem8.id, rank: 17, store_id: store12.id)
 demenu_item18 = MenuItem.create!(menu_id: de_menu5.id, item_id: deitem9.id, rank: 18, store_id: store12.id)
+
+# Halal Guys
+
+store13 = Store.create!(name:'Halal Guys',address: '336 OFarrell St, San Francisco, CA 94102', hours: ['10:00AM - 9:30PM'], description: 'Offshoot of a famed food cart serving gyros, falafel, chicken platters & other Middle Eastern eats.', status: 1, coordinate: '(37.786180, -122.410370)', rating: 4.7, rating_count: 2083, price_rating: '$$')
+store13_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGCombo.jpg')
+store13_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGChicken.jpg')
+store13.photos.attach(io: store13_photo1, filename: 'HGCombo.jpg')
+store13.photos.attach(io: store13_photo2, filename: 'HGChicken.jpg')
+
+store_filter38 = StoreFilter.create!(store_id: store13.id, filter_id: filter12.id)
+store_filter39 = StoreFilter.create!(store_id: store13.id, filter_id: filter17.id)
+
+hgitem1 = Item.create!(name: 'Combo Platter(Chicken & Gyro)', price: 13.99, description: 'Our world-famous platters start with salad (lettuce and tomato), rice and our juicy protein (chicken and beef gyro). Includes two white sauce packets and one hot sauce packet.', store_id: store13.id)
+hgitem1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGCombo.jpg')
+hgitem1.photo.attach(io: hgitem1_photo, filename: 'HGCombo.jpg')
+
+hgitem2 = Item.create!(name: 'Gyro Platter', description: 'Our world-famous platters start with salad (lettuce and tomato), rice, and our juicy protein beef gyro. Includes two white sauce packets and one hot sauce packet.', price: 13.99, store_id: store13.id)
+hgitem2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGGyro.jpg') 
+hgitem2.photo.attach(io: hgitem2_photo, filename: 'HGGyro.jpg')
+
+hgitem3 = Item.create!(name: 'Chicken Platter', description: 'Our world-famous platters start with salad (lettuce and tomato), rice, and our juicy protein chicken. Includes two white sauce packets and one hot sauce packet.', price: 13.99, store_id: store13.id)
+hgitem3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGChicken.jpg')
+hgitem3.photo.attach(io: hgitem3_photo, filename: 'HGChicken.jpg')
+
+hgitem4 = Item.create!(name: 'Combo Sandwich', price: 10.99, description: 'Served on a warm pita with chicken and beef gyro and topped with shredded iceberg lettuce and chopped tomato. Includes one white sauce packet and one hot sauce packet.', store_id: store13.id)
+hgitem4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGComboSand.jpg')
+hgitem4.photo.attach(io: hgitem4_photo, filename: 'HGComboSand.jpg')
+
+hgitem5 = Item.create!(name: 'Chicken Sandwich', price: 10.99, description: 'Served on a warm pita with chicken and topped with shredded iceberg lettuce and chopped tomato. Includes one white sauce packet and one hot sauce packet.', store_id: store13.id)
+hgitem5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGChickenSand.jpg')
+hgitem5.photo.attach(io: hgitem5_photo, filename: 'HGChickenSand.jpg')
+
+hgitem6 = Item.create!(name: 'Gyro(Beef) Sandwich', price: 10.99, description: 'Served on a warm pita with gyro and topped with shredded iceberg lettuce and chopped tomato. Includes one white sauce packet and one hot sauce packet.', store_id: store13.id)
+hgitem6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGGyroSand.jpg')
+hgitem6.photo.attach(io: hgitem6_photo, filename: 'HGGyroSand.jpg')
+
+hgitem7 = Item.create!(name: 'Falafel Sandwich', price: 10.99, description: 'Served on a warm pita with falafel and topped with shredded iceberg lettuce and chopped tomato. Includes one white sauce packet and one hot sauce packet.', store_id: store13.id)
+hgitem7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGFalafelSand.jpg')
+hgitem7.photo.attach(io: hgitem7_photo, filename: 'HGFalafelSand.jpg')
+
+hgitem8 = Item.create!(name: 'Falafel', price: 2.99, description: '2 pieces.', store_id: store13.id)
+hgitem8_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGFalafelSide.jpg')
+hgitem8.photo.attach(io: hgitem8_photo, filename: 'HGFalafelSide.jpg')
+
+hgitem9 = Item.create!(name: 'Baba Ghanoush', price: 5.99, description: '8 oz serving roasted eggplant dip with two whole pieces of pita.', store_id: store13.id)
+hgitem9_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGBaba.jpg')
+hgitem9.photo.attach(io: hgitem9_photo, filename: 'HGBaba.jpg')
+
+hgitem10 = Item.create!(name: 'Hummus', price: 5.99, description: '8 oz of hummus with two whole pieces of pita.', store_id: store13.id)
+hgitem10_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/HGHummus.jpg')
+hgitem10.photo.attach(io: hgitem10_photo, filename: 'HGHummus.jpg')
+
+hg_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store13.id)
+hg_menu2 = Menu.create!(title: 'Platters', rank: 2, store_id: store13.id)
+hg_menu3 = Menu.create!(title: 'Sandwiches', rank: 3, store_id: store13.id)
+hg_menu4 = Menu.create!(title: 'Sides', rank: 4, store_id: store13.id)
+
+hgmenu_item1 = MenuItem.create!(menu_id: hg_menu1.id, item_id: hgitem1.id, rank: 1, store_id: store13.id)
+hgmenu_item2 = MenuItem.create!(menu_id: hg_menu1.id, item_id: hgitem2.id, rank: 2, store_id: store13.id)
+hgmenu_item3 = MenuItem.create!(menu_id: hg_menu1.id, item_id: hgitem3.id, rank: 3, store_id: store13.id)
+hgmenu_item4 = MenuItem.create!(menu_id: hg_menu2.id, item_id: hgitem1.id, rank: 4, store_id: store13.id)
+hgmenu_item5 = MenuItem.create!(menu_id: hg_menu2.id, item_id: hgitem2.id, rank: 5, store_id: store13.id)
+hgmenu_item6 = MenuItem.create!(menu_id: hg_menu2.id, item_id: hgitem3.id, rank: 6, store_id: store13.id)
+hgmenu_item7 = MenuItem.create!(menu_id: hg_menu3.id, item_id: hgitem4.id, rank: 7, store_id: store13.id)
+hgmenu_item8 = MenuItem.create!(menu_id: hg_menu3.id, item_id: hgitem5.id, rank: 8, store_id: store13.id)
+hgmenu_item9 = MenuItem.create!(menu_id: hg_menu3.id, item_id: hgitem6.id, rank: 9, store_id: store13.id)
+hgmenu_item10 = MenuItem.create!(menu_id: hg_menu3.id, item_id: hgitem7.id, rank: 10, store_id: store13.id)
+hgmenu_item11 = MenuItem.create!(menu_id: hg_menu4.id, item_id: hgitem8.id, rank: 11, store_id: store13.id)
+hgmenu_item12 = MenuItem.create!(menu_id: hg_menu4.id, item_id: hgitem9.id, rank: 12, store_id: store13.id)
+hgmenu_item13 = MenuItem.create!(menu_id: hg_menu4.id, item_id: hgitem10.id, rank: 13, store_id: store13.id)
+
+# Saison Smokehouse
+
+store14 = Store.create!(name:'Saison Smokehouse',address: '132 The Embarcadero, San Francisco, CA 94105', hours: ['11:30AM - 8:00PM'], description: 'Michelin-starred Angler and Michelin two-star Saison have joined forces to smoke some chicken, brisket, ribs and more.', status: 1, coordinate: '(37.793091, -122.392212)', rating: 4.5, rating_count: 15, price_rating: '$$$')
+store14_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSGold.jpg')
+store14_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSPorkRibs.jpg')
+store14.photos.attach(io: store14_photo1, filename: 'SSGold.jpg')
+store14.photos.attach(io: store14_photo2, filename: 'SSPorkRibs.jpg')
+
+store_filter40 = StoreFilter.create!(store_id: store14.id, filter_id: filter7.id)
+
+ssitem1 = Item.create!(name: 'Red Meal', price: 75.00, description: 'Choice of two meats and a side, served with biscuits, honey butter, pickles and cabbage slaw. Choice of sauce, and Two Embered Caramel Frostys.', store_id: store14.id)
+ssitem1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSRed.jpg')
+ssitem1.photo.attach(io: ssitem1_photo, filename: 'SSRed.jpg')
+
+ssitem2 = Item.create!(name: 'Gold Meal', description: 'Comes with 1/2 Whole Roasted Chicken, 1/2 Rack Spice Rubbed Pork Ribs, and 1 lb. Pastrami Brisket. Choice of two sides, served with biscuits, honey butter, pickles and cabbage slaw. choice of two sauces, and four Embered Caramel Frostys.', price: 140.00, store_id: store14.id)
+ssitem2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSGold.jpg') 
+ssitem2.photo.attach(io: ssitem2_photo, filename: 'SSGold.jpg')
+
+ssitem3 = Item.create!(name: 'Pastrami Brisket', description: '', price: 20.00, store_id: store14.id)
+ssitem3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSBrisket.jpg')
+ssitem3.photo.attach(io: ssitem3_photo, filename: 'SSBrisket.jpg')
+
+ssitem4 = Item.create!(name: 'Spice-Rubbed Pork Ribs', price: 26.00, description: 'Half-Rack.', store_id: store14.id)
+ssitem4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSPorkRibs.jpg')
+ssitem4.photo.attach(io: ssitem4_photo, filename: 'SSPorkRibs.jpg')
+
+ssitem5 = Item.create!(name: 'Grandmas Buttermilk Biscuits and Honey Butter', price: 6.00, description: '', store_id: store14.id)
+ssitem5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSBiscuits.jpg')
+ssitem5.photo.attach(io: ssitem5_photo, filename: 'SSBiscuits.jpg')
+
+ssitem6 = Item.create!(name: 'Cabbage Slaw with Wild Fennel Vinegar', price: 5.00, description: '', store_id: store14.id)
+ssitem6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSSlaw.jpg')
+ssitem6.photo.attach(io: ssitem6_photo, filename: 'SSSlaw.jpg')
+
+ssitem7 = Item.create!(name: 'Orecchiette Mac and Wine Country Cheeses', price: 7.00, description: '', store_id: store14.id)
+ssitem7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSMac.jpg')
+ssitem7.photo.attach(io: ssitem7_photo, filename: 'SSMac.jpg')
+
+ssitem8 = Item.create!(name: 'Braised Collard Greens with Country Ham Hocks', price: 6.00, description: '2 pieces.', store_id: store14.id)
+ssitem8_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSGreens.jpg')
+ssitem8.photo.attach(io: ssitem8_photo, filename: 'SSGreens.jpg')
+
+ssitem9 = Item.create!(name: 'Potato Salad', price: 6.00, description: '', store_id: store14.id)
+ssitem9_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSPotatoSalad.jpg')
+ssitem9.photo.attach(io: ssitem9_photo, filename: 'SSPotatoSalad.jpg')
+
+ssitem10 = Item.create!(name: 'Barbecue Rancho Gordo Beans', price: 6.00, description: '', store_id: store14.id)
+ssitem10_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/SSBeans.jpg')
+ssitem10.photo.attach(io: ssitem10_photo, filename: 'SSBeans.jpg')
+
+ss_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store14.id)
+ss_menu2 = Menu.create!(title: 'Chef Meals', rank: 2, store_id: store14.id)
+ss_menu3 = Menu.create!(title: 'Barbeque', rank: 3, store_id: store14.id)
+ss_menu4 = Menu.create!(title: 'Sides', rank: 4, store_id: store14.id)
+
+ssmenu_item1 = MenuItem.create!(menu_id: ss_menu1.id, item_id: ssitem3.id, rank: 1, store_id: store14.id)
+ssmenu_item2 = MenuItem.create!(menu_id: ss_menu1.id, item_id: ssitem4.id, rank: 2, store_id: store14.id)
+ssmenu_item3 = MenuItem.create!(menu_id: ss_menu1.id, item_id: ssitem7.id, rank: 3, store_id: store14.id)
+ssmenu_item4 = MenuItem.create!(menu_id: ss_menu2.id, item_id: ssitem1.id, rank: 4, store_id: store14.id)
+ssmenu_item5 = MenuItem.create!(menu_id: ss_menu2.id, item_id: ssitem2.id, rank: 5, store_id: store14.id)
+ssmenu_item6 = MenuItem.create!(menu_id: ss_menu3.id, item_id: ssitem3.id, rank: 6, store_id: store14.id)
+ssmenu_item7 = MenuItem.create!(menu_id: ss_menu3.id, item_id: ssitem4.id, rank: 7, store_id: store14.id)
+ssmenu_item8 = MenuItem.create!(menu_id: ss_menu4.id, item_id: ssitem5.id, rank: 8, store_id: store14.id)
+ssmenu_item9 = MenuItem.create!(menu_id: ss_menu4.id, item_id: ssitem6.id, rank: 9, store_id: store14.id)
+ssmenu_item10 = MenuItem.create!(menu_id: ss_menu4.id, item_id: ssitem7.id, rank: 10, store_id: store14.id)
+ssmenu_item11 = MenuItem.create!(menu_id: ss_menu4.id, item_id: ssitem8.id, rank: 11, store_id: store14.id)
+ssmenu_item12 = MenuItem.create!(menu_id: ss_menu4.id, item_id: ssitem9.id, rank: 12, store_id: store14.id)
+ssmenu_item13 = MenuItem.create!(menu_id: ss_menu4.id, item_id: ssitem10.id, rank: 13, store_id: store14.id)
+
+# Tacqueria Los Coyotes
+
+store15 = Store.create!(name:'Tacqueria Los Coyotes',address: '3036 16th St, San Francisco, CA 94103', hours: ['9:30AM - 9:00PM'], description: 'Menu selections range from basic tacos to a California burrito filled with steak, avocado & fries.', status: 1, coordinate: '(37.765470, -122.420440)', rating: 4.7, rating_count: 2174, price_rating: '$$')
+store15_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCClassic.jpg')
+store15_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCSuperB.jpg')
+store15.photos.attach(io: store15_photo1, filename: 'TCClassic.jpg')
+store15.photos.attach(io: store15_photo2, filename: 'TCSuperB.jpg')
+
+store_filter41 = StoreFilter.create!(store_id: store15.id, filter_id: filter8.id)
+store_filter42 = StoreFilter.create!(store_id: store15.id, filter_id: filter15.id)
+
+tcitem1 = Item.create!(name: 'Classic Eggs Breakfast', price: 10.99, description: 'Spanish rice, refried beans, breakfast taco, and one sunny-side-up egg.', store_id: store15.id)
+tcitem1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCClassic.jpg')
+tcitem1.photo.attach(io: tcitem1_photo, filename: 'TCClassic.jpg')
+
+tcitem2 = Item.create!(name: 'Chilaquiles Breakfast', description: 'In green or red sauce.', price: 10.99, store_id: store15.id)
+tcitem2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCChilaquiles.jpg') 
+tcitem2.photo.attach(io: tcitem2_photo, filename: 'TCChilaquiles.jpg')
+
+tcitem3 = Item.create!(name: 'Omelette Breakfast', description: 'Carne asada, veggies, rice, beans, and cheesed wrapped in a fluffy 4 egg omelette.', price: 10.99, store_id: store15.id)
+tcitem3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCOmelette.jpg')
+tcitem3.photo.attach(io: tcitem3_photo, filename: 'TCOmelette.jpg')
+
+tcitem4 = Item.create!(name: 'Super Breakfast Burrito', price: 10.25, description: 'Eggs, carne asada, rice, beans, cheese, sour cream, guacamole, lettuce, and salsa.', store_id: store15.id)
+tcitem4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCSuperB.jpg')
+tcitem4.photo.attach(io: tcitem4_photo, filename: 'TCSuperB.jpg')
+
+tcitem5 = Item.create!(name: 'Mojado Burrito', price: 10.75, description: 'Carne Asada, rice, beans, sour cream, cheese, guacamole, and sauce.', store_id: store15.id)
+tcitem5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCMojado.jpg')
+tcitem5.photo.attach(io: tcitem5_photo, filename: 'TCMojado.jpg')
+
+tcitem6 = Item.create!(name: 'Chimichanga Burrito', price: 9.75, description: 'Carne Asada, rice, beans, and sauce. Served without lettuce.', store_id: store15.id)
+tcitem6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCChimichanga.jpg')
+tcitem6.photo.attach(io: tcitem6_photo, filename: 'TCChimichanga.jpg')
+
+tcitem7 = Item.create!(name: 'California Burrito', price: 10.75, description: 'Steak, fries, cheese, avocado, and sour cream.', store_id: store15.id)
+tcitem7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCCalifornia.jpg')
+tcitem7.photo.attach(io: tcitem7_photo, filename: 'TCCalifornia.jpg')
+
+tcitem8 = Item.create!(name: 'Regular Taco', price: 3.50, description: 'Carnitas, onion, cilantro, and sauce.', store_id: store15.id)
+tcitem8_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCTaco.jpg')
+tcitem8.photo.attach(io: tcitem8_photo, filename: 'TCTaco.jpg')
+
+tcitem9 = Item.create!(name: 'Regular Crispy Taco', price: 3.75, description: 'Carnitas, onion, cilantro, and sauce.', store_id: store15.id)
+tcitem9_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCCrispyTaco.jpg')
+tcitem9.photo.attach(io: tcitem9_photo, filename: 'TCCrispyTaco.jpg')
+
+tcitem10 = Item.create!(name: 'Super Flautas', price: 10.95, description: 'Chicken, rice, beans, guacamole, sour cream, cheese, lettuce, and sauce.', store_id: store15.id)
+tcitem10_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCFlautas.jpg')
+tcitem10.photo.attach(io: tcitem10_photo, filename: 'TCFlautas.jpg')
+
+tcitem11 = Item.create!(name: 'Sopes', price: 4.95, description: 'Carne Asada, beans, cheese, lettuce, sour cream, avocado, and sauce.', store_id: store15.id)
+tcitem11_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCSopes.jpg')
+tcitem11.photo.attach(io: tcitem11_photo, filename: 'TCSopes.jpg')
+
+tcitem12 = Item.create!(name: 'Pupusas', price: 3.95, description: 'Flatbread made with cornmeal or rice flour and paired with cheese', store_id: store15.id)
+tcitem12_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/TCPupusas.jpg')
+tcitem12.photo.attach(io: tcitem12_photo, filename: 'TCPupusas.jpg')
+
+tc_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store15.id)
+tc_menu2 = Menu.create!(title: 'Breakfast', rank: 2, store_id: store15.id)
+tc_menu3 = Menu.create!(title: 'Burritos', rank: 3, store_id: store15.id)
+tc_menu4 = Menu.create!(title: 'Tacos', rank: 4, store_id: store15.id)
+tc_menu5 = Menu.create!(title: 'Flautas, Sopes, & Pupusas', rank: 5, store_id: store15.id)
+
+tcmenu_item1 = MenuItem.create!(menu_id: tc_menu1.id, item_id: tcitem5.id, rank: 1, store_id: store15.id)
+tcmenu_item2 = MenuItem.create!(menu_id: tc_menu1.id, item_id: tcitem7.id, rank: 2, store_id: store15.id)
+tcmenu_item3 = MenuItem.create!(menu_id: tc_menu1.id, item_id: tcitem8.id, rank: 3, store_id: store15.id)
+tcmenu_item4 = MenuItem.create!(menu_id: tc_menu2.id, item_id: tcitem1.id, rank: 4, store_id: store15.id)
+tcmenu_item5 = MenuItem.create!(menu_id: tc_menu2.id, item_id: tcitem2.id, rank: 5, store_id: store15.id)
+tcmenu_item6 = MenuItem.create!(menu_id: tc_menu2.id, item_id: tcitem3.id, rank: 6, store_id: store15.id)
+tcmenu_item7 = MenuItem.create!(menu_id: tc_menu2.id, item_id: tcitem4.id, rank: 7, store_id: store15.id)
+tcmenu_item8 = MenuItem.create!(menu_id: tc_menu3.id, item_id: tcitem5.id, rank: 8, store_id: store15.id)
+tcmenu_item9 = MenuItem.create!(menu_id: tc_menu3.id, item_id: tcitem6.id, rank: 9, store_id: store15.id)
+tcmenu_item10 = MenuItem.create!(menu_id: tc_menu3.id, item_id: tcitem7.id, rank: 10, store_id: store15.id)
+tcmenu_item11 = MenuItem.create!(menu_id: tc_menu4.id, item_id: tcitem8.id, rank: 11, store_id: store15.id)
+tcmenu_item12 = MenuItem.create!(menu_id: tc_menu4.id, item_id: tcitem9.id, rank: 12, store_id: store15.id)
+tcmenu_item13 = MenuItem.create!(menu_id: tc_menu5.id, item_id: tcitem10.id, rank: 13, store_id: store15.id)
+tcmenu_item14 = MenuItem.create!(menu_id: tc_menu5.id, item_id: tcitem11.id, rank: 14, store_id: store15.id)
+tcmenu_item15 = MenuItem.create!(menu_id: tc_menu5.id, item_id: tcitem12.id, rank: 15, store_id: store15.id)
+
+# Pa'ina Lounge & Restaurant
+# store16 = Store.find_by(name: 'Paina Lounge & Restaurant')
+# store16 = Store.create!(name:'Paina Lounge & Restaurant',address: '1865 Post St, San Francisco, CA 94115', hours: ['11:00AM - 9:00PM'], description: 'Modern, vibrant eatery with live music serving Hawaiian-style tapas & poke, plus tropical cocktails.', status: 1, coordinate: '(37.783691, -122.444649)', rating: 4.8, rating_count: 240, price_rating: '$$')
+store16_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLPokeBowl.jpg')
+store16_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLPokeParty.jpg')
+store16.photos.attach(io: store16_photo1, filename: 'PLPokeBowl.jpg')
+store16.photos.attach(io: store16_photo2, filename: 'PLPokeParty.jpg')
+
+# filter2 = Filter.find_by(filter_title: 'Asian')
+# filter14 = Filter.find_by(filter_title: 'Poke')
+
+store_filter43 = StoreFilter.create!(store_id: store16.id, filter_id: filter2.id)
+store_filter44 = StoreFilter.create!(store_id: store16.id, filter_id: filter14.id)
+
+plitem1 = Item.create!(name: 'Poke Bowl', price: 10.00, description: 'Raw ahi tuna tossed in shoyu, sesame oil, scallions, sweet onions, and Hawaiian sea salt.', store_id: store16.id)
+plitem1_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLPokeBowl.jpg')
+plitem1.photo.attach(io: plitem1_photo, filename: 'PLPokeBowl.jpg')
+
+plitem2 = Item.create!(name: 'Poke Party', description: 'Raw ahi tuna tossed in shoyu, sesame oil, scallions, sweet onions, and Hawaiian sea salt.', price: 36.00, store_id: store16.id)
+plitem2_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLPokeParty.jpg') 
+plitem2.photo.attach(io: plitem2_photo, filename: 'PLPokeParty.jpg')
+
+plitem3 = Item.create!(name: 'Spam Musubi', description: 'Rice, teriyaki sauce, nori-furikake, and nori wrap.', price: 5.00, store_id: store16.id)
+plitem3_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLSpam.jpg')
+plitem3.photo.attach(io: plitem3_photo, filename: 'PLSpam.jpg')
+
+plitem4 = Item.create!(name: 'Kalbi Nachos', price: 9.00, description: 'Marinated beef, citrus-aioli, nacho cheese, serrano, and kimchi.', store_id: store16.id)
+plitem4_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLNachos.jpg')
+plitem4.photo.attach(io: plitem4_photo, filename: 'PLNachos.jpg')
+
+plitem5 = Item.create!(name: 'Duck Fried Rice', price: 16.00, description: 'Maple leaf duck breast, market vegetables, and fried egg.', store_id: store16.id)
+plitem5_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLDFriedRice.jpg')
+plitem5.photo.attach(io: plitem5_photo, filename: 'PLDFriedRice.jpg')
+
+plitem6 = Item.create!(name: 'Paina Wings', price: 8.00, description: 'Chili glaze and scallions.', store_id: store16.id)
+plitem6_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLWings.jpg')
+plitem6.photo.attach(io: plitem6_photo, filename: 'PLWings.jpg')
+
+plitem7 = Item.create!(name: 'Kalua Pig Poutine', price: 10.00, description: 'Braised pork butt, cabbage, beef gravy, fries, queso-fresco, and serrano.', store_id: store16.id)
+plitem7_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLPoutine.jpg')
+plitem7.photo.attach(io: plitem7_photo, filename: 'PLPoutine.jpg')
+
+plitem8 = Item.create!(name: 'Loco Moco', price: 16.00, description: '6 oz of American wagyu beef, beef gravy, mac salad, and fried egg.', store_id: store16.id)
+plitem8_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLLocoMoco.jpg')
+plitem8.photo.attach(io: plitem8_photo, filename: 'PLLocoMoco.jpg')
+
+plitem9 = Item.create!(name: 'Kimchi Fried Rice', price: 10.00, description: 'Shoyu, sesame, nori, and fried egg.', store_id: store16.id)
+plitem9_photo= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLKFriedRice.jpg')
+plitem9.photo.attach(io: plitem9_photo, filename: 'PLKFriedRice.jpg')
+
+pl_menu1 = Menu.create!(title: 'Popular Items', rank: 1, store_id: store16.id)
+pl_menu2 = Menu.create!(title: 'Poke Bar', rank: 2, store_id: store16.id)
+pl_menu3 = Menu.create!(title: 'Shared Supper', rank: 3, store_id: store16.id)
+
+plmenu_item1 = MenuItem.create!(menu_id: pl_menu1.id, item_id: plitem1.id, rank: 1, store_id: store16.id)
+plmenu_item2 = MenuItem.create!(menu_id: pl_menu1.id, item_id: plitem2.id, rank: 2, store_id: store16.id)
+plmenu_item3 = MenuItem.create!(menu_id: pl_menu1.id, item_id: plitem5.id, rank: 3, store_id: store16.id)
+plmenu_item4 = MenuItem.create!(menu_id: pl_menu1.id, item_id: plitem6.id, rank: 4, store_id: store16.id)
+plmenu_item5 = MenuItem.create!(menu_id: pl_menu1.id, item_id: plitem9.id, rank: 5, store_id: store16.id)
+plmenu_item6 = MenuItem.create!(menu_id: pl_menu1.id, item_id: plitem4.id, rank: 6, store_id: store16.id)
+plmenu_item7 = MenuItem.create!(menu_id: pl_menu1.id, item_id: plitem7.id, rank: 7, store_id: store16.id)
+plmenu_item8 = MenuItem.create!(menu_id: pl_menu1.id, item_id: plitem3.id, rank: 8, store_id: store16.id)
+plmenu_item9 = MenuItem.create!(menu_id: pl_menu2.id, item_id: plitem1.id, rank: 9, store_id: store16.id)
+plmenu_item10 = MenuItem.create!(menu_id: pl_menu2.id, item_id: plitem2.id, rank: 10, store_id: store16.id)
+plmenu_item11 = MenuItem.create!(menu_id: pl_menu3.id, item_id: plitem3.id, rank: 11, store_id: store16.id)
+plmenu_item12 = MenuItem.create!(menu_id: pl_menu3.id, item_id: plitem4.id, rank: 12, store_id: store16.id)
+plmenu_item13 = MenuItem.create!(menu_id: pl_menu3.id, item_id: plitem5.id, rank: 13, store_id: store16.id)
+plmenu_item14 = MenuItem.create!(menu_id: pl_menu3.id, item_id: plitem6.id, rank: 14, store_id: store16.id)
+plmenu_item15 = MenuItem.create!(menu_id: pl_menu3.id, item_id: plitem7.id, rank: 15, store_id: store16.id)
+plmenu_item16 = MenuItem.create!(menu_id: pl_menu3.id, item_id: plitem8.id, rank: 16, store_id: store16.id)
+plmenu_item17 = MenuItem.create!(menu_id: pl_menu3.id, item_id: plitem9.id, rank: 17, store_id: store16.id)
