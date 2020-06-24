@@ -32,7 +32,6 @@ class CheckoutDrawer extends React.Component {
   placeOrder(){
     const { currentUser, createOrder, store, cart } = this.props;
     let orderTotal = document.getElementById("total").innerHTML.split("$")
-    console.log(store)
     if (Object.values(cart.contents).length !== 0) {
       const newOrder = {
         contents: cart.contents,

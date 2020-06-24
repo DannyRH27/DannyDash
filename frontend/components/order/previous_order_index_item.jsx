@@ -4,7 +4,7 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 function PreviousOrderIndexItem(props) {
 
   const { order } = props;
-  const date = new Date();
+  const date = new Date(order.deliveredDate);
   const month = date.getMonth();
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
   const day = date.getDate();

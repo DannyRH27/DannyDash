@@ -9,31 +9,24 @@ class StoreIndexItem extends React.Component {
     this.state = {
       duration: ''
     }
-
+    this._isMounted = false;
 
     this.calculateDispatchDistance = this.calculateDispatchDistance.bind(this);
   }
 
   componentDidMount(){
-    
+    this._isMounted = true;
     const { fetchCurrentUser, fetchStore, store, currentUser } = this.props;
-    if (currentUser) {
-      var dispatchUser = {};
-      fetchCurrentUser()
-        .then((action) => {
-          dispatchUser = action.currentUser;
-        })
-        .then(() => {
-          fetchStore(store.id).then((store) => {
-            this.calculateDispatchDistance(store.payload, dispatchUser);
-          });
-        });
-    } else {
-      fetchStore(store.id).then((store) => {
-        this.calculateDispatchDistance(store.payload, dispatchUser);
-      });
+    if (currentUser && this._isMounted) {
+        this.calculateDispatchDistance(store, currentUser);
+    } else if (this._isMounted) {
+        this.calculateDispatchDistance(store, currentUser);
     }
-    
+  }
+
+
+  componentWillUnmount(){
+    this._isMounted = false;
   }
 
 
@@ -53,14 +46,14 @@ class StoreIndexItem extends React.Component {
             var to = destinations[j];
           }
         }
-        this.setState({ duration: durationText });
+        if (this._isMounted) {
+          this.setState({ duration: durationText });
+        }
 
       }
     }
     var origin1 = store.address
     var destinationA = new google.maps.LatLng(37.75383, -122.401772);
-    console.log(store.name)
-    console.log(destinationA)
     if (currentUser) {
       destinationA = currentUser.address
     }
@@ -84,9 +77,6 @@ class StoreIndexItem extends React.Component {
   render() {
     const { store } = this.props;
     const { duration } = this.state;
-    // if (store === null || store === undefined || store === false) return null;
-    // if (this.props.location.pathname === "/home" && duration === '') return null;
-    // if (store.filters === undefined) return null;
     const tags = store.filters.map((filter, idx) => (
       <p key={idx}>{filter}, &nbsp;</p>
     ));

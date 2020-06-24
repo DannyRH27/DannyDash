@@ -14,7 +14,8 @@ class OrderShow extends React.Component {
       duration: 0,
       durationText: "",
       distance: "",
-      address: ""
+      address: "",
+      deliveryDate: "",
     };
 
     this.calculateDispatchDistance = this.calculateDispatchDistance.bind(this);
@@ -23,7 +24,7 @@ class OrderShow extends React.Component {
 
   componentDidMount() {
     const { fetchOrder } = this.props;
-    
+  
     fetchOrder(this.props.match.params.orderId)
       .then((action) => this.calculateDispatchDistance(action.payload.order)
     );
@@ -69,6 +70,7 @@ class OrderShow extends React.Component {
         this.setState({ ETA: strTime });
         this.setState({ durationText: durationText });
         this.setState({ distance: distance });
+        this.setState({ deliveryDate: date })
         this.initMap(order);
 
       }
@@ -151,17 +153,16 @@ class OrderShow extends React.Component {
 
   render() {
     const { match, currentUser, orders } = this.props;
-    const { ETA, duration, durationText, distance, address } = this.state;
+    const { ETA, duration, durationText, distance, address, deliveryDate } = this.state;
     const order = orders[match.params.orderId];
     if (order === undefined) return null;
     if (duration === 0) return null;
     if (ETA === "") return null;
+    if (deliveryDate === "") return null;
     var date = new Date();
-    var etaDate = new Date(order.createdAt);
-    etaDate.setMinutes(etaDate.getMinutes() + duration / 60);
-    const DeliveryStatus = date > etaDate ? "Delivered" : "In-Transit";
+    const DeliveryStatus = date > deliveryDate ? "Delivered" : "In-Transit";
     const Plural = Object.keys(order.contents).length > 1 ? "Items" : "Item";
-    const visualClass =  date > etaDate ? null : 'in-transit'
+    const visualClass =  date > deliveryDate ? null : 'in-transit'
     return (
       <div className="order-show-container">
         <div className="order-show-drawer-container">

@@ -32,7 +32,6 @@ class UserShow extends React.Component {
 
   handleSubmit() {
     const { update, currentUser } = this.props;
-    console.log("hi saving")
     const user = Object.assign({}, currentUser)
     const fields = Object.entries(this.state.user)
 
@@ -47,7 +46,6 @@ class UserShow extends React.Component {
 
   render() {
     const { currentUser } = this.props;
-    // console.log(this.state)
     return (
       <div className="user-show-container">
         <div className="profile-container">

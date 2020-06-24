@@ -6,25 +6,22 @@ import { Link, withRouter } from 'react-router-dom';
 class StoreIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      stores: null
-    }
+    this._isMounted = false;
   }
 
   componentDidMount() {
     const { fetchStores, fetchFilters, filterStores, searchStores, location, match } = this.props;
+    this._isMounted = true;
     fetchFilters();
-    if (location.pathname.slice(0,8) === "/filters") {
+    if (location.pathname.slice(0,8) === "/filters" && this._isMounted) {
       filterStores(match.params.filter)
-        .then( stores => this.setState({ stores: stores}))
-    } else if (location.pathname.slice(0,7) === "/search") {
+    } else if (location.pathname.slice(0,7) === "/search" && this._isMounted) {
       searchStores(match.params.fragment)
-        .then( stores => this.setState({ stores: stores}))
     }
-    //  else {
-    //   fetchStores()
-    //     .then(stores => this.setState({ stores: stores}))
-    // }
+  }
+
+  componentWillUnmount(){
+    this._isMounted = false;
   }
   
   componentDidUpdate(prevProps){
@@ -32,20 +29,15 @@ class StoreIndex extends React.Component {
     const filter = match.params.filter
     if (location.pathname !== prevProps.location.pathname && location.pathname.slice(0,8) === "/filters") {
       filterStores(filter)
-      .then(stores => this.setState({ stores: stores}))
+      window.scrollTo(0, 0);
     } 
-    // else if (location.pathname.slice(0, 7) === "/search") {
-    //   searchStores(match.params.fragment)
-    //     .then(stores => this.setState({ stores: stores }))
-    // }
-    window.scrollTo(0, 0);
   }
+  
 
   render() {
-    const { fetchCurrentUser, stores, fetchStore, fetchStores, filters, location, match } = this.props
-    if (stores === null || stores === undefined || stores === false) return;
-    if (filters === null || filters === undefined || filters === false) return;
-
+    const { fetchCurrentUser, stores, fetchStore, fetchStores, filters, location, match, currentUser } = this.props
+    if (stores.length === 0) return null;
+    console.log(stores)
     const FilterHeader = 
       location.pathname.slice(0, 8) === "/filters" 
         ? (<span>{match.params.filter}</span>) 
@@ -83,6 +75,7 @@ class StoreIndex extends React.Component {
                       fetchStore={fetchStore}
                       fetchStores={fetchStores}
                       store={store}
+                      currentUser={currentUser}
                     />
                   </Link>
                 ))}

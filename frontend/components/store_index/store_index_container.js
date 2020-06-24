@@ -6,7 +6,8 @@ import StoreIndex from './store_index';
 
 const mapStateToProps = (state) => ({
     stores: Object.values(state.entities.stores),
-    filters: Object.values(state.entities.filters)
+    filters: Object.values(state.entities.filters),
+    currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

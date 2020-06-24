@@ -3,7 +3,7 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 
 function ActiveOrderIndexItem(props) {
   const { order } = props;
-  const date = new Date();
+  const date = new Date(order.deliveredDate);
   const month = date.getMonth();
   const months = [
     "Jan",
