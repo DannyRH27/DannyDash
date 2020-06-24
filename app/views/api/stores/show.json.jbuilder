@@ -12,7 +12,7 @@ json.items do
     @store.menu_items.each do |item|
         json.set! item.id do
             json.extract! item, :name, :price, :description
-            json.photoUrl url_for(item.photo)
+            json.photoUrl url_for(item.photo) || ''
         end
     end
 end

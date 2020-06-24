@@ -6,7 +6,8 @@ class Menu < ApplicationRecord
 
     has_many :menu_items,
         foreign_key: :menu_id,
-        class_name: :MenuItem
+        class_name: :MenuItem,
+        dependent: :destroy
 
     has_many :items,
         through: :menu_items,

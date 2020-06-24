@@ -1,5 +1,6 @@
 class StoreFilter < ApplicationRecord
     belongs_to :filter,
         foreign_key: :filter_id,
-        class_name: :Filter
+        class_name: :Filter,
+        dependent: :destroy
 end

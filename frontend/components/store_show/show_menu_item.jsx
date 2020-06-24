@@ -18,6 +18,7 @@ class ShowMenuItem extends React.Component{
         const {item, menu} = this.props
         if (item === null || item === undefined || item === false) return null;
         if (menu === null || menu === undefined || menu === false) return null;
+        const itemImage = item.photoUrl ?  <img src={`${item.photoUrl}`} alt="" /> : null;
         return (
           <div onClick={() => this.handleClick()} className="menu-item-container">
             {/* Div below will be a button in the future */}
@@ -34,7 +35,7 @@ class ShowMenuItem extends React.Component{
                   </div>
                   <div className="menu-item-picture-container">
                     <div className="menu-item-picture-box">
-                      <img src={`${item.photoUrl}`} alt="" />
+                      {itemImage}
                     </div>
                   </div>
                 </div>

@@ -17,20 +17,23 @@ class Store < ApplicationRecord
 
     has_many :menus,
         foreign_key: :store_id,
-        class_name: :Menu
+        class_name: :Menu,
+        dependent: :destroy
 
     has_many :menu_items,
         through: :menus,
-        source: :items
-
+        source: :items,
+        dependent: :destroy
         
     has_many :store_filters,
         foreign_key: :store_id,
-        class_name: :StoreFilter
+        class_name: :StoreFilter,
+        dependent: :destroy
     
     has_many :filters,
         through: :store_filters,
-        source: :filter
+        source: :filter,
+        dependent: :destroy
 
 end
 
