@@ -53,10 +53,7 @@ class StoreIndexItem extends React.Component {
       }
     }
     var origin1 = store.address
-    var destinationA = new google.maps.LatLng(37.75383, -122.401772);
-    if (currentUser) {
-      destinationA = currentUser.address
-    }
+    var destinationA = currentUser.address || new google.maps.LatLng(37.75383, -122.401772);
     var service = new google.maps.DistanceMatrixService();
     service.getDistanceMatrix(
       {
