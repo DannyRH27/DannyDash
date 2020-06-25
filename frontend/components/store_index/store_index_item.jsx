@@ -17,10 +17,11 @@ class StoreIndexItem extends React.Component {
   componentDidMount(){
     this._isMounted = true;
     const { fetchCurrentUser, fetchStore, store, currentUser } = this.props;
+    var dispatchUser = {}
     if (currentUser && this._isMounted) {
         this.calculateDispatchDistance(store, currentUser);
     } else if (this._isMounted) {
-        this.calculateDispatchDistance(store, currentUser);
+        this.calculateDispatchDistance(store, dispatchUser);
     }
   }
 
