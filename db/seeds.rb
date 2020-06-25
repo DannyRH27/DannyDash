@@ -1377,7 +1377,7 @@ tcmenu_item15 = MenuItem.create!(menu_id: tc_menu5.id, item_id: tcitem12.id, ran
 
 # Pa'ina Lounge & Restaurant
 # store16 = Store.find_by(name: 'Paina Lounge & Restaurant')
-# store16 = Store.create!(name:'Paina Lounge & Restaurant',address: '1865 Post St, San Francisco, CA 94115', hours: ['11:00AM - 9:00PM'], description: 'Modern, vibrant eatery with live music serving Hawaiian-style tapas & poke, plus tropical cocktails.', status: 1, coordinate: '(37.783691, -122.444649)', rating: 4.8, rating_count: 240, price_rating: '$$')
+store16 = Store.create!(name:'Paina Lounge & Restaurant',address: '1865 Post St, San Francisco, CA 94115', hours: ['11:00AM - 9:00PM'], description: 'Modern, vibrant eatery with live music serving Hawaiian-style tapas & poke, plus tropical cocktails.', status: 1, coordinate: '(37.783691, -122.444649)', rating: 4.8, rating_count: 240, price_rating: '$$')
 store16_photo1= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLPokeBowl.jpg')
 store16_photo2= open('https://dannydash-seeds.s3-us-west-1.amazonaws.com/PLPokeParty.jpg')
 store16.photos.attach(io: store16_photo1, filename: 'PLPokeBowl.jpg')
