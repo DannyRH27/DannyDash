@@ -1,14 +1,14 @@
 View the [live site](https://dannydash.herokuapp.com).
 
-# DistanSing
+# DannyDash
 <p align="center">
   <img src="https://distansing-dev.s3-us-west-1.amazonaws.com/splash.png" width="1200">
 </p>
-DistanSing is a virtual-event hosting app developed during the COVID-19 pandemic as a solution for artists/bands to continue catering to their fans/audience. It was implemented using the following technologies:
+DannyDash is an on-demand prepared food delivery service inspired by [live site](https://doordash.com) that estimates the amount of time it will take for Danny to delivery food to you by walking. It was implemented using the following technologies:
 
 + **Frontend**: React.js, Redux
-+ **Backend**: MongoDB, Express.js
-+ **Others**: JavaScript, Node.js, Socket.io, PeerJS, Amazon S3
++ **Backend**: PostgreSQL Database, Ruby on Rails
++ **Others**: JavaScript, Amazon S3, Google Geocoding API, Google Maps Javascript API, Google Distance Matrix API, Omniauth Facebook API,
 
 ## Table of Contents
 + [Event CRUD](https://github.com/tjmccabe/DistanSing#events)
