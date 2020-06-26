@@ -95,8 +95,8 @@ class CheckoutIndex extends React.Component {
             className="checkout-address-input"
             placeholder="Please enter an address"
             type="text"
-            pattern="\w+(\s\w+){2,}"
-            title="123 Baker Street"
+            pattern="(\w.+\s.+\s\w+)"
+            title="123 John Doe Lane, San Francisco CA 94110"
           />
           <input type="submit" />
         </form>

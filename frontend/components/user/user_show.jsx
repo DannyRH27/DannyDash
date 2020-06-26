@@ -113,8 +113,8 @@ class UserShow extends React.Component {
                         : "Please enter an address"
                     }`}
                     value={this.state.address}
-                    pattern="\w+(\s\w+){2,}"
-                    title="123 Baker Street"
+                    pattern="(\w.+\s.+\s\w+)"
+                    title="123 John Doe Lane, San Francisco CA 94110"
                   />
                 </div>
               </div>

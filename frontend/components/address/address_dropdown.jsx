@@ -39,21 +39,21 @@ class AddressDropdown extends React.Component {
     const { currentUser, closeDropdown, openDropdown} = this.props;
     const placeholdertext = currentUser ? "Please enter a new address" : "Please sign in/sign up"
     const Dropdown = currentUser ? (
-        <input
-          onChange={this.handleInput}
-          placeholder={placeholdertext}
-          type="text"
-          pattern="\w+(\s\w+){2,}"
-          title="123 Baker Street"
-        />
+      <input
+        onChange={this.handleInput}
+        placeholder={placeholdertext}
+        type="text"
+        pattern="(\w.+\s.+\s\w+)"
+        title="123 John Doe Lane, San Francisco CA 94110"
+      />
     ) : (
-        <input
-          onChange={this.handleInput}
-          placeholder={placeholdertext}
-          type="text"
-          id="disabled"
-          disabled
-        />
+      <input
+        onChange={this.handleInput}
+        placeholder={placeholdertext}
+        type="text"
+        id="disabled"
+        disabled
+      />
     );
     return (
       <div

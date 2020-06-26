@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     width: 70%;
-    max-width: 350px;
+    max-width: 321px;
     z-index: 10000;
     transform: translateX(-100%);
     transition: transform 0.3s ease-out;
@@ -37,15 +37,15 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     align-items: center;
+    padding: 14px 20px 14px 10px;
+    border-bottom: 1px solid rgb(222, 222, 222);
 }
 
 .side-drawer li {
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid rgb(222, 222, 222);
     width: 100%;
     max-width: 320px;
-    padding: 14px 20px 14px 10px;
     text-align: center;
 }
 
