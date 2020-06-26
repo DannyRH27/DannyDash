@@ -2,7 +2,7 @@ View the [live site](https://dannydash.herokuapp.com).
 
 # DannyDash
 <p align="center">
-  <img src="https://distansing-dev.s3-us-west-1.amazonaws.com/splash.png" width="1200">
+  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/Splash.mp4" width="1200">
 </p>
 DannyDash is an on-demand prepared food delivery service inspired by [live site](https://doordash.com) that estimates the amount of time it will take for Danny to delivery food to you by walking. It was implemented using the following technologies:
 
@@ -37,8 +37,8 @@ As a user, feel free to browse and discover events that peak your interest. Log 
 DannyDash allows you sign in or signup for a user account using your Facebook credentials.
 <br>
 
-Omni-Authorization is achieved through Facebook Login API. When the login with Facebook button is hit, a script runs that redirects to Facebook to ask for information based on your Facebook login credentials. Once authorized, the
-Omniauth Controller determines the Facebook route has been hit and proceeds to generate a user with the information provided. If successful, the user will be created and redirected to the home page. On failure, the account will not be created and the user will be redirected back to the splash page.
+Omni-Authorization is achieved through Facebook Login API. When the Continue with Facebook button is hit, a script runs that redirects to Facebook to ask for information based on your Facebook login credentials. Once authorized, the
+Omniauth Controller determines the Facebook API route has been hit and proceeds to generate a user with the information provided. If successful, the user will be created and redirected to the home page. On failure, the account will not be created and the user will be redirected back to the splash page.
 
 ```
 <script>
