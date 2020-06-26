@@ -15,9 +15,9 @@ DannyDash is an on-demand prepared food delivery service inspired by [live site]
 ## Logistics Dispatch System
 <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/Dispatch.png" width="1000">
 
-The Logistics Dispatch System is implemented using Google's Geocoding, Distance Matrix, and Maps Javascript APIs. <br/>
-First, the Geocoding API will take the current user's address and the destination store address and return latitude/longitude coordinates for both. <br/>
-Next, the store coordinates are set as the origin and the user's coordinates are set as the destination in the Distance Matric API inputs and will return, duration and distance. <br/>
+The Logistics Dispatch System is implemented using Google's Geocoding, Distance Matrix, and Maps Javascript APIs. <br/><br/>
+First, the Geocoding API will take the current user's address and the destination store address and return latitude/longitude coordinates for both. <br/><br/>
+Next, the store coordinates are set as the origin and the user's coordinates are set as the destination in the Distance Matric API inputs and will return, duration and distance. <br/><br/>
 Finally, the Maps Javascript API will initialize an instance of Google Maps and use the coordinates to create two markers on the map. ETA will be calculated by manipulating the returned duration and incrementing it with a DateTime Object.
 ```
   calculateDispatchDistance(order) {
@@ -184,16 +184,17 @@ def failure
 end
 ```
 <br/>
+
 ## Dynamic Search
 <p align="center">
-  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/SearchDropdown.png" width=400>
+  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/SearchDropdown2.png" width=300>
 </p>
 <p align="center">
   <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/SearchIndex.png" width=1000>
 </p>
-Search stores for quick navigation! See the first five stores that match, or view all results! 
+Search stores for quick navigation! See the first five stores that match, or view all results! <br/>
 Search is implemented using query strings taken from the URL to scan the database for queries.
-
+<br/>
 AJAX Call
 <br/>
 ```
@@ -220,8 +221,6 @@ def search
 end
 
 ```
-<br/>
-<br/>
 
 ## Contact
 + Danny Huang: 
