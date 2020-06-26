@@ -10,14 +10,14 @@ DannyDash is an on-demand prepared food delivery service inspired by [live site]
 ## Table of Contents
 + [Logistics Dispatch System](https://github.com/DannyRH27/DannyDash#logistics-dispatch-system)
 + [Facebook Omni-Authorization](https://github.com/DannyRH27/DannyDash/#facebook-omni-authorization)
-+ [Live Chat](https://github.com/tjmccabe/DistanSing#live-chat)
-+ [Dynamic Search](https://github.com/tjmccabe/DistanSing#dynamic-search)
++ [Dynamic Search](https://github.com/tjmccabe/DannyRH27#dynamic-search)
 
 ## Logistics Dispatch System
 <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/Dispatch.png" width="1000">
 
-The Logistics Dispatch System is implemented using Google's Geocoding, Distance Matrix, and Maps Javascript APIs. First, the Geocoding API will take the current user's address and the destination store address and
-return latitude/longitude coordinates for both. Next, the store coordinates are set as the origin and the user's coordinates are set as the destination in the Distance Matric API inputs and will return, duration and distance.
+The Logistics Dispatch System is implemented using Google's Geocoding, Distance Matrix, and Maps Javascript APIs. <br/>
+First, the Geocoding API will take the current user's address and the destination store address and return latitude/longitude coordinates for both. <br/>
+Next, the store coordinates are set as the origin and the user's coordinates are set as the destination in the Distance Matric API inputs and will return, duration and distance. <br/>
 Finally, the Maps Javascript API will initialize an instance of Google Maps and use the coordinates to create two markers on the map. ETA will be calculated by manipulating the returned duration and incrementing it with a DateTime Object.
 ```
   calculateDispatchDistance(order) {
@@ -128,7 +128,9 @@ DannyDash allows you sign in or signup for a user account using your Facebook cr
 
 Omni-Authorization is achieved through Facebook Login API. When the Continue with Facebook button is hit, a script runs that redirects to Facebook to ask for information based on your Facebook login credentials. Once authorized, the
 Omniauth Controller determines the Facebook API route has been hit and proceeds to generate a user with the information provided. If successful, the user will be created and redirected to the home page. On failure, the account will not be created and the user will be redirected back to the splash page.
-
+<br/>
+<br/>
+Async FB API Call
 ```
 <script>
       window.fbAsyncInit = function() {
@@ -151,9 +153,14 @@ Omniauth Controller determines the Facebook API route has been hit and proceeds 
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
+
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=175499983639989&autoLogAppEvents=1"></script>
-
+```
+<br/>
+<br/>
+Omni-Authorization Callback Controller Facebook Route
+```
 def facebook
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
@@ -175,18 +182,36 @@ def failure
 end
 ```
 
-## Live Chat
-<p align="center">
-  <img src="https://distansing-dev.s3-us-west-1.amazonaws.com/live_chat.png" width="400">
-</p>
-Interact with artist or your fans during an event using our real-time chat. Use the preloaded emojis to express your enjoyment!
-
 ## Dynamic Search
 <p align="center">
-  <img src="https://distansing-dev.s3-us-west-1.amazonaws.com/search.png" width="400">
+  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/SearchDropdown.png width="400">
 </p>
-Search artists or events using the search bar for quick navigation! See the first five artists/events that match, or view all results!
+<p align="center">
+  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/SearchIndex.png width="400">
+</p>
+Search stores for quick navigation! See the first five stores that match, or view all results! 
+Search is implemented using query strings taken from the URL to scan the database for queries.
 
+AJAX Call
+```
+search(fragment) {
+  $.ajax({
+    method: "GET",
+    url: `/api/stores/search/`,
+    data: { fragment: fragment },
+  }).then((res) => {
+    this.setState({ searchResults: res });
+  });
+}
+```
+Store Controller Search Route
+```
+def search
+  fragment = params[:fragment]
+  @stores = Store.where("name ilike ?", "%#{fragment}%")
+  render :search
+end
+```
 ## Contact
 + TJ McCabe: 
 [Github](https://github.com/tjmccabe/) 
