@@ -126,8 +126,10 @@ Finally, the Maps Javascript API will initialize an instance of Google Maps and 
 DannyDash allows you sign in or signup for a user account using your Facebook credentials.
 <br>
 
-Omni-Authorization is achieved through Facebook Login API. When the Continue with Facebook button is hit, a script runs that redirects to Facebook to ask for information based on your Facebook login credentials. Once authorized, the
-Omniauth Controller determines the Facebook API route has been hit and proceeds to generate a user with the information provided. If successful, the user will be created and redirected to the home page. On failure, the account will not be created and the user will be redirected back to the splash page.
+Omni-Authorization is achieved through Facebook Login API. <br/><br/>
+When the Continue with Facebook button is hit, a script runs that redirects to Facebook to ask for information based on your Facebook login credentials. <br/><br/>
+Once authorized, the Omniauth Controller determines the Facebook API route has been hit and proceeds to generate a user with the information provided. <br/><br/>
+If successful, the user will be created and redirected to the home page. On failure, the account will not be created and the user will be redirected back to the splash page.
 <br/>
 <br/>
 Async FB API Call
