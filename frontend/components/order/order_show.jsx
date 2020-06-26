@@ -86,45 +86,29 @@ class OrderShow extends React.Component {
         destinations: [destinationA],
         travelMode: "WALKING",
         unitSystem: google.maps.UnitSystem.IMPERIAL,
-        // transitOptions: TransitOptions,
-        // drivingOptions: DrivingOptions,
-        // unitSystem: UnitSystem,
-        // avoidHighways: Boolean,
-        // avoidTolls: Boolean,
       },
       callback.bind(this)
     );
   }
 
   initMap(order) {
-    // The location of Uluru
     const { currentUser } = this.props;
     var location = { lat: 37.75383, lng: -122.401772 };
-    // The map, centered at location
-    // var map = new google.maps.Map(
-      // document.getElementById('map'), { zoom: 14, center: location });
-    // The marker, positioned at location
-    // var marker = new google.maps.Marker({ position: location, map: map });
     var map = new google.maps.Map(document.getElementById("order-map"), {
       zoom: 15,
       center: location,
     });
-    var iconBase = "https://maps.google.com/mapfiles/kml/shapes/";
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({ address: currentUser.address }, function (
       results,
       status
     ) {
-      // if (status == google.maps.GeocoderStatus.OK) {
       var homeMark = <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/Home.png" alt=""/>
       map.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
         map: map,
         position: results[0].geometry.location,
-        // icon: "https://dannydash-seeds.s3-us-west-1.amazonaws.com/Home.png",
       });
-      // const address = document.getElementById("address");
-      // address.innerHTML = results[0].formatted_address;
       this.setState({address: results[0].formatted_address})
     // }
     }.bind(this))
@@ -134,19 +118,11 @@ class OrderShow extends React.Component {
       status
     ) {
       if (status == google.maps.GeocoderStatus.OK) {
-        // var map = new google.maps.Map(document.getElementById("order-map"), {
-        //   zoom: 14,
-        //   center: results[0].geometry.location,
-        // });
-        // map.setCenter(results[0].geometry.location);
         var storeMark = <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/Store.png" alt=""/>
         var marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location,
-          // icon: "https://dannydash-seeds.s3-us-west-1.amazonaws.com/Store.png",
         });
-        // const address = document.getElementById("address");
-        // address.innerHTML = results[0].formatted_address;
       }
     }.bind(this))
   }

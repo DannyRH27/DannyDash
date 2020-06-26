@@ -13,7 +13,7 @@ const mapStateToProps = (state, { match }) => {
     const store = selectStore(state.entities, storeId);
     const menus = state.entities.menus;
     const items = state.entities.items;
-    // const reviews = selectReviewsForStore(state.entities, store);
+
     return {
         storeId,
         store,

@@ -17,7 +17,6 @@ class StoreShow extends React.Component {
       distance: '',
     }
 
-    // this.calculateDispatchDistance = this.calculateDispatchDistance.bind(this);
   }
 
   componentDidMount() {
@@ -84,11 +83,6 @@ class StoreShow extends React.Component {
         destinations: [destinationA],
         travelMode: "WALKING",
         unitSystem: google.maps.UnitSystem.IMPERIAL,
-        // transitOptions: TransitOptions,
-        // drivingOptions: DrivingOptions,
-        // unitSystem: UnitSystem,
-        // avoidHighways: Boolean,
-        // avoidTolls: Boolean,
       },
       callback.bind(this)
     );

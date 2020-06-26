@@ -37,7 +37,6 @@ class StoreIndex extends React.Component {
   render() {
     const { fetchCurrentUser, stores, fetchStore, fetchStores, filters, location, match, currentUser } = this.props
     if (stores.length === 0) return null;
-    console.log(stores)
     const FilterHeader = 
       location.pathname.slice(0, 8) === "/filters" 
         ? (<span>{match.params.filter}</span>) 

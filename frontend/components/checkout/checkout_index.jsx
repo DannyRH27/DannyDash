@@ -15,7 +15,6 @@ class CheckoutIndex extends React.Component {
 
   componentDidMount(){
     const {fetchStores, fetchCart, fetchCartStore, cart, currentUser, store} = this.props;
-    // this.initMap();
     fetchCart(currentUser.id).then((payload) => {
       fetchCartStore(payload.cart.storeId)
         .then((store) => this.initMap(store.payload))
@@ -33,21 +32,14 @@ class CheckoutIndex extends React.Component {
   }
  
   initMap(store) {
-    // The location of Uluru
     const { currentUser } = this.props;
     var location = { lat: store.coordinate.x , lng: store.coordinate.y };
-    // The map, centered at location
-    // var map = new google.maps.Map(
-    //   document.getElementById('map'), { zoom: 14, center: location });
-    // The marker, positioned at location
-    // var marker = new google.maps.Marker({ position: location, map: map });
 
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({ 'address': currentUser.address }, function (results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         var map = new google.maps.Map(
           document.getElementById('map'), { zoom: 14, center: results[0].geometry.location });
-        // map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location

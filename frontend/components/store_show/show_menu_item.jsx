@@ -21,13 +21,11 @@ class ShowMenuItem extends React.Component{
         const itemImage = item.photoUrl ?  <img src={`${item.photoUrl}`} alt="" /> : null;
         return (
           <div onClick={() => this.handleClick()} className="menu-item-container">
-            {/* Div below will be a button in the future */}
             <div className="menu-item-box">
               <span className="secondary-foreground">
                 <div className="second-inner-layer">
                   <div className="menu-item-info">
                     <div className="menu-item-name">
-                      {/* Need to fix anchor tags. */}
                       <p>{item.name}</p>
                     </div>
                     <span>{item.description}</span>

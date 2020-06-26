@@ -62,11 +62,6 @@ class StoreIndexItem extends React.Component {
         destinations: [destinationA],
         travelMode: "WALKING",
         unitSystem: google.maps.UnitSystem.IMPERIAL,
-        // transitOptions: TransitOptions,
-        // drivingOptions: DrivingOptions,
-        // unitSystem: UnitSystem,
-        // avoidHighways: Boolean,
-        // avoidTolls: Boolean,
       },
       callback.bind(this)
     );

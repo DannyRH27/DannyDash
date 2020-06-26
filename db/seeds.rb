@@ -710,11 +710,11 @@ mcmenu_item12 = MenuItem.create!(menu_id: mc_menu3.id, item_id: mcitem6.id, rank
 mcmenu_item13 = MenuItem.create!(menu_id: mc_menu3.id, item_id: mcitem7.id, rank: 13, store_id: store6.id)
 mcmenu_item14 = MenuItem.create!(menu_id: mc_menu3.id, item_id: mcitem8.id, rank: 14, store_id: store6.id)
 mcmenu_item15 = MenuItem.create!(menu_id: mc_menu3.id, item_id: mcitem9.id, rank: 15, store_id: store6.id)
-mcmenu_item16 = MenuItem.create!(menu_id: mc_menu3.id, item_id: mcitem10.id, rank: 16, store_id: store6.id)
-mcmenu_item17 = MenuItem.create!(menu_id: mc_menu3.id, item_id: mcitem11.id, rank: 17, store_id: store6.id)
-mcmenu_item18 = MenuItem.create!(menu_id: mc_menu3.id, item_id: mcitem12.id, rank: 18, store_id: store6.id)
-mcmenu_item19 = MenuItem.create!(menu_id: mc_menu3.id, item_id: mcitem13.id, rank: 19, store_id: store6.id)
-mcmenu_item20 = MenuItem.create!(menu_id: mc_menu3.id, item_id: mcitem14.id, rank: 20, store_id: store6.id)
+mcmenu_item16 = MenuItem.create!(menu_id: mc_menu4.id, item_id: mcitem10.id, rank: 16, store_id: store6.id)
+mcmenu_item17 = MenuItem.create!(menu_id: mc_menu4.id, item_id: mcitem11.id, rank: 17, store_id: store6.id)
+mcmenu_item18 = MenuItem.create!(menu_id: mc_menu4.id, item_id: mcitem12.id, rank: 18, store_id: store6.id)
+mcmenu_item19 = MenuItem.create!(menu_id: mc_menu4.id, item_id: mcitem13.id, rank: 19, store_id: store6.id)
+mcmenu_item20 = MenuItem.create!(menu_id: mc_menu4.id, item_id: mcitem14.id, rank: 20, store_id: store6.id)
 
 # Seapot
 
