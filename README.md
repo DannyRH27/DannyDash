@@ -2,7 +2,7 @@ View the [live site](https://dannydash.herokuapp.com).
 
 # DannyDash
 <p align="center">
-  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/Splash.mp4" width="1200">
+  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/Splash+GIF2.gif" width="1200">
 </p>
 DannyDash is an on-demand prepared food delivery service inspired by [live site](https://doordash.com) that estimates the amount of time it will take for Danny to delivery food to you by walking. It was implemented using the following technologies:
 
