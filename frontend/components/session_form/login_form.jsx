@@ -13,6 +13,11 @@ class LoginForm extends React.Component {
         this.demo = this.demo.bind(this)
     }
 
+
+    componentDidMount(){
+      window.scrollTo(0, 0);
+    }
+    
     update(field) {
         return (e) =>
         this.setState({

@@ -10,6 +10,7 @@ class StoreIndex extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     const { fetchStores, fetchFilters, filterStores, searchStores, location, match } = this.props;
     this._isMounted = true;
     fetchFilters();
