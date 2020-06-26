@@ -11,12 +11,12 @@ DannyDash is an on-demand prepared food delivery service inspired by [live site]
 + **Others**: JavaScript, Amazon S3, Google Geocoding API, Google Maps Javascript API, Google Distance Matrix API, Omniauth Facebook API,
 
 ## Table of Contents
-+ [Event CRUD](https://github.com/tjmccabe/DistanSing#events)
++ [Logistics Dispatch System](https://github.com/tjmccabe/DistanSing#dispatch)
 + [Live Streaming](https://github.com/tjmccabe/DistanSing#live-streaming)
 + [Live Chat](https://github.com/tjmccabe/DistanSing#live-chat)
 + [Dynamic Search](https://github.com/tjmccabe/DistanSing#dynamic-search)
 
-## Events
+## Dispatch
 ### Artists
 As an artist, host your own events by navigating to your profile page and click the <img src="https://distansing-dev.s3-us-west-1.amazonaws.com/create_event_button.png" width="80"> button. 
 
