@@ -68,7 +68,11 @@ class AddressDropdown extends React.Component {
             {Dropdown}
           </div>
           <div className="submit-container">
-            <input className="address-dropdown-submit" type="submit" />
+            <input
+              className="address-dropdown-submit"
+              value="Submit"
+              type="submit"
+            />
           </div>
         </form>
       </div>

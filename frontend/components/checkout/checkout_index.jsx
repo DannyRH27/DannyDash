@@ -98,7 +98,7 @@ class CheckoutIndex extends React.Component {
             pattern="(\w.+\s.+\s\w+)"
             title="123 John Doe Lane, San Francisco CA 94110"
           />
-          <input type="submit" />
+          <input value="Submit" type="submit" />
         </form>
       </div>
     );
