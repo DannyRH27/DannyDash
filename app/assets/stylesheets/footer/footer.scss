@@ -1,0 +1,34 @@
+.footer-container {
+  width: 100%;
+  z-index: 10000000;
+  color: white;
+  background-color: black;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  // border-top: 1px solid gray;
+}
+
+.footer-details {
+  display: flex;
+  align-items: center;
+}
+
+.footer-details img {
+  height: 50px;
+  width: 50px;
+  margin: 0px 5px 0px 10px;
+}
+
+.footer-details svg {
+  font-size: 35px;
+  color: white;
+  text-decoration: none;
+  margin: 0px 5px;
+  transition: all 0.4s;
+}
+
+.footer-details svg:hover {
+  transform: scale(1.1);
+}

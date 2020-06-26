@@ -14,6 +14,7 @@ import OrderShowContainer from './order/order_show_container';
 import OrderIndexContainer from './order/order_index_container';
 import UserShowContainer from './user/user_show_container';
 import Modal from "./modal/modal";
+import Footer from "./footer/footer";
 
 const App = () => (
   <div style={{ height: "100%" }}>
@@ -43,6 +44,11 @@ const App = () => (
       <Switch>
         <ProtectedRoute path="/orders/:orderId" component={OrderShowContainer} />
         <Route exact path="/orders" component={OrderIndexContainer} />
+      </Switch>
+      <Switch>
+        <Route exact path="/login" component={null} />
+        <Route exact path="/signup" component={null} />
+        <Route path="/" component={Footer}/>
       </Switch>
     </main>
   </div>

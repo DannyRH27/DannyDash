@@ -1,10 +1,11 @@
 .order-index-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: calc(96vh - 70px);
   position: relative;
   width: 100%;
   padding-top: 48px;
+  background-color: white;
 }
 
 .order-index {

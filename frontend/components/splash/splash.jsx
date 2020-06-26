@@ -28,7 +28,7 @@ class Splash extends React.Component{
     })
 
     return (
-      <div>
+      <div className="splash-page">
         <div
           className="splash-container"
           style={{
@@ -62,11 +62,48 @@ class Splash extends React.Component{
             </div>
           </div>
         </div>
-        <div className="third-div">
-          {/* <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/Communal2.jpg" alt="" /> */}
-        </div>
-        <div className="fourth-div">
-          {/* <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/Communal3.jpg" alt="" /> */}
+        <div className="splash-entry-points-container">
+          <div className="first-entry-point">
+            <div className="entry-point">
+              <div className="entry-point-details">
+                <h1>Every Order Delivered Personally</h1>
+                <span>
+                  From your neighborhood sushi spot to the burger and fries you
+                  crave, Danny Huang will personally deliver each time to
+                  you...by walking.
+                </span>
+                <Link to="/home">
+                  <button>Order Quickly</button>
+                </Link>
+              </div>
+              <div id="first-pic" className="entry-point-picture">
+                <img
+                  src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/Communal2.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div className="second-entry-point">
+            <div className="entry-point">
+              <div id="second-pic" className="entry-point-picture">
+                <img
+                  src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/Communal3.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="entry-point-details">
+                <h1>Seriously, it might take a while.</h1>
+                <span>
+                  Some of our customers have even waited days, but they keep
+                  coming back for more.
+                </span>
+                <Link to="/home">
+                  <button>Order Quickly</button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

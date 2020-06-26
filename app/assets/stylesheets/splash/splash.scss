@@ -1,3 +1,8 @@
+.splash-page {
+  min-height: calc(100vh - 70px);
+  background-color: white;
+}
+
 .splash-container {
   display: flex;
   flex-direction: column;
@@ -43,7 +48,7 @@
   color: white;
   font-size: 32px;
   font-weight: 600;
-  font-family:  'Bubblegum Sans';
+  font-family:  Roboto;
 }
 
 .splash-text a {
@@ -53,7 +58,8 @@
   border-radius: 15px;
   background-color: black;
   padding: 7px;
-  font-family: 'Bubblegum Sans';
+  font-family: Roboto;
+  font-weight: 700;
   margin-top: 15px;
   transition: 0.4s;
 }
@@ -69,7 +75,7 @@
 .local-favorites-container {
   width: 100%;
   max-width: 1002px;
-  margin: 0px auto;
+  margin: 0px auto 140px auto;
   flex: 1 0 auto;
 }
 
@@ -99,4 +105,149 @@
   -webkit-box-pack: center;
   justify-content: center;
   flex-flow: row wrap;
+}
+
+.splash-entry-points-container {
+  width: 100%;
+}
+
+.first-entry-point {
+  width: 100%;
+  margin-bottom: -28px;
+}
+
+.entry-point {
+  max-width: 1184px;
+  flex-flow: row nowrap;
+  margin: 0px auto;
+  display: flex;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+
+}
+
+.entry-point-details {
+  flex: 4 1 0%;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-bottom: 96px;
+  flex-flow: column nowrap;
+}
+
+.entry-point-details h1 {
+  font-size: 40px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 0px;
+  padding: 0px;
+}
+
+.entry-point-details span {
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  margin: 20px 0px;
+  padding: 0px;
+}
+
+.entry-point-details a {
+  width: 150px;
+}
+
+.entry-point-details button {
+  position: relative;
+  max-width: 100%;
+  min-height: 40px;
+  width: 150px;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  background-color: rgb(235, 23, 0);
+  box-shadow: transparent 0px 0px 0px 1px inset;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 1000px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  transition: background-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  transition: 0.4s;
+}
+
+.entry-point-details button:hover {
+  background-color: #c61400;
+}
+
+.entry-point-details button:active {
+  background-color: #a21101;
+}
+
+.entry-point-details button:focus {
+  outline: none;
+}
+
+.entry-point-picture img {
+  height: 450px;
+  width: 600px;
+}
+
+#first-pic {
+  margin-left: 48px;
+}
+
+#second-pic {
+  margin-right: 48px;
+}
+.second-entry-point {
+  width: 100%;
+  background: rgb(255, 240, 237);
+  padding: 100px 0px 96px;
+}
+
+.second-entry {
+  max-width: 1000px;
+  flex-flow: row nowrap;
+  margin: 0px auto;
+}
+
+.second-entry-picture {
+  flex: 7 1 0%;
+}
+
+.second-entry-picture img {
+  height: 450px;
+  width: 600px;
+}
+
+.second-entry-details {
+  flex: 4 1 0%;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-left: 48px;
+  flex-flow: column nowrap;
 }
