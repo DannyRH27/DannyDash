@@ -48,7 +48,7 @@
   color: white;
   font-size: 32px;
   font-weight: 600;
-  font-family:  Roboto;
+  font-family:  'Bubblegum Sans';
 }
 
 .splash-text a {
@@ -58,18 +58,18 @@
   border-radius: 15px;
   background-color: black;
   padding: 7px;
-  font-family: Roboto;
+  font-family: 'Bubblegum Sans';
   font-weight: 700;
   margin-top: 15px;
   transition: 0.4s;
 }
 
 .splash-text a:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .splash-text a:active {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .local-favorites-container {
