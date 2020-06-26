@@ -186,10 +186,10 @@ end
 <br/>
 ## Dynamic Search
 <p align="center">
-  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/SearchDropdown.png width="400">
+  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/SearchDropdown.png" width=400>
 </p>
 <p align="center">
-  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/SearchIndex.png width="400">
+  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/SearchIndex.png" width=1000>
 </p>
 Search stores for quick navigation! See the first five stores that match, or view all results! 
 Search is implemented using query strings taken from the URL to scan the database for queries.
@@ -217,6 +217,8 @@ def search
   render :search
 end
 ```
+<br/>
+<br/>
 ## Contact
 + Danny Huang: 
 [Github](https://github.com/DannyRH27) 
