@@ -211,11 +211,13 @@ search(fragment) {
 Store Controller Search Route
 <br/>
 ```
+
 def search
   fragment = params[:fragment]
   @stores = Store.where("name ilike ?", "%#{fragment}%")
   render :search
 end
+
 ```
 <br/>
 <br/>
