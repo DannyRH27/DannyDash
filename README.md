@@ -10,7 +10,7 @@ DannyDash is an on-demand prepared food delivery service inspired by [live site]
 ## Table of Contents
 + [Logistics Dispatch System](https://github.com/DannyRH27/DannyDash#logistics-dispatch-system)
 + [Facebook Omni-Authorization](https://github.com/DannyRH27/DannyDash/#facebook-omni-authorization)
-+ [Dynamic Search](https://github.com/tjmccabe/DannyRH27#dynamic-search)
++ [Dynamic Search](https://github.com/tjmccabe/DannyRH27/#dynamic-search)
 
 ## Logistics Dispatch System
 <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/Dispatch.png" width="1000">
@@ -183,7 +183,6 @@ def failure
     redirect_to root_path
 end
 ```
-<br/>
 
 ## Dynamic Search
 <p align="center">
@@ -197,6 +196,7 @@ Search is implemented using query strings taken from the URL to scan the databas
 <br/>
 AJAX Call
 <br/>
+
 ```
 search(fragment) {
   $.ajax({
@@ -208,6 +208,7 @@ search(fragment) {
   });
 }
 ```
+
 <br/>
 Store Controller Search Route
 <br/>
