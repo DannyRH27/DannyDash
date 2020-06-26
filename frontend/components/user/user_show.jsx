@@ -1,4 +1,5 @@
 import React from 'react';
+import { currentUser } from '../../util/session_api_util';
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class UserShow extends React.Component {
       },
       disabled: true,
     };
-
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -29,6 +31,16 @@ class UserShow extends React.Component {
 
     }
   }
+
+  handleFocus(e){
+    e.currentTarget.placeholder = ""
+  }
+
+  handleBlur(e, field){
+    const { currentUser } = this.props;
+    e.currentTarget.placeholder = currentUser[field]
+  }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -67,6 +79,8 @@ class UserShow extends React.Component {
                     type="text"
                     placeholder={currentUser.fname}
                     value={this.state.fname}
+                    onFocus={this.handleFocus}
+                    onBlur={(e) => this.handleBlur(e, "fname")}
                   />
                 </div>
                 <div className="profile-edit-field">
@@ -76,6 +90,8 @@ class UserShow extends React.Component {
                     type="text"
                     placeholder={currentUser.lname}
                     value={this.state.lname}
+                    onFocus={this.handleFocus}
+                    onBlur={(e) => this.handleBlur(e, "lname")}
                   />
                 </div>
                 <div className="profile-edit-field">
@@ -87,6 +103,8 @@ class UserShow extends React.Component {
                     value={this.state.email}
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                     title="johndoe@gmail.com"
+                    onFocus={this.handleFocus}
+                    onBlur={(e) => this.handleBlur(e, "email")}
                   />
                 </div>
                 <div className="profile-edit-field">
@@ -98,6 +116,8 @@ class UserShow extends React.Component {
                     value={this.state.phoneNumber}
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     title="XXX-XXX-XXXX"
+                    onFocus={this.handleFocus}
+                    onBlur={(e) => this.handleBlur(e, "phoneNumber")}
                   />
                 </div>
                 <div className="profile-edit-field">
@@ -112,6 +132,8 @@ class UserShow extends React.Component {
                         : "Please enter an address"
                     }`}
                     value={this.state.address}
+                    onFocus={this.handleFocus}
+                    onBlur={(e) => this.handleBlur(e, "address")}
                     pattern="(\w.+\s.+\s\w+)"
                     title="123 John Doe Lane, San Francisco CA 94110"
                   />

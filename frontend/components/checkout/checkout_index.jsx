@@ -8,8 +8,11 @@ class CheckoutIndex extends React.Component {
     super(props);
     this.state = {
       address: this.props.currentUser.address,
-      tempAddress: '',
+      tempAddress: "",
     };
+
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
@@ -33,6 +36,16 @@ class CheckoutIndex extends React.Component {
 
   handleInput(e) {
     this.setState({ tempAddress: e.target.value });
+  }
+
+  handleFocus(e) {
+    e.currentTarget.placeholder = "";
+  }
+
+  handleBlur(e) {
+    const { currentUser } = this.props;
+    e.currentTarget.placeholder =
+      "e.g. 123 John Doe Lane, San Francisco CA 94110";
   }
 
   handleEnter(e) {
@@ -97,6 +110,8 @@ class CheckoutIndex extends React.Component {
             type="text"
             pattern="(\w.+\s.+\s\w+)"
             title="123 John Doe Lane, San Francisco CA 94110"
+            onFocus={this.handleFocus}
+            onBlur={(e) => this.handleBlur(e)}
           />
           <input value="Submit" type="submit" />
         </form>

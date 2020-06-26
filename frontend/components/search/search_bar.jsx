@@ -11,8 +11,11 @@ class SearchBar extends React.Component {
     this.state = {
       searchResults: null,
       openDropdown: false,
-      fragment: ''
-    }
+      fragment: "",
+    };
+
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.closeDropdown = this.closeDropdown.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
@@ -20,21 +23,33 @@ class SearchBar extends React.Component {
   }
 
   closeDropdown() {
-    this.setState({ openDropdown: false, fragment: '', searchResults: null });
+    this.setState({ openDropdown: false, fragment: "", searchResults: null });
+  }
+
+  handleFocus(e) {
+    e.currentTarget.placeholder = "";
+  }
+
+  handleBlur(e) {
+    const { currentUser } = this.props;
+    e.currentTarget.placeholder = "Search For Restaurants"
   }
 
   handleInput(e) {
-    if (e.target.value === '') {
-      this.setState({ openDropdown: false, fragment: '', searchResults: null });
+    if (e.target.value === "") {
+      this.setState({ openDropdown: false, fragment: "", searchResults: null });
     } else {
       this.search(e.target.value);
-      this.setState({ fragment: e.target.value, openDropdown: true })
+      this.setState({ fragment: e.target.value, openDropdown: true });
     }
   }
 
   handleEnter(e) {
-    if (e.key === 'Enter') {
-      if (this.props.history.location.pathname.slice(0, 7) === '/search' && this.state.fragment !== '') {
+    if (e.key === "Enter") {
+      if (
+        this.props.history.location.pathname.slice(0, 7) === "/search" &&
+        this.state.fragment !== ""
+      ) {
         this.handleSearchSubmit();
         window.location.reload();
       } else {
@@ -45,43 +60,44 @@ class SearchBar extends React.Component {
 
   handleSearchSubmit() {
     this.closeDropdown();
-    if (this.state.fragment !== '') {
+    if (this.state.fragment !== "") {
       this.props.history.push(`/search/${this.state.fragment}`);
     }
   }
 
-  search (fragment) {
+  search(fragment) {
     $.ajax({
       method: "GET",
       url: `/api/stores/search/`,
       data: { fragment: fragment },
-    })
-      .then(res => {
-        this.setState({ searchResults: res })
-      })
+    }).then((res) => {
+      this.setState({ searchResults: res });
+    });
   }
 
   render() {
     const { fragment, searchResults, openDropdown } = this.state;
     return (
       <div className="search-bar-container">
-        <FaSearch 
-          className="search-icon" />
-        <input 
+        <FaSearch className="search-icon" />
+        <input
           className="search-input"
-          type="text" 
-          onChange={this.handleInput} 
+          type="text"
+          onChange={this.handleInput}
           onKeyPress={this.handleEnter}
-          placeholder="Search" />
-        { openDropdown && searchResults ?  
-          <SearchDropdown 
+          placeholder="Search For Restaurants"
+          onFocus={this.handleFocus}
+          onBlur={(e) => this.handleBlur(e)}
+        />
+        {openDropdown && searchResults ? (
+          <SearchDropdown
             fragment={fragment}
-            closeDropdown={this.closeDropdown} 
-            searchResults={searchResults} />
-          : null
-        }
+            closeDropdown={this.closeDropdown}
+            searchResults={searchResults}
+          />
+        ) : null}
       </div>
-    )
+    );
   }
 }
 

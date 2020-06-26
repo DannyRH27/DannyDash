@@ -4,41 +4,52 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 class AddressDropdown extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      address: null
-    }
+      address: null,
+    };
+
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
   }
   componentDidMount() {
-    window.addEventListener('click', this.props.closeDropdown)
+    window.addEventListener("click", this.props.closeDropdown);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('click', this.props.closeDropdown)
+    window.removeEventListener("click", this.props.closeDropdown);
+  }
+
+  handleFocus(e) {
+    e.currentTarget.placeholder = "";
+  }
+
+  handleBlur(e) {
+    const { currentUser } = this.props;
+    e.currentTarget.placeholder = "e.g. 123 John Doe Lane, San Francisco CA 94110";
   }
 
   handleInput(e) {
-    this.setState({ address: e.target.value })
+    this.setState({ address: e.target.value });
   }
 
   handleEnter(e) {
     // e.preventDefault();
     const { currentUser, update, closeDropdown } = this.props;
-    const newUser = Object.assign({}, currentUser)
-    newUser.address = this.state.address
-    update(newUser)
-      .then(()=> {
-        closeDropdown();
-        window.location.reload();
-      })
+    const newUser = Object.assign({}, currentUser);
+    newUser.address = this.state.address;
+    update(newUser).then(() => {
+      closeDropdown();
+      window.location.reload();
+    });
   }
 
   render() {
-    const { currentUser, closeDropdown, openDropdown} = this.props;
+    const { currentUser, closeDropdown, openDropdown } = this.props;
     const placeholdertext = currentUser
-      ? "e.g. 123 John Doe Lane, San Francisco CA 94110 "
+      ? "e.g. 123 John Doe Lane, San Francisco CA 94110"
       : "Please sign in/sign up";
     const Dropdown = currentUser ? (
       <input
@@ -47,6 +58,8 @@ class AddressDropdown extends React.Component {
         type="text"
         pattern="(\w.+\s.+\s\w+)"
         title="123 John Doe Lane, San Francisco CA 94110"
+        onFocus={this.handleFocus}
+        onBlur={(e) => this.handleBlur(e)}
       />
     ) : (
       <input
