@@ -15,6 +15,9 @@ class LoginForm extends React.Component {
 
 
     componentDidMount(){
+      const { clearErrors } = this.props;
+
+      clearErrors();
       window.scrollTo(0, 0);
     }
     

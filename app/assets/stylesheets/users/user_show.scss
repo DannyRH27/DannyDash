@@ -125,7 +125,7 @@
   padding: 24px 29px 24px 24px;
 }
 
-.profile-edit-save button {
+.profile-edit-save input {
   position: relative;
   max-width: 100%;
   display: flex;
@@ -153,20 +153,25 @@
   text-decoration: none;
 }
 
-.profile-edit-save button:hover {
+.profile-edit-save input:hover {
   background-color: #c61400;
 }
 
-.profile-edit-save button:active {
+.profile-edit-save input:active {
   background-color: #a21101;
 }
 
-.profile-edit-save button:focus {
+.profile-edit-save input:focus {
   outline: none;
 }
 
-.profile-edit-save button:disabled {
+.profile-edit-save input:disabled {
   background-color: rgb(247, 247, 247);
   color: rgb(178, 178, 178);
   cursor: not-allowed;
+}
+
+#update-errors {
+  text-align: center;
+  padding: 0;
 }

@@ -17,7 +17,12 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user && @user.update_attributes(user_params)
+    p @user
+    if @user.email == 'demo@gmail.com'
+      render json: ['Please do not update the demo user email.'], status: 401
+    elsif @user && @user.update_attributes(user_params)
+      @user.phone_number = params[:user][:phoneNumber]
+      @user.save
         render 'api/users/show'
     elsif !@user
         render json: ['User not found'], status: 404
