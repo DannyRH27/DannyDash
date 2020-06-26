@@ -194,6 +194,7 @@ end
 Search stores for quick navigation! See the first five stores that match, or view all results! <br/>
 Search is implemented using query strings taken from the URL to scan the database for queries.
 <br/>
+<br/>
 AJAX Call
 <br/>
 
