@@ -41,6 +41,16 @@ class SideDrawer extends React.Component {
     if (show) {
       drawerClasses = ["side-drawer", "open"];
     }
+    const LandingPageButton = currentUser ? null : (
+      <li onClick={handleToggle}>
+        <Link to="/">
+          <p className="side-bar-icon">
+            <RiShoppingBag2Line />
+          </p>
+          Landing Page
+        </Link>
+      </li>
+    );
     const UserDrawer = currentUser ? (
       <li onClick={handleToggle}>
             <Link to={`/users/${currentUser.id}`}>
@@ -89,14 +99,7 @@ class SideDrawer extends React.Component {
               Home
             </Link>
           </li>
-          {/* <li onClick={handleToggle}>
-            <Link to="/">
-              <p className="side-bar-icon">
-                <RiShoppingBag2Line />
-              </p>
-              Pickup
-            </Link>
-          </li> */}
+          {LandingPageButton}
           <li onClick={handleToggle}>
             <Link to="/orders">
               <p className="side-bar-icon">

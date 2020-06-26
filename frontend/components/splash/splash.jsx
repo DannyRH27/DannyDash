@@ -69,8 +69,7 @@ class Splash extends React.Component{
                 <h1>Every Order Delivered Personally</h1>
                 <span>
                   From your neighborhood sushi spot to the burger and fries you
-                  crave, Danny Huang will personally deliver each time to
-                  you...by walking.
+                  crave, Danny Huang always delivers (on code and food)...by walking.
                 </span>
                 <Link to="/home">
                   <button>Order Quickly</button>
