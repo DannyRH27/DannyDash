@@ -32,7 +32,7 @@ As a user, feel free to browse and discover events that peak your interest. Log 
   <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/FBLogin.png" width="1000">
 </p>
 <p align="center">
-  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/FBPermission.png" width="1000">
+  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/FBPermission2.png" width="1000">
 </p>
 DannyDash allows you sign in or signup for a user account using your Facebook credentials.
 <br>
