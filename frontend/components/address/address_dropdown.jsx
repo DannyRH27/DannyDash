@@ -24,46 +24,51 @@ class AddressDropdown extends React.Component {
   }
 
   handleEnter(e) {
+    // e.preventDefault();
     const { currentUser, update, closeDropdown } = this.props;
-    if (currentUser && e.key === 'Enter' && this.state.address !== '') {
-      const newUser = Object.assign({}, currentUser)
-      newUser.address = this.state.address
-      update(newUser)
-        .then(()=> {
-          closeDropdown();
-          window.location.reload();
-        })
-    }
+    const newUser = Object.assign({}, currentUser)
+    newUser.address = this.state.address
+    update(newUser)
+      .then(()=> {
+        closeDropdown();
+        window.location.reload();
+      })
   }
 
   render() {
     const { currentUser, closeDropdown, openDropdown} = this.props;
     const placeholdertext = currentUser ? "Please enter a new address" : "Please sign in/sign up"
     const Dropdown = currentUser ? (
-      <input
-        onChange={this.handleInput}
-        onKeyPress={this.handleEnter}
-        placeholder={placeholdertext}
-        type="text"
-      ></input>
+        <input
+          onChange={this.handleInput}
+          placeholder={placeholdertext}
+          type="text"
+          pattern="\w+(\s\w+){2,}"
+          title="123 Baker Street"
+        />
     ) : (
-      <input
-        onChange={this.handleInput}
-        onKeyPress={this.handleEnter}
-        placeholder={placeholdertext}
-        type="text"
-        id="disabled"
-        disabled
-      ></input>
+        <input
+          onChange={this.handleInput}
+          placeholder={placeholdertext}
+          type="text"
+          id="disabled"
+          disabled
+        />
     );
     return (
-      <div className={`address-dropdown ${openDropdown ? "animate-dropdown" : ""}`} onClick={(e) => e.stopPropagation()}>
-        <div
-          className="address-dropdown-input"
-        >
-          <FaMapMarkerAlt />
-          {Dropdown}
-        </div>
+      <div
+        className={`address-dropdown ${openDropdown ? "animate-dropdown" : ""}`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <form onSubmit={this.handleEnter}>
+          <div className="address-dropdown-input">
+            <FaMapMarkerAlt />
+            {Dropdown}
+          </div>
+          <div className="submit-container">
+            <input className="address-dropdown-submit" type="submit" />
+          </div>
+        </form>
       </div>
     );
   }

@@ -168,7 +168,7 @@ ActiveRecord::Schema.define(version: 2020_06_18_061855) do
     t.string "uid"
     t.string "name"
     t.text "image"
-    t.index ["address"], name: "index_users_on_address", unique: true
+    t.index ["address"], name: "index_users_on_address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["phone_number"], name: "index_users_on_phone_number"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -17,8 +17,8 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = current_user
-    p @user
-    if @user.email == 'demo@gmail.com'
+    p params[:user][:email]
+    if @user.email == 'demo@gmail.com' && params[:user][:email] != 'demo@gmail.com'
       render json: ['Please do not update the demo user email.'], status: 401
     elsif @user && @user.update_attributes(user_params)
       @user.phone_number = params[:user][:phoneNumber]

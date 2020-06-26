@@ -5,59 +5,78 @@ import ReactTooltip from "react-tooltip";
 
 class CheckoutIndex extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      address: this.props.currentUser.address
-    }
-
+      address: this.props.currentUser.address,
+      tempAddress: '',
+    };
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
   }
 
-  componentDidMount(){
-    const {fetchStores, fetchCart, fetchCartStore, cart, currentUser, store} = this.props;
+  componentDidMount() {
+    const {
+      fetchStores,
+      fetchCart,
+      fetchCartStore,
+      cart,
+      currentUser,
+      store,
+    } = this.props;
     fetchCart(currentUser.id).then((payload) => {
-      fetchCartStore(payload.cart.storeId)
-        .then((store) => this.initMap(store.payload))
-    })
+      fetchCartStore(payload.cart.storeId).then((store) =>
+        this.initMap(store.payload)
+      );
+    });
   }
 
-  placeOrder(){
-    const { currentUser, createOrder, store, cart } = this.props;
-    const orderButton = document.getElementById("placeButton")
+  handleInput(e) {
+    this.setState({ tempAddress: e.target.value });
+  }
+
+  handleEnter(e) {
+    const { currentUser, update, closeDropdown } = this.props;
+    const newUser = Object.assign({}, currentUser);
+    newUser.address = this.state.tempAddress;
+    update(newUser).then(() => {
+      window.location.reload();
+    });
+  }
+
+  placeOrder() {
+    const orderButton = document.getElementById("placeButton");
     orderButton.click();
-    if (Object.values(cart.contents).length !== 0) {
-      const newOrder = { contents: cart.contents, customer_id: currentUser.id, store: store}
-
-    }
   }
- 
+
   initMap(store) {
     const { currentUser } = this.props;
-    var location = { lat: store.coordinate.x , lng: store.coordinate.y };
 
     var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ 'address': currentUser.address }, function (results, status) {
+    geocoder.geocode({ address: currentUser.address }, function (
+      results,
+      status
+    ) {
       if (status == google.maps.GeocoderStatus.OK) {
-        var map = new google.maps.Map(
-          document.getElementById('map'), { zoom: 14, center: results[0].geometry.location });
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 14,
+          center: results[0].geometry.location,
+        });
         var marker = new google.maps.Marker({
           map: map,
-          position: results[0].geometry.location
+          position: results[0].geometry.location,
         });
-        const address = document.getElementById('address')
-        address.innerHTML = results[0].formatted_address
+        const address = document.getElementById("address");
+        address.innerHTML = results[0].formatted_address;
       }
-
-    })
+    });
   }
 
-  render(){
+  render() {
     const { store, cart, currentUser, updateCart } = this.props;
     if (cart.contents === undefined) return null;
     const PlaceOrder = currentUser.address ? (
-      <button onClick={this.placeOrder}>
-        Place Order
-      </button>
+      <button onClick={this.placeOrder}>Place Order</button>
     ) : (
       <button id="disabled" onClick={this.placeOrder} disabled>
         Place Order
@@ -70,7 +89,17 @@ class CheckoutIndex extends React.Component {
       </div>
     ) : (
       <div className="checkout-section-details">
-        <p id="address">Please enter an address</p>
+        <form onSubmit={this.handleEnter}>
+          <input
+            onChange={this.handleInput}
+            className="checkout-address-input"
+            placeholder="Please enter an address"
+            type="text"
+            pattern="\w+(\s\w+){2,}"
+            title="123 Baker Street"
+          />
+          <input type="submit" />
+        </form>
       </div>
     );
     return (
@@ -120,9 +149,7 @@ class CheckoutIndex extends React.Component {
               </div>
               <div id="button-section" className="checkout-section">
                 <div className="checkout-section-header"></div>
-                <div className="checkout-section-details">
-                  {PlaceOrder}
-                </div>
+                <div className="checkout-section-details">{PlaceOrder}</div>
               </div>
             </div>
           </div>

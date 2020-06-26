@@ -47,6 +47,7 @@ class UserShow extends React.Component {
   }
 
   render() {
+    console.log("FUCK")
     const { currentUser, errors, clearErrors } = this.props;
     const SessionErrors = errors[0] ? (
       <div id="update-errors" className="session-errors"> {errors[0]} </div>
@@ -112,6 +113,8 @@ class UserShow extends React.Component {
                         : "Please enter an address"
                     }`}
                     value={this.state.address}
+                    pattern="\w+(\s\w+){2,}"
+                    title="123 Baker Street"
                   />
                 </div>
               </div>

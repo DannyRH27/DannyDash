@@ -12,7 +12,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     add_index :users, :phone_number
-    add_index :users, :address, unique: true
+    add_index :users, :address
     add_index :users, :session_token, unique: true
   end
 end

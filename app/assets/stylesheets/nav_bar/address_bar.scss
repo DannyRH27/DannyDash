@@ -113,3 +113,17 @@
   border-bottom: 9px solid transparent;
   content: "";
 }
+
+.submit-container {
+  display:flex;
+  justify-content: flex-end;
+}
+
+.address-dropdown-submit {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  cursor: pointer;
+  align-self: center;
+  margin: 0 15px 10px 0px;
+}
