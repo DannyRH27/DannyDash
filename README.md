@@ -12,7 +12,7 @@ DannyDash is an on-demand prepared food delivery service inspired by [live site]
 
 ## Table of Contents
 + [Logistics Dispatch System](https://github.com/DannyRH27/DannyDash#dispatch)
-+ [Live Streaming](https://github.com/tjmccabe/DistanSing#live-streaming)
++ [Facebook Omni-Authorization](https://github.com/DannyRH27/DannyDash/#facebook-omni-authorization)
 + [Live Chat](https://github.com/tjmccabe/DistanSing#live-chat)
 + [Dynamic Search](https://github.com/tjmccabe/DistanSing#dynamic-search)
 
@@ -27,68 +27,63 @@ Fill in some basic information, such as an event name, the ticket price, and whe
 ### Users
 As a user, feel free to browse and discover events that peak your interest. Log in to purchase a ticket and secure your spot! See a list of your purchased events (and even refund a ticket!) by navigating to your profile. Once the event countdown reaches zero, just wait for the artist to start streaming, and you will be redirected to the event!
 
-## Live Streaming
+## Facebook Omni-Authorization
 <p align="center">
-  <img src="misc/OG Zack.gif" width="1000">
+  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/FBLogin.png" width="1000">
 </p>
-DistanSing allows artists to live stream their event using only a webcam, or just a mobile device!
+<p align="center">
+  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/FBPermission.png" width="1000">
+</p>
+DannyDash allows you sign in or signup for a user account using your Facebook credentials.
 <br>
 
-Live streaming is achieved through Peer.js. When an artist starts streaming, the `startPlaying()` function runs and the `stopPlaying()` function executes when the artist ends the event.
+Omni-Authorization is achieved through Facebook Login API. When the login with Facebook button is hit, a script runs that redirects to Facebook to ask for information based on your Facebook login credentials. Once authorized, the
+Omniauth Controller determines the Facebook route has been hit and proceeds to generate a user with the information provided. If successful, the user will be created and redirected to the home page. On failure, the account will not be created and the user will be redirected back to the splash page.
 
 ```
-startPlaying() {
-  this.setState({ playing: true }, () => {
-    this.getMedia({
-      success: (stream) => {
-        this.localstream = stream;
-        this.recStream(stream, "lVideo");
-        const formData = new FormData()
-        formData.append('id', this.props.eventId);
-        formData.append('streaming', true);
-        if (!this.props.featured) {
-          this.props.updateEvent(formData)
-        }
-      },
-      error: (err) => {
-        alert("cannot access your camera");
-      },
-    });
-    
-    const peer = new Peer(this.peerOptions);
-    this.peer = peer;
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '175499983639989',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v6.0'
+        });
+          
+        FB.AppEvents.logPageView();   
+          
+      };
 
-    peer.on("connection", connection => {
-      peer.call(connection.peer, this.localstream);
-      this.connections.add(connection)
-    })
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=175499983639989&autoLogAppEvents=1"></script>
 
-    peer.on("error", err => {
-      console.log(`Artist error has occurred: ${err}`);
-    })
-    
-    this.socket.on("requestArtistConnect", userId => {
-      peer.connect(userId);
-    })
-  });
-  if (!this.props.featured) {
-    setTimeout(() => this.endEvent(), 18000000)
-  }
-};
-```
-```
-stopPlaying() {
-  this.connections.forEach(conn => { conn.close() });
-  if (this.peer) {
-    this.peer.disconnect();
-  }
-  this.socket.close()
-  if (this.localstream) { 
-    this.localstream.getTracks().forEach(track => {
-      track.stop();
-    });
-  }
-};
+def facebook
+    @user = User.from_omniauth(request.env["omniauth.auth"])
+
+    if @user.persisted?
+        login!(@user)
+        redirect_to "#/home"
+        @cart = @user.cart || Cart.create(customer_id: @user.id)
+        sign_in @user, event: :authentication
+        set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
+    else
+        session["devise.facebook_data"] = request.env["omniauth.auth"]
+        redirect_to new_user_registration_url
+    end
+
+end
+
+def failure
+    redirect_to root_path
+end
 ```
 
 ## Live Chat
