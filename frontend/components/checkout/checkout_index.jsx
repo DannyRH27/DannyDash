@@ -93,7 +93,7 @@ class CheckoutIndex extends React.Component {
           <input
             onChange={this.handleInput}
             className="checkout-address-input"
-            placeholder="Please enter an address"
+            placeholder="e.g. 123 John Doe Lane, San Francisco CA 94110"
             type="text"
             pattern="(\w.+\s.+\s\w+)"
             title="123 John Doe Lane, San Francisco CA 94110"

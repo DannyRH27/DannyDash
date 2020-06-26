@@ -37,7 +37,9 @@ class AddressDropdown extends React.Component {
 
   render() {
     const { currentUser, closeDropdown, openDropdown} = this.props;
-    const placeholdertext = currentUser ? "Please enter a new address" : "Please sign in/sign up"
+    const placeholdertext = currentUser
+      ? "e.g. 123 John Doe Lane, San Francisco CA 94110 "
+      : "Please sign in/sign up";
     const Dropdown = currentUser ? (
       <input
         onChange={this.handleInput}
