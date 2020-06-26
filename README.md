@@ -1,9 +1,6 @@
 View the [live site](https://dannydash.herokuapp.com).
 
 # DannyDash
-<p align="center">
-  <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/Splash+GIF2.gif" width="1200">
-</p>
 DannyDash is an on-demand prepared food delivery service inspired by [live site](https://doordash.com) that estimates the amount of time it will take for Danny to delivery food to you by walking. It was implemented using the following technologies:
 
 + **Frontend**: React.js, Redux
@@ -11,22 +8,114 @@ DannyDash is an on-demand prepared food delivery service inspired by [live site]
 + **Others**: JavaScript, Amazon S3, Google Geocoding API, Google Maps Javascript API, Google Distance Matrix API, Omniauth Facebook API,
 
 ## Table of Contents
-+ [Logistics Dispatch System](https://github.com/DannyRH27/DannyDash#dispatch)
++ [Logistics Dispatch System](https://github.com/DannyRH27/DannyDash#logistics-dispatch-system)
 + [Facebook Omni-Authorization](https://github.com/DannyRH27/DannyDash/#facebook-omni-authorization)
 + [Live Chat](https://github.com/tjmccabe/DistanSing#live-chat)
 + [Dynamic Search](https://github.com/tjmccabe/DistanSing#dynamic-search)
 
-## Dispatch
-### Artists
-As an artist, host your own events by navigating to your profile page and click the <img src="https://distansing-dev.s3-us-west-1.amazonaws.com/create_event_button.png" width="80"> button. 
+## Logistics Dispatch System
+<img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/Dispatch.png" width="1000">
 
-<img src="https://distansing-dev.s3-us-west-1.amazonaws.com/create_event.png" width="500">
+The Logistics Dispatch System is implemented using Google's Geocoding, Distance Matrix, and Maps Javascript APIs. First, the Geocoding API will take the current user's address and the destination store address and
+return latitude/longitude coordinates for both. Next, the store coordinates are set as the origin and the user's coordinates are set as the destination in the Distance Matric API inputs and will return, duration and distance.
+Finally, the Maps Javascript API will initialize an instance of Google Maps and use the coordinates to create two markers on the map. ETA will be calculated by manipulating the returned duration and incrementing it with a DateTime Object.
+```
+  calculateDispatchDistance(order) {
+    const { updateOrder } = this.props;
+    function callback(response, status) {
+      if (status == "OK") {
+        var origins = response.originAddresses;
+        var destinations = response.destinationAddresses;
 
-Fill in some basic information, such as an event name, the ticket price, and when the event will be held. *We don't need to worry about the 'where' since we will all be virtual!* Once the countdown reaches zero, click the <img src="https://distansing-dev.s3-us-west-1.amazonaws.com/event_go_live.png" width="100"> button and start streaming!
+        for (var i = 0; i < origins.length; i++) {
+          var results = response.rows[i].elements;
+          for (var j = 0; j < results.length; j++) {
+            var element = results[j];
+            var distance = element.distance.text;
+            var durationText = element.duration.text;
+            var duration = element.duration.value;
+            var from = origins[i];
+            var to = destinations[j];
+          }
+        }
+        var date = new Date(order.createdAt);
+        date.setMinutes(date.getMinutes() + duration / 60);
+        var minutes = date.getMinutes();
+        var hours = date.getHours();
+        var ampm = hours >= 12 ? "pm" : "am";
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        var strTime = hours + ":" + minutes + " " + ampm;
+        if (order.deliveryEta === null) {
+          const newOrder = Object.assign({}, order)
+          newOrder.deliveryEta = strTime
+          newOrder.deliveredDate = date
+          updateOrder(newOrder)
+        }
+        
 
-### Users
-As a user, feel free to browse and discover events that peak your interest. Log in to purchase a ticket and secure your spot! See a list of your purchased events (and even refund a ticket!) by navigating to your profile. Once the event countdown reaches zero, just wait for the artist to start streaming, and you will be redirected to the event!
+        this.setState({ duration: duration });
+        this.setState({ ETA: strTime });
+        this.setState({ durationText: durationText });
+        this.setState({ distance: distance });
+        this.setState({ deliveryDate: date })
+        this.initMap(order);
 
+      }
+    }
+    const { currentUser } = this.props;
+    var origin1 = order.store.address;
+    var destinationA = currentUser.address;
+
+    var service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+      {
+        origins: [origin1],
+        destinations: [destinationA],
+        travelMode: "WALKING",
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+      },
+      callback.bind(this)
+    );
+  }
+
+  initMap(order) {
+    const { currentUser } = this.props;
+    var location = { lat: 37.75383, lng: -122.401772 };
+    var map = new google.maps.Map(document.getElementById("order-map"), {
+      zoom: 15,
+      center: location,
+    });
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ address: currentUser.address }, function (
+      results,
+      status
+    ) {
+      var homeMark = <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/Home.png" alt=""/>
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location,
+      });
+      this.setState({address: results[0].formatted_address})
+    // }
+    }.bind(this))
+
+    geocoder.geocode({ address: order.store.address }, function (
+      results,
+      status
+    ) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var storeMark = <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/Store.png" alt=""/>
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+        });
+      }
+    }.bind(this))
+  }
+```
 ## Facebook Omni-Authorization
 <p align="center">
   <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/FBLogin.png" width="1000">
