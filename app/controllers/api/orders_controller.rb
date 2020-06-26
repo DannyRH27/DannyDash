@@ -7,7 +7,6 @@ class Api::OrdersController < ApplicationController
 
   def show
     @order = Order.find_by(id: params[:id])
-    p @order
     @cart = current_user.cart
     if @order
       render :show
