@@ -31,10 +31,10 @@ As a user, feel free to browse and discover events that peak your interest. Log 
 <p align="center">
   <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/FBLogin.png" width="1000">
 </p>
-<p align="center">
+<!-- <p align="center">
   <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/FBPermission.png" width="1000">
 </p>
-DannyDash allows you sign in or signup for a user account using your Facebook credentials.
+DannyDash allows you sign in or signup for a user account using your Facebook credentials. -->
 <br>
 
 Omni-Authorization is achieved through Facebook Login API. When the Continue with Facebook button is hit, a script runs that redirects to Facebook to ask for information based on your Facebook login credentials. Once authorized, the
