@@ -3,7 +3,8 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 
 function ActiveOrderIndexItem(props) {
   const { order } = props;
-  const date = new Date(order.deliveredDate);
+  const date = new Date();
+  const deliveredDate = new Date(order.deliveredDate);
   const month = date.getMonth();
   const months = [
     "Jan",
@@ -19,8 +20,8 @@ function ActiveOrderIndexItem(props) {
     "Nov",
     "Dec",
   ];
-  const day = date.getDate();
-  const year = date.getFullYear();
+  const day = deliveredDate.getDate();
+  const year = deliveredDate.getFullYear();
   const strDate = `${months[month]} ${day} ${year}, ${
     order.deliveryEta
   }  •  $${order.total}`;
@@ -36,9 +37,8 @@ function ActiveOrderIndexItem(props) {
       )}
     </span>
   );
-
   const IndexItem =
-    new Date(order.deliveryEta) < date ? null : (
+    deliveredDate < date ? null : (
       <div className="order-index-item">
         <div className="order-item-title">
           <span>{order.store.name}</span>

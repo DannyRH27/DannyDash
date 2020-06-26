@@ -1,7 +1,7 @@
 View the [live site](https://dannydash.herokuapp.com).
 
 # DannyDash
-DannyDash is an on-demand prepared food delivery service inspired by [live site](https://doordash.com) that estimates the amount of time it will take for Danny to delivery food to you by walking. It was implemented using the following technologies:
+DannyDash is an on-demand prepared food delivery service inspired by [DoorDash](https://doordash.com) that estimates the amount of time it will take for Danny to delivery food to you by walking. It was implemented using the following technologies:
 
 + **Frontend**: React.js, Redux
 + **Backend**: PostgreSQL Database, Ruby on Rails

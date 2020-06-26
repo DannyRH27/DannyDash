@@ -4,11 +4,12 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 function PreviousOrderIndexItem(props) {
 
   const { order } = props;
-  const date = new Date(order.deliveredDate);
-  const month = date.getMonth();
+  const date = new Date();
+  const deliveredDate = new Date(order.deliveredDate);
+  const month =deliveredDate.getMonth();
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-  const day = date.getDate();
-  const year = date.getFullYear();
+  const day =deliveredDate.getDate();
+  const year =deliveredDate.getFullYear();
   const strDate = `${months[month]} ${day} ${year}, ${order.deliveryEta}  •  $${order.total}`;
   const orderContents =  Object.values(order.contents)
   const items = orderContents.map((item) => (
@@ -17,7 +18,7 @@ function PreviousOrderIndexItem(props) {
   items[items.length - 1] = <span key={orderContents[orderContents.length-1].id}>{orderContents[orderContents.length-1].name.substr(0, orderContents[orderContents.length-1].name.length)}</span>  
   
 
-  const IndexItem = new Date(order.deliveredDate) < date ? (
+  const IndexItem = deliveredDate < date ? (
     <div className="order-index-item">
       <div className="order-item-title">
         <span>{order.store.name}</span>

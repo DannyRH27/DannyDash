@@ -17,7 +17,7 @@ class OrderIndex extends React.Component {
           <span>Orders</span>
           <span className="order-index-header">Active Orders</span>
           <div className="order-index-list">
-            {Object.values(orders).map((order) => (
+            {Object.values(orders).reverse().map((order) => (
               <Link key={order.id} to={`/orders/${order.id}`}>
                 <ActiveOrderIndexItem order={order} />
               </Link>
@@ -25,7 +25,7 @@ class OrderIndex extends React.Component {
           </div>
           <span className="order-index-header">Previous Orders</span>
           <div className="order-index-list">
-            {Object.values(orders).map((order) => (
+            {Object.values(orders).reverse().map((order) => (
               <Link key={order.id} to={`/orders/${order.id}`}>
                 <PreviousOrderIndexItem order={order} />
               </Link>
