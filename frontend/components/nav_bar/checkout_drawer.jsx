@@ -45,6 +45,7 @@ class CheckoutDrawer extends React.Component {
   }
 
   onSelect(e){
+    e.target.focus();
     let value = e.target.innerHTML.split('$')
     this.setState({ tip: parseFloat(value[1])})
   }
