@@ -10,7 +10,7 @@ DannyDash is an on-demand prepared food delivery service inspired by [live site]
 ## Table of Contents
 + [Logistics Dispatch System](https://github.com/DannyRH27/DannyDash#logistics-dispatch-system)
 + [Facebook Omni-Authorization](https://github.com/DannyRH27/DannyDash/#facebook-omni-authorization)
-+ [Dynamic Search](https://github.com/tjmccabe/DannyRH27/#dynamic-search)
++ [Dynamic Search](https://github.com/DannyRH27/#dynamic-search)
 
 ## Logistics Dispatch System
 <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/Dispatch.png" width="1000">
