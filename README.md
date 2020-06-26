@@ -158,8 +158,10 @@ Async FB API Call
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=175499983639989&autoLogAppEvents=1"></script>
 ```
 <br/>
-<br/>
 Omni-Authorization Callback Controller Facebook Route
+<br/>
+<br/>
+
 ```
 def facebook
     @user = User.from_omniauth(request.env["omniauth.auth"])
@@ -181,7 +183,7 @@ def failure
     redirect_to root_path
 end
 ```
-
+<br/>
 ## Dynamic Search
 <p align="center">
   <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/SearchDropdown.png width="400">
@@ -193,6 +195,7 @@ Search stores for quick navigation! See the first five stores that match, or vie
 Search is implemented using query strings taken from the URL to scan the database for queries.
 
 AJAX Call
+<br/>
 ```
 search(fragment) {
   $.ajax({
@@ -204,7 +207,9 @@ search(fragment) {
   });
 }
 ```
+<br/>
 Store Controller Search Route
+<br/>
 ```
 def search
   fragment = params[:fragment]
@@ -213,15 +218,6 @@ def search
 end
 ```
 ## Contact
-+ TJ McCabe: 
-[Github](https://github.com/tjmccabe/) 
-[LinkedIn](https://www.linkedin.com/in/tj-mccabe/)
-+ Darrick Yong: 
-[Github](https://github.com/darrickyong/) 
-[LinkedIn](https://www.linkedin.com/in/darrickyong/)
 + Danny Huang: 
 [Github](https://github.com/DannyRH27) 
 [LinkedIn](https://www.linkedin.com/in/dannyrhuang/)
-+ Glen Park: 
-[Github](https://github.com/glenpark00) 
-[LinkedIn](https://www.linkedin.com/in/glen-park-20ab961a9/)
