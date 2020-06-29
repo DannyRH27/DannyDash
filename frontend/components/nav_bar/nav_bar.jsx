@@ -115,8 +115,12 @@ class NavBar extends React.Component {
         <Link to={`/stores/${Object.values(cartStore)[0]["id"]}`}>
           <div className="navbar_logo">Back to Menu</div>
         </Link>
-      ) : (
+      ) : currentUser ? (
         <Link className="navbar_logo" to="/home">
+          DannyDash
+        </Link>
+      ) : (
+        <Link className="navbar_logo" to="/">
           DannyDash
         </Link>
       );
