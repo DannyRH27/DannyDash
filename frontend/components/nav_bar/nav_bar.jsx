@@ -25,7 +25,6 @@ class NavBar extends React.Component {
     this._isMounted = false;
     this.handleToggle = this.handleToggle.bind(this);
     this.handleCartToggle = this.handleCartToggle.bind(this);
-    this.goBack = this.goBack.bind(this);
     this.hideSideBar = this.hideSideBar.bind(this);
     this.hideCartSideBar = this.hideCartSideBar.bind(this);
   }
@@ -80,10 +79,6 @@ class NavBar extends React.Component {
     }
   }
 
-  goBack() {
-    this.props.history.goBack();
-  }
-
   render() {
     const {
       currentUser,
@@ -93,6 +88,7 @@ class NavBar extends React.Component {
       update,
       cartStore,
     } = this.props;
+
     const SessionButtons = currentUser ? null : (
       <ul>
         <li className="splash-signup">
@@ -114,16 +110,16 @@ class NavBar extends React.Component {
         </div>
       );
     const NavbarLogo =
-      this.props.location.pathname === "/checkout" ? (
-        <div className="navbar_logo" onClick={this.goBack}>
-          Back to Menu
-        </div>
+      this.props.location.pathname === "/checkout" &&
+      Object.values(cartStore).length !== 0 ? (
+        <Link to={`/stores/${Object.values(cartStore)[0]["id"]}`}>
+          <div className="navbar_logo">Back to Menu</div>
+        </Link>
       ) : (
         <Link className="navbar_logo" to="/home">
           DannyDash
         </Link>
       );
-      const fuck = "FUCKL"
     return (
       <header className="navbar">
         <nav className="navbar_navigation">
@@ -148,7 +144,7 @@ class NavBar extends React.Component {
             show={this.state.sideDrawerOpen}
             handleToggle={this.handleToggle}
             currentUser={currentUser}
-            hideSideBar={this.hideSideBar}
+            hideSideBar={this.hideSideBars}
           />
           <CartDrawer
             show={this.state.cartDrawerOpen}
