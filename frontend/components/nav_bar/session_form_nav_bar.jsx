@@ -71,15 +71,17 @@ class SessionFormNavBar extends React.Component {
       <header id="session_navbar">
         <nav className="navbar_navigation">
           <div className="spacer"></div>
-          <Link id="logo" to="/">DannyDash</Link>
+          <Link id="logo" to="/">
+            DannyDash
+          </Link>
           <div className="session_navbar_nav-items">
             <ul>
-              <li className="splash-signup">
-                <Link to="/login">Sign In</Link>
-              </li>
-              <li className="splash-signup">
-                <Link to="/signup">Sign Up</Link>
-              </li>
+              <Link to="/login">
+                <li className="splash-signup">Sign In</li>
+              </Link>
+              <Link to="/signup">
+                <li className="splash-signup">Sign Up</li>
+              </Link>
             </ul>
           </div>
         </nav>
