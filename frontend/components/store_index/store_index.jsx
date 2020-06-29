@@ -36,14 +36,33 @@ class StoreIndex extends React.Component {
   
 
   render() {
-    const { fetchCurrentUser, stores, fetchStore, fetchStores, filters, location, match, currentUser } = this.props
-    // if (stores.length === 0) return null;
+    const { fetchCurrentUser, stores, fetchStore, fetchStores, filters, location, match, currentUser, update } = this.props
     const FilterHeader = 
       location.pathname.slice(0, 8) === "/filters" 
         ? (<span>{match.params.filter}</span>) 
         : location.pathname.slice(0, 7) === "/search" 
           ? (<span>Results for {match.params.fragment}...</span>) 
-          : <span>All Restaurants</span>
+          : <span>All Restaurants</span>;
+
+    const StoreIndexList =
+      stores.length === 0 ? null : (
+        <div className="store-list-container">
+          <div className="store-list">
+            {stores.map((store) => (
+              <Link key={store.id} to={`/stores/${store.id}`}>
+                <StoreIndexItem
+                  fetchCurrentUser={fetchCurrentUser}
+                  fetchStore={fetchStore}
+                  fetchStores={fetchStores}
+                  store={store}
+                  currentUser={currentUser}
+                  update={update}
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+      );
     return (
       <div>
         <div className="store-index-container">
@@ -66,21 +85,7 @@ class StoreIndex extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="store-list-container">
-              <div className="store-list">
-                {stores.map((store) => (
-                  <Link key={store.id} to={`/stores/${store.id}`}>
-                    <StoreIndexItem
-                      fetchCurrentUser={fetchCurrentUser}
-                      fetchStore={fetchStore}
-                      fetchStores={fetchStores}
-                      store={store}
-                      currentUser={currentUser}
-                    />
-                  </Link>
-                ))}
-              </div>
-            </div>
+            {StoreIndexList}
           </div>
         </div>
       </div>

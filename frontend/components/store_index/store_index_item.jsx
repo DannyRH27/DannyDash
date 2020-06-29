@@ -41,12 +41,18 @@ class StoreIndexItem extends React.Component {
           var results = response.rows[i].elements;
           for (var j = 0; j < results.length; j++) {
             var element = results[j];
-            var distance = element.distance.text;
-            var durationText = element.duration.text;
+            var distance = '';
+            var durationText = '';
+            if (element.status !== "NOT_FOUND") {
+              distance = element.distance.text;
+              durationText = element.duration.text;
+            }
+
             var from = origins[i];
             var to = destinations[j];
           }
         }
+
         if (this._isMounted) {
           this.setState({ duration: durationText });
         }
@@ -70,6 +76,10 @@ class StoreIndexItem extends React.Component {
   render() {
     const { store } = this.props;
     const { duration } = this.state;
+
+    const ETA = duration !== '' ? (
+      <span>Approximately {duration} (Walking)</span>
+    ) : <span>Not available in your area</span>
     const tags = store.filters.map((filter, idx) => (
       <p key={idx}>{filter}, &nbsp;</p>
     ));
@@ -126,7 +136,7 @@ class StoreIndexItem extends React.Component {
               </div>
               <div className="info-filters">
                 <span> {store.priceRating} • &nbsp; {tags} </span>
-                <span>Approximately {duration} (Walking)</span>
+                {ETA}
               </div>
               <div className="info-misc">
                 <div className="info-review">

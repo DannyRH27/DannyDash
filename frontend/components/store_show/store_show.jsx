@@ -57,20 +57,26 @@ class StoreShow extends React.Component {
           var results = response.rows[i].elements;
           for (var j = 0; j < results.length; j++) {
             var element = results[j];
-            var distance = element.distance.text;
-            var duration = element.duration.value;
+            var distance = "";
+            var duration = 0;
+            if (element.status !== "NOT_FOUND") {
+              distance = element.distance.text;
+              duration = element.duration.value;
+            }
             var from = origins[i];
             var to = destinations[j];
           }
         }
 
-        this.setState({ duration: duration });
-        if (distance.split(" ")[1] === "ft"){
-          this.setState({
-            distance: (parseInt(distance.split(" ")[0]) / 5280).toFixed(2),
-          });
-        } else {
-          this.setState({ distance: distance.split(" ")[0] });
+        if (element.status !== "NOT_FOUND") {
+          this.setState({ duration: duration });
+          if (distance.split(" ")[1] === "ft") {
+            this.setState({
+              distance: (parseInt(distance.split(" ")[0]) / 5280).toFixed(2),
+            });
+          } else {
+            this.setState({ distance: distance.split(" ")[0] });
+          }
         }
       }
     }
@@ -91,11 +97,9 @@ class StoreShow extends React.Component {
   render() {
     const { store, menus, items, openModal, receiveModalItem } = this.props;
     const { distance, duration } = this.state;
-    if (distance === '') return null;
     if (store === null || store === undefined || store === false) return null;
     if (menus === null || menus === undefined || menus === false) return null;
 
-    if ( distance)
     var days = Math.trunc(duration / 86400)
     var minutes = Math.trunc(((duration % 86400) % 3600) / 60);
     var minMinuteRange = Math.trunc(((duration % 86400) % 3600) / 60) - 3;
@@ -135,6 +139,14 @@ class StoreShow extends React.Component {
           <p>minutes</p>
         </div>
       ) : null;
+
+    const Distance = 
+      distance !== '' ? (
+        <div>
+          <span>{distance}</span>
+          <p>miles</p>
+        </div>
+      ) : null;
     return (
       <div className="store-show-container">
         <div className="store-show-box">
@@ -172,10 +184,7 @@ class StoreShow extends React.Component {
                     {DaysETA}
                     {HoursETA}
                     {MinutesETA}
-                    <div>
-                      <span>{distance}</span>
-                      <p>miles</p>
-                    </div>
+                    {Distance}
                   </div>
                 </div>
               </div>

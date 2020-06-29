@@ -33,14 +33,14 @@ class Splash extends React.Component{
         <div
           className="splash-container"
           style={{
-            backgroundImage: `url(https://dannydash-seeds.s3-us-west-1.amazonaws.com/Splash.jpg)`,
+            backgroundImage: `url(https://dannydash-seeds.s3-us-west-1.amazonaws.com/Splash10.jpg)`,
           }}
         >
           <div className="splash-card">
             <div className="splash-text">
               <h1>DannyDash</h1>
               <span>Your favorite stores, delivered</span>
-              <Link to="/home">Order Now</Link>
+              <Link to="/home">Order Quickly</Link>
             </div>
           </div>
         </div>

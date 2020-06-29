@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCcVisa } from "react-icons/fa";
+import { FaCcVisa, FaLeaf } from "react-icons/fa";
 import CheckoutItem from "./checkout_item";
 import ReactTooltip from "react-tooltip";
 
@@ -9,6 +9,7 @@ class CheckoutIndex extends React.Component {
     this.state = {
       address: this.props.currentUser.address,
       tempAddress: "",
+      mapLoaded: false,
     };
 
     this.handleFocus = this.handleFocus.bind(this);
@@ -16,17 +17,16 @@ class CheckoutIndex extends React.Component {
     this.handleEnter = this.handleEnter.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.initMap = this.initMap.bind(this);
   }
 
   componentDidMount() {
     const {
-      fetchStores,
       fetchCart,
       fetchCartStore,
-      cart,
       currentUser,
-      store,
     } = this.props;
+
     fetchCart(currentUser.id).then((payload) => {
       fetchCartStore(payload.cart.storeId).then((store) =>
         this.initMap(store.payload)
@@ -45,7 +45,7 @@ class CheckoutIndex extends React.Component {
   handleBlur(e) {
     const { currentUser } = this.props;
     e.currentTarget.placeholder =
-      "e.g. 123 John Doe Lane, San Francisco CA 94110";
+      "Please enter a valid address";
   }
 
   handleEnter(e) {
@@ -71,6 +71,7 @@ class CheckoutIndex extends React.Component {
       status
     ) {
       if (status == google.maps.GeocoderStatus.OK) {
+        this.setState({ mapLoaded: true })
         var map = new google.maps.Map(document.getElementById("map"), {
           zoom: 14,
           center: results[0].geometry.location,
@@ -81,21 +82,31 @@ class CheckoutIndex extends React.Component {
         });
         const address = document.getElementById("address");
         address.innerHTML = results[0].formatted_address;
+
       }
-    });
+    }.bind(this));
   }
 
   render() {
     const { store, cart, currentUser, updateCart } = this.props;
+    const { mapLoaded } = this.state;
     if (cart.contents === undefined) return null;
-    const PlaceOrder = currentUser.address ? (
-      <button onClick={this.placeOrder}>Place Order</button>
-    ) : (
-      <button id="disabled" onClick={this.placeOrder} disabled>
-        Place Order
-      </button>
-    );
-    const CheckoutMap = currentUser.address ? (
+    const PlaceOrder =
+      currentUser.address && mapLoaded ? (
+        <button id="order-button" onClick={this.placeOrder}>
+          Place Order
+        </button>
+      ) : (
+        <button
+          id="order-button"
+          className="disabled"
+          onClick={this.placeOrder}
+          disabled
+        >
+          Place Order
+        </button>
+      );
+    const CheckoutMap = currentUser.address && mapLoaded ? (
       <div className="checkout-section-details">
         <div id="map"></div>
         <p id="address"></p>
@@ -106,7 +117,7 @@ class CheckoutIndex extends React.Component {
           <input
             onChange={this.handleInput}
             className="checkout-address-input"
-            placeholder="e.g. 123 John Doe Lane, San Francisco CA 94110"
+            placeholder="Please enter a valid address"
             type="text"
             pattern="(\w.+\s.+\s\w+)"
             title="123 John Doe Lane, San Francisco CA 94110"
@@ -117,6 +128,7 @@ class CheckoutIndex extends React.Component {
         </form>
       </div>
     );
+
     return (
       <div className="checkout-index-wrapper">
         <div className="checkout-index-container">

@@ -53,13 +53,20 @@ class SideDrawer extends React.Component {
     );
     const UserDrawer = currentUser ? (
       <li onClick={handleToggle}>
-            <Link to={`/users/${currentUser.id}`}>
-              <p className="side-bar-icon">
-                <RiAccountCircleLine />
-              </p>
-              Account
-            </Link>
-          </li>
+        <Link to={`/users/${currentUser.id}`}>
+          <p className="side-bar-icon">
+            <RiAccountCircleLine />
+          </p>
+          <div>
+            <span>Account</span>
+            <div>
+              <span className="side-bar-username">
+                {currentUser.fname} {currentUser.lname}
+              </span>
+            </div>
+          </div>
+        </Link>
+      </li>
     ) : null;
     const SessionDrawer = currentUser ? (
       <li onClick={this.signOut}>

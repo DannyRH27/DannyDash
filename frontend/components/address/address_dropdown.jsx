@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 class AddressDropdown extends React.Component {
@@ -62,13 +62,20 @@ class AddressDropdown extends React.Component {
         onBlur={(e) => this.handleBlur(e)}
       />
     ) : (
-      <input
-        onChange={this.handleInput}
-        placeholder={placeholdertext}
-        type="text"
-        id="disabled"
-        disabled
-      />
+      <Link to="/signup">
+        <input
+          onChange={this.handleInput}
+          placeholder={placeholdertext}
+          type="text"
+          className="enabled"
+        />
+      </Link>
+    );
+
+    const SubmitButton = currentUser ? (
+      <input className="address-dropdown-submit" value="Submit" type="submit" />
+    ) : (
+      <input className="address-dropdown-submit disabled" value="Submit" type="submit" disabled/>
     );
     return (
       <div
@@ -81,11 +88,7 @@ class AddressDropdown extends React.Component {
             {Dropdown}
           </div>
           <div className="submit-container">
-            <input
-              className="address-dropdown-submit"
-              value="Submit"
-              type="submit"
-            />
+            {SubmitButton}
           </div>
         </form>
       </div>

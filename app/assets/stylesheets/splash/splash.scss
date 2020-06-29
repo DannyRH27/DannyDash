@@ -21,7 +21,7 @@
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  width: 100%;
+  width: 50%;
   z-index: 1;
   flex-flow: column;
 
@@ -32,7 +32,6 @@
   -webkit-box-align: center;
   align-items: center;
   flex-flow: column nowrap;
-  margin-right: 190px;
 }
 
 .splash-text h1 {
@@ -43,7 +42,7 @@
 }
 
 .splash-text span {
-  margin-top: 72px;
+  margin-top: 85px;
   max-width: 668px;
   color: white;
   font-size: 32px;

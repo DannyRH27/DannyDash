@@ -1,7 +1,3 @@
-#disabled {
-  cursor: not-allowed;
-}
-
 .checkout-index-wrapper {
   display: flex;
   flex-direction: column;
@@ -185,4 +181,8 @@
   margin-left: 15px;
   padding: 0px;
   cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed !important;
 }

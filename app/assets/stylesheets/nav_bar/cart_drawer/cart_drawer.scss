@@ -4,6 +4,11 @@
   box-shadow: none;
 }
 
+@media (max-width: 1200px) {
+    #store-cart {
+        display: none;
+    }
+}
 .cart-toggle {
   padding-left: 14px;
   color: white;

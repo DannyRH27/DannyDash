@@ -8,7 +8,8 @@ class CheckoutDrawer extends React.Component {
     this.state = {
       store: {},
       cart: {},
-      tip: 'Please add a tip'
+      tip: 'Please add a tip',
+      validAddress: false
     }
     this.onSelect = this.onSelect.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
@@ -16,10 +17,8 @@ class CheckoutDrawer extends React.Component {
 
   componentDidMount() {
     const {
-      fetchStores,
       fetchCart,
       fetchCartStore,
-      cart,
       currentUser,
     } = this.props;
     fetchCart(currentUser.id).then((payload) => {
@@ -27,7 +26,20 @@ class CheckoutDrawer extends React.Component {
       fetchCartStore(payload.cart.storeId)
         .then(payload => this.setState({ store: payload.payload}))
     });
+
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode(
+      { address: currentUser.address },
+      function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          
+          this.setState({ validAddress: true })
+        }
+      }.bind(this)
+    );
+    
   }
+
 
   placeOrder(){
     const { currentUser, createOrder, store, cart } = this.props;
@@ -52,10 +64,13 @@ class CheckoutDrawer extends React.Component {
 
   render() {
     const { drawerClasses, currentUser } = this.props;
-    const { store, cart, tip } = this.state;
-    let subtotal = 0
+    const { store, cart, tip, validAddress } = this.state;
+    const orderButton = document.getElementById("order-button");
+    if (orderButton === undefined) return null;
     if (currentUser === undefined) return null;
+    
     if (Object.values(cart).length === 0 ) return null;
+    let subtotal = 0
     Object.values(cart.contents).forEach((item) => {
       let item_subtotal = parseFloat(item.price) * parseFloat(item.quantity);
       subtotal += item_subtotal;
@@ -67,9 +82,8 @@ class CheckoutDrawer extends React.Component {
     let selectedTip = typeof tip === typeof "" ? <p>{tip}</p> : <p>${tip.toFixed(2)}</p>
     let total = typeof tip === typeof "" ? subtotal + fees : subtotal + fees + tip
     let tooltip = `Estimated Tax: $${tax.toFixed(2)}<br/>Service Fee: $${service}<br/><br/>This 11% service fee helps us<br/>operate DannyDash.`
-    const PlaceOrder = currentUser.address ? (
+    const PlaceOrder = currentUser.address && validAddress ? (
       <button
-
         id="placeButton"
         onClick={this.placeOrder}
         className="checkout-drawer-button"
@@ -79,9 +93,8 @@ class CheckoutDrawer extends React.Component {
     ) : (
       <button
         id="placeButton"
-        id="disabled"
         onClick={this.placeOrder}
-        className="checkout-drawer-button"
+        className="checkout-drawer-button disabled"
         disabled
       >
         Place Order
