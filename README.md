@@ -123,13 +123,13 @@ Finally, the Maps Javascript API will initialize an instance of Google Maps and 
 <p align="center">
   <img src="https://dannydash-seeds.s3-us-west-1.amazonaws.com/ReadMe/FBPermission2.png" width="500">
 </p>
-DannyDash allows you sign in or signup for a user account using your Facebook credentials.
+DannyDash allows you to sign in or signup for a user account using your Facebook credentials.
 <br>
 
 Omni-Authorization is achieved through Facebook Login API. <br/><br/>
-When the Continue with Facebook button is hit, a script runs that redirects to Facebook to ask for information based on your Facebook login credentials. <br/><br/>
-Once authorized, the Omniauth Controller determines the Facebook API route has been hit and proceeds to generate a user with the information provided. <br/><br/>
-If successful, the user will be created and redirected to the home page. On failure, the account will not be created and the user will be redirected back to the splash page.
+When the 'Continue with Facebook' button is hit, an API call is made to the backend OmniAuth Callbacks Controller's Facebook route and an async script initializes an instance of the Facebook app with your Facebook API key in order to request user information.<br/><br/>
+After the user inserts their credentials, we will be redirected back to the Omniauth Callback Controller where the information from the request is available as a hash at request.env["omniauth.auth"] and proceeds to generate a user with the information provided. <br/><br/>
+If successfully validated through the user model, the user will be created and redirected to the home page. On failure, the account will not be created and the user will be redirected back to the splash page.
 <br/>
 <br/>
 Async FB API Call
@@ -184,6 +184,8 @@ end
 def failure
     redirect_to root_path
 end
+```
+
 ```
 
 ## Dynamic Search
