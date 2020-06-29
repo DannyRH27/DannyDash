@@ -22,7 +22,12 @@
 }
 
 .cart-drawer {
+    width: 340px;
+    min-width: 340px;
+    background-color: rgb(255, 255, 255);
+    height: calc(100vh - 48px);
     overflow-y: auto;
+    position: fixed;
     z-index: 100;
     top: 48px;
     height: 100%;
