@@ -82,24 +82,35 @@ class CheckoutDrawer extends React.Component {
     let selectedTip = typeof tip === typeof "" ? <p>{tip}</p> : <p>${tip.toFixed(2)}</p>
     let total = typeof tip === typeof "" ? subtotal + fees : subtotal + fees + tip
     let tooltip = `Estimated Tax: $${tax.toFixed(2)}<br/>Service Fee: $${service}<br/><br/>This 11% service fee helps us<br/>operate DannyDash.`
-    const PlaceOrder = currentUser.address && validAddress ? (
-      <button
-        id="placeButton"
-        onClick={this.placeOrder}
-        className="checkout-drawer-button"
-      >
-        Place Order
-      </button>
-    ) : (
-      <button
-        id="placeButton"
-        onClick={this.placeOrder}
-        className="checkout-drawer-button disabled"
-        disabled
-      >
-        Place Order
-      </button>
-    );
+    const PlaceOrder =
+      currentUser.address && validAddress ? 
+        !(Object.values(cart.contents).length === 0) ? (
+          <button
+            id="placeButton"
+            onClick={this.placeOrder}
+            className="checkout-drawer-button"
+          >
+            Place Order
+          </button>
+        ) : (
+          <button
+          id="placeButton"
+          onClick={this.placeOrder}
+          className="checkout-drawer-button disabled"
+          disabled
+        >
+          Place Order
+        </button>
+      ) : (
+        <button
+          id="placeButton"
+          onClick={this.placeOrder}
+          className="checkout-drawer-button disabled"
+          disabled
+        >
+          Place Order
+        </button>
+      );
     return (
       <nav
         onClick={(e) => e.stopPropagation()}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { FaCcVisa, FaLeaf } from "react-icons/fa";
 import CheckoutItem from "./checkout_item";
 import ReactTooltip from "react-tooltip";
@@ -21,6 +22,7 @@ class CheckoutIndex extends React.Component {
   }
 
   componentDidMount() {
+    this._isMounted = true;
     const {
       fetchCart,
       fetchCartStore,
@@ -32,6 +34,7 @@ class CheckoutIndex extends React.Component {
         this.initMap(store.payload)
       );
     });
+
   }
 
   handleInput(e) {
@@ -92,8 +95,18 @@ class CheckoutIndex extends React.Component {
     const { mapLoaded } = this.state;
     if (cart.contents === undefined) return null;
     const PlaceOrder =
-      currentUser.address && mapLoaded ? (
-        <button id="order-button" onClick={this.placeOrder}>
+      currentUser.address && mapLoaded ?
+        !(Object.values(cart.contents).length === 0) ? (
+          <button id="order-button" onClick={this.placeOrder}>
+            Place Order
+          </button>
+      ) : (
+        <button
+          id="order-button"
+          className="disabled"
+          onClick={this.placeOrder}
+          disabled
+        >
           Place Order
         </button>
       ) : (
@@ -186,4 +199,4 @@ class CheckoutIndex extends React.Component {
   }
 }
 
-export default CheckoutIndex;
+export default withRouter(CheckoutIndex);
