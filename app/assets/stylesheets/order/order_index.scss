@@ -59,6 +59,15 @@
   padding: 16px;
   border-bottom: 1px solid rgb(231, 231, 231);
 }
+
+.order-index-item:hover {
+  background-color: rgb(247, 247, 247);
+}
+
+.order-index-item:active {
+  background-color: rgb(232, 232, 232);
+}
+
 .order-item-title {
   display: flex;
   align-items: center;
@@ -99,6 +108,8 @@
 
 #order-item-summary {
   display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
 }
 
 #order-item-summary span {
