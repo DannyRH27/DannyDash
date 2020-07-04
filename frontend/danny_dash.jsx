@@ -27,18 +27,4 @@ document.addEventListener("DOMContentLoaded", () => {
 	const root = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, root);
   
-
-	
-	// test
-	window.dispatch = store.dispatch
-	window.store = store
-	window.login = login
-	window.logout = logout
-  window.signup = signup
-  window.openModal = openModal
-  window.fetchCart = fetchCart
-  window.updateCart = updateCart
-  window.searchStores = searchStores
-  window.filterStores = filterStores
-	
 })

@@ -15,15 +15,20 @@ import {
 class CartDrawer extends React.Component {
   constructor(props) {
     super(props);
+    this._isMounted = false;
   }
 
   componentDidMount() {
     const { fetchCart, fetchCartStore, currentUser } = this.props;
+    this._isMounted = true;
     window.addEventListener("click", this.props.hideCartSideBar);
-    currentUser ? fetchCart(currentUser.id) : null;
+    if (this._isMounted && currentUser) {
+      fetchCart(currentUser.id)
+    }
   }
 
   componentWillUnmount() {
+    this._isMounted = false;
     window.removeEventListener("click", this.props.hideCartSideBar);
   }
 

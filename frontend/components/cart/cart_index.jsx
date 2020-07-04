@@ -5,15 +5,24 @@ import { Link, withRouter } from 'react-router-dom';
 class CartIndex extends React.Component {
   constructor(props){
     super(props)
-
+    this._isMounted = false;
   }
 
   componentDidMount(){
     const { fetchStores, fetchCartStore, cart, location } = this.props;
-    if (location.pathname.slice(0,5) === "/home") {
-      fetchStores();
+    this._isMounted = true;
+
+    if (this._isMounted) {
+      if (location.pathname.slice(0, 5) === "/home") {
+        fetchStores();
+      }
+      fetchCartStore(cart.storeId);
     }
-    fetchCartStore(cart.storeId);
+    
+  }
+
+  componentWillUnmount(){
+    this._isMounted = false;
   }
 
   render(){

@@ -11,6 +11,7 @@ class CheckoutDrawer extends React.Component {
       tip: 'Please add a tip',
       validAddress: false
     }
+    this._isMounted = false;
     this.onSelect = this.onSelect.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
   }
@@ -21,23 +22,25 @@ class CheckoutDrawer extends React.Component {
       fetchCartStore,
       currentUser,
     } = this.props;
-    fetchCart(currentUser.id).then((payload) => {
-      this.setState({ cart: payload.cart})
-      fetchCartStore(payload.cart.storeId)
-        .then(payload => this.setState({ store: payload.payload}))
-    });
+    this._isMounted = true;
+    if (this._isMounted) {
+      fetchCart(currentUser.id).then((payload) => {
+        this.setState({ cart: payload.cart })
+        fetchCartStore(payload.cart.storeId)
+          .then(payload => this.setState({ store: payload.payload }))
+      });
 
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode(
-      { address: currentUser.address },
-      function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          
-          this.setState({ validAddress: true })
-        }
-      }.bind(this)
-    );
-    
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode(
+        { address: currentUser.address },
+        function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+
+            this.setState({ validAddress: true })
+          }
+        }.bind(this)
+      );
+    }
   }
 
 

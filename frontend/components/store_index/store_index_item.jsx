@@ -7,7 +7,7 @@ class StoreIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      duration: ''
+      duration: '',
     }
     this._isMounted = false;
 
@@ -74,6 +74,13 @@ class StoreIndexItem extends React.Component {
   }
 
   render() {
+    const { loading } = this.state;
+    if (loading) return (
+      <div className="loading-spinner-background">
+        <div className="loading-spinner">
+        </div>
+      </div>
+    )
     const { store } = this.props;
     const { duration } = this.state;
 

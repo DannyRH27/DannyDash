@@ -32,9 +32,13 @@ class NavBar extends React.Component {
   componentDidMount() {
     const { currentUser } = this.props;
     this._isMounted = true;
-
-    this.props.location.pathname === "/home" ? this.props.fetchStores() : null;
-    currentUser ? this.props.fetchOrders() : null;
+    if (this._isMounted){
+      this.props.location.pathname === "/home" ? this.props.fetchStores() : null;
+    } else if (this._isMounted && currentUser) {
+      this.props.location.pathname === "/home" ? this.props.fetchStores() : null;
+      this.props.fetchOrders()
+      
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -42,10 +46,6 @@ class NavBar extends React.Component {
       window.scrollTo(0, 0);
       this.setState({ sideDrawerOpen: false });
       this.setState({ cartDrawerOpen: false });
-    }
-
-    if (this.props.location.pathname === "/home") {
-      this.props.fetchStores();
     }
   }
 
@@ -148,7 +148,7 @@ class NavBar extends React.Component {
             show={this.state.sideDrawerOpen}
             handleToggle={this.handleToggle}
             currentUser={currentUser}
-            hideSideBar={this.hideSideBars}
+            hideSideBar={this.hideSideBar}
           />
           <CartDrawer
             show={this.state.cartDrawerOpen}

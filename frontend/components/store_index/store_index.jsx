@@ -7,17 +7,23 @@ class StoreIndex extends React.Component {
   constructor(props) {
     super(props)
     this._isMounted = false;
+    this.state = {
+      loading: true
+    }
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
     const { fetchStores, fetchFilters, filterStores, searchStores, location, match } = this.props;
     this._isMounted = true;
-    fetchFilters();
-    if (location.pathname.slice(0,8) === "/filters" && this._isMounted) {
-      filterStores(match.params.filter)
-    } else if (location.pathname.slice(0,7) === "/search" && this._isMounted) {
-      searchStores(match.params.fragment)
+    if (this._isMounted) {
+      fetchFilters()
+        .then(() => this._isMounted ? this.setState({ loading: false }) : null)
+      if (location.pathname.slice(0, 8) === "/filters" && this._isMounted) {
+        filterStores(match.params.filter)
+      } else if (location.pathname.slice(0, 7) === "/search" && this._isMounted) {
+        searchStores(match.params.fragment)
+      }
     }
   }
 
@@ -36,6 +42,13 @@ class StoreIndex extends React.Component {
   
 
   render() {
+    const { loading } = this.state; 
+    if (loading) return (
+      <div className="loading-spinner-background">
+        <div className="loading-spinner">
+        </div>
+      </div>
+    )
     const { fetchCurrentUser, stores, fetchStore, fetchStores, filters, location, match, currentUser, update } = this.props
     const FilterHeader = 
       location.pathname.slice(0, 8) === "/filters" 

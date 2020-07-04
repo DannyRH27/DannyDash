@@ -15,6 +15,7 @@ class StoreShow extends React.Component {
     this.state = {
       duration: 0,
       distance: '',
+      loading: true
     }
 
   }
@@ -33,8 +34,9 @@ class StoreShow extends React.Component {
        });
      }
      
-    fetchMenus(storeId);
-    fetchItems(storeId);
+    fetchMenus(storeId)
+     .then(() => fetchItems(storeId))
+     .then(() => this.setState({ loading: false }))
   }
 
   componentDidUpdate(prevProps) {
@@ -95,6 +97,13 @@ class StoreShow extends React.Component {
   }
 
   render() {
+    const { loading } = this.state;
+    if (loading) return (
+      <div className="loading-spinner-background">
+        <div className="loading-spinner">
+        </div>
+      </div>
+    )
     const { store, menus, items, openModal, receiveModalItem } = this.props;
     const { distance, duration } = this.state;
     if (store === null || store === undefined || store === false) return null;

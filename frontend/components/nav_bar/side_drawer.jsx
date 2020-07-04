@@ -23,9 +23,7 @@ class SideDrawer extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener("click", this.props.hideSideBar);
-  }
-
-  
+  }  
 
   signOut() {
     const { logout, handleToggle } = this.props;
