@@ -23,6 +23,8 @@ class StoreIndex extends React.Component {
         filterStores(match.params.filter)
       } else if (location.pathname.slice(0, 7) === "/search" && this._isMounted) {
         searchStores(match.params.fragment)
+      } else {
+        fetchStores()
       }
     }
   }
@@ -32,12 +34,14 @@ class StoreIndex extends React.Component {
   }
   
   componentDidUpdate(prevProps){
-    const { location, filterStores, match } = this.props;
+    const { location, filterStores, searchStores, match } = this.props;
     const filter = match.params.filter
     if (location.pathname !== prevProps.location.pathname && location.pathname.slice(0,8) === "/filters") {
       filterStores(filter)
       window.scrollTo(0, 0);
-    } 
+    } else if (location.pathname !== prevProps.location.pathname && location.pathname.slice(0,7) === "/search") {
+      searchStores(match.params.fragment)
+    }
   }
   
 
