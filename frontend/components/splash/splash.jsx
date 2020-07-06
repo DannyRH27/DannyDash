@@ -15,7 +15,7 @@ class Splash extends React.Component{
     this.props.fetchStores()
       .then(()=> setTimeout(()=> {
         this.setState({loading: false})
-      }, 2000)
+      }, 1000)
     )
   }
 

@@ -14,11 +14,11 @@
 
 .loading-spinner {
   transform: translate(-50%, -50%);
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid red; /* Blue */
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid red; /* Blue */
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 10px;
+  height: 10px;
   animation: spin 2s linear infinite;
 }
 
