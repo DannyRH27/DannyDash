@@ -5,21 +5,35 @@ import StoreIndexItem from "../store_index/store_index_item";
 class Splash extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      loading: true
+    }
   };
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.fetchStores();
+    this.props.fetchStores()
+      .then(()=> setTimeout(()=> {
+        this.setState({loading: false})
+      }, 2000)
+    )
   }
 
   render(){
-        const {
-          fetchCurrentUser,
-          stores,
-          fetchStore,
-          fetchStores,
-        } = this.props;
+    const {
+      fetchCurrentUser,
+      stores,
+      fetchStore,
+      fetchStores,
+    } = this.props;
 
+    const { loading } = this.state;
+    if (loading)
+      return (
+        <div className="loading-spinner-background">
+          <div className="loading-spinner"></div>
+        </div>
+      );
     let locals = {};
     const storeIds = Object.keys(stores);
     storeIds.forEach(id => {

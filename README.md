@@ -17,8 +17,8 @@ DannyDash is an on-demand prepared food delivery service inspired by [DoorDash](
 
 The Logistics Dispatch System is implemented using Google's Geocoding, Distance Matrix, and Maps Javascript APIs. <br/><br/>
 First, the Geocoding API will take the current user's address and the destination store address and return latitude/longitude coordinates for both. <br/><br/>
-Next, the store coordinates are set as the origin and the user's coordinates are set as the destination in the Distance Matric API inputs and will return, duration and distance. <br/><br/>
-Finally, the Maps Javascript API will initialize an instance of Google Maps and use the coordinates to create two markers on the map. ETA will be calculated by manipulating the returned duration and incrementing it with a DateTime Object.
+Next, the store coordinates are set as the origin and the user's coordinates are set as the destination in the Distance Matric API inputs and will return duration and distance. <br/><br/>
+Finally, the Maps Javascript API will find the DOM element with the id of "order-map", initialize an instance of Google Maps, and use the coordinates to create two markers on the map. ETA will be calculated by manipulating the returned duration and incrementing it with a DateTime Object.
 ```
   calculateDispatchDistance(order) {
     const { updateOrder } = this.props;
