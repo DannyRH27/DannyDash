@@ -127,8 +127,8 @@ DannyDash allows you to sign in or signup for a user account using your Facebook
 <br>
 
 Omni-Authorization is achieved through Facebook Login API. <br/><br/>
-When the 'Continue with Facebook' button is hit, an API call is made to the backend OmniAuth Callbacks Controller's Facebook route and an async script initializes an instance of the Facebook app with your Facebook API key in order to request user information.<br/><br/>
-After the user inserts their credentials, we will be redirected back to the Omniauth Callback Controller where the information from the request is available as a hash at request.env["omniauth.auth"] and proceeds to generate a user with the information provided. <br/><br/>
+When the 'Continue with Facebook' button is hit, an API call is made to the backend OmniAuth Callbacks Controller's Facebook route and a script asynchronously initializes an instance of the Facebook app with your Facebook API key in order to request user information.<br/><br/>
+After the user inserts their credentials/authorizes DannyDash, we will be redirected back to the Omniauth Callback Controller where the information from the request is available as a hash at request.env["omniauth.auth"] and proceeds to generate a user with the information provided. <br/><br/>
 If successfully validated through the user model, the user will be created and redirected to the home page. On failure, the account will not be created and the user will be redirected back to the splash page.
 <br/>
 <br/>

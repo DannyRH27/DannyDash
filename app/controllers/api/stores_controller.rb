@@ -21,7 +21,7 @@ class Api::StoresController < ApplicationController
 
     def filter
       filter = params[:filter]
-      @stores = Store.joins(:filters).where(filters: {filter_title: "#{filter}"})
+      @stores = Store.joins(:filters).where(filters: {filter_title: "#{filter}"}).preload(:filters)
       render :filter
     end
 
