@@ -8,15 +8,24 @@ class Splash extends React.Component{
     this.state = {
       loading: true
     }
+
+    this.showPage = this.showPage.bind(this)
   };
 
   componentDidMount() {
+    window.addEventListener("load", this.showPage)
     window.scrollTo(0, 0);
     this.props.fetchStores()
-      .then(()=> setTimeout(()=> {
-        this.setState({loading: false})
-      }, 1000)
-    )
+    
+  }
+  componentDidUpdate(){
+    const { loading } = this.state
+    if (loading) {
+      this.showPage()
+    }
+  }
+  showPage(){
+    this.setState({loading: false})
   }
 
   render(){
