@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { RiNetflixLine } from "react-icons/ri";
 import StoreIndexItem from "../store_index/store_index_item";
 class Splash extends React.Component{
   constructor(props){
