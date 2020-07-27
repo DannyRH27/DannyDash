@@ -1,9 +1,7 @@
 import React from 'react';
 import SearchDropdown from './search_dropdown';
-// import { FontAwesomeIcon } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { withRouter } from 'react-router-dom';
-import { debounce } from 'throttle-debounce';
 
 class SearchBar extends React.Component {
   constructor(props) {
