@@ -1,5 +1,4 @@
 import React from 'react'
-import regeneratorRuntime from "regenerator-runtime";
 
 class ShowMenuItem extends React.Component{
     constructor(props){
