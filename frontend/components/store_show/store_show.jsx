@@ -1,12 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { IoIosCheckmarkCircle } from "react-icons/io";
-import { FaStar } from "react-icons/fa";
 import StoreShowMenu from './store_show_menu';
-import { HashLink } from "react-router-hash-link";
 import { Link, animateScroll as scroll } from "react-scroll";
 import StarRatings from "react-star-ratings";
-import { currentUser } from '../../util/session_api_util';
 
 
 class StoreShow extends React.Component {
@@ -22,7 +19,7 @@ class StoreShow extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    const { storeId, fetchStore, currentUser, fetchCurrentUser, fetchMenus, fetchItems } = this.props;
+    const { storeId, fetchStore, currentUser, fetchMenus, fetchItems } = this.props;
     var dispatchUser = {};
      if (currentUser) {
         fetchStore(storeId).then((store) => {
@@ -65,8 +62,6 @@ class StoreShow extends React.Component {
               distance = element.distance.text;
               duration = element.duration.value;
             }
-            var from = origins[i];
-            var to = destinations[j];
           }
         }
 
