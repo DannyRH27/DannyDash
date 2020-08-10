@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import CartIndex from "./cart_index";
-import { fetchCart, updateCart } from "../../actions/cart_actions";
+import { updateCart } from "../../actions/cart_actions";
 import { fetchCartStore, fetchStores } from "../../actions/store_actions";
 
 
