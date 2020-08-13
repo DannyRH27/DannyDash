@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { updateCart, fetchCart } from "../../actions/cart_actions";
+import { updateCart } from "../../actions/cart_actions";
 import { closeModal, openModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 import { FiPlusCircle, FiMinusCircle } from "react-icons/fi";
