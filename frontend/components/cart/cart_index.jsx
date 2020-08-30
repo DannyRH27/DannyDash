@@ -8,6 +8,7 @@ class CartIndex extends React.Component {
     this._isMounted = false;
   }
 
+  
   componentDidMount(){
     const { fetchStores, fetchCartStore, cart, location } = this.props;
     this._isMounted = true;
