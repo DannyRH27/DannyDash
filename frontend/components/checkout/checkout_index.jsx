@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { FaCcVisa, FaLeaf } from "react-icons/fa";
 import CheckoutItem from "./checkout_item";
-import ReactTooltip from "react-tooltip";
+
 
 class CheckoutIndex extends React.Component {
   constructor(props) {
