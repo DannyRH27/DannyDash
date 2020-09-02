@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { FaCcVisa, FaLeaf } from "react-icons/fa";
+import { FaCcVisa } from "react-icons/fa";
 import CheckoutItem from "./checkout_item";
 
 
