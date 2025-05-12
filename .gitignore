@@ -11,3 +11,4 @@ bundle.js*
 .bundle/
 # Ignore application configuration
 /config/application.yml
+.bundle/config
