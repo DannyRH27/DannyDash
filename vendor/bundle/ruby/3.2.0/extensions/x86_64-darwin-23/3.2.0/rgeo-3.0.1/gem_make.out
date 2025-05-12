@@ -1,0 +1,23 @@
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/3.2.0/gems/rgeo-3.0.1/ext/geos_c_impl
+/Users/dannyhuang/.rvm/rubies/ruby-3.2.2/bin/ruby extconf.rb
+checking for geos-config... no
+checking for geos_c.h... no
+**** WARNING: Unable to find GEOS headers or libraries.
+**** Ensure that 'geos-config' is in your PATH or provide that full path via --with-geos-config
+**** Compiling without GEOS support.
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/3.2.0/gems/rgeo-3.0.1/ext/geos_c_impl
+make DESTDIR\= sitearchdir\=./.gem.20250512-9958-hh6ukn sitelibdir\=./.gem.20250512-9958-hh6ukn clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/3.2.0/gems/rgeo-3.0.1/ext/geos_c_impl
+make DESTDIR\= sitearchdir\=./.gem.20250512-9958-hh6ukn sitelibdir\=./.gem.20250512-9958-hh6ukn
+make: Nothing to be done for `install'.
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/3.2.0/gems/rgeo-3.0.1/ext/geos_c_impl
+make DESTDIR\= sitearchdir\=./.gem.20250512-9958-hh6ukn sitelibdir\=./.gem.20250512-9958-hh6ukn install
+make: Nothing to be done for `install'.
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/3.2.0/gems/rgeo-3.0.1/ext/geos_c_impl
+make DESTDIR\= sitearchdir\=./.gem.20250512-9958-hh6ukn sitelibdir\=./.gem.20250512-9958-hh6ukn clean
+make: *** No rule to make target `clean'.  Stop.

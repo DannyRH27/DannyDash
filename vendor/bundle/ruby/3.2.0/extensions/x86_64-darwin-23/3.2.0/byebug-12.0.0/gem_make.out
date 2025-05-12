@@ -1,0 +1,22 @@
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/3.2.0/gems/byebug-12.0.0/ext/byebug
+/Users/dannyhuang/.rvm/rubies/ruby-3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/3.2.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20250512-9958-j7xdoo sitelibdir\=./.gem.20250512-9958-j7xdoo clean
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/3.2.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20250512-9958-j7xdoo sitelibdir\=./.gem.20250512-9958-j7xdoo
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/3.2.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20250512-9958-j7xdoo sitelibdir\=./.gem.20250512-9958-j7xdoo install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20250512-9958-j7xdoo/byebug
+
+current directory: /Users/dannyhuang/Desktop/AppAcademy/DannyDash/vendor/bundle/ruby/3.2.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20250512-9958-j7xdoo sitelibdir\=./.gem.20250512-9958-j7xdoo clean
